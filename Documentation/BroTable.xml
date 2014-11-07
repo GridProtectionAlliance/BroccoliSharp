@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <remarks>
+    <para>
+      <h2>Handling Tables</h2>
+      BroccoliSharp supports Bro-style tables, i.e., associative containers that map instances of a key type to
+      an instance of a value type. A given key can only ever point to a single value. The key type can be composite,
+      i.e., it may consist of an ordered sequence of different types, or it can be direct, i.e., consisting of a
+      single type (such as an integer, a string, or a record).
+    </para>
+    <para>
+      The functionality of a <see cref="BroTable"/> is virtually identical to that of a .NET
+      <see cref="Dictionary{TKey, TValue}"/> with a type implementation of a <see cref="BroValue"/> for both the
+      key and the value.
+    </para>
+    <para>
+      Tables are handled similarly to records in that typing is determined dynamically by the initial key/value pair
+      inserted. The resulting types can be obtained via the <see cref="BroTable.KeyType">BroTable.KeyType</see>
+      property and the <see cref="BroTable.ValueType">BroTable.ValueType</see> property. Should the types not have
+      been determined yet, <see cref="BroType.Unknown">BroType.Unknown</see> will result. Also, as with records,
+      values inserted into the table are copied internally, and the ones passed to the insertion functions remain
+      unaffected.
+    </para>
+    <para>
+      The main thing to know about BroccoliSharp's implementation of tables is how to use composite key types.
+      You may treat composite key types exactly as <see cref="BroRecord"/> instances, though you do not need to use
+      field names when assigning elements to individual <see cref="BroField"/> values, you can leave the field name
+      out of most methods and when doing so the field name will default to an empty string. So in order to insert a
+      key/value pair in the table, you will create a new <see cref="BroRecord"/> with the needed values then use
+      this record as the key object for the <see cref="BroTable"/>. In order to differentiate composite index types
+      from direct ones consisting of a single record, use <see cref="BroType.List">BroType.List</see> as the type of
+      the record key, as opposed to <see cref="BroType.Record">BroType.Record</see>. The Broccoli API will then know
+      to interpret the record as an ordered sequence of items making up a composite element, not a regular record.
+    </para>
+  </remarks>
+  <threadsafety>
+    Implementation of <see cref="BroTable"/> is not synchronized, as a result, enumerating through
+    the table will intrinsically not be a thread-safe procedure. In cases where enumeration contends
+    with write accesses, table should be locked during the entire enumeration. To allow the table
+    to be accessed by multiple threads for reading and writing, synchronization will be required.
+  </threadsafety>
+</docs>

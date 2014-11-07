@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <remarks>
+    <para>
+      <h2>Managing Connections</h2>
+      You can use BroccoliSharp to establish a connection to a remote Bro, or to create a Broccoli-enabled
+      server application that other Bros will connect to (this means that in principle, you can also
+      use Broccoli purely as middleware and have multiple Broccoli applications communicate directly).
+    </para>
+    <para>
+      In order to establish a connection to a remote Bro, you need to create a <see cref="BroConnection"/>.
+      You then use this connection object to request events, establish the connection with the remote Bro,
+      send events, etc. You can construct a client based <see cref="BroConnection"/> with a host name or
+      IP Address string; the string should be in “hostname:port” or “x.x.x.x:port” format, respectively.
+      For more control, you can implement your own .NET <see cref="TcpClient"/> or <see cref="Socket"/>
+      objects and use that connection to construct a new <see cref="BroConnection"/>.
+    </para>
+    <para>
+      To establish a Broccoli-enabled server connection, you first need to implement the usual .NET
+      <see cref="TcpListener"/> or <see cref="Socket"/> objects. Once established, you can create a new
+      <see cref="BroConnection"/> with a constructor that accepts these objects. The rest of the
+      connection handling then proceeds as in the client scenario.
+    </para>
+    <note>
+      BroccoliSharp has not yet been tested with SSL connections. However, this may work by simply using the .NET
+      <see cref="System.Net.Security.SslStream"/> with an existing <see cref="Socket"/>. Note that the SSL implementation
+      in Mono is managed, so this would not be used in conjunction with the <c>bro_ctx</c> structure used to initialize the
+      Broccoli API with OpenSSL. As a result, the <c>bro_ctx</c> structure is not defined in the internal BroccoliSharp
+      BroApi. See <a href="http://www.mono-project.com/docs/faq/security/">Mono SSL</a> for more details on SSL setup.
+    </note>
+    <para>
+      All <see cref="BroConnection"/> constructors accept <see cref="BroConnectionFlags"/> for fine-tuning
+      connection behavior. These flags are:
+      <list type="table">
+        <listheader>
+          <term>
+            <see cref="BroConnectionFlags">Connection&#160;Flag</see>
+          </term>
+          <description>Description:</description>
+        </listheader>
+        <item>
+          <term>
+            <see cref="BroConnectionFlags.None"/>
+          </term>
+          <description>
+            No functionality. Use when no flags are desired.
+          </description>
+        </item>
+        <item>
+          <term>
+            <see cref="BroConnectionFlags.Reconnect"/>
+          </term>
+          <description>
+            When using this option, Broccoli will attempt to reconnect to the peer transparently after
+            losing connectivity. Essentially whenever you try to read from or write to the peer and
+            its connection has broke down, a full reconnect including complete handshaking is attempted.
+            You can check whether the connection to a peer is alive at any time using
+            <see cref="BroConnection.IsAlive"/>.
+          </description>
+        </item>
+        <item>
+          <term>
+            <see cref="BroConnectionFlags.AlwaysQueue"/>
+          </term>
+          <description>
+            When using this option, Broccoli will queue any events you send for later transmission when
+            a connection is currently down. Without using this flag, any events you attempt to send while
+            a connection is down get dropped on the floor. Note that Broccoli maintains a maximum queue
+            size per connection so if you attempt to send lots of events while the connection is down,
+            the oldest events may start to get dropped nonetheless. Again, you can check whether the
+            connection is currently okay by using <see cref="BroConnection.IsAlive"/>.
+          </description>
+        </item>
+        <item>
+          <term>
+            <see cref="BroConnectionFlags.DontCache"/>
+          </term>
+          <description>
+            When using this option, Broccoli will ask the peer not to use caching on the objects it sends
+            to us. This is the default and the flag need not normally be used. It is kept to maintain
+            backward compatibility.
+          </description>
+        </item>
+        <item>
+          <term>
+            <see cref="BroConnectionFlags.Yield"/>
+          </term>
+          <description>
+            When using this option, <see cref="BroConnection.ProcessInput"/> processes at most one event
+            at a time and then returns.
+          </description>
+        </item>
+        <item>
+          <term>
+            <see cref="BroConnectionFlags.Cache"/>
+          </term>
+          <description>
+            When using this option, Broccoli will ask the peer to use caching on the objects it sends to
+            us. Caching is normally disabled.
+          </description>
+        </item>
+      </list>
+    </para>
+    <para>
+      Just by creating a <see cref="BroConnection"/> instance you do not also establish a connection right away, this
+      is done using <see cref="BroConnection.Connect"/>. The main reason for this is to allow you to subscribe to
+      events (using <see cref="BroConnection.RegisterForEvent">RegisterForEvent()</see>, see example below) before
+      establishing the connection. Upon successfully returning from <see cref="BroConnection.Connect"/> you are
+      guaranteed to receive all instances of the event types you have requested, while later on during the connection
+      some time may elapse between the issuing of a request for events and the processing of that request at the remote
+      end. Connections are established via TCP. The port numbers Bro agents and Broccoli applications listen on can
+      vary from peer to peer.
+      <code language="C#">
+          BroConnection connection = new BroConnection("bro.yourorg.com:1234"))
+
+          // Register for events before connecting to Bro...
+          connection.RegisterForEvent("foo");
+
+          // Connect to remote Bro
+          connection.Connect();
+      </code>
+    </para>
+    <para>
+      Finally, <see cref="BroConnection.Dispose()"/> will terminate a connection and release all resources associated
+      with the connection. You can create as many connections as you like, to one or more peers.
+    </para>
+    <h2>Connections Classes</h2>
+    <para>
+      When you want to establish connections from multiple BroccoliSharp applications with different purposes, the peer
+      needs a means to understand what kind of application each connection belongs to. The real meaning of
+      “kind of application” here is “sets of event types to request”, because depending on the class of an application,
+      the peer will likely want to receive different types of events.
+    </para>
+    <para>
+      BroccoliSharp lets you set the class of a connection by assigning a class name to the connection object's
+      <see cref="BroConnection.Class"/> property. When using this feature, you need set that value before issuing a
+      <see cref="BroConnection.Connect"/> since the class of a connection is determined at connection startup.
+    </para>
+    <para>
+      If your peer is a Bro node, you need to match the chosen connection class in the remote Bro's
+      <c>Communication::nodes</c>  configuration. See <a
+      href="https://www.bro.org/sphinx/components/broccoli/broccoli-manual.html#configuring-event-reception-in-bro-scripts">
+        “Configuring event reception in Bro scripts”
+      </a>, for how to do this. Finally, in order to obtain the class of a
+      connection as indicated by the remote side, check the value of the <see cref="BroConnection.PeerClass"/> property:
+      <code language="C#">
+          Console.WriteLine("Peer class = " + connection.PeerClass);
+      </code>
+    </para>
+    <h2>Composing and Sending Events</h2>
+    <para>
+      In order to send an event to the remote Bro agent, you first create an empty <see cref="BroEvent"/> with the name
+      of the event, then <see cref="BroEvent.AddParameter(BroValue)">add parameters</see> to pass to the event
+      handler at the remote agent and then send off the event.
+    </para>
+    <para>
+      Let's assume we want to request a report of all connections a remote Bro currently keeps state for that match a
+      given destination port and host name and that have amassed more than a certain number of bytes. The idea is to send
+      an event to the remote Bro that contains the query, identifiable through a request ID, and have the remote Bro
+      answer us with <c>remote_conns</c> events containing the information we asked for. The definition of our requesting
+      event could like the following in the Bro policy:
+      <code language="jscript" title="Bro Script">
+          event report_conns(req_id: int, dest_host: string, dest_port: port, min_size: count);
+      </code>
+      First, create a new event:
+      <code language="C#">
+          BroEvent ev = new BroEvent("report_conns");
+      </code>
+      Now we need to add parameters to the event. The sequence and types must match the event handler declaration – check
+      the Bro policy to make sure they match. The function to use for adding parameter values is
+      <see cref="BroEvent.AddParameter(BroValue)">BroEvent.AddParameter</see>. All values are eventually passed as
+      <see cref="BroValue"/> instances and are copied internally, so the source object remains unmodified. However, this is
+      often transparent to the developer since all <see cref="BroType"/> implementations are implicitly castable to a
+      <see cref="BroValue"/>, i.e., you do not have to explicitly cast existing <see cref="BroType"/> implementation
+      instances to a <see cref="BroValue"/>. As an example, you can pass a literal <see cref="string"/> value to the
+      <see cref="BroEvent.AddParameter(BroValue)"/> function and this will be implicitly converted to a <see cref="BroString"/>
+      and then automatically cast to a <see cref="BroValue"/>. The <see cref="BroValue"/> class manages the type of the
+      value for you. See the <see cref="BroType"/> enumeration for all the value types that BroccoliSharp supports along with
+      data structures associated with each item.
+    </para>
+    <para>
+      With this information, we can now compose a Bro <c>request_connections</c> event:
+      <code language="C#">
+          ev.AddParameter(new BroValue(0, BroType.Int));      // req_id
+          ev.AddParameter("desthost.destdomain.com");         // dest_host
+          ev.AddParameter(new BroPort(80, "tcp");             // dest_port
+          ev.AddParameter(new BroValue(1000, BroType.Count)); // min_size
+      </code>
+      <see cref="BroValue"/> also defines a constructor parameter called <c>typeName</c> that will allow you to specify a
+      specialization of any of the <see cref="BroType"/> values. This is generally not necessary except for one situation:
+      when using <see cref="BroType.Enum">BroType.Enum</see>. You currently cannot define a Bro-level enum type in the
+      Broccoli API, and thus when sending an enum value, you have to specify the type of the enum along with the value.
+      For example, in order to add an instance of enum <c>transport_type</c> defined in Bro's <c>bro.init</c>, you would use:
+      <code language="C#">
+          ev.AddParameter(new BroValue(2, BroType.Enum, "transport_proto"));
+      </code>
+      to get the equivalent of “udp” on the remote side. In BroccoliSharp, however, most all methods dealing with a
+      <see cref="BroValue"/> have overloads that will take a value, the <see cref="BroType"/> and an optional type name; you
+      will rarely ever have to explicitly create a new <see cref="BroValue"/> to specify a desired type name, for example:
+      <code language="C#">
+          ev.AddParameter(2, BroType.Enum, "transport_proto");
+      </code>
+      The same method is used to specify type names when calling other BroccoliSharp functions, such as:
+      <see cref="BroEvent.ReplaceParameter(int, BroValue)">BroEvent.ReplaceParameter()</see>,
+      <see cref="BroRecord.Add(BroField)">BroRecord.Add()</see>,
+      <see cref="BroRecord.this[int]">BroRecord.this[int]</see> and
+      <see cref="BroRecord.this[string]">BroRecord.this[string]</see>.
+    </para>
+    <para>
+      All that's left to do now is to send off the event. For this, use the Bro connection method
+      <see cref="BroConnection.SendEvent(BroEvent)"/> providing the event instance as the parameter. This function returns
+      <c>true</c> when the event could be sent right away or was queued for later delivery; othwerwise, <c>false</c> is returned
+      on error. If the event gets queued, this does not indicate an error – it is likely that the connection was just not ready
+      to send the event at this point. Whenever you call <see cref="BroConnection.SendEvent(BroEvent)"/>, Broccoli attempts to
+      send as much of an existing event queue as possible. Again, the event is copied internally to make it easier for you to
+      send the same event repeatedly:
+      <code language="C#">
+          connection.SendEvent(ev);
+      </code>
+      <note>
+        You don't have to create a <see cref="BroEvent"/> object if you don't intend on reusing it. The <see cref="BroConnection"/>
+        overloads for the <c>SendEvent</c> method include one that takes an args style parameter array:
+        <code language="C#">
+            connection.SendEvent("report_conns",
+                new BroValue(0, BroType.Int),
+                "desthost.destdomain.com",
+                new BroPort(80, "tcp"),
+                new BroValue(1000, BroType.Count));
+        </code>
+      </note>
+      Two other functions may be useful to you: <see cref="BroEventQueue.Length">BroEventQueue.Length</see> tells you how many
+      events are currently queued, and <see cref="BroEventQueue.Flush">BroEventQueue.Flush()</see> attempts to flush the current
+      event queue and returns the number of events that do remain in the queue after the flush. However, you do not normally
+      need to call <see cref="BroEventQueue.Flush">BroEventQueue.Flush()</see>, queue flushing is attempted every time you send
+      an event.
+    </para>
+    <para>
+      The <see cref="BroEventQueue"/> object is always referenced from the source <see cref="BroConnection"/> using the
+      read-only <see cref="BroConnection.EventQueue">BroConnection.EventQueue</see> property, for example:
+      <code language="C#">
+          connection.EventQueue.Length;
+      </code>
+    </para>
+    <h2>Receiving Events</h2>
+    <para>
+      Receiving events is a little more work because you need to:
+      <ol>
+        <li>Attach to the <see cref="BroConnection.ReceivedEvent"/> to handle requested events when they arrive.</li>
+        <li>Let the remote Bro agent know that you would like to receive those events.</li>
+        <li>Write code in your event handler for extracting and processing arriving events.</li>
+      </ol>
+      Each of these steps is explained in the following sections.
+    </para>
+    <h3>
+      <i>Implementing an Event Handler</i>
+    </h3>
+    <para>
+      The BroccoliSharp library internally handles creating a callback for the Broccoli API to use for any events to be
+      received. Under the covers, BroccoliSharp will use the Broccoli <i>Compact Argument Passing</i> mechanism and expose
+      the received events through normal .NET event handling mechanisms so as to simplify receiving Bro events for the
+      developer. As a result, all a developer needs to do is to create a handler for the
+      <see cref="BroConnection.ReceivedEvent">BroConnection.ReceivedEvent</see> and then attach to this event. The function
+      signature for these events looks like <c>delegate void ReceivedEventSignature(object sender, BroEventArgs e)</c>:
+      <code language="C#">
+          // Establish event handler for Bro events
+          connection.BroEvent += connection_ReceivedEvent;
+
+          // Bro event handler - called when a new Bro event is received
+          static void connection_ReceivedEvent(object sender, BroEventArgs e)
+          {
+              if (e.EventName == "foo")
+              {
+                  // Code to handle foo event...
+              }
+          }
+      </code>
+    </para>
+    <h3>
+      <i>Register to Receive Event</i>
+    </h3>
+    <para>
+      In order to register to receive an event, use <see cref="BroConnection.RegisterForEvent">BroConnection.RegisterForEvent()</see>
+      and provide it the name of the Bro event you want to receive. You can optionally also provide user definable data that will
+      be provided to the event handler any time an event with this name is received.
+      <note>
+        Any user data associated with the event is maintained in managed memory and does not cross into the Broccoli API.
+      </note>
+    </para>
+    <para>
+      Continuing our example, we will now want to process the connection reports that contain the responses to our prior defined
+      <c>remote_conns</c> event. Let's assume those reponses look as follows:
+      <code language="jscript" title="Bro Script">
+          event report_conn(req_id: int, conn: connection);
+      </code>
+      The reply events contain the request ID so we can associate requests with replies, and a connection record (defined in
+      <c>bro.init</c> in Bro). Now just register to receive the event using the connection object's
+      <see cref="BroConnection.RegisterForEvent"/> function:
+      <code language="C#">
+          connection.RegisterForEvent("report_conn");
+      </code>
+      In this case we have no additional data to be passed into the callback, so we did not specify a value for the optional
+      userData argument. If you have multiple events you are interested in, register each one in this fashion.
+    </para>
+    <h3>
+      <i>Handling Received Events</i>
+    </h3>
+    <para>
+      Events are received in a <see cref="BroEventArgs"/> object that is passed to the event handler that is attached to the
+      connection object's <see cref="BroConnection.ReceivedEvent"/>. All received events can be distinguished by keying off the
+      <see cref="BroEventArgs.EventName">BroEventArgs.EventName</see> value, for example:
+      <code language="C#">
+          // Bro event handler
+          static void connection_ReceivedEvent(object sender, BroEventArgs e)
+          {
+              // Raised when a new Bro event is received
+              switch (e.EventName)
+              {
+                  case "foo":
+                      // Handle foo event
+                      Console.WriteLine("Received event \"foo\" with {0} parameters at {1}", e.Parameters.Length, e.EventTime);
+
+                      for (int i = 0; i &lt; e.Parameters.Length; i++)
+                          Console.WriteLine("    Event \"foo\" parameter[{0}] = {1}", i, e.Parameters[i]);
+
+                      break;
+                  default:
+                      Console.WriteLine("Received unexpected event \"{0}\".", e.EventName);
+                      break;
+              }
+          }
+      </code>
+    </para>
+    <h2>Requesting Event Delivery</h2>
+    <para>
+      BroccoliSharp will now know what to do with the requested events when they arrive. What's left to do is to let the remote
+      Bro know that you would like to receive the events for which you registered. If you haven't yet called
+      <see cref="BroConnection.Connect"/>, then there is nothing to do, since calling the connect function will request the
+      registered events anyway. If you are already connected, you can still request events. To do so, simply call the
+      <see cref="BroConnection.RequestEvents">BroConnection.RequestEvents()</see> method.
+    </para>
+    <para>
+      This mechanism also implies that no unrequested events will be delivered to us (and if that happened for whatever reason,
+      the event would simply be dropped on the floor).
+      <note>
+        Currently you cannot un-request events, nor can you request events based on predicates on the values of
+        the events' arguments.
+      </note>
+    </para>
+    <h2>Reading Events from the Connection Handle</h2>
+    <para>
+      At this point the remote Bro will start sending you the requested events once they are triggered - however, this does
+      not automatically raise the connection's <see cref="BroConnection.ReceivedEvent"/>. What is left to do is to trigger
+      processing of the queued events in the connection which will start dispatching them to the event handlers.
+    </para>
+    <para>
+      To start raising the events and firing event handlers with received event data, you can choose among two approaches: explicit
+      polling or using events on the source <see cref="Socket"/> to know when data has arrived for processing. Explicit polling
+      is particularly straightforward: all you need to do is call the
+      <see cref="BroConnection.ProcessInput">BroConnection.ProcessInput()</see> function from a timer or loop, which will then go
+      off and check if any events have arrived and if so, dispatch them accordingly. Note that the
+      <see cref="BroConnection.ProcessInput"/> function does not block – if no events have arrived, then the call will return
+      immediately. For more fine-grained control over your I/O handling, you can use a source <see cref="Socket"/> to determine
+      when data has arrived and then invoke <see cref="BroConnection.ProcessInput"/> - one way to do this would be to use
+      <a href="http://msdn.microsoft.com/en-us/library/bbx2eya8(v=vs.110).aspx">asynchronous sockets</a>.
+    </para>
+    <para>
+      As a side note, if you don't process arriving events frequently enough, then TCP's flow control will start to slow
+      down the sender until eventually events will queue up and be dropped at the sending end.
+    </para>
+    <note>
+      When using your own <see cref="Socket"/>, it is recommended to use the <see cref="BroConnection"/> constructors that
+      accept sockets. It is also possible to get a handle to the socket that the Broccoli API will create when using the
+      <see cref="BroConnection(string, BroConnectionFlags)">Bro constructor</see> that accepts a host-name. You can do this by
+      accessing the <see cref="BroConnection.FileDescriptor">BroConnection.FileDescriptor</see> property, but using the descriptor
+      from within a .NET application is outside the scope of this documentation.
+    </note>
+  </remarks>
+  <example>
+    This example shows how to create and use a <see cref="BroConnection"/>:
+    <code source="Examples\CS\Example1\Program.cs" language="C#" />
+    <code source="Examples\VB\Example1\Program.vb" language="VB" />
+    <code source="Examples\Java\Example1\Program.java" language="JSharp" />
+  </example>
+</docs>

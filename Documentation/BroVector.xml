@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <remarks>
+    <para>
+      <h2>Handling Vectors</h2>
+      The functionality of a <see cref="BroVector"/> is virtually identical to that of a .NET
+      <see cref="List{T}"/> with a type implementation of a <see cref="BroValue"/>.
+    </para>
+  </remarks>
+  <threadsafety>
+    Implementation of <see cref="BroVector"/> is not synchronized, as a result, enumerating through
+    the vector will intrinsically not be a thread-safe procedure. In cases where enumeration contends
+    with write accesses, vector should be locked during the entire enumeration. To allow the vector
+    to be accessed by multiple threads for reading and writing, synchronization will be required.
+  </threadsafety>
+</docs>

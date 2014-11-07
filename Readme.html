@@ -1,0 +1,175 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>BroccoliSharp: A .NET Implementation of the Bro Client Communications Library</title>
+    <style>
+        
+    </style>
+</head>
+<body lang="EN-US">
+    <h1>BroccoliSharp: A .NET implementation of the Bro Client Communications Library.</h1>
+
+    <p>
+        BroccoliSharp is a set of managed C# based .NET classes and structures that wrap
+        Broccoli, the "Bro client communications library". This library fully implements
+        the Broccoli API and will allow you to create client sensors for the Bro intrusion
+        detection system, receive Bro IDs, send and receive Bro events, as well as send
+        and receive event requests to and from peering Bros. As in the native C Broccoli
+        API, you can currently create and receive values of pure types like integers,
+        counters, timestamps, IP addresses, port numbers, booleans, and strings.
+    </p>
+
+    <p>
+        BroccoliSharp is free software under terms of the BSD license as provided in the
+        LICENSE.txt file distributed with the source code.
+    </p>
+
+    <p>
+        More details on BroccoliSharp usage can be found in the documentation related to
+        the primary data structures. It is expected that the developer is already familiar
+        with basic Bro concepts before using the BroccoliSharp library.
+    </p>
+
+    <!-- Uncomment for inclusion in Sandcastle Project Summary:
+    
+    <p>
+        Many of the following documentation topics have been derived from key portions of the official
+        <a href="https://www.bro.org/sphinx/components/broccoli/broccoli-manual.html">Broccoli documentation</a>
+        put into context of using BroccoliSharp from a .NET application. Many topics also include usage
+        examples in C#. The <a href="T_BroccoliSharp_BroConnection.htm">BroConnection class</a> topic remarks
+        also include examples in VB.NET and Java using <a href="http://www.ikvm.net/">IKVM.NET</a>.
+    </p>
+
+    <ul>
+        <li>
+            For details on how to manage connections, handle connections classes, and compose and send
+            events using BroccoliSharp, see topic remarks for the:
+            <ul style="list-style-type: none">
+                <li><a href="T_BroccoliSharp_BroConnection.htm">BroConnection class</a></li>
+            </ul>
+        </li>
+        <li>
+            For details on how to handle record structures in BroccoliSharp, see topic remarks for the:
+            <ul style="list-style-type: none">
+                <li><a href="T_BroccoliSharp_BroRecord.htm">BroRecord class</a></li>
+            </ul>
+        </li>
+        <li>
+            For details on how to handle tables and composite keys in BroccoliSharp, see topic remarks for the:
+            <ul style="list-style-type: none">
+                <li><a href="T_BroccoliSharp_BroTable.htm">BroTable class</a></li>
+            </ul>
+        </li>
+        <li>
+            For details on how to handle sets in BroccoliSharp, see topic remarks for the:
+            <ul style="list-style-type: none">
+                <li><a href="T_BroccoliSharp_BroSet.htm">BroSet class</a></li>
+            </ul>
+        </li>
+        <li>
+            For details on how BroccoliSharp safely passes strongly-typed values into Broccoli API functions
+            with void* values, see topic remarks for the:
+            <ul style="list-style-type: none">
+                <li><a href="T_BroccoliSharp_BroValue.htm">BroValue class</a></li>
+            </ul>
+        </li>
+        <li>
+            For details on the BroccoliSharp structures and classes that are associated with each of
+            the Bro types, see topic remarks for the:
+            <ul style="list-style-type: none">
+                <li><a href="T_BroccoliSharp_BroType.htm">BroType enumeration</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    -->
+
+    <h2>Download</h2>
+
+    <p>
+        You can find the latest BroccoliSharp release for download at 
+        <a href="https://www.gridprotectionalliance.org/NightlyBuilds/BroccoliSharp/Beta/BroccoliSharp.zip">GPA Nightly Builds</a>
+        (for now).
+    </p>
+
+    <p>
+        BroccoliSharps’s git repository is located at &lt;<b>tbd git location</b>&gt;.
+        You can browse the repository &lt;<b>tbd git location</b>&gt;.
+    </p>
+
+    <p>
+        This document describes BroccoliSharp 1.0.
+    </p>
+
+    <h2>Installation</h2>
+
+    <p>
+        The BroccoliSharp library
+        has only been tested on Linux so far.
+    </p>
+
+    <h3>Prerequisites</h3>
+
+    <p>
+        BroccoliSharp requires the following
+        libraries which need to be installed before you begin:
+    </p>
+
+    <p style='text-indent: .5in'>
+        <span style='font-family: Symbol'>·&#160;</span>&#160;        
+        <a href="https://www.bro.org/download/">The Broccoli library</a>
+        (of course!), Broccoli has its own requirements, see
+        <a href="https://www.bro.org/sphinx/components/broccoli/README.html">docs</a>.
+    </p>
+
+    <p style='text-indent: .5in'>
+        <span style='font-family: Symbol'>·&#160;</span>&#160;
+        <a href="http://www.mono-project.com/download/#download-lin">Mono</a> –
+        version supporting.NET 4.5 is preferred but may not be required.
+    </p>
+
+    <h3>Building BroccoliSharp</h3>
+
+    <p>
+        To build the BroccoliSharp library using Mono you can use xbuild:
+    </p>
+
+    <p style='text-indent: .5in'>
+        xbuild /p:Configuration=Release BroccoliSharp.sln
+    </p>
+
+    <p>
+        To build BroccoliSharp to work with a Broccoli release that has disabled PCAP support, use:
+    </p>
+
+    <p style='text-indent: .5in'>
+        xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln
+    </p>
+
+    <p>
+        You can also build the library on Windows using Visual Studio, however the binaries built on Windows
+        will only work on Linux if the Mono release at least supports .NET 4.5.
+    </p>
+
+    <p>
+        Once the BroccoliSharp.dll exists (found in Build/Output/Release folder relative to solution) you can
+        add a reference to the library in your .NET projects and begin using BroccoliSharp.
+    </p>
+
+    <h3>About the Code</h3>
+    
+    <p>
+        When building inside Visual Studio code analysis is enabled for this project. A rule set is included
+        with the source code (i.e., BroccoliSharp.ruleset) that defines the analysis rules that are enabled for
+        the project. Note that this rule set is basically just the "Microsoft Managed Recommended Rules" with
+        one rule turned off: CA1060: Move P/Invokes to NativeMethods class. This rule wants to force the name
+        of the imported Bro API functions class to be "NativeMethods", but I prefer "BroAPI" for this project.
+    </p>
+    <p>
+        The code has also been through extensive analysis using the 
+        <a href="http://www.mono-project.com/docs/tools+libraries/tools/gendarme/">Gendarme</a> tool. All
+        items it reports have been reviewed thoroughly - there are no issues of concern. A future to-do could
+        be to create an exclusion list with justifications.
+    </p>
+</body>
+</html>

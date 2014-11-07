@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <remarks>
+    <para>
+      <h2>Handling Bro Values</h2>
+      The Broccoli API defines a number of data types (see the <see cref="BroType"/> enumeration for
+      the full list). From a BroccoliSharp perspective these data types are placed into two major
+      classifications: value-types (e.g., <see cref="int"/>, <see cref="ulong"/>, <see cref="double"/>,
+      <see cref="BroTime"/>, etc.), and reference-types (e.g., <see cref="BroString"/>,
+      <see cref="BroRecord"/>, <see cref="BroSet"/>, etc.). A <see cref="BroValue"/> can represent
+      either a value-type or a reference-type for any <see cref="BroType"/> implementation.
+    </para>
+    <para>
+      A <see cref="BroValue"/> acts as a versatile variant value class that can wrap all managed and
+      native <see cref="BroType"/> implementations. The <see cref="BroValue"/> is an intermediate class
+      that holds a reference to the actual type value and is implicitly castable to all <see cref="BroType"/>
+      wrapper classes, structures and applicable .NET data types. The <see cref="BroValue"/> class exists
+      to map strongly-typed <see cref="BroType"/> wrapper implementations and .NET native types to the void*
+      values that are passed into the Broccoli C API.
+    </para>
+    <para>
+      Any Broccoli C API detail concerning use of opaque vs. transparent structures or getting a fixed pointer
+      to a managed memory location for value and reference types are handled internally by BroccoliSharp via
+      the <see cref="BroValue"/> class.
+    </para>
+    <para>
+      A <see cref="BroValue"/> is implictly castable to all the <see cref="BroType"/> implementations. For
+      reference-types, the <see cref="BroValue"/> just acts as a pointer to the value - casting to and from
+      the type implementation and a <see cref="BroValue"/> only creates a reference to the type - not a new
+      instance of the type. Casting a <see cref="BroValue"/> to a type other than the <see cref="BroType"/>
+      implementation it represents will ususally result in a <c>null</c> value. However, where applicable for
+      the type, casting to and from related native .NET types is allowed. To change the type of a
+      <see cref="BroValue"/> to another type, use the <see cref="BroValueExtensions.ConvertToType"/> method.
+      For value-types, casting to and from the type implementation and a <see cref="BroValue"/> always makes
+      a copy of the value.
+    </para>
+    <note>
+      <see cref="BroPort"/>, <see cref="BroAddress"/> and <see cref="BroSubnet"/> are immutable value-types,
+      as a result, casting from these structures to a <see cref="BroValue"/> always makes a copy of the value.
+      Also, although in the Broccoli C API the <c>bro_string</c> data type is a structure, the corresponding
+      BroccoliSharp wrapper class, <see cref="BroString"/>, is a reference-type - however, this class is also
+      immutable.
+    </note>
+    <para>
+      <h2>Design Notes</h2>
+      With a quick review of the <see cref="BroValue"/> source code one might be tempted to change the
+      <see cref="BroValue"/> <c>class</c> into a <c>struct</c> - it certainly meets all of the criteria for
+      one. However, in the current design a <see cref="BroField"/> (used in conjunction with a
+      <see cref="BroRecord"/>) directly inherits from <see cref="BroValue"/> and adds a field name property
+      to allow column-name based lookups in a <see cref="BroRecord"/>. Through inheritance the
+      <see cref="BroField"/> is effectively a <see cref="BroValue"/> for most all use cases and this greatly
+      simplifies library usage when dealing with record sets. Unless you redesign how the record-set functionality
+      currently uses the <see cref="BroField"/> as an extended <see cref="BroValue"/>, simply switching to a
+      <c>struct</c> implementation means you can no longer inherit base functionality - in .NET, a <c>struct</c>
+      cannot inherit a base class or other struct, it can only implement interfaces. To convert the
+      <see cref="BroValue"/> to a <c>struct</c> using the current design would require using an interface for
+      common functionality in the <see cref="BroValue"/> and <see cref="BroField"/>. The first thing you would
+      lose in making these classes structs and implementing a common interface would be the ability to implicitly
+      cast to and from common .NET types, e.g., a <see cref="string"/>. Custom Bro wrapper types could implement
+      the needed interface easily enough, but you can't redefine native .NET types and have them implement your
+      custom interface. Also, implicit conversion operations only work with concrete types, so you cannot
+      implicitly convert an object to an interface - i.e., you can't make a native .NET string implicitly
+      convertible to your custom interface.
+    </para>
+    <para>
+      Even with these constraints, this would not be the end of the world - you could go down the <c>struct</c>
+      path without breaking the basic functionality of the library. However, making these changes would
+      significantly reduce developer usage convenience of the library by having to always create Bro wrapper types
+      to interact with the library. With the way the library is currently designed (with classes), a string can be
+      a BroString, an IPAddress can be a BroAddress and a DateTime can be a BroTime, etc. without the developer
+      having to deal with or think about the conversion details from native types to Bro wrapper types.
+    </para>
+    <para>
+      Another issue with the <c>struct</c> approach would be the performance penalties that would be incurred in
+      the boxing and unboxing of the struct (value-type) as it was cast to and from its base interface
+      (reference-type) before it could interact with any of Bro classes that work with values - and that being most
+      all of them. As a side note, you might be thinking I actually tried using these classes as structs and later
+      decided it was a bad idea - and if so, you would be right.
+    </para>
+  </remarks>
+</docs>

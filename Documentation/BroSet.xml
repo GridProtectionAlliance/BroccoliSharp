@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <remarks>
+    <para>
+      <h2>Handling Sets</h2>
+      The functionality of a <see cref="BroSet"/> is virtually identical to that of a .NET
+      <see cref="HashSet{T}"/> with a type implementation of a <see cref="BroValue"/>.
+    </para>
+    <para>
+      From the perspective of the Broccoli API, a set essentially a <see cref="BroTable"/> with
+      <c>void</c> value types. Consequently, in BroccoliSharp you can actually implicitly cast a
+      <see cref="BroTable"/> to a <see cref="BroSet"/> and the resulting new <see cref="BroSet"/>
+      will be loaded with all the <see cref="BroTable.Keys"/> of the table.
+    </para>
+  </remarks>
+  <threadsafety>
+    Implementation of <see cref="BroSet"/> is not synchronized, as a result, enumerating through
+    the set will intrinsically not be a thread-safe procedure. In cases where enumeration contends
+    with write accesses, set should be locked during the entire enumeration. To allow the set
+    to be accessed by multiple threads for reading and writing, synchronization will be required.
+  </threadsafety>
+</docs>

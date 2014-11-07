@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <remarks>
+    <para>
+      The <see cref="BroEvent"/> implements the .NET <see cref="IEnumerable{T}"/> interface with a type
+      implementation of a <see cref="BroValue"/> to allow enumeration of the added parameters.
+    </para>
+  </remarks>
+  <example>
+    Example of sending a <see cref="BroEvent"/> from a <see cref="BroConnection"/>:
+    <code language="C#">
+        using (BroConnection connection = new BroConnection("bro.yourorg.com:1234"))
+        {
+            // Connect to remote Bro
+            connection.Connect();
+
+            // Create a new event
+            BroEvent bar = new BroEvent("bar");
+
+            bar.AddParameter("Text parameter");
+            bar.AddParameter(true);
+            bar.AddParameter("192.168.1.1", BroType.IpAddr);
+            bar.AddParameter(new BroPort(80, ProtocolType.Tcp));
+            bar.AddParameter(2, BroType.Enum, "transport_proto");
+            bar.AddParameter(BroTime.Now);
+
+            // Send the event
+            bool result = connection.SendEvent(bar);
+            Console.WriteLine("Event \"bar\" {0}", result ? "was sent or queued for later delivery" : "failed to send or queue");
+        }
+    </code>
+    The <see cref="BroEvent"/> implements <see cref="IEnumerable{T}"/> such that you can iterate over the
+    parameters added to the event, for example:
+    <code language="C#">
+          BroEvent myEvent = new BroEvent("myEvent");
+          BroVector list = new BroVector();
+      
+          for (int i = 0; i &lt; 10; i++)
+              list.Add(i, BroType.Int);
+      
+          myEvent.AddParameter(list.Count, BroType.Int);
+          myEvent.AddParameter(list);
+          myEvent.AddParameter("bro.myorg.com", BroType.IpAddr);
+          myEvent.AddParameter("MyEvent Text String");
+          myEvent.AddParameter(false);
+      
+          int counter = 0;
+      
+          foreach (BroValue value in myEvent)
+              Console.WriteLine("Event value {0} = \"{1}\"", counter++, value);      
+  </code>
+  </example>
+  <threadsafety>
+    Implementation of <see cref="BroEvent"/> is not synchronized, as a result, enumerating through the
+    event parameters will intrinsically not be a thread-safe procedure. In cases where enumeration contends
+    with write accesses, event object should be locked during the entire enumeration. To allow the event to
+    be accessed by multiple threads for reading and writing, synchronization will be required.
+  </threadsafety>
+</docs>

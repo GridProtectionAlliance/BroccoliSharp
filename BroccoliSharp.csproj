@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD88485E-0776-4B00-88F8-C85F1A8AF953}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BroccoliSharp</RootNamespace>
+    <AssemblyName>BroccoliSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\Output\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS, BRO_PCAP_SUPPORT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\Build\Output\Debug\BroccoliSharp.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Build\Output\Release\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS, BRO_PCAP_SUPPORT</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\Build\Output\Release\BroccoliSharp.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseNoPCAP|AnyCPU' ">
+    <OutputPath>..\Build\Output\ReleaseNoPCAP\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>..\Build\Output\ReleaseNoPCAP\BroccoliSharp.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BroAddress.cs" />
+    <Compile Include="BroConfiguration.cs" />
+    <Compile Include="BroEventArgs.cs" />
+    <Compile Include="BroEventQueue.cs" />
+    <Compile Include="BroField.cs" />
+    <Compile Include="BroTypeExtensions.cs" />
+    <Compile Include="BroValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BroValueExtensions.cs" />
+    <Compile Include="Internal\BroApi.cs" />
+    <Compile Include="BroConnection.cs" />
+    <Compile Include="BroConnectionFlags.cs" />
+    <Compile Include="BroEvent.cs" />
+    <Compile Include="BroPacket.cs" />
+    <Compile Include="BroPort.cs" />
+    <Compile Include="BroRecord.cs" />
+    <Compile Include="BroSet.cs" />
+    <Compile Include="Internal\BroStructures.cs" />
+    <Compile Include="BroSubnet.cs" />
+    <Compile Include="BroTable.cs" />
+    <Compile Include="BroTime.cs" />
+    <Compile Include="BroType.cs" />
+    <Compile Include="BroVector.cs" />
+    <Compile Include="Internal\InternalExtensions.cs" />
+    <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BroString.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BroccoliSharp.ruleset" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentation\BroConnection.xml" />
+    <Content Include="Documentation\BroRecord.xml" />
+    <Content Include="Documentation\BroSet.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Documentation\BroTable.xml" />
+    <Content Include="Documentation\BroValue.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Documentation\BroEvent.xml" />
+    <Content Include="Documentation\BroVector.xml" />
+    <None Include="README" />
+    <None Include="LICENSE" />
+    <Content Include="Readme.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

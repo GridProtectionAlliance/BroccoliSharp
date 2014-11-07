@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<docs>
+  <remarks>
+    <para>
+      <h2>Handling Records</h2>
+      BroccoliSharp supports record structures, i.e., types that pack a set of values together, placing
+      each value into its own field. In BroccoliSharp, the way you handle records is somewhat similar to
+      events: after creating an empty record (of type <see cref="BroRecord"/>), you can iteratively add
+      fields and values to it. The main difference is that you must specify a field name with the value;
+      each value in a record can be identified both by position (a numerical index starting from zero),
+      and by field name. You can retrieve values in a record by field index or field name. You can also
+      reassign values. There is no explicit, IDL-style definition of record types. You define the type
+      of a record implicitly by the sequence of field names and the sequence of the types of the values
+      you put into the record.
+    </para>
+    <para>
+      Note that all fields in a record must be assigned before it can be shipped.
+    </para>
+    <para>
+      The functionality of a <see cref="BroRecord"/> is virtually identical to that of a .NET
+      <see cref="List{T}"/> with a type implementation of a <see cref="BroField"/>. The <see cref="BroField"/>
+      class is simply a <see cref="BroValue"/> that also contains a field name for the record.
+    </para>
+    <para>
+      Keep in mind that a <see cref="BroRecord"/> field value may also contain another nested
+      <see cref="BroRecord"/>.
+    </para>
+  </remarks>
+  <example>
+    The <see cref="BroRecord"/> has two indexer properties. One will access <see cref="BroField"/>
+    values by index and the other by field name:
+    <code language="C#">
+        BroRecord record = new BroRecord();
+        BroVector list = new BroVector();
+
+        for (int i = 0; i &lt; 10; i++)
+            list.Add(i, BroType.Int);
+
+        record.Add(list.Count, BroType.Int, "listCount");
+        record.Add(list, "list");
+        record.Add("bro.myorg.com", BroType.IpAddr, "ipAddress");
+        record.Add("MyEvent Text String", "textString");
+        record.Add(2, BroType.Enum, "enumCol", "transport_proto");
+        record.Add(false, "booleanCol");
+
+        // Get first item by index
+        BroValue firstItem = record[0];
+
+        // Get column named "enumCol"
+        BroValue enumCol = record["enumCol"];
+    </code>
+  </example>
+  <threadsafety>
+    Implementation of <see cref="BroRecord"/> is not synchronized, as a result, enumerating through
+    the record will intrinsically not be a thread-safe procedure. In cases where enumeration contends
+    with write accesses, record should be locked during the entire enumeration. To allow the record
+    to be accessed by multiple threads for reading and writing, synchronization will be required.
+  </threadsafety>
+</docs>

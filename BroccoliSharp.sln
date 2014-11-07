@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "BroccoliSharpHelp", "BroccoliSharpHelp.shfbproj", "{D126B0A3-A11E-428D-B69C-5D06F2B05849}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AD88485E-0776-4B00-88F8-C85F1A8AF953} = {AD88485E-0776-4B00-88F8-C85F1A8AF953}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroccoliSharp", "BroccoliSharp.csproj", "{AD88485E-0776-4B00-88F8-C85F1A8AF953}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ReleaseNoPCAP|Any CPU = ReleaseNoPCAP|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D126B0A3-A11E-428D-B69C-5D06F2B05849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D126B0A3-A11E-428D-B69C-5D06F2B05849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D126B0A3-A11E-428D-B69C-5D06F2B05849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D126B0A3-A11E-428D-B69C-5D06F2B05849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D126B0A3-A11E-428D-B69C-5D06F2B05849}.ReleaseNoPCAP|Any CPU.ActiveCfg = Release|Any CPU
+		{D126B0A3-A11E-428D-B69C-5D06F2B05849}.ReleaseNoPCAP|Any CPU.Build.0 = Release|Any CPU
+		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.ReleaseNoPCAP|Any CPU.ActiveCfg = ReleaseNoPCAP|Any CPU
+		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.ReleaseNoPCAP|Any CPU.Build.0 = ReleaseNoPCAP|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
