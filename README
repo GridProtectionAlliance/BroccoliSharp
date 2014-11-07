@@ -14,20 +14,20 @@ Prerequisites
 
 	BroccoliSharp requires the following libraries which need to be installed before you begin: 
 
-		·   The Broccoli library (of course!), Broccoli has its own requirements, see docs. 
+	* The Broccoli library (of course!), Broccoli has its own requirements, see docs. 
 
-		·   Mono – version supporting.NET 4.5 is preferred but may not be required. 
+	* Mono – version supporting.NET 4.5 is preferred but may not be required. 
 
 Building BroccoliSharp
 
-	To build the BroccoliSharp library using Mono you can use xbuild: 
+To build the BroccoliSharp library using Mono you can use xbuild: 
 
-		xbuild /p:Configuration=Release BroccoliSharp.sln 
+	xbuild /p:Configuration=Release BroccoliSharp.sln 
 
-	To build BroccoliSharp to work with a Broccoli release that has disabled PCAP support, use: 
+To build BroccoliSharp to work with a Broccoli release that has disabled PCAP support, use: 
 
-		xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln 
+	xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln 
 
-	You can also build the library on Windows using Visual Studio, however the binaries built on Windows will only work on Linux if the Mono release at least supports .NET 4.5. 
+You can also build the library on Windows using Visual Studio, however the binaries built on Windows will only work on Linux if the Mono release at least supports .NET 4.5. 
 
-	Once the BroccoliSharp.dll exists (found in Build/Output/Release folder relative to solution) you can add a reference to the library in your .NET projects and begin using BroccoliSharp. 
+Once the BroccoliSharp.dll exists (found in Build/Output/Release folder relative to solution) you can add a reference to the library in your .NET projects and begin using BroccoliSharp. 
