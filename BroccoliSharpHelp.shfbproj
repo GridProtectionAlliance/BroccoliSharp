@@ -131,18 +131,8 @@
     &amp;lt%3bh2&amp;gt%3bDownload&amp;lt%3b/h2&amp;gt%3b
 
     &amp;lt%3bp&amp;gt%3b
-        You can find the latest BroccoliSharp release for download at 
-        &amp;lt%3ba href=&amp;quot%3bhttps://www.gridprotectionalliance.org/NightlyBuilds/BroccoliSharp/Beta/BroccoliSharp.zip&amp;quot%3b&amp;gt%3bGPA Nightly Builds&amp;lt%3b/a&amp;gt%3b
-        %28for now%29.
-    &amp;lt%3b/p&amp;gt%3b
-
-    &amp;lt%3bp&amp;gt%3b
-        BroccoliSharps’s git repository is located at &amp;amp%3blt%3b&amp;lt%3bb&amp;gt%3btbd git location&amp;lt%3b/b&amp;gt%3b&amp;amp%3bgt%3b.
-        You can browse the repository &amp;amp%3blt%3b&amp;lt%3bb&amp;gt%3btbd git location&amp;lt%3b/b&amp;gt%3b&amp;amp%3bgt%3b.
-    &amp;lt%3b/p&amp;gt%3b
-
-    &amp;lt%3bp&amp;gt%3b
-        This document describes BroccoliSharp 1.0.
+        You can find the latest BroccoliSharp source code on GitHub: 
+        &amp;lt%3ba href=&amp;quot%3bhttps://github.com/GridProtectionAlliance/BroccoliSharp&amp;quot%3b&amp;gt%3bGridProtectionAlliance/BroccoliSharp&amp;lt%3b/a&amp;gt%3b
     &amp;lt%3b/p&amp;gt%3b
 
     &amp;lt%3bh2&amp;gt%3bInstallation&amp;lt%3b/h2&amp;gt%3b
