@@ -12,10 +12,10 @@ Installation
 
 Prerequisites
 
-    BroccoliSharp requires the following libraries which need to be installed before you begin: 
+    BroccoliSharp requires the following libraries which need to be installed
+    before you begin: 
 
-    * The Broccoli library (of course!), Broccoli has its own requirements, see docs. 
-
+    * The Broccoli library (of course!), Broccoli has its own requirements.
     * Mono – version supporting.NET 4.5 is preferred but may not be required. 
 
 Building BroccoliSharp
