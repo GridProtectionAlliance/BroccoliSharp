@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Add method">
+    <HelpKINode Title="BroRecord.Add Method " Url="html/Overload_BroccoliSharp_BroRecord_Add.htm" />
+    <HelpKINode Title="BroSet.Add Method " Url="html/Overload_BroccoliSharp_BroSet_Add.htm" />
+    <HelpKINode Title="BroTable.Add Method " Url="html/Overload_BroccoliSharp_BroTable_Add.htm" />
+    <HelpKINode Title="BroVector.Add Method " Url="html/Overload_BroccoliSharp_BroVector_Add.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddParameter method" Url="html/Overload_BroccoliSharp_BroEvent_AddParameter.htm" />
+  <HelpKINode Title="AddParameters method" Url="html/M_BroccoliSharp_BroEvent_AddParameters.htm" />
+  <HelpKINode Title="AddressBytes property">
+    <HelpKINode Title="BroAddress.AddressBytes Property " Url="html/P_BroccoliSharp_BroAddress_AddressBytes.htm" />
+    <HelpKINode Title="BroSubnet.AddressBytes Property " Url="html/P_BroccoliSharp_BroSubnet_AddressBytes.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AdoptEvents method" Url="html/Overload_BroccoliSharp_BroConnection_AdoptEvents.htm" />
+  <HelpKINode Title="AlwaysQueue enumeration member" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
+  <HelpKINode Title="Any enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Bool enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Boolean to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_27.htm" />
+  <HelpKINode Title="Boolean to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_27.htm" />
+  <HelpKINode Title="BroAddress structure">
+    <HelpKINode Title="BroAddress Structure" Url="html/T_BroccoliSharp_BroAddress.htm" />
+    <HelpKINode Title="about BroAddress structure" Url="html/T_BroccoliSharp_BroAddress.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroAddress__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroAddress.htm" />
+    <HelpKINode Title="operators and type conversions" Url="html/Operators_T_BroccoliSharp_BroAddress.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroAddress.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroAddress to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit.htm" />
+  <HelpKINode Title="BroAddress to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit.htm" />
+  <HelpKINode Title="BroAddress to IPAddress conversion" Url="html/M_BroccoliSharp_BroAddress_op_Implicit.htm" />
+  <HelpKINode Title="BroAddress.AddressBytes property" Url="html/P_BroccoliSharp_BroAddress_AddressBytes.htm" />
+  <HelpKINode Title="BroAddress.BroAddress constructor" Url="html/Overload_BroccoliSharp_BroAddress__ctor.htm" />
+  <HelpKINode Title="BroAddress.Equality operator" Url="html/M_BroccoliSharp_BroAddress_op_Equality.htm" />
+  <HelpKINode Title="BroAddress.Equals method" Url="html/Overload_BroccoliSharp_BroAddress_Equals.htm" />
+  <HelpKINode Title="BroAddress.GetHashCode method" Url="html/M_BroccoliSharp_BroAddress_GetHashCode.htm" />
+  <HelpKINode Title="BroAddress.Inequality operator" Url="html/M_BroccoliSharp_BroAddress_op_Inequality.htm" />
+  <HelpKINode Title="BroAddress.IsIPv4MappedAddress property" Url="html/P_BroccoliSharp_BroAddress_IsIPv4MappedAddress.htm" />
+  <HelpKINode Title="BroAddress.ToIPAddress method" Url="html/M_BroccoliSharp_BroAddress_ToIPAddress.htm" />
+  <HelpKINode Title="BroAddress.ToString method" Url="html/M_BroccoliSharp_BroAddress_ToString.htm" />
+  <HelpKINode Title="BroccoliSharp namespace" Url="html/N_BroccoliSharp.htm" />
+  <HelpKINode Title="BroccoliSharp.BroAddress structure" Url="html/T_BroccoliSharp_BroAddress.htm" />
+  <HelpKINode Title="BroccoliSharp.BroConfiguration class" Url="html/T_BroccoliSharp_BroConfiguration.htm" />
+  <HelpKINode Title="BroccoliSharp.BroConnection class" Url="html/T_BroccoliSharp_BroConnection.htm" />
+  <HelpKINode Title="BroccoliSharp.BroConnectionFlags enumeration" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
+  <HelpKINode Title="BroccoliSharp.BroEvent class" Url="html/T_BroccoliSharp_BroEvent.htm" />
+  <HelpKINode Title="BroccoliSharp.BroEventArgs class" Url="html/T_BroccoliSharp_BroEventArgs.htm" />
+  <HelpKINode Title="BroccoliSharp.BroEventQueue class" Url="html/T_BroccoliSharp_BroEventQueue.htm" />
+  <HelpKINode Title="BroccoliSharp.BroField class" Url="html/T_BroccoliSharp_BroField.htm" />
+  <HelpKINode Title="BroccoliSharp.BroPacket class" Url="html/T_BroccoliSharp_BroPacket.htm" />
+  <HelpKINode Title="BroccoliSharp.BroPort structure" Url="html/T_BroccoliSharp_BroPort.htm" />
+  <HelpKINode Title="BroccoliSharp.BroRecord class" Url="html/T_BroccoliSharp_BroRecord.htm" />
+  <HelpKINode Title="BroccoliSharp.BroSet class" Url="html/T_BroccoliSharp_BroSet.htm" />
+  <HelpKINode Title="BroccoliSharp.BroString class" Url="html/T_BroccoliSharp_BroString.htm" />
+  <HelpKINode Title="BroccoliSharp.BroSubnet structure" Url="html/T_BroccoliSharp_BroSubnet.htm" />
+  <HelpKINode Title="BroccoliSharp.BroTable class" Url="html/T_BroccoliSharp_BroTable.htm" />
+  <HelpKINode Title="BroccoliSharp.BroTime structure" Url="html/T_BroccoliSharp_BroTime.htm" />
+  <HelpKINode Title="BroccoliSharp.BroType enumeration" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="BroccoliSharp.BroTypeExtensions class" Url="html/T_BroccoliSharp_BroTypeExtensions.htm" />
+  <HelpKINode Title="BroccoliSharp.BroValue class" Url="html/T_BroccoliSharp_BroValue.htm" />
+  <HelpKINode Title="BroccoliSharp.BroValueExtensions class" Url="html/T_BroccoliSharp_BroValueExtensions.htm" />
+  <HelpKINode Title="BroccoliSharp.BroVector class" Url="html/T_BroccoliSharp_BroVector.htm" />
+  <HelpKINode Title="BroConfiguration class">
+    <HelpKINode Title="BroConfiguration Class" Url="html/T_BroccoliSharp_BroConfiguration.htm" />
+    <HelpKINode Title="about BroConfiguration class" Url="html/T_BroccoliSharp_BroConfiguration.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroConfiguration.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroConfiguration.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroConfiguration.Domain property" Url="html/P_BroccoliSharp_BroConfiguration_Domain.htm" />
+  <HelpKINode Title="BroConfiguration.TryGetValue method" Url="html/Overload_BroccoliSharp_BroConfiguration_TryGetValue.htm" />
+  <HelpKINode Title="BroConnection class">
+    <HelpKINode Title="BroConnection Class" Url="html/T_BroccoliSharp_BroConnection.htm" />
+    <HelpKINode Title="about BroConnection class" Url="html/T_BroccoliSharp_BroConnection.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroConnection__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_BroccoliSharp_BroConnection.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroConnection.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroConnection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroConnection.AdoptEvents method" Url="html/Overload_BroccoliSharp_BroConnection_AdoptEvents.htm" />
+  <HelpKINode Title="BroConnection.BroConnection constructor" Url="html/Overload_BroccoliSharp_BroConnection__ctor.htm" />
+  <HelpKINode Title="BroConnection.Class property" Url="html/P_BroccoliSharp_BroConnection_Class.htm" />
+  <HelpKINode Title="BroConnection.Connect method" Url="html/M_BroccoliSharp_BroConnection_Connect.htm" />
+  <HelpKINode Title="BroConnection.Data property" Url="html/P_BroccoliSharp_BroConnection_Data.htm" />
+  <HelpKINode Title="BroConnection.Dispose method" Url="html/Overload_BroccoliSharp_BroConnection_Dispose.htm" />
+  <HelpKINode Title="BroConnection.EventQueue property" Url="html/P_BroccoliSharp_BroConnection_EventQueue.htm" />
+  <HelpKINode Title="BroConnection.FileDescriptor property" Url="html/P_BroccoliSharp_BroConnection_FileDescriptor.htm" />
+  <HelpKINode Title="BroConnection.Finalize method" Url="html/M_BroccoliSharp_BroConnection_Finalize.htm" />
+  <HelpKINode Title="BroConnection.Flags property" Url="html/P_BroccoliSharp_BroConnection_Flags.htm" />
+  <HelpKINode Title="BroConnection.HostName property" Url="html/P_BroccoliSharp_BroConnection_HostName.htm" />
+  <HelpKINode Title="BroConnection.InputBufferLength property" Url="html/P_BroccoliSharp_BroConnection_InputBufferLength.htm" />
+  <HelpKINode Title="BroConnection.IsAlive property" Url="html/P_BroccoliSharp_BroConnection_IsAlive.htm" />
+  <HelpKINode Title="BroConnection.OnReceivedEvent method" Url="html/M_BroccoliSharp_BroConnection_OnReceivedEvent.htm" />
+  <HelpKINode Title="BroConnection.OutputBufferLength property" Url="html/P_BroccoliSharp_BroConnection_OutputBufferLength.htm" />
+  <HelpKINode Title="BroConnection.PacketContext property" Url="html/P_BroccoliSharp_BroConnection_PacketContext.htm" />
+  <HelpKINode Title="BroConnection.PeerClass property" Url="html/P_BroccoliSharp_BroConnection_PeerClass.htm" />
+  <HelpKINode Title="BroConnection.ProcessInput method" Url="html/M_BroccoliSharp_BroConnection_ProcessInput.htm" />
+  <HelpKINode Title="BroConnection.ReceivedEvent event" Url="html/E_BroccoliSharp_BroConnection_ReceivedEvent.htm" />
+  <HelpKINode Title="BroConnection.Reconnect method" Url="html/M_BroccoliSharp_BroConnection_Reconnect.htm" />
+  <HelpKINode Title="BroConnection.RegisterForEvent method" Url="html/M_BroccoliSharp_BroConnection_RegisterForEvent.htm" />
+  <HelpKINode Title="BroConnection.RequestEvents method" Url="html/M_BroccoliSharp_BroConnection_RequestEvents.htm" />
+  <HelpKINode Title="BroConnection.SendEvent method" Url="html/Overload_BroccoliSharp_BroConnection_SendEvent.htm" />
+  <HelpKINode Title="BroConnection.SendPacket method" Url="html/M_BroccoliSharp_BroConnection_SendPacket.htm" />
+  <HelpKINode Title="BroConnection.UnregisterForEvent method" Url="html/M_BroccoliSharp_BroConnection_UnregisterForEvent.htm" />
+  <HelpKINode Title="BroConnectionFlags enumeration" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
+  <HelpKINode Title="BroEvent class">
+    <HelpKINode Title="BroEvent Class" Url="html/T_BroccoliSharp_BroEvent.htm" />
+    <HelpKINode Title="about BroEvent class" Url="html/T_BroccoliSharp_BroEvent.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroEvent__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroEvent.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroEvent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroEvent.AddParameter method" Url="html/Overload_BroccoliSharp_BroEvent_AddParameter.htm" />
+  <HelpKINode Title="BroEvent.AddParameters method" Url="html/M_BroccoliSharp_BroEvent_AddParameters.htm" />
+  <HelpKINode Title="BroEvent.BroEvent constructor" Url="html/Overload_BroccoliSharp_BroEvent__ctor.htm" />
+  <HelpKINode Title="BroEvent.Dispose method" Url="html/Overload_BroccoliSharp_BroEvent_Dispose.htm" />
+  <HelpKINode Title="BroEvent.Finalize method" Url="html/M_BroccoliSharp_BroEvent_Finalize.htm" />
+  <HelpKINode Title="BroEvent.GetEnumerator method" Url="html/M_BroccoliSharp_BroEvent_GetEnumerator.htm" />
+  <HelpKINode Title="BroEvent.Name property" Url="html/P_BroccoliSharp_BroEvent_Name.htm" />
+  <HelpKINode Title="BroEvent.ParameterCount property" Url="html/P_BroccoliSharp_BroEvent_ParameterCount.htm" />
+  <HelpKINode Title="BroEvent.ReplaceParameter method" Url="html/Overload_BroccoliSharp_BroEvent_ReplaceParameter.htm" />
+  <HelpKINode Title="BroEventArgs class">
+    <HelpKINode Title="BroEventArgs Class" Url="html/T_BroccoliSharp_BroEventArgs.htm" />
+    <HelpKINode Title="about BroEventArgs class" Url="html/T_BroccoliSharp_BroEventArgs.htm" />
+    <HelpKINode Title="constructor" Url="html/M_BroccoliSharp_BroEventArgs__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroEventArgs.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroEventArgs.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroEventArgs.BroEventArgs constructor" Url="html/M_BroccoliSharp_BroEventArgs__ctor.htm" />
+  <HelpKINode Title="BroEventArgs.EventName property" Url="html/P_BroccoliSharp_BroEventArgs_EventName.htm" />
+  <HelpKINode Title="BroEventArgs.EventTime property" Url="html/P_BroccoliSharp_BroEventArgs_EventTime.htm" />
+  <HelpKINode Title="BroEventArgs.Parameters property" Url="html/P_BroccoliSharp_BroEventArgs_Parameters.htm" />
+  <HelpKINode Title="BroEventArgs.UserData property" Url="html/P_BroccoliSharp_BroEventArgs_UserData.htm" />
+  <HelpKINode Title="BroEventQueue class">
+    <HelpKINode Title="BroEventQueue Class" Url="html/T_BroccoliSharp_BroEventQueue.htm" />
+    <HelpKINode Title="about BroEventQueue class" Url="html/T_BroccoliSharp_BroEventQueue.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroEventQueue.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroEventQueue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroEventQueue.Flush method" Url="html/M_BroccoliSharp_BroEventQueue_Flush.htm" />
+  <HelpKINode Title="BroEventQueue.Length property" Url="html/P_BroccoliSharp_BroEventQueue_Length.htm" />
+  <HelpKINode Title="BroEventQueue.MaxLength property" Url="html/P_BroccoliSharp_BroEventQueue_MaxLength.htm" />
+  <HelpKINode Title="BroField class">
+    <HelpKINode Title="BroField Class" Url="html/T_BroccoliSharp_BroField.htm" />
+    <HelpKINode Title="about BroField class" Url="html/T_BroccoliSharp_BroField.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroField__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroField.htm" />
+    <HelpKINode Title="operators and type conversions" Url="html/Operators_T_BroccoliSharp_BroField.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroField.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroField to Boolean conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_14.htm" />
+  <HelpKINode Title="BroField to BroAddress conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_4.htm" />
+  <HelpKINode Title="BroField to BroPacket conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_11.htm" />
+  <HelpKINode Title="BroField to BroPort conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_3.htm" />
+  <HelpKINode Title="BroField to BroRecord conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_8.htm" />
+  <HelpKINode Title="BroField to BroSet conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_10.htm" />
+  <HelpKINode Title="BroField to BroString conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_1.htm" />
+  <HelpKINode Title="BroField to BroSubnet conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_6.htm" />
+  <HelpKINode Title="BroField to BroTable conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_9.htm" />
+  <HelpKINode Title="BroField to BroTime conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_12.htm" />
+  <HelpKINode Title="BroField to BroVector conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_7.htm" />
+  <HelpKINode Title="BroField to DateTime conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_13.htm" />
+  <HelpKINode Title="BroField to Double conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_17.htm" />
+  <HelpKINode Title="BroField to Int32 conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_15.htm" />
+  <HelpKINode Title="BroField to IPAddress conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_5.htm" />
+  <HelpKINode Title="BroField to String conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_2.htm" />
+  <HelpKINode Title="BroField to UInt64 conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_16.htm" />
+  <HelpKINode Title="BroField.BroField constructor" Url="html/Overload_BroccoliSharp_BroField__ctor.htm" />
+  <HelpKINode Title="BroField.Equality operator" Url="html/M_BroccoliSharp_BroField_op_Equality.htm" />
+  <HelpKINode Title="BroField.Equals method" Url="html/Overload_BroccoliSharp_BroField_Equals.htm" />
+  <HelpKINode Title="BroField.GetHashCode method" Url="html/M_BroccoliSharp_BroField_GetHashCode.htm" />
+  <HelpKINode Title="BroField.Inequality operator" Url="html/M_BroccoliSharp_BroField_op_Inequality.htm" />
+  <HelpKINode Title="BroField.Name property" Url="html/P_BroccoliSharp_BroField_Name.htm" />
+  <HelpKINode Title="BroPacket class">
+    <HelpKINode Title="BroPacket Class" Url="html/T_BroccoliSharp_BroPacket.htm" />
+    <HelpKINode Title="about BroPacket class" Url="html/T_BroccoliSharp_BroPacket.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroPacket__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroPacket.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroPacket to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_18.htm" />
+  <HelpKINode Title="BroPacket to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_1.htm" />
+  <HelpKINode Title="BroPacket.BroPacket constructor" Url="html/Overload_BroccoliSharp_BroPacket__ctor.htm" />
+  <HelpKINode Title="BroPacket.Clone method" Url="html/M_BroccoliSharp_BroPacket_Clone.htm" />
+  <HelpKINode Title="BroPacket.Dispose method" Url="html/Overload_BroccoliSharp_BroPacket_Dispose.htm" />
+  <HelpKINode Title="BroPacket.Finalize method" Url="html/M_BroccoliSharp_BroPacket_Finalize.htm" />
+  <HelpKINode Title="BroPort structure">
+    <HelpKINode Title="BroPort Structure" Url="html/T_BroccoliSharp_BroPort.htm" />
+    <HelpKINode Title="about BroPort structure" Url="html/T_BroccoliSharp_BroPort.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroPort__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroPort.htm" />
+    <HelpKINode Title="operators and type conversions" Url="html/Operators_T_BroccoliSharp_BroPort.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroPort.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroPort to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_19.htm" />
+  <HelpKINode Title="BroPort to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_2.htm" />
+  <HelpKINode Title="BroPort to UInt64 conversion" Url="html/M_BroccoliSharp_BroPort_op_Implicit.htm" />
+  <HelpKINode Title="BroPort.BroPort constructor" Url="html/Overload_BroccoliSharp_BroPort__ctor.htm" />
+  <HelpKINode Title="BroPort.Equality operator" Url="html/M_BroccoliSharp_BroPort_op_Equality.htm" />
+  <HelpKINode Title="BroPort.Equals method" Url="html/Overload_BroccoliSharp_BroPort_Equals.htm" />
+  <HelpKINode Title="BroPort.GetHashCode method" Url="html/M_BroccoliSharp_BroPort_GetHashCode.htm" />
+  <HelpKINode Title="BroPort.Inequality operator" Url="html/M_BroccoliSharp_BroPort_op_Inequality.htm" />
+  <HelpKINode Title="BroPort.Number property" Url="html/P_BroccoliSharp_BroPort_Number.htm" />
+  <HelpKINode Title="BroPort.ProtocolType property" Url="html/P_BroccoliSharp_BroPort_ProtocolType.htm" />
+  <HelpKINode Title="BroPort.RawProtocolType property" Url="html/P_BroccoliSharp_BroPort_RawProtocolType.htm" />
+  <HelpKINode Title="BroPort.ToString method" Url="html/M_BroccoliSharp_BroPort_ToString.htm" />
+  <HelpKINode Title="BroRecord class">
+    <HelpKINode Title="BroRecord Class" Url="html/T_BroccoliSharp_BroRecord.htm" />
+    <HelpKINode Title="about BroRecord class" Url="html/T_BroccoliSharp_BroRecord.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroRecord__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroRecord.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroRecord.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroRecord to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_20.htm" />
+  <HelpKINode Title="BroRecord to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_3.htm" />
+  <HelpKINode Title="BroRecord.Add method" Url="html/Overload_BroccoliSharp_BroRecord_Add.htm" />
+  <HelpKINode Title="BroRecord.BroRecord constructor" Url="html/Overload_BroccoliSharp_BroRecord__ctor.htm" />
+  <HelpKINode Title="BroRecord.Clear method" Url="html/M_BroccoliSharp_BroRecord_Clear.htm" />
+  <HelpKINode Title="BroRecord.Clone method" Url="html/M_BroccoliSharp_BroRecord_Clone.htm" />
+  <HelpKINode Title="BroRecord.Contains method" Url="html/Overload_BroccoliSharp_BroRecord_Contains.htm" />
+  <HelpKINode Title="BroRecord.CopyTo method" Url="html/M_BroccoliSharp_BroRecord_CopyTo.htm" />
+  <HelpKINode Title="BroRecord.Count property" Url="html/P_BroccoliSharp_BroRecord_Count.htm" />
+  <HelpKINode Title="BroRecord.Dispose method" Url="html/Overload_BroccoliSharp_BroRecord_Dispose.htm" />
+  <HelpKINode Title="BroRecord.Finalize method" Url="html/M_BroccoliSharp_BroRecord_Finalize.htm" />
+  <HelpKINode Title="BroRecord.GetEnumerator method" Url="html/M_BroccoliSharp_BroRecord_GetEnumerator.htm" />
+  <HelpKINode Title="BroRecord.IndexOf method" Url="html/Overload_BroccoliSharp_BroRecord_IndexOf.htm" />
+  <HelpKINode Title="BroRecord.Insert method" Url="html/Overload_BroccoliSharp_BroRecord_Insert.htm" />
+  <HelpKINode Title="BroRecord.IsReadOnly property" Url="html/P_BroccoliSharp_BroRecord_IsReadOnly.htm" />
+  <HelpKINode Title="BroRecord.Item property" Url="html/Overload_BroccoliSharp_BroRecord_Item.htm" />
+  <HelpKINode Title="BroRecord.Remove method" Url="html/Overload_BroccoliSharp_BroRecord_Remove.htm" />
+  <HelpKINode Title="BroRecord.RemoveAt method" Url="html/M_BroccoliSharp_BroRecord_RemoveAt.htm" />
+  <HelpKINode Title="BroRecord.ToString method" Url="html/M_BroccoliSharp_BroRecord_ToString.htm" />
+  <HelpKINode Title="BroSet class">
+    <HelpKINode Title="BroSet Class" Url="html/T_BroccoliSharp_BroSet.htm" />
+    <HelpKINode Title="about BroSet class" Url="html/T_BroccoliSharp_BroSet.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroSet__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroSet.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroSet.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroSet to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_21.htm" />
+  <HelpKINode Title="BroSet to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_4.htm" />
+  <HelpKINode Title="BroSet.Add method" Url="html/Overload_BroccoliSharp_BroSet_Add.htm" />
+  <HelpKINode Title="BroSet.BroSet constructor" Url="html/Overload_BroccoliSharp_BroSet__ctor.htm" />
+  <HelpKINode Title="BroSet.Clear method" Url="html/M_BroccoliSharp_BroSet_Clear.htm" />
+  <HelpKINode Title="BroSet.Clone method" Url="html/M_BroccoliSharp_BroSet_Clone.htm" />
+  <HelpKINode Title="BroSet.Contains method" Url="html/Overload_BroccoliSharp_BroSet_Contains.htm" />
+  <HelpKINode Title="BroSet.CopyTo method" Url="html/M_BroccoliSharp_BroSet_CopyTo.htm" />
+  <HelpKINode Title="BroSet.Count property" Url="html/P_BroccoliSharp_BroSet_Count.htm" />
+  <HelpKINode Title="BroSet.Dispose method" Url="html/Overload_BroccoliSharp_BroSet_Dispose.htm" />
+  <HelpKINode Title="BroSet.ExceptWith method" Url="html/M_BroccoliSharp_BroSet_ExceptWith.htm" />
+  <HelpKINode Title="BroSet.Finalize method" Url="html/M_BroccoliSharp_BroSet_Finalize.htm" />
+  <HelpKINode Title="BroSet.GetEnumerator method" Url="html/M_BroccoliSharp_BroSet_GetEnumerator.htm" />
+  <HelpKINode Title="BroSet.IntersectWith method" Url="html/M_BroccoliSharp_BroSet_IntersectWith.htm" />
+  <HelpKINode Title="BroSet.IsProperSubsetOf method" Url="html/M_BroccoliSharp_BroSet_IsProperSubsetOf.htm" />
+  <HelpKINode Title="BroSet.IsProperSupersetOf method" Url="html/M_BroccoliSharp_BroSet_IsProperSupersetOf.htm" />
+  <HelpKINode Title="BroSet.IsReadOnly property" Url="html/P_BroccoliSharp_BroSet_IsReadOnly.htm" />
+  <HelpKINode Title="BroSet.IsSubsetOf method" Url="html/M_BroccoliSharp_BroSet_IsSubsetOf.htm" />
+  <HelpKINode Title="BroSet.IsSupersetOf method" Url="html/M_BroccoliSharp_BroSet_IsSupersetOf.htm" />
+  <HelpKINode Title="BroSet.Overlaps method" Url="html/M_BroccoliSharp_BroSet_Overlaps.htm" />
+  <HelpKINode Title="BroSet.Remove method" Url="html/M_BroccoliSharp_BroSet_Remove.htm" />
+  <HelpKINode Title="BroSet.SetEquals method" Url="html/M_BroccoliSharp_BroSet_SetEquals.htm" />
+  <HelpKINode Title="BroSet.SymmetricExceptWith method" Url="html/M_BroccoliSharp_BroSet_SymmetricExceptWith.htm" />
+  <HelpKINode Title="BroSet.ToList method" Url="html/M_BroccoliSharp_BroSet_ToList.htm" />
+  <HelpKINode Title="BroSet.Type property" Url="html/P_BroccoliSharp_BroSet_Type.htm" />
+  <HelpKINode Title="BroSet.UnionWith method" Url="html/M_BroccoliSharp_BroSet_UnionWith.htm" />
+  <HelpKINode Title="BroString class">
+    <HelpKINode Title="BroString Class" Url="html/T_BroccoliSharp_BroString.htm" />
+    <HelpKINode Title="about BroString class" Url="html/T_BroccoliSharp_BroString.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroString__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroString.htm" />
+    <HelpKINode Title="operators and type conversions" Url="html/Operators_T_BroccoliSharp_BroString.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroString.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroString to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_22.htm" />
+  <HelpKINode Title="BroString to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_5.htm" />
+  <HelpKINode Title="BroString to String conversion" Url="html/M_BroccoliSharp_BroString_op_Implicit.htm" />
+  <HelpKINode Title="BroString.BroString constructor" Url="html/Overload_BroccoliSharp_BroString__ctor.htm" />
+  <HelpKINode Title="BroString.Dispose method" Url="html/Overload_BroccoliSharp_BroString_Dispose.htm" />
+  <HelpKINode Title="BroString.Equality operator" Url="html/M_BroccoliSharp_BroString_op_Equality.htm" />
+  <HelpKINode Title="BroString.Equals method" Url="html/Overload_BroccoliSharp_BroString_Equals.htm" />
+  <HelpKINode Title="BroString.Finalize method" Url="html/M_BroccoliSharp_BroString_Finalize.htm" />
+  <HelpKINode Title="BroString.GetHashCode method" Url="html/M_BroccoliSharp_BroString_GetHashCode.htm" />
+  <HelpKINode Title="BroString.Inequality operator" Url="html/M_BroccoliSharp_BroString_op_Inequality.htm" />
+  <HelpKINode Title="BroString.Length property" Url="html/P_BroccoliSharp_BroString_Length.htm" />
+  <HelpKINode Title="BroString.ToString method" Url="html/M_BroccoliSharp_BroString_ToString.htm" />
+  <HelpKINode Title="BroSubnet structure">
+    <HelpKINode Title="BroSubnet Structure" Url="html/T_BroccoliSharp_BroSubnet.htm" />
+    <HelpKINode Title="about BroSubnet structure" Url="html/T_BroccoliSharp_BroSubnet.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroSubnet__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroSubnet.htm" />
+    <HelpKINode Title="operators and type conversions" Url="html/Operators_T_BroccoliSharp_BroSubnet.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroSubnet.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroSubnet to BroAddress conversion" Url="html/M_BroccoliSharp_BroSubnet_op_Implicit.htm" />
+  <HelpKINode Title="BroSubnet to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_23.htm" />
+  <HelpKINode Title="BroSubnet to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_6.htm" />
+  <HelpKINode Title="BroSubnet.AddressBytes property" Url="html/P_BroccoliSharp_BroSubnet_AddressBytes.htm" />
+  <HelpKINode Title="BroSubnet.BroSubnet constructor" Url="html/Overload_BroccoliSharp_BroSubnet__ctor.htm" />
+  <HelpKINode Title="BroSubnet.Equality operator" Url="html/M_BroccoliSharp_BroSubnet_op_Equality.htm" />
+  <HelpKINode Title="BroSubnet.Equals method" Url="html/Overload_BroccoliSharp_BroSubnet_Equals.htm" />
+  <HelpKINode Title="BroSubnet.GetHashCode method" Url="html/M_BroccoliSharp_BroSubnet_GetHashCode.htm" />
+  <HelpKINode Title="BroSubnet.Inequality operator" Url="html/M_BroccoliSharp_BroSubnet_op_Inequality.htm" />
+  <HelpKINode Title="BroSubnet.IsIPv4MappedAddress property" Url="html/P_BroccoliSharp_BroSubnet_IsIPv4MappedAddress.htm" />
+  <HelpKINode Title="BroSubnet.ToIPAddress method" Url="html/M_BroccoliSharp_BroSubnet_ToIPAddress.htm" />
+  <HelpKINode Title="BroSubnet.ToString method" Url="html/M_BroccoliSharp_BroSubnet_ToString.htm" />
+  <HelpKINode Title="BroSubnet.Width property" Url="html/P_BroccoliSharp_BroSubnet_Width.htm" />
+  <HelpKINode Title="BroTable class">
+    <HelpKINode Title="BroTable Class" Url="html/T_BroccoliSharp_BroTable.htm" />
+    <HelpKINode Title="about BroTable class" Url="html/T_BroccoliSharp_BroTable.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroTable__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroTable.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroTable.htm" />
+    <HelpKINode Title="type conversions" Url="html/Operators_T_BroccoliSharp_BroTable.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroTable to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_24.htm" />
+  <HelpKINode Title="BroTable to BroSet conversion" Url="html/M_BroccoliSharp_BroTable_op_Implicit.htm" />
+  <HelpKINode Title="BroTable to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_7.htm" />
+  <HelpKINode Title="BroTable.Add method" Url="html/Overload_BroccoliSharp_BroTable_Add.htm" />
+  <HelpKINode Title="BroTable.BroTable constructor" Url="html/Overload_BroccoliSharp_BroTable__ctor.htm" />
+  <HelpKINode Title="BroTable.Clear method" Url="html/M_BroccoliSharp_BroTable_Clear.htm" />
+  <HelpKINode Title="BroTable.Clone method" Url="html/M_BroccoliSharp_BroTable_Clone.htm" />
+  <HelpKINode Title="BroTable.Contains method" Url="html/M_BroccoliSharp_BroTable_Contains.htm" />
+  <HelpKINode Title="BroTable.ContainsKey method" Url="html/Overload_BroccoliSharp_BroTable_ContainsKey.htm" />
+  <HelpKINode Title="BroTable.CopyTo method" Url="html/M_BroccoliSharp_BroTable_CopyTo.htm" />
+  <HelpKINode Title="BroTable.Count property" Url="html/P_BroccoliSharp_BroTable_Count.htm" />
+  <HelpKINode Title="BroTable.Dispose method" Url="html/Overload_BroccoliSharp_BroTable_Dispose.htm" />
+  <HelpKINode Title="BroTable.Finalize method" Url="html/M_BroccoliSharp_BroTable_Finalize.htm" />
+  <HelpKINode Title="BroTable.GetEnumerator method" Url="html/M_BroccoliSharp_BroTable_GetEnumerator.htm" />
+  <HelpKINode Title="BroTable.IsReadOnly property" Url="html/P_BroccoliSharp_BroTable_IsReadOnly.htm" />
+  <HelpKINode Title="BroTable.Item property" Url="html/Overload_BroccoliSharp_BroTable_Item.htm" />
+  <HelpKINode Title="BroTable.Keys property" Url="html/P_BroccoliSharp_BroTable_Keys.htm" />
+  <HelpKINode Title="BroTable.KeyType property" Url="html/P_BroccoliSharp_BroTable_KeyType.htm" />
+  <HelpKINode Title="BroTable.Remove method" Url="html/M_BroccoliSharp_BroTable_Remove.htm" />
+  <HelpKINode Title="BroTable.TryGetValue method" Url="html/Overload_BroccoliSharp_BroTable_TryGetValue.htm" />
+  <HelpKINode Title="BroTable.Values property" Url="html/P_BroccoliSharp_BroTable_Values.htm" />
+  <HelpKINode Title="BroTable.ValueType property" Url="html/P_BroccoliSharp_BroTable_ValueType.htm" />
+  <HelpKINode Title="BroTime structure">
+    <HelpKINode Title="BroTime Structure" Url="html/T_BroccoliSharp_BroTime.htm" />
+    <HelpKINode Title="about BroTime structure" Url="html/T_BroccoliSharp_BroTime.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroTime__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_BroccoliSharp_BroTime.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroTime.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroTime.htm" />
+    <HelpKINode Title="type conversions" Url="html/Operators_T_BroccoliSharp_BroTime.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroTime to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_25.htm" />
+  <HelpKINode Title="BroTime to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_8.htm" />
+  <HelpKINode Title="BroTime to DateTime conversion" Url="html/M_BroccoliSharp_BroTime_op_Implicit_1.htm" />
+  <HelpKINode Title="BroTime to Double conversion" Url="html/M_BroccoliSharp_BroTime_op_Implicit.htm" />
+  <HelpKINode Title="BroTime.BroTime constructor" Url="html/Overload_BroccoliSharp_BroTime__ctor.htm" />
+  <HelpKINode Title="BroTime.Epoch field" Url="html/F_BroccoliSharp_BroTime_Epoch.htm" />
+  <HelpKINode Title="BroTime.Now property" Url="html/P_BroccoliSharp_BroTime_Now.htm" />
+  <HelpKINode Title="BroTime.ToDateTime method" Url="html/M_BroccoliSharp_BroTime_ToDateTime.htm" />
+  <HelpKINode Title="BroTime.ToString method" Url="html/Overload_BroccoliSharp_BroTime_ToString.htm" />
+  <HelpKINode Title="BroTime.Value property" Url="html/P_BroccoliSharp_BroTime_Value.htm" />
+  <HelpKINode Title="BroType enumeration" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="BroTypeExtensions class">
+    <HelpKINode Title="BroTypeExtensions Class" Url="html/T_BroccoliSharp_BroTypeExtensions.htm" />
+    <HelpKINode Title="about BroTypeExtensions class" Url="html/T_BroccoliSharp_BroTypeExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroTypeExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroTypeExtensions.IsEnumerableType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsEnumerableType.htm" />
+  <HelpKINode Title="BroTypeExtensions.IsOpaqueType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsOpaqueType.htm" />
+  <HelpKINode Title="BroTypeExtensions.IsReferenceType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsReferenceType.htm" />
+  <HelpKINode Title="BroTypeExtensions.IsUnsupportedType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsUnsupportedType.htm" />
+  <HelpKINode Title="BroTypeExtensions.IsValueType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsValueType.htm" />
+  <HelpKINode Title="BroValue class">
+    <HelpKINode Title="BroValue Class" Url="html/T_BroccoliSharp_BroValue.htm" />
+    <HelpKINode Title="about BroValue class" Url="html/T_BroccoliSharp_BroValue.htm" />
+    <HelpKINode Title="constructor" Url="html/M_BroccoliSharp_BroValue__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroValue.htm" />
+    <HelpKINode Title="operators and type conversions" Url="html/Operators_T_BroccoliSharp_BroValue.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroValue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroValue to Boolean conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_22.htm" />
+  <HelpKINode Title="BroValue to BroAddress conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_12.htm" />
+  <HelpKINode Title="BroValue to BroPacket conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_19.htm" />
+  <HelpKINode Title="BroValue to BroPort conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_11.htm" />
+  <HelpKINode Title="BroValue to BroRecord conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_16.htm" />
+  <HelpKINode Title="BroValue to BroSet conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_18.htm" />
+  <HelpKINode Title="BroValue to BroString conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_9.htm" />
+  <HelpKINode Title="BroValue to BroSubnet conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_14.htm" />
+  <HelpKINode Title="BroValue to BroTable conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_17.htm" />
+  <HelpKINode Title="BroValue to BroTime conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_20.htm" />
+  <HelpKINode Title="BroValue to BroVector conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_15.htm" />
+  <HelpKINode Title="BroValue to DateTime conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_21.htm" />
+  <HelpKINode Title="BroValue to Double conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_25.htm" />
+  <HelpKINode Title="BroValue to Int32 conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_23.htm" />
+  <HelpKINode Title="BroValue to IPAddress conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_13.htm" />
+  <HelpKINode Title="BroValue to String conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_10.htm" />
+  <HelpKINode Title="BroValue to UInt64 conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_24.htm" />
+  <HelpKINode Title="BroValue.BroValue constructor" Url="html/M_BroccoliSharp_BroValue__ctor.htm" />
+  <HelpKINode Title="BroValue.Equality operator" Url="html/M_BroccoliSharp_BroValue_op_Equality.htm" />
+  <HelpKINode Title="BroValue.Equals method" Url="html/Overload_BroccoliSharp_BroValue_Equals.htm" />
+  <HelpKINode Title="BroValue.GetHashCode method" Url="html/M_BroccoliSharp_BroValue_GetHashCode.htm" />
+  <HelpKINode Title="BroValue.HasValue property" Url="html/P_BroccoliSharp_BroValue_HasValue.htm" />
+  <HelpKINode Title="BroValue.Inequality operator" Url="html/M_BroccoliSharp_BroValue_op_Inequality.htm" />
+  <HelpKINode Title="BroValue.ToString method" Url="html/M_BroccoliSharp_BroValue_ToString.htm" />
+  <HelpKINode Title="BroValue.Type property" Url="html/P_BroccoliSharp_BroValue_Type.htm" />
+  <HelpKINode Title="BroValue.TypeName property" Url="html/P_BroccoliSharp_BroValue_TypeName.htm" />
+  <HelpKINode Title="BroValue.Value property" Url="html/P_BroccoliSharp_BroValue_Value.htm" />
+  <HelpKINode Title="BroValueExtensions class">
+    <HelpKINode Title="BroValueExtensions Class" Url="html/T_BroccoliSharp_BroValueExtensions.htm" />
+    <HelpKINode Title="about BroValueExtensions class" Url="html/T_BroccoliSharp_BroValueExtensions.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroValueExtensions.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroValueExtensions.ConvertToType method" Url="html/M_BroccoliSharp_BroValueExtensions_ConvertToType.htm" />
+  <HelpKINode Title="BroVector class">
+    <HelpKINode Title="BroVector Class" Url="html/T_BroccoliSharp_BroVector.htm" />
+    <HelpKINode Title="about BroVector class" Url="html/T_BroccoliSharp_BroVector.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_BroccoliSharp_BroVector__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_BroccoliSharp_BroVector.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroVector.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BroVector to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_26.htm" />
+  <HelpKINode Title="BroVector to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_26.htm" />
+  <HelpKINode Title="BroVector.Add method" Url="html/Overload_BroccoliSharp_BroVector_Add.htm" />
+  <HelpKINode Title="BroVector.BroVector constructor" Url="html/Overload_BroccoliSharp_BroVector__ctor.htm" />
+  <HelpKINode Title="BroVector.Clear method" Url="html/M_BroccoliSharp_BroVector_Clear.htm" />
+  <HelpKINode Title="BroVector.Clone method" Url="html/M_BroccoliSharp_BroVector_Clone.htm" />
+  <HelpKINode Title="BroVector.Contains method" Url="html/M_BroccoliSharp_BroVector_Contains.htm" />
+  <HelpKINode Title="BroVector.CopyTo method" Url="html/M_BroccoliSharp_BroVector_CopyTo.htm" />
+  <HelpKINode Title="BroVector.Count property" Url="html/P_BroccoliSharp_BroVector_Count.htm" />
+  <HelpKINode Title="BroVector.Dispose method" Url="html/Overload_BroccoliSharp_BroVector_Dispose.htm" />
+  <HelpKINode Title="BroVector.Finalize method" Url="html/M_BroccoliSharp_BroVector_Finalize.htm" />
+  <HelpKINode Title="BroVector.GetEnumerator method" Url="html/M_BroccoliSharp_BroVector_GetEnumerator.htm" />
+  <HelpKINode Title="BroVector.IndexOf method" Url="html/M_BroccoliSharp_BroVector_IndexOf.htm" />
+  <HelpKINode Title="BroVector.Insert method" Url="html/Overload_BroccoliSharp_BroVector_Insert.htm" />
+  <HelpKINode Title="BroVector.IsReadOnly property" Url="html/P_BroccoliSharp_BroVector_IsReadOnly.htm" />
+  <HelpKINode Title="BroVector.Item property" Url="html/P_BroccoliSharp_BroVector_Item.htm" />
+  <HelpKINode Title="BroVector.Remove method" Url="html/M_BroccoliSharp_BroVector_Remove.htm" />
+  <HelpKINode Title="BroVector.RemoveAt method" Url="html/M_BroccoliSharp_BroVector_RemoveAt.htm" />
+  <HelpKINode Title="Cache enumeration member" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
+  <HelpKINode Title="Class property" Url="html/P_BroccoliSharp_BroConnection_Class.htm" />
+  <HelpKINode Title="Clear method">
+    <HelpKINode Title="BroRecord.Clear Method " Url="html/M_BroccoliSharp_BroRecord_Clear.htm" />
+    <HelpKINode Title="BroSet.Clear Method " Url="html/M_BroccoliSharp_BroSet_Clear.htm" />
+    <HelpKINode Title="BroTable.Clear Method " Url="html/M_BroccoliSharp_BroTable_Clear.htm" />
+    <HelpKINode Title="BroVector.Clear Method " Url="html/M_BroccoliSharp_BroVector_Clear.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Clone method">
+    <HelpKINode Title="BroPacket.Clone Method " Url="html/M_BroccoliSharp_BroPacket_Clone.htm" />
+    <HelpKINode Title="BroRecord.Clone Method " Url="html/M_BroccoliSharp_BroRecord_Clone.htm" />
+    <HelpKINode Title="BroSet.Clone Method " Url="html/M_BroccoliSharp_BroSet_Clone.htm" />
+    <HelpKINode Title="BroTable.Clone Method " Url="html/M_BroccoliSharp_BroTable_Clone.htm" />
+    <HelpKINode Title="BroVector.Clone Method " Url="html/M_BroccoliSharp_BroVector_Clone.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Connect method" Url="html/M_BroccoliSharp_BroConnection_Connect.htm" />
+  <HelpKINode Title="Contains method">
+    <HelpKINode Title="BroRecord.Contains Method " Url="html/Overload_BroccoliSharp_BroRecord_Contains.htm" />
+    <HelpKINode Title="BroSet.Contains Method " Url="html/Overload_BroccoliSharp_BroSet_Contains.htm" />
+    <HelpKINode Title="BroTable.Contains Method " Url="html/M_BroccoliSharp_BroTable_Contains.htm" />
+    <HelpKINode Title="BroVector.Contains Method " Url="html/M_BroccoliSharp_BroVector_Contains.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ContainsKey method" Url="html/Overload_BroccoliSharp_BroTable_ContainsKey.htm" />
+  <HelpKINode Title="ConvertToType method" Url="html/M_BroccoliSharp_BroValueExtensions_ConvertToType.htm" />
+  <HelpKINode Title="CopyTo method">
+    <HelpKINode Title="BroRecord.CopyTo Method " Url="html/M_BroccoliSharp_BroRecord_CopyTo.htm" />
+    <HelpKINode Title="BroSet.CopyTo Method " Url="html/M_BroccoliSharp_BroSet_CopyTo.htm" />
+    <HelpKINode Title="BroTable.CopyTo Method " Url="html/M_BroccoliSharp_BroTable_CopyTo.htm" />
+    <HelpKINode Title="BroVector.CopyTo Method " Url="html/M_BroccoliSharp_BroVector_CopyTo.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Count enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Count property">
+    <HelpKINode Title="BroRecord.Count Property " Url="html/P_BroccoliSharp_BroRecord_Count.htm" />
+    <HelpKINode Title="BroSet.Count Property " Url="html/P_BroccoliSharp_BroSet_Count.htm" />
+    <HelpKINode Title="BroTable.Count Property " Url="html/P_BroccoliSharp_BroTable_Count.htm" />
+    <HelpKINode Title="BroVector.Count Property " Url="html/P_BroccoliSharp_BroVector_Count.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Counter enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Data property" Url="html/P_BroccoliSharp_BroConnection_Data.htm" />
+  <HelpKINode Title="DateTime to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_28.htm" />
+  <HelpKINode Title="DateTime to BroTime conversion" Url="html/M_BroccoliSharp_BroTime_op_Implicit_2.htm" />
+  <HelpKINode Title="DateTime to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_28.htm" />
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="BroConnection.Dispose Method " Url="html/Overload_BroccoliSharp_BroConnection_Dispose.htm" />
+    <HelpKINode Title="BroEvent.Dispose Method " Url="html/Overload_BroccoliSharp_BroEvent_Dispose.htm" />
+    <HelpKINode Title="BroPacket.Dispose Method " Url="html/Overload_BroccoliSharp_BroPacket_Dispose.htm" />
+    <HelpKINode Title="BroRecord.Dispose Method " Url="html/Overload_BroccoliSharp_BroRecord_Dispose.htm" />
+    <HelpKINode Title="BroSet.Dispose Method " Url="html/Overload_BroccoliSharp_BroSet_Dispose.htm" />
+    <HelpKINode Title="BroString.Dispose Method " Url="html/Overload_BroccoliSharp_BroString_Dispose.htm" />
+    <HelpKINode Title="BroTable.Dispose Method " Url="html/Overload_BroccoliSharp_BroTable_Dispose.htm" />
+    <HelpKINode Title="BroVector.Dispose Method " Url="html/Overload_BroccoliSharp_BroVector_Dispose.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Domain property" Url="html/P_BroccoliSharp_BroConfiguration_Domain.htm" />
+  <HelpKINode Title="DontCache enumeration member" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
+  <HelpKINode Title="Double enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Double to BroTime conversion" Url="html/M_BroccoliSharp_BroTime_op_Implicit_3.htm" />
+  <HelpKINode Title="Enum enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Epoch field" Url="html/F_BroccoliSharp_BroTime_Epoch.htm" />
+  <HelpKINode Title="Equality operator">
+    <HelpKINode Title="BroAddress.Equality Operator " Url="html/M_BroccoliSharp_BroAddress_op_Equality.htm" />
+    <HelpKINode Title="BroField.Equality Operator " Url="html/M_BroccoliSharp_BroField_op_Equality.htm" />
+    <HelpKINode Title="BroPort.Equality Operator " Url="html/M_BroccoliSharp_BroPort_op_Equality.htm" />
+    <HelpKINode Title="BroString.Equality Operator " Url="html/M_BroccoliSharp_BroString_op_Equality.htm" />
+    <HelpKINode Title="BroSubnet.Equality Operator " Url="html/M_BroccoliSharp_BroSubnet_op_Equality.htm" />
+    <HelpKINode Title="BroValue.Equality Operator " Url="html/M_BroccoliSharp_BroValue_op_Equality.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Equals method">
+    <HelpKINode Title="BroAddress.Equals Method " Url="html/Overload_BroccoliSharp_BroAddress_Equals.htm" />
+    <HelpKINode Title="BroField.Equals Method " Url="html/Overload_BroccoliSharp_BroField_Equals.htm" />
+    <HelpKINode Title="BroPort.Equals Method " Url="html/Overload_BroccoliSharp_BroPort_Equals.htm" />
+    <HelpKINode Title="BroString.Equals Method " Url="html/Overload_BroccoliSharp_BroString_Equals.htm" />
+    <HelpKINode Title="BroSubnet.Equals Method " Url="html/Overload_BroccoliSharp_BroSubnet_Equals.htm" />
+    <HelpKINode Title="BroValue.Equals Method " Url="html/Overload_BroccoliSharp_BroValue_Equals.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Error enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="EventName property" Url="html/P_BroccoliSharp_BroEventArgs_EventName.htm" />
+  <HelpKINode Title="EventQueue property" Url="html/P_BroccoliSharp_BroConnection_EventQueue.htm" />
+  <HelpKINode Title="EventTime property" Url="html/P_BroccoliSharp_BroEventArgs_EventTime.htm" />
+  <HelpKINode Title="ExceptWith method" Url="html/M_BroccoliSharp_BroSet_ExceptWith.htm" />
+  <HelpKINode Title="File enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="FileDescriptor property" Url="html/P_BroccoliSharp_BroConnection_FileDescriptor.htm" />
+  <HelpKINode Title="Finalize method">
+    <HelpKINode Title="BroConnection.Finalize Method " Url="html/M_BroccoliSharp_BroConnection_Finalize.htm" />
+    <HelpKINode Title="BroEvent.Finalize Method " Url="html/M_BroccoliSharp_BroEvent_Finalize.htm" />
+    <HelpKINode Title="BroPacket.Finalize Method " Url="html/M_BroccoliSharp_BroPacket_Finalize.htm" />
+    <HelpKINode Title="BroRecord.Finalize Method " Url="html/M_BroccoliSharp_BroRecord_Finalize.htm" />
+    <HelpKINode Title="BroSet.Finalize Method " Url="html/M_BroccoliSharp_BroSet_Finalize.htm" />
+    <HelpKINode Title="BroString.Finalize Method " Url="html/M_BroccoliSharp_BroString_Finalize.htm" />
+    <HelpKINode Title="BroTable.Finalize Method " Url="html/M_BroccoliSharp_BroTable_Finalize.htm" />
+    <HelpKINode Title="BroVector.Finalize Method " Url="html/M_BroccoliSharp_BroVector_Finalize.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Flags property" Url="html/P_BroccoliSharp_BroConnection_Flags.htm" />
+  <HelpKINode Title="Flush method" Url="html/M_BroccoliSharp_BroEventQueue_Flush.htm" />
+  <HelpKINode Title="Func enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="GetEnumerator method">
+    <HelpKINode Title="BroEvent.GetEnumerator Method " Url="html/M_BroccoliSharp_BroEvent_GetEnumerator.htm" />
+    <HelpKINode Title="BroRecord.GetEnumerator Method " Url="html/M_BroccoliSharp_BroRecord_GetEnumerator.htm" />
+    <HelpKINode Title="BroSet.GetEnumerator Method " Url="html/M_BroccoliSharp_BroSet_GetEnumerator.htm" />
+    <HelpKINode Title="BroTable.GetEnumerator Method " Url="html/M_BroccoliSharp_BroTable_GetEnumerator.htm" />
+    <HelpKINode Title="BroVector.GetEnumerator Method " Url="html/M_BroccoliSharp_BroVector_GetEnumerator.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetHashCode method">
+    <HelpKINode Title="BroAddress.GetHashCode Method " Url="html/M_BroccoliSharp_BroAddress_GetHashCode.htm" />
+    <HelpKINode Title="BroField.GetHashCode Method " Url="html/M_BroccoliSharp_BroField_GetHashCode.htm" />
+    <HelpKINode Title="BroPort.GetHashCode Method " Url="html/M_BroccoliSharp_BroPort_GetHashCode.htm" />
+    <HelpKINode Title="BroString.GetHashCode Method " Url="html/M_BroccoliSharp_BroString_GetHashCode.htm" />
+    <HelpKINode Title="BroSubnet.GetHashCode Method " Url="html/M_BroccoliSharp_BroSubnet_GetHashCode.htm" />
+    <HelpKINode Title="BroValue.GetHashCode Method " Url="html/M_BroccoliSharp_BroValue_GetHashCode.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HasValue property" Url="html/P_BroccoliSharp_BroValue_HasValue.htm" />
+  <HelpKINode Title="HostName property" Url="html/P_BroccoliSharp_BroConnection_HostName.htm" />
+  <HelpKINode Title="IndexOf method">
+    <HelpKINode Title="BroRecord.IndexOf Method " Url="html/Overload_BroccoliSharp_BroRecord_IndexOf.htm" />
+    <HelpKINode Title="BroVector.IndexOf Method " Url="html/M_BroccoliSharp_BroVector_IndexOf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Inequality operator">
+    <HelpKINode Title="BroAddress.Inequality Operator " Url="html/M_BroccoliSharp_BroAddress_op_Inequality.htm" />
+    <HelpKINode Title="BroField.Inequality Operator " Url="html/M_BroccoliSharp_BroField_op_Inequality.htm" />
+    <HelpKINode Title="BroPort.Inequality Operator " Url="html/M_BroccoliSharp_BroPort_op_Inequality.htm" />
+    <HelpKINode Title="BroString.Inequality Operator " Url="html/M_BroccoliSharp_BroString_op_Inequality.htm" />
+    <HelpKINode Title="BroSubnet.Inequality Operator " Url="html/M_BroccoliSharp_BroSubnet_op_Inequality.htm" />
+    <HelpKINode Title="BroValue.Inequality Operator " Url="html/M_BroccoliSharp_BroValue_op_Inequality.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InputBufferLength property" Url="html/P_BroccoliSharp_BroConnection_InputBufferLength.htm" />
+  <HelpKINode Title="Insert method">
+    <HelpKINode Title="BroRecord.Insert Method " Url="html/Overload_BroccoliSharp_BroRecord_Insert.htm" />
+    <HelpKINode Title="BroVector.Insert Method " Url="html/Overload_BroccoliSharp_BroVector_Insert.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Int enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="IntersectWith method" Url="html/M_BroccoliSharp_BroSet_IntersectWith.htm" />
+  <HelpKINode Title="Interval enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="IpAddr enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="IPAddress to BroAddress conversion" Url="html/M_BroccoliSharp_BroAddress_op_Implicit_1.htm" />
+  <HelpKINode Title="IPAddress to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_29.htm" />
+  <HelpKINode Title="IPAddress to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_29.htm" />
+  <HelpKINode Title="IsAlive property" Url="html/P_BroccoliSharp_BroConnection_IsAlive.htm" />
+  <HelpKINode Title="IsEnumerableType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsEnumerableType.htm" />
+  <HelpKINode Title="IsIPv4MappedAddress property">
+    <HelpKINode Title="BroAddress.IsIPv4MappedAddress Property " Url="html/P_BroccoliSharp_BroAddress_IsIPv4MappedAddress.htm" />
+    <HelpKINode Title="BroSubnet.IsIPv4MappedAddress Property " Url="html/P_BroccoliSharp_BroSubnet_IsIPv4MappedAddress.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsOpaqueType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsOpaqueType.htm" />
+  <HelpKINode Title="IsProperSubsetOf method" Url="html/M_BroccoliSharp_BroSet_IsProperSubsetOf.htm" />
+  <HelpKINode Title="IsProperSupersetOf method" Url="html/M_BroccoliSharp_BroSet_IsProperSupersetOf.htm" />
+  <HelpKINode Title="IsReadOnly property">
+    <HelpKINode Title="BroRecord.IsReadOnly Property " Url="html/P_BroccoliSharp_BroRecord_IsReadOnly.htm" />
+    <HelpKINode Title="BroSet.IsReadOnly Property " Url="html/P_BroccoliSharp_BroSet_IsReadOnly.htm" />
+    <HelpKINode Title="BroTable.IsReadOnly Property " Url="html/P_BroccoliSharp_BroTable_IsReadOnly.htm" />
+    <HelpKINode Title="BroVector.IsReadOnly Property " Url="html/P_BroccoliSharp_BroVector_IsReadOnly.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsReferenceType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsReferenceType.htm" />
+  <HelpKINode Title="IsSubsetOf method" Url="html/M_BroccoliSharp_BroSet_IsSubsetOf.htm" />
+  <HelpKINode Title="IsSupersetOf method" Url="html/M_BroccoliSharp_BroSet_IsSupersetOf.htm" />
+  <HelpKINode Title="IsUnsupportedType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsUnsupportedType.htm" />
+  <HelpKINode Title="IsValueType method" Url="html/M_BroccoliSharp_BroTypeExtensions_IsValueType.htm" />
+  <HelpKINode Title="Item property">
+    <HelpKINode Title="BroRecord.Item Property " Url="html/Overload_BroccoliSharp_BroRecord_Item.htm" />
+    <HelpKINode Title="BroTable.Item Property " Url="html/Overload_BroccoliSharp_BroTable_Item.htm" />
+    <HelpKINode Title="BroVector.Item Property " Url="html/P_BroccoliSharp_BroVector_Item.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Keys property" Url="html/P_BroccoliSharp_BroTable_Keys.htm" />
+  <HelpKINode Title="KeyType property" Url="html/P_BroccoliSharp_BroTable_KeyType.htm" />
+  <HelpKINode Title="Length property">
+    <HelpKINode Title="BroEventQueue.Length Property " Url="html/P_BroccoliSharp_BroEventQueue_Length.htm" />
+    <HelpKINode Title="BroString.Length Property " Url="html/P_BroccoliSharp_BroString_Length.htm" />
+  </HelpKINode>
+  <HelpKINode Title="List enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="MaxLength property" Url="html/P_BroccoliSharp_BroEventQueue_MaxLength.htm" />
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="BroEvent.Name Property " Url="html/P_BroccoliSharp_BroEvent_Name.htm" />
+    <HelpKINode Title="BroField.Name Property " Url="html/P_BroccoliSharp_BroField_Name.htm" />
+  </HelpKINode>
+  <HelpKINode Title="None enumeration member" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
+  <HelpKINode Title="Now property" Url="html/P_BroccoliSharp_BroTime_Now.htm" />
+  <HelpKINode Title="Number property" Url="html/P_BroccoliSharp_BroPort_Number.htm" />
+  <HelpKINode Title="OnReceivedEvent method" Url="html/M_BroccoliSharp_BroConnection_OnReceivedEvent.htm" />
+  <HelpKINode Title="OutputBufferLength property" Url="html/P_BroccoliSharp_BroConnection_OutputBufferLength.htm" />
+  <HelpKINode Title="Overlaps method" Url="html/M_BroccoliSharp_BroSet_Overlaps.htm" />
+  <HelpKINode Title="Packet enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="PacketContext property" Url="html/P_BroccoliSharp_BroConnection_PacketContext.htm" />
+  <HelpKINode Title="ParameterCount property" Url="html/P_BroccoliSharp_BroEvent_ParameterCount.htm" />
+  <HelpKINode Title="Parameters property" Url="html/P_BroccoliSharp_BroEventArgs_Parameters.htm" />
+  <HelpKINode Title="Pattern enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="PeerClass property" Url="html/P_BroccoliSharp_BroConnection_PeerClass.htm" />
+  <HelpKINode Title="Port enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="ProcessInput method" Url="html/M_BroccoliSharp_BroConnection_ProcessInput.htm" />
+  <HelpKINode Title="ProtocolType property" Url="html/P_BroccoliSharp_BroPort_ProtocolType.htm" />
+  <HelpKINode Title="RawProtocolType property" Url="html/P_BroccoliSharp_BroPort_RawProtocolType.htm" />
+  <HelpKINode Title="ReceivedEvent event" Url="html/E_BroccoliSharp_BroConnection_ReceivedEvent.htm" />
+  <HelpKINode Title="Reconnect enumeration member" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
+  <HelpKINode Title="Reconnect method" Url="html/M_BroccoliSharp_BroConnection_Reconnect.htm" />
+  <HelpKINode Title="Record enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="RegisterForEvent method" Url="html/M_BroccoliSharp_BroConnection_RegisterForEvent.htm" />
+  <HelpKINode Title="Remove method">
+    <HelpKINode Title="BroRecord.Remove Method " Url="html/Overload_BroccoliSharp_BroRecord_Remove.htm" />
+    <HelpKINode Title="BroSet.Remove Method " Url="html/M_BroccoliSharp_BroSet_Remove.htm" />
+    <HelpKINode Title="BroTable.Remove Method " Url="html/M_BroccoliSharp_BroTable_Remove.htm" />
+    <HelpKINode Title="BroVector.Remove Method " Url="html/M_BroccoliSharp_BroVector_Remove.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RemoveAt method">
+    <HelpKINode Title="BroRecord.RemoveAt Method " Url="html/M_BroccoliSharp_BroRecord_RemoveAt.htm" />
+    <HelpKINode Title="BroVector.RemoveAt Method " Url="html/M_BroccoliSharp_BroVector_RemoveAt.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ReplaceParameter method" Url="html/Overload_BroccoliSharp_BroEvent_ReplaceParameter.htm" />
+  <HelpKINode Title="RequestEvents method" Url="html/M_BroccoliSharp_BroConnection_RequestEvents.htm" />
+  <HelpKINode Title="SendEvent method" Url="html/Overload_BroccoliSharp_BroConnection_SendEvent.htm" />
+  <HelpKINode Title="SendPacket method" Url="html/M_BroccoliSharp_BroConnection_SendPacket.htm" />
+  <HelpKINode Title="Set enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="SetEquals method" Url="html/M_BroccoliSharp_BroSet_SetEquals.htm" />
+  <HelpKINode Title="String enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="String to BroField conversion" Url="html/M_BroccoliSharp_BroField_op_Implicit_30.htm" />
+  <HelpKINode Title="String to BroString conversion" Url="html/M_BroccoliSharp_BroString_op_Implicit_1.htm" />
+  <HelpKINode Title="String to BroValue conversion" Url="html/M_BroccoliSharp_BroValue_op_Implicit_30.htm" />
+  <HelpKINode Title="Subnet enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="SymmetricExceptWith method" Url="html/M_BroccoliSharp_BroSet_SymmetricExceptWith.htm" />
+  <HelpKINode Title="Table enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Time enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Timer enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="ToDateTime method" Url="html/M_BroccoliSharp_BroTime_ToDateTime.htm" />
+  <HelpKINode Title="ToIPAddress method">
+    <HelpKINode Title="BroAddress.ToIPAddress Method " Url="html/M_BroccoliSharp_BroAddress_ToIPAddress.htm" />
+    <HelpKINode Title="BroSubnet.ToIPAddress Method " Url="html/M_BroccoliSharp_BroSubnet_ToIPAddress.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToList method" Url="html/M_BroccoliSharp_BroSet_ToList.htm" />
+  <HelpKINode Title="ToString method">
+    <HelpKINode Title="BroAddress.ToString Method " Url="html/M_BroccoliSharp_BroAddress_ToString.htm" />
+    <HelpKINode Title="BroPort.ToString Method " Url="html/M_BroccoliSharp_BroPort_ToString.htm" />
+    <HelpKINode Title="BroRecord.ToString Method " Url="html/M_BroccoliSharp_BroRecord_ToString.htm" />
+    <HelpKINode Title="BroString.ToString Method " Url="html/M_BroccoliSharp_BroString_ToString.htm" />
+    <HelpKINode Title="BroSubnet.ToString Method " Url="html/M_BroccoliSharp_BroSubnet_ToString.htm" />
+    <HelpKINode Title="BroTime.ToString Method " Url="html/Overload_BroccoliSharp_BroTime_ToString.htm" />
+    <HelpKINode Title="BroValue.ToString Method " Url="html/M_BroccoliSharp_BroValue_ToString.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TryGetValue method">
+    <HelpKINode Title="BroConfiguration.TryGetValue Method " Url="html/Overload_BroccoliSharp_BroConfiguration_TryGetValue.htm" />
+    <HelpKINode Title="BroTable.TryGetValue Method " Url="html/Overload_BroccoliSharp_BroTable_TryGetValue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Type property">
+    <HelpKINode Title="BroSet.Type Property " Url="html/P_BroccoliSharp_BroSet_Type.htm" />
+    <HelpKINode Title="BroValue.Type Property " Url="html/P_BroccoliSharp_BroValue_Type.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TypeName property" Url="html/P_BroccoliSharp_BroValue_TypeName.htm" />
+  <HelpKINode Title="Union enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="UnionWith method" Url="html/M_BroccoliSharp_BroSet_UnionWith.htm" />
+  <HelpKINode Title="Unknown enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="UnregisterForEvent method" Url="html/M_BroccoliSharp_BroConnection_UnregisterForEvent.htm" />
+  <HelpKINode Title="UserData property" Url="html/P_BroccoliSharp_BroEventArgs_UserData.htm" />
+  <HelpKINode Title="Value property">
+    <HelpKINode Title="BroTime.Value Property " Url="html/P_BroccoliSharp_BroTime_Value.htm" />
+    <HelpKINode Title="BroValue.Value Property " Url="html/P_BroccoliSharp_BroValue_Value.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Values property" Url="html/P_BroccoliSharp_BroTable_Values.htm" />
+  <HelpKINode Title="ValueType property" Url="html/P_BroccoliSharp_BroTable_ValueType.htm" />
+  <HelpKINode Title="Vector enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
+  <HelpKINode Title="Width property" Url="html/P_BroccoliSharp_BroSubnet_Width.htm" />
+  <HelpKINode Title="Yield enumeration member" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
+</HelpKI>

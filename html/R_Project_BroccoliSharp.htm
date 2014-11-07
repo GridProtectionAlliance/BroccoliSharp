@@ -1,0 +1,181 @@
+﻿<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../styles/branding.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" />
+    <script type="text/javascript" src="../scripts/branding.js"> </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BroccoliSharp Library</title>
+    <meta name="Language" content="en-us" />
+    <meta name="Microsoft.Help.Id" content="R:Project_BroccoliSharp" />
+    <meta name="Description" content="BroccoliSharp: A .NET implementation of the Bro Client Communications Library. BroccoliSharp is a set of managed C# based .NET classes and structures that wrap Broccoli, the &quot;Bro client communications library&quot;." />
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    <meta name="BrandingAware" content="true" />
+    
+    <meta name="container" content="unknown" />
+    <meta name="file" content="R_Project_BroccoliSharp" />
+    <meta name="guid" content="R_Project_BroccoliSharp" />
+    
+    <link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" />
+    <script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../scripts/branding-Website.js"></script>
+  </head>
+  <body onload="OnLoad('cs')">
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <div class="pageHeader" id="PageHeader">BroccoliSharp Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div>
+    <div class="pageBody">
+      <div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_BroccoliSharp.htm" title="BroccoliSharp Documentation" tocid="roottoc">BroccoliSharp Documentation</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_BroccoliSharp.htm" title="BroccoliSharp Library" tocid="R_Project_BroccoliSharp">BroccoliSharp Library</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="N_BroccoliSharp.htm" title="BroccoliSharp" tocid="N_BroccoliSharp">BroccoliSharp</a></div></div></div><div id="TocResize" class="tocResize" onmousedown="OnMouseDown(event);"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize"><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize"></div><div class="topicContent" id="TopicContent">
+        <table class="titleTable">
+          <tr>
+            <td class="logoColumn">
+              <img alt="BroccoliSharp" src="../icons/BroccoliSharp.png" />
+            </td>
+            <td class="titleColumn">BroccoliSharp Library</td>
+          </tr>
+        </table>
+        <span class="introStyle"></span>
+        <div class="summary">
+          <h1>BroccoliSharp: A .NET implementation of the Bro Client Communications Library.</h1>
+          <p>
+        BroccoliSharp is a set of managed C# based .NET classes and structures that wrap
+        Broccoli, the "Bro client communications library". This library fully implements
+        the Broccoli API and will allow you to create client sensors for the Bro intrusion
+        detection system, receive Bro IDs, send and receive Bro events, as well as send
+        and receive event requests to and from peering Bros. As in the native C Broccoli
+        API, you can currently create and receive values of pure types like integers,
+        counters, timestamps, IP addresses, port numbers, booleans, and strings.
+    </p>
+          <p>
+        BroccoliSharp is free software under terms of the BSD license as provided in the
+        LICENSE.txt file distributed with the source code.
+    </p>
+          <p>
+        More details on BroccoliSharp usage can be found in the documentation related to
+        the primary data structures. It is expected that the developer is already familiar
+        with basic Bro concepts before using the BroccoliSharp library.
+    </p>
+          <p>
+        Many of the following documentation topics have been derived from key portions of the official
+        <a href="https://www.bro.org/sphinx/components/broccoli/broccoli-manual.html">Broccoli documentation</a>
+        put into context of using BroccoliSharp from a .NET application. Many topics also include usage
+        examples in C#. The <a href="T_BroccoliSharp_BroConnection.htm">BroConnection class</a> topic remarks
+        also include examples in VB.NET and Java using <a href="http://www.ikvm.net/">IKVM.NET</a>.
+    </p>
+          <ul>
+            <li>
+            For details on how to manage connections, handle connections classes, and compose and send
+            events using BroccoliSharp, see topic remarks for the:
+            <ul style="list-style-type: none"><li><a href="T_BroccoliSharp_BroConnection.htm">BroConnection class</a></li></ul></li>
+            <li>
+            For details on how to handle record structures in BroccoliSharp, see topic remarks for the:
+            <ul style="list-style-type: none"><li><a href="T_BroccoliSharp_BroRecord.htm">BroRecord class</a></li></ul></li>
+            <li>
+            For details on how to handle tables and composite keys in BroccoliSharp, see topic remarks for the:
+            <ul style="list-style-type: none"><li><a href="T_BroccoliSharp_BroTable.htm">BroTable class</a></li></ul></li>
+            <li>
+            For details on how to handle sets in BroccoliSharp, see topic remarks for the:
+            <ul style="list-style-type: none"><li><a href="T_BroccoliSharp_BroSet.htm">BroSet class</a></li></ul></li>
+            <li>
+            For details on how BroccoliSharp safely passes strongly-typed values into Broccoli API functions
+            with void* values, see topic remarks for the:
+            <ul style="list-style-type: none"><li><a href="T_BroccoliSharp_BroValue.htm">BroValue class</a></li></ul></li>
+            <li>
+            For details on the BroccoliSharp structures and classes that are associated with each of
+            the Bro types, see topic remarks for the:
+            <ul style="list-style-type: none"><li><a href="T_BroccoliSharp_BroType.htm">BroType enumeration</a></li></ul></li>
+          </ul>
+          <h2>Download</h2>
+          <p>
+        You can find the latest BroccoliSharp source code on GitHub: 
+        <a href="https://github.com/GridProtectionAlliance/BroccoliSharp">GridProtectionAlliance/BroccoliSharp</a></p>
+          <h2>Installation</h2>
+          <p>
+        The BroccoliSharp library
+        has only been tested on Linux so far.
+    </p>
+          <h3>Prerequisites</h3>
+          <p>
+        BroccoliSharp requires the following
+        libraries which need to be installed before you begin:
+    </p>
+          <p style="text-indent: .5in">
+            <span style="font-family: Symbol">· </span>         
+        <a href="https://www.bro.org/download/">The Broccoli library</a>
+        (of course!), Broccoli has its own requirements, see
+        <a href="https://www.bro.org/sphinx/components/broccoli/README.html">docs</a>.
+    </p>
+          <p style="text-indent: .5in">
+            <span style="font-family: Symbol">· </span> 
+        <a href="http://www.mono-project.com/download/#download-lin">Mono</a> –
+        version supporting.NET 4.5 is preferred but may not be required.
+    </p>
+          <h3>Building BroccoliSharp</h3>
+          <p>
+        To build the BroccoliSharp library using Mono you can use xbuild:
+    </p>
+          <p style="text-indent: .5in">
+        xbuild /p:Configuration=Release BroccoliSharp.sln
+    </p>
+          <p>
+        To build BroccoliSharp to work with a Broccoli release that has disabled PCAP support, use:
+    </p>
+          <p style="text-indent: .5in">
+        xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln
+    </p>
+          <p>
+        You can also build the library on Windows using Visual Studio, however the binaries built on Windows
+        will only work on Linux if the Mono release at least supports .NET 4.5.
+    </p>
+          <p>
+        Once the BroccoliSharp.dll exists (found in Build/Output/Release folder relative to solution) you can
+        add a reference to the library in your .NET projects and begin using BroccoliSharp.
+    </p>
+          <h3>About the Code</h3>
+          <p>
+        When building inside Visual Studio code analysis is enabled for this project. A rule set is included
+        with the source code (i.e., BroccoliSharp.ruleset) that defines the analysis rules that are enabled for
+        the project. Note that this rule set is basically just the "Microsoft Managed Recommended Rules" with
+        one rule turned off: CA1060: Move P/Invokes to NativeMethods class. This rule wants to force the name
+        of the imported Bro API functions class to be "NativeMethods", but I prefer "BroAPI" for this project.
+    </p>
+          <p>
+        The code has also been through extensive analysis using the 
+        <a href="http://www.mono-project.com/docs/tools+libraries/tools/gendarme/">Gendarme</a> tool. All
+        items it reports have been reviewed thoroughly - there are no issues of concern. A future to-do could
+        be to create an exclusion list with justifications.
+    </p>
+        </div>
+        <div class="collapsibleAreaRegion">
+          <span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0">
+            <img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Namespaces</span>
+        </div>
+        <div id="ID0RBSection" class="collapsibleSection">
+          <table id="memberList" class="members">
+            <tr>
+              <th>Namespace</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>
+                <a href="N_BroccoliSharp.htm">BroccoliSharp</a>
+              </td>
+              <td>
+                <div class="summary">
+            Contains fundamental classes for interaction with the Broccoli API from within a .NET environment.
+            </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="pageFooter" class="pageFooter">See <a href="https://www.bro.org/sphinx/components/broccoli/broccoli-manual.html">Bro Client Communications Library</a> manual for corresponding C API usage.<p><a href="https://www.gridprotectionalliance.org/" target="_blank">Copyright © 2014, Grid Protection Alliance.  All Rights Reserved.</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:rcarroll%40gridprotectionalliance.org?Subject=BroccoliSharp Documentation">GPA Development</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script> </div>
+  </body>
+</html>

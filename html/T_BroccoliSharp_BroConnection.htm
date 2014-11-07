@@ -1,0 +1,588 @@
+﻿<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../styles/branding.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" />
+    <script type="text/javascript" src="../scripts/branding.js"> </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BroConnection Class</title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="BroConnection class" />
+    <meta name="System.Keywords" content="BroccoliSharp.BroConnection class" />
+    <meta name="System.Keywords" content="BroConnection class, about BroConnection class" />
+    <meta name="Microsoft.Help.F1" content="BroccoliSharp.BroConnection" />
+    <meta name="Microsoft.Help.Id" content="T:BroccoliSharp.BroConnection" />
+    <meta name="Description" content="Represents a Bro connection. PCAP functionality is enabled for this build." />
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    <meta name="BrandingAware" content="true" />
+    
+    <meta name="container" content="BroccoliSharp" />
+    <meta name="file" content="T_BroccoliSharp_BroConnection" />
+    <meta name="guid" content="T_BroccoliSharp_BroConnection" />
+    
+    <link type="text/css" rel="stylesheet" href="../styles/highlight.css" />
+    <script type="text/javascript" src="../scripts/highlight.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" />
+    <script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../scripts/branding-Website.js"></script>
+  </head>
+  <body onload="OnLoad('cs')">
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <div class="pageHeader" id="PageHeader">BroccoliSharp Documentation<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div>
+    <div class="pageBody">
+      <div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_BroccoliSharp.htm" title="BroccoliSharp Documentation" tocid="roottoc">BroccoliSharp Documentation</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="R_Project_BroccoliSharp.htm" title="BroccoliSharp Library" tocid="R_Project_BroccoliSharp">BroccoliSharp Library</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="N_BroccoliSharp.htm" title="BroccoliSharp" tocid="N_BroccoliSharp">BroccoliSharp</a></div><div class="toclevel1 current" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="T_BroccoliSharp_BroConnection.htm" title="BroConnection Class" tocid="T_BroccoliSharp_BroConnection">BroConnection Class</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Overload_BroccoliSharp_BroConnection__ctor.htm" title="BroConnection Constructor " tocid="Overload_BroccoliSharp_BroConnection__ctor">BroConnection Constructor </a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Methods_T_BroccoliSharp_BroConnection.htm" title="BroConnection Methods" tocid="Methods_T_BroccoliSharp_BroConnection">BroConnection Methods</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Properties_T_BroccoliSharp_BroConnection.htm" title="BroConnection Properties" tocid="Properties_T_BroccoliSharp_BroConnection">BroConnection Properties</a></div><div class="toclevel2" data-toclevel="2"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!"></a><a data-tochassubtree="true" href="Events_T_BroccoliSharp_BroConnection.htm" title="BroConnection Events" tocid="Events_T_BroccoliSharp_BroConnection">BroConnection Events</a></div></div></div><div id="TocResize" class="tocResize" onmousedown="OnMouseDown(event);"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize"><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize"></div><div class="topicContent" id="TopicContent">
+        <table class="titleTable">
+          <tr>
+            <td class="logoColumn">
+              <img alt="BroccoliSharp" src="../icons/BroccoliSharp.png" />
+            </td>
+            <td class="titleColumn">BroConnection Class</td>
+          </tr>
+        </table>
+        <span class="introStyle"></span>
+        <div class="summary">
+            Represents a Bro connection. PCAP functionality is enabled for this build.
+            </div>
+        <div class="collapsibleAreaRegion">
+          <span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0">
+            <img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Inheritance Hierarchy</span>
+        </div>
+        <div id="ID0RBSection" class="collapsibleSection">
+          <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">System<span id="LSTC55A4CCA_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Object</a>
+          <br />  <span class="selflink">BroccoliSharp<span id="LSTC55A4CCA_1"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_1?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>BroConnection</span><br /></div>
+        <p> </p>
+        <strong>Namespace:</strong> <a href="N_BroccoliSharp.htm">BroccoliSharp</a><br /><strong>Assembly:</strong> BroccoliSharp (in BroccoliSharp.dll) Version: 1.0.5424.29371<div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Syntax</span></div><div id="ID2RBSection" class="collapsibleSection"><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EECA_tab1" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID1EECA','cs','1','5');return false;">C#</a></div><div id="ID1EECA_tab2" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID1EECA','vb','2','5');return false;">VB</a></div><div id="ID1EECA_tab3" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID1EECA','fs','3','5');return false;">F#</a></div><div id="ID1EECA_tab4" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID1EECA','jsh','4','5');return false;">J#</a></div><div id="ID1EECA_tab5" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID1EECA','js','5','5');return false;">JavaScript</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EECA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EECA');return false;" title="Copy">Copy</a></div></div><div id="ID1EECA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="keyword">public</span> <span class="keyword">class</span> <span class="identifier">BroConnection</span> : <span class="identifier">IDisposable</span></pre></div><div id="ID1EECA_code_Div2" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="keyword">Public</span> <span class="keyword">Class</span> <span class="identifier">BroConnection</span>
+	<span class="keyword">Implements</span> <span class="identifier">IDisposable</span></pre></div><div id="ID1EECA_code_Div3" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="keyword">type</span> <span class="identifier">BroConnection</span> =  
+    <span class="keyword">class</span>
+        <span class="keyword">interface</span> <span class="identifier">IDisposable</span>
+    <span class="keyword">end</span></pre></div><div id="ID1EECA_code_Div4" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="keyword">public</span> <span class="keyword">class</span> <span class="identifier">BroConnection</span> <span class="keyword">implements</span> <span class="identifier">IDisposable</span></pre></div><div id="ID1EECA_code_Div5" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="identifier">BroccoliSharp.BroConnection</span> = <span class="keyword">function</span>();
+
+<span class="identifier">Type</span>.createClass(
+	'BroccoliSharp.BroConnection',
+	null,
+	<span class="identifier">IDisposable</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EECA");</script></div><p>The <span class="selflink">BroConnection</span> type exposes the following members.</p><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID3RB')" onkeypress="SectionExpandCollapse_CheckKey('ID3RB', event)" tabindex="0"><img id="ID3RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Constructors</span></div><div id="ID3RBSection" class="collapsibleSection"><table id="memberList" class="members"><tr><th class="iconColumn">
+								 
+							</th><th>Name</th><th>Description</th></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection__ctor.htm">BroConnection(Int32, BroConnectionFlags)</a></td><td><div class="summary">
+            Creates a new <span class="selflink">BroConnection</span> using the existing <span class="parameter">socket</span> handle.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection__ctor_1.htm">BroConnection(Socket, BroConnectionFlags)</a></td><td><div class="summary">
+            Creates a new <span class="selflink">BroConnection</span> using the existing <span class="parameter">socket</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection__ctor_2.htm">BroConnection(TcpClient, BroConnectionFlags)</a></td><td><div class="summary">
+            Creates a new client-based <span class="selflink">BroConnection</span> using the existing <span class="parameter">tcpClient</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection__ctor_3.htm">BroConnection(TcpListener, BroConnectionFlags)</a></td><td><div class="summary">
+            Creates a new server-based <span class="selflink">BroConnection</span> using the existing <span class="parameter">tcpListener</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection__ctor_4.htm">BroConnection(String, BroConnectionFlags)</a></td><td><div class="summary">
+            Creates a new <span class="selflink">BroConnection</span> with specified connection parameters.
+            </div></td></tr></table><a href="#PageHeader">Top</a></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID4RB')" onkeypress="SectionExpandCollapse_CheckKey('ID4RB', event)" tabindex="0"><img id="ID4RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Methods</span></div><div id="ID4RBSection" class="collapsibleSection"><table id="memberList" class="members"><tr><th class="iconColumn">
+								 
+							</th><th>Name</th><th>Description</th></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_AdoptEvents.htm">AdoptEvents(BroConnection)</a></td><td><div class="summary">
+            Requests the same events as those in <span class="parameter">source</span> Bro connection.
+            </div></td></tr><tr data="public;static;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /><img src="../icons/static.gif" alt="Static member" title="Static member" /></td><td><a href="M_BroccoliSharp_BroConnection_AdoptEvents_1.htm">AdoptEvents(BroConnection, BroConnection)</a></td><td><div class="summary">
+            Requests the same events for the <span class="parameter">destination</span> as those in <span class="parameter">source</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_Connect.htm">Connect</a></td><td><div class="summary">
+            Attempts to establish connection to peer.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_Dispose.htm">Dispose<span id="LSTC55A4CCA_2"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_2?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a></td><td><div class="summary">
+            Releases all the resources used by this <span class="selflink">BroConnection</span> object.
+            </div></td></tr><tr data="protected;declared;notNetfw;"><td><img src="../icons/protmethod.gif" alt="Protected method" title="Protected method" /></td><td><a href="M_BroccoliSharp_BroConnection_Dispose_1.htm">Dispose(Boolean)</a></td><td><div class="summary">
+            Releases the unmanaged resources used by this <span class="selflink">BroConnection</span> object and optionally releases the managed resources.
+            </div></td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/bsc2ak47" target="_blank">Equals</a></td><td><div class="summary">Determines whether the specified <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a> is equal to the current <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="../icons/protmethod.gif" alt="Protected method" title="Protected method" /></td><td><a href="M_BroccoliSharp_BroConnection_Finalize.htm">Finalize</a></td><td><div class="summary">
+            Releases the unmanaged resources before this <span class="selflink">BroConnection</span> object is reclaimed by <a href="http://msdn2.microsoft.com/en-us/library/a0fwz4wc" target="_blank">GC</a>.
+            </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/4k87zsw7" target="_blank">Object<span id="LSTC55A4CCA_3"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_3?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>Finalize<span id="LSTC55A4CCA_4"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_4?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/zdee4b3y" target="_blank">GetHashCode</a></td><td><div class="summary">Serves as a hash function for a particular type. </div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/dfwy45w9" target="_blank">GetType</a></td><td><div class="summary">Gets the <a href="http://msdn2.microsoft.com/en-us/library/42892f65" target="_blank">Type</a> of the current instance.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="protected;inherited;notNetfw;"><td><img src="../icons/protmethod.gif" alt="Protected method" title="Protected method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/57ctke0a" target="_blank">MemberwiseClone</a></td><td><div class="summary">Creates a shallow copy of the current <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="protected;declared;notNetfw;"><td><img src="../icons/protmethod.gif" alt="Protected method" title="Protected method" /></td><td><a href="M_BroccoliSharp_BroConnection_OnReceivedEvent.htm">OnReceivedEvent</a></td><td><div class="summary">
+            Raises the <a href="E_BroccoliSharp_BroConnection_ReceivedEvent.htm">ReceivedEvent</a> with the specified <span class="parameter">args</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_ProcessInput.htm">ProcessInput</a></td><td><div class="summary">
+            Processes input sent to the sensor by Bro.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_Reconnect.htm">Reconnect</a></td><td><div class="summary">
+            Drops the current connection and reconnects, reusing all settings.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_RegisterForEvent.htm">RegisterForEvent</a></td><td><div class="summary">
+            Registers for events that arrive with the name of <span class="parameter">eventName</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_RequestEvents.htm">RequestEvents</a></td><td><div class="summary">
+            Notifies peering Bro to send events.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_SendEvent.htm">SendEvent(BroEvent)</a></td><td><div class="summary">
+            Attempts to send a <a href="T_BroccoliSharp_BroEvent.htm">BroEvent</a> to a Bro agent.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_SendEvent_1.htm">SendEvent(<span id="LSTC55A4CCA_5"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_5?cpp=array&lt;");</script>Byte<span id="LSTC55A4CCA_6"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_6?cpp=&gt;|cs=[]|vb=()|nu=[]|fs=[]");</script>, Int32)</a></td><td><div class="summary">
+            Enqueues a serialized event directly into the send buffer for this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_SendEvent_2.htm">SendEvent(String, <span id="LSTC55A4CCA_7"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_7?cpp=array&lt;");</script>BroValue<span id="LSTC55A4CCA_8"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_8?cpp=&gt;|cs=[]|vb=()|nu=[]|fs=[]");</script>)</a></td><td><div class="summary">
+            Attempts to send an event to a Bro agent with the specified <span class="parameter">name</span> and <span class="parameter">parameters</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_SendPacket.htm">SendPacket</a></td><td><div class="summary">
+            Sends Bro <span class="parameter">packet</span> from this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;inherited;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="http://msdn2.microsoft.com/en-us/library/7bxwbwt2" target="_blank">ToString</a></td><td><div class="summary">Returns a string that represents the current object.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubmethod.gif" alt="Public method" title="Public method" /></td><td><a href="M_BroccoliSharp_BroConnection_UnregisterForEvent.htm">UnregisterForEvent</a></td><td><div class="summary">
+            Unregisters for events that arrive with the name of <span class="parameter">eventName</span>.
+            </div></td></tr></table><a href="#PageHeader">Top</a></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID5RB')" onkeypress="SectionExpandCollapse_CheckKey('ID5RB', event)" tabindex="0"><img id="ID5RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Properties</span></div><div id="ID5RBSection" class="collapsibleSection"><table id="memberList" class="members"><tr><th class="iconColumn">
+								 
+							</th><th>Name</th><th>Description</th></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_Class.htm">Class</a></td><td><div class="summary">
+            Gets or sets class associated with this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_Data.htm">Data</a></td><td><div class="summary">
+            Gets data storage facility that can store arbitrary data associated with this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_EventQueue.htm">EventQueue</a></td><td><div class="summary">
+            Gets event queue functions for this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_FileDescriptor.htm">FileDescriptor</a></td><td><div class="summary">
+            Gets file descriptor of this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_Flags.htm">Flags</a></td><td><div class="summary">
+            Gets <a href="T_BroccoliSharp_BroConnectionFlags.htm">BroConnectionFlags</a> associated with this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_HostName.htm">HostName</a></td><td><div class="summary">
+            Gets host name, formatted as host:port, associated with this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_InputBufferLength.htm">InputBufferLength</a></td><td><div class="summary">
+            Gets connection statistic for the number of bytes to process in input buffer.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_IsAlive.htm">IsAlive</a></td><td><div class="summary">
+            Gets flag that determines whether a connection is currently alive or has died.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_OutputBufferLength.htm">OutputBufferLength</a></td><td><div class="summary">
+            Gets connection statistic for the number of bytes to process in output buffer.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_PacketContext.htm">PacketContext</a></td><td><div class="summary">
+            Gets or sets current packet context, i.e., the libpcap DLT linklayer type, for this <span class="selflink">BroConnection</span>.
+            </div></td></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubproperty.gif" alt="Public property" title="Public property" /></td><td><a href="P_BroccoliSharp_BroConnection_PeerClass.htm">PeerClass</a></td><td><div class="summary">
+            Gets connection class indicated by peer.
+            </div></td></tr></table><a href="#PageHeader">Top</a></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID6RB')" onkeypress="SectionExpandCollapse_CheckKey('ID6RB', event)" tabindex="0"><img id="ID6RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Events</span></div><div id="ID6RBSection" class="collapsibleSection"><table id="memberList" class="members"><tr><th class="iconColumn">
+								 
+							</th><th>Name</th><th>Description</th></tr><tr data="public;declared;notNetfw;"><td><img src="../icons/pubevent.gif" alt="Public event" title="Public event" /></td><td><a href="E_BroccoliSharp_BroConnection_ReceivedEvent.htm">ReceivedEvent</a></td><td><div class="summary">
+            Occurs when a Broccoli event call-back has been received.
+            </div></td></tr></table><a href="#PageHeader">Top</a></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID7RB')" onkeypress="SectionExpandCollapse_CheckKey('ID7RB', event)" tabindex="0"><img id="ID7RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Remarks</span></div><div id="ID7RBSection" class="collapsibleSection"><p><h2>Managing Connections</h2>
+      You can use BroccoliSharp to establish a connection to a remote Bro, or to create a Broccoli-enabled
+      server application that other Bros will connect to (this means that in principle, you can also
+      use Broccoli purely as middleware and have multiple Broccoli applications communicate directly).
+    </p><p>
+      In order to establish a connection to a remote Bro, you need to create a <span class="selflink">BroConnection</span>.
+      You then use this connection object to request events, establish the connection with the remote Bro,
+      send events, etc. You can construct a client based <span class="selflink">BroConnection</span> with a host name or
+      IP Address string; the string should be in “hostname:port” or “x.x.x.x:port” format, respectively.
+      For more control, you can implement your own .NET <a href="http://msdn2.microsoft.com/en-us/library/1612451t" target="_blank">TcpClient</a> or <a href="http://msdn2.microsoft.com/en-us/library/attbb8f5" target="_blank">Socket</a>
+      objects and use that connection to construct a new <span class="selflink">BroConnection</span>.
+    </p><p>
+      To establish a Broccoli-enabled server connection, you first need to implement the usual .NET
+      <a href="http://msdn2.microsoft.com/en-us/library/zsyxy9k2" target="_blank">TcpListener</a> or <a href="http://msdn2.microsoft.com/en-us/library/attbb8f5" target="_blank">Socket</a> objects. Once established, you can create a new
+      <span class="selflink">BroConnection</span> with a constructor that accepts these objects. The rest of the
+      connection handling then proceeds as in the client scenario.
+    </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td>
+      BroccoliSharp has not yet been tested with SSL connections. However, this may work by simply using the .NET
+      <a href="http://msdn2.microsoft.com/en-us/library/d50tfa1c" target="_blank">SslStream</a> with an existing <a href="http://msdn2.microsoft.com/en-us/library/attbb8f5" target="_blank">Socket</a>. Note that the SSL implementation
+      in Mono is managed, so this would not be used in conjunction with the <span class="code">bro_ctx</span> structure used to initialize the
+      Broccoli API with OpenSSL. As a result, the <span class="code">bro_ctx</span> structure is not defined in the internal BroccoliSharp
+      BroApi. See <a href="http://www.mono-project.com/docs/faq/security/">Mono SSL</a> for more details on SSL setup.
+    </td></tr></table></div><p>
+      All <span class="selflink">BroConnection</span> constructors accept <a href="T_BroccoliSharp_BroConnectionFlags.htm">BroConnectionFlags</a> for fine-tuning
+      connection behavior. These flags are:
+      <div class="tableSection"><table><tr><th><a href="T_BroccoliSharp_BroConnectionFlags.htm">Connection Flag</a></th><th>Description:</th></tr><tr><td><a href="T_BroccoliSharp_BroConnectionFlags.htm">None</a></td><td>
+            No functionality. Use when no flags are desired.
+          </td></tr><tr><td><a href="T_BroccoliSharp_BroConnectionFlags.htm">Reconnect</a></td><td>
+            When using this option, Broccoli will attempt to reconnect to the peer transparently after
+            losing connectivity. Essentially whenever you try to read from or write to the peer and
+            its connection has broke down, a full reconnect including complete handshaking is attempted.
+            You can check whether the connection to a peer is alive at any time using
+            <a href="P_BroccoliSharp_BroConnection_IsAlive.htm">IsAlive</a>.
+          </td></tr><tr><td><a href="T_BroccoliSharp_BroConnectionFlags.htm">AlwaysQueue</a></td><td>
+            When using this option, Broccoli will queue any events you send for later transmission when
+            a connection is currently down. Without using this flag, any events you attempt to send while
+            a connection is down get dropped on the floor. Note that Broccoli maintains a maximum queue
+            size per connection so if you attempt to send lots of events while the connection is down,
+            the oldest events may start to get dropped nonetheless. Again, you can check whether the
+            connection is currently okay by using <a href="P_BroccoliSharp_BroConnection_IsAlive.htm">IsAlive</a>.
+          </td></tr><tr><td><a href="T_BroccoliSharp_BroConnectionFlags.htm">DontCache</a></td><td>
+            When using this option, Broccoli will ask the peer not to use caching on the objects it sends
+            to us. This is the default and the flag need not normally be used. It is kept to maintain
+            backward compatibility.
+          </td></tr><tr><td><a href="T_BroccoliSharp_BroConnectionFlags.htm">Yield</a></td><td>
+            When using this option, <a href="M_BroccoliSharp_BroConnection_ProcessInput.htm">ProcessInput<span id="LSTC55A4CCA_9"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_9?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> processes at most one event
+            at a time and then returns.
+          </td></tr><tr><td><a href="T_BroccoliSharp_BroConnectionFlags.htm">Cache</a></td><td>
+            When using this option, Broccoli will ask the peer to use caching on the objects it sends to
+            us. Caching is normally disabled.
+          </td></tr></table></div></p><p>
+      Just by creating a <span class="selflink">BroConnection</span> instance you do not also establish a connection right away, this
+      is done using <a href="M_BroccoliSharp_BroConnection_Connect.htm">Connect<span id="LSTC55A4CCA_10"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_10?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>. The main reason for this is to allow you to subscribe to
+      events (using <a href="M_BroccoliSharp_BroConnection_RegisterForEvent.htm">RegisterForEvent()</a>, see example below) before
+      establishing the connection. Upon successfully returning from <a href="M_BroccoliSharp_BroConnection_Connect.htm">Connect<span id="LSTC55A4CCA_11"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_11?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> you are
+      guaranteed to receive all instances of the event types you have requested, while later on during the connection
+      some time may elapse between the issuing of a request for events and the processing of that request at the remote
+      end. Connections are established via TCP. The port numbers Bro agents and Broccoli applications listen on can
+      vary from peer to peer.
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAA3BBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAA3BBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAA3BBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAA3BBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">BroConnection connection = <span class="highlight-keyword">new</span> BroConnection(<span class="highlight-literal">"bro.yourorg.com:1234"</span>))
+
+<span class="highlight-comment">// Register for events before connecting to Bro...</span>
+connection.RegisterForEvent(<span class="highlight-literal">"foo"</span>);
+
+<span class="highlight-comment">// Connect to remote Bro</span>
+connection.Connect();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAA3BBA");</script></p><p>
+      Finally, <a href="M_BroccoliSharp_BroConnection_Dispose.htm">Dispose<span id="LSTC55A4CCA_12"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_12?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> will terminate a connection and release all resources associated
+      with the connection. You can create as many connections as you like, to one or more peers.
+    </p><h2>Connections Classes</h2><p>
+      When you want to establish connections from multiple BroccoliSharp applications with different purposes, the peer
+      needs a means to understand what kind of application each connection belongs to. The real meaning of
+      “kind of application” here is “sets of event types to request”, because depending on the class of an application,
+      the peer will likely want to receive different types of events.
+    </p><p>
+      BroccoliSharp lets you set the class of a connection by assigning a class name to the connection object's
+      <a href="P_BroccoliSharp_BroConnection_Class.htm">Class</a> property. When using this feature, you need set that value before issuing a
+      <a href="M_BroccoliSharp_BroConnection_Connect.htm">Connect<span id="LSTC55A4CCA_13"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_13?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> since the class of a connection is determined at connection startup.
+    </p><p>
+      If your peer is a Bro node, you need to match the chosen connection class in the remote Bro's
+      <span class="code">Communication::nodes</span>  configuration. See <a href="https://www.bro.org/sphinx/components/broccoli/broccoli-manual.html#configuring-event-reception-in-bro-scripts">
+        “Configuring event reception in Bro scripts”
+      </a>, for how to do this. Finally, in order to obtain the class of a
+      connection as indicated by the remote side, check the value of the <a href="P_BroccoliSharp_BroConnection_PeerClass.htm">PeerClass</a> property:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAXBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAXBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAXBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAXBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">Console.WriteLine(<span class="highlight-literal">"Peer class = "</span> + connection.PeerClass);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAXBBA");</script></p><h2>Composing and Sending Events</h2><p>
+      In order to send an event to the remote Bro agent, you first create an empty <a href="T_BroccoliSharp_BroEvent.htm">BroEvent</a> with the name
+      of the event, then <a href="M_BroccoliSharp_BroEvent_AddParameter.htm">add parameters</a> to pass to the event
+      handler at the remote agent and then send off the event.
+    </p><p>
+      Let's assume we want to request a report of all connections a remote Bro currently keeps state for that match a
+      given destination port and host name and that have amassed more than a certain number of bytes. The idea is to send
+      an event to the remote Bro that contains the query, identifiable through a request ID, and have the remote Bro
+      answer us with <span class="code">remote_conns</span> events containing the information we asked for. The definition of our requesting
+      event could like the following in the Bro policy:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EA2UBBA_tab1" class="codeSnippetContainerTabSingle">Bro Script</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EA2UBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EA2UBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EA2UBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">event report_conns(req_id: <span class="highlight-keyword">int</span>, dest_host: string, dest_port: port, min_size: count);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EA2UBBA");</script>
+      First, create a new event:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAZUBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAZUBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAZUBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAZUBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">BroEvent ev = <span class="highlight-keyword">new</span> BroEvent(<span class="highlight-literal">"report_conns"</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAZUBBA");</script>
+      Now we need to add parameters to the event. The sequence and types must match the event handler declaration – check
+      the Bro policy to make sure they match. The function to use for adding parameter values is
+      <a href="M_BroccoliSharp_BroEvent_AddParameter.htm">BroEvent.AddParameter</a>. All values are eventually passed as
+      <a href="T_BroccoliSharp_BroValue.htm">BroValue</a> instances and are copied internally, so the source object remains unmodified. However, this is
+      often transparent to the developer since all <a href="T_BroccoliSharp_BroType.htm">BroType</a> implementations are implicitly castable to a
+      <a href="T_BroccoliSharp_BroValue.htm">BroValue</a>, i.e., you do not have to explicitly cast existing <a href="T_BroccoliSharp_BroType.htm">BroType</a> implementation
+      instances to a <a href="T_BroccoliSharp_BroValue.htm">BroValue</a>. As an example, you can pass a literal <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a> value to the
+      <a href="M_BroccoliSharp_BroEvent_AddParameter.htm">AddParameter(BroValue)</a> function and this will be implicitly converted to a <a href="T_BroccoliSharp_BroString.htm">BroString</a>
+      and then automatically cast to a <a href="T_BroccoliSharp_BroValue.htm">BroValue</a>. The <a href="T_BroccoliSharp_BroValue.htm">BroValue</a> class manages the type of the
+      value for you. See the <a href="T_BroccoliSharp_BroType.htm">BroType</a> enumeration for all the value types that BroccoliSharp supports along with
+      data structures associated with each item.
+    </p><p>
+      With this information, we can now compose a Bro <span class="code">request_connections</span> event:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EA5TBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EA5TBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EA5TBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EA5TBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">ev.AddParameter(<span class="highlight-keyword">new</span> BroValue(<span class="highlight-number">0</span>, BroType.Int));      <span class="highlight-comment">// req_id</span>
+ev.AddParameter(<span class="highlight-literal">"desthost.destdomain.com"</span>);         <span class="highlight-comment">// dest_host</span>
+ev.AddParameter(<span class="highlight-keyword">new</span> BroPort(<span class="highlight-number">80</span>, <span class="highlight-literal">"tcp"</span>);             <span class="highlight-comment">// dest_port</span>
+ev.AddParameter(<span class="highlight-keyword">new</span> BroValue(<span class="highlight-number">1000</span>, BroType.Count)); <span class="highlight-comment">// min_size</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EA5TBBA");</script><a href="T_BroccoliSharp_BroValue.htm">BroValue</a> also defines a constructor parameter called <span class="code">typeName</span> that will allow you to specify a
+      specialization of any of the <a href="T_BroccoliSharp_BroType.htm">BroType</a> values. This is generally not necessary except for one situation:
+      when using <a href="T_BroccoliSharp_BroType.htm">BroType.Enum</a>. You currently cannot define a Bro-level enum type in the
+      Broccoli API, and thus when sending an enum value, you have to specify the type of the enum along with the value.
+      For example, in order to add an instance of enum <span class="code">transport_type</span> defined in Bro's <span class="code">bro.init</span>, you would use:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EARTBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EARTBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EARTBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EARTBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">ev.AddParameter(<span class="highlight-keyword">new</span> BroValue(<span class="highlight-number">2</span>, BroType.Enum, <span class="highlight-literal">"transport_proto"</span>));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EARTBBA");</script>
+      to get the equivalent of “udp” on the remote side. In BroccoliSharp, however, most all methods dealing with a
+      <a href="T_BroccoliSharp_BroValue.htm">BroValue</a> have overloads that will take a value, the <a href="T_BroccoliSharp_BroType.htm">BroType</a> and an optional type name; you
+      will rarely ever have to explicitly create a new <a href="T_BroccoliSharp_BroValue.htm">BroValue</a> to specify a desired type name, for example:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAJTBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAJTBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAJTBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAJTBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">ev.AddParameter(<span class="highlight-number">2</span>, BroType.Enum, <span class="highlight-literal">"transport_proto"</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAJTBBA");</script>
+      The same method is used to specify type names when calling other BroccoliSharp functions, such as:
+      <a href="M_BroccoliSharp_BroEvent_ReplaceParameter.htm">BroEvent.ReplaceParameter()</a>,
+      <a href="M_BroccoliSharp_BroRecord_Add.htm">BroRecord.Add()</a>,
+      <a href="P_BroccoliSharp_BroRecord_Item.htm">BroRecord.this[int]</a> and
+      <a href="P_BroccoliSharp_BroRecord_Item_1.htm">BroRecord.this[string]</a>.
+    </p><p>
+      All that's left to do now is to send off the event. For this, use the Bro connection method
+      <a href="M_BroccoliSharp_BroConnection_SendEvent.htm">SendEvent(BroEvent)</a> providing the event instance as the parameter. This function returns
+      <span class="code">true</span> when the event could be sent right away or was queued for later delivery; othwerwise, <span class="code">false</span> is returned
+      on error. If the event gets queued, this does not indicate an error – it is likely that the connection was just not ready
+      to send the event at this point. Whenever you call <a href="M_BroccoliSharp_BroConnection_SendEvent.htm">SendEvent(BroEvent)</a>, Broccoli attempts to
+      send as much of an existing event queue as possible. Again, the event is copied internally to make it easier for you to
+      send the same event repeatedly:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAISBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAISBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAISBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAISBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">connection.SendEvent(ev);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAISBBA");</script><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td>
+        You don't have to create a <a href="T_BroccoliSharp_BroEvent.htm">BroEvent</a> object if you don't intend on reusing it. The <span class="selflink">BroConnection</span>
+        overloads for the <span class="code">SendEvent</span> method include one that takes an args style parameter array:
+        <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAHSBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAHSBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAHSBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAHSBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">connection.SendEvent(<span class="highlight-literal">"report_conns"</span>,
+    <span class="highlight-keyword">new</span> BroValue(<span class="highlight-number">0</span>, BroType.Int),
+    <span class="highlight-literal">"desthost.destdomain.com"</span>,
+    <span class="highlight-keyword">new</span> BroPort(<span class="highlight-number">80</span>, <span class="highlight-literal">"tcp"</span>),
+    <span class="highlight-keyword">new</span> BroValue(<span class="highlight-number">1000</span>, BroType.Count));</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAHSBBA");</script></td></tr></table></div>
+      Two other functions may be useful to you: <a href="P_BroccoliSharp_BroEventQueue_Length.htm">BroEventQueue.Length</a> tells you how many
+      events are currently queued, and <a href="M_BroccoliSharp_BroEventQueue_Flush.htm">BroEventQueue.Flush()</a> attempts to flush the current
+      event queue and returns the number of events that do remain in the queue after the flush. However, you do not normally
+      need to call <a href="M_BroccoliSharp_BroEventQueue_Flush.htm">BroEventQueue.Flush()</a>, queue flushing is attempted every time you send
+      an event.
+    </p><p>
+      The <a href="T_BroccoliSharp_BroEventQueue.htm">BroEventQueue</a> object is always referenced from the source <span class="selflink">BroConnection</span> using the
+      read-only <a href="P_BroccoliSharp_BroConnection_EventQueue.htm">BroConnection.EventQueue</a> property, for example:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAARBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAARBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAARBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAARBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">connection.EventQueue.Length;</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAARBBA");</script></p><h2>Receiving Events</h2><p>
+      Receiving events is a little more work because you need to:
+      <ol><li>Attach to the <a href="E_BroccoliSharp_BroConnection_ReceivedEvent.htm">ReceivedEvent</a> to handle requested events when they arrive.</li><li>Let the remote Bro agent know that you would like to receive those events.</li><li>Write code in your event handler for extracting and processing arriving events.</li></ol>
+      Each of these steps is explained in the following sections.
+    </p><h3><i>Implementing an Event Handler</i></h3><p>
+      The BroccoliSharp library internally handles creating a callback for the Broccoli API to use for any events to be
+      received. Under the covers, BroccoliSharp will use the Broccoli <i>Compact Argument Passing</i> mechanism and expose
+      the received events through normal .NET event handling mechanisms so as to simplify receiving Bro events for the
+      developer. As a result, all a developer needs to do is to create a handler for the
+      <a href="E_BroccoliSharp_BroConnection_ReceivedEvent.htm">BroConnection.ReceivedEvent</a> and then attach to this event. The function
+      signature for these events looks like <span class="code">delegate void ReceivedEventSignature(object sender, BroEventArgs e)</span>:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAANBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAANBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAANBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAANBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Establish event handler for Bro events</span>
+connection.BroEvent += connection_ReceivedEvent;
+
+<span class="highlight-comment">// Bro event handler - called when a new Bro event is received</span>
+<span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> connection_ReceivedEvent(<span class="highlight-keyword">object</span> sender, BroEventArgs e)
+{
+    <span class="highlight-keyword">if</span> (e.EventName == <span class="highlight-literal">"foo"</span>)
+    {
+        <span class="highlight-comment">// Code to handle foo event...</span>
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAANBBA");</script></p><h3><i>Register to Receive Event</i></h3><p>
+      In order to register to receive an event, use <a href="M_BroccoliSharp_BroConnection_RegisterForEvent.htm">BroConnection.RegisterForEvent()</a>
+      and provide it the name of the Bro event you want to receive. You can optionally also provide user definable data that will
+      be provided to the event handler any time an event with this name is received.
+      <div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td>
+        Any user data associated with the event is maintained in managed memory and does not cross into the Broccoli API.
+      </td></tr></table></div></p><p>
+      Continuing our example, we will now want to process the connection reports that contain the responses to our prior defined
+      <span class="code">remote_conns</span> event. Let's assume those reponses look as follows:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAHKBBA_tab1" class="codeSnippetContainerTabSingle">Bro Script</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAHKBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAHKBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAHKBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">event report_conn(req_id: <span class="highlight-keyword">int</span>, conn: connection);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAHKBBA");</script>
+      The reply events contain the request ID so we can associate requests with replies, and a connection record (defined in
+      <span class="code">bro.init</span> in Bro). Now just register to receive the event using the connection object's
+      <a href="M_BroccoliSharp_BroConnection_RegisterForEvent.htm">RegisterForEvent(String, Object)</a> function:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABKBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABKBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABKBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABKBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">connection.RegisterForEvent(<span class="highlight-literal">"report_conn"</span>);</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABKBBA");</script>
+      In this case we have no additional data to be passed into the callback, so we did not specify a value for the optional
+      userData argument. If you have multiple events you are interested in, register each one in this fashion.
+    </p><h3><i>Handling Received Events</i></h3><p>
+      Events are received in a <a href="T_BroccoliSharp_BroEventArgs.htm">BroEventArgs</a> object that is passed to the event handler that is attached to the
+      connection object's <a href="E_BroccoliSharp_BroConnection_ReceivedEvent.htm">ReceivedEvent</a>. All received events can be distinguished by keying off the
+      <a href="P_BroccoliSharp_BroEventArgs_EventName.htm">BroEventArgs.EventName</a> value, for example:
+      <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAAIBBA_tab1" class="codeSnippetContainerTabSingle">C#</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAAIBBA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAAIBBA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAAIBBA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">// Bro event handler</span>
+<span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> connection_ReceivedEvent(<span class="highlight-keyword">object</span> sender, BroEventArgs e)
+{
+    <span class="highlight-comment">// Raised when a new Bro event is received</span>
+    <span class="highlight-keyword">switch</span> (e.EventName)
+    {
+        <span class="highlight-keyword">case</span> <span class="highlight-literal">"foo"</span>:
+            <span class="highlight-comment">// Handle foo event</span>
+            Console.WriteLine(<span class="highlight-literal">"Received event \"foo\" with {0} parameters at {1}"</span>, e.Parameters.Length, e.EventTime);
+
+            <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; e.Parameters.Length; i++)
+                Console.WriteLine(<span class="highlight-literal">"    Event \"foo\" parameter[{0}] = {1}"</span>, i, e.Parameters[i]);
+
+            <span class="highlight-keyword">break</span>;
+        <span class="highlight-keyword">default</span>:
+            Console.WriteLine(<span class="highlight-literal">"Received unexpected event \"{0}\"."</span>, e.EventName);
+            <span class="highlight-keyword">break</span>;
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAAIBBA");</script></p><h2>Requesting Event Delivery</h2><p>
+      BroccoliSharp will now know what to do with the requested events when they arrive. What's left to do is to let the remote
+      Bro know that you would like to receive the events for which you registered. If you haven't yet called
+      <a href="M_BroccoliSharp_BroConnection_Connect.htm">Connect<span id="LSTC55A4CCA_14"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_14?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a>, then there is nothing to do, since calling the connect function will request the
+      registered events anyway. If you are already connected, you can still request events. To do so, simply call the
+      <a href="M_BroccoliSharp_BroConnection_RequestEvents.htm">BroConnection.RequestEvents()</a> method.
+    </p><p>
+      This mechanism also implies that no unrequested events will be delivered to us (and if that happened for whatever reason,
+      the event would simply be dropped on the floor).
+      <div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td>
+        Currently you cannot un-request events, nor can you request events based on predicates on the values of
+        the events' arguments.
+      </td></tr></table></div></p><h2>Reading Events from the Connection Handle</h2><p>
+      At this point the remote Bro will start sending you the requested events once they are triggered - however, this does
+      not automatically raise the connection's <a href="E_BroccoliSharp_BroConnection_ReceivedEvent.htm">ReceivedEvent</a>. What is left to do is to trigger
+      processing of the queued events in the connection which will start dispatching them to the event handlers.
+    </p><p>
+      To start raising the events and firing event handlers with received event data, you can choose among two approaches: explicit
+      polling or using events on the source <a href="http://msdn2.microsoft.com/en-us/library/attbb8f5" target="_blank">Socket</a> to know when data has arrived for processing. Explicit polling
+      is particularly straightforward: all you need to do is call the
+      <a href="M_BroccoliSharp_BroConnection_ProcessInput.htm">BroConnection.ProcessInput()</a> function from a timer or loop, which will then go
+      off and check if any events have arrived and if so, dispatch them accordingly. Note that the
+      <a href="M_BroccoliSharp_BroConnection_ProcessInput.htm">ProcessInput<span id="LSTC55A4CCA_15"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_15?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> function does not block – if no events have arrived, then the call will return
+      immediately. For more fine-grained control over your I/O handling, you can use a source <a href="http://msdn2.microsoft.com/en-us/library/attbb8f5" target="_blank">Socket</a> to determine
+      when data has arrived and then invoke <a href="M_BroccoliSharp_BroConnection_ProcessInput.htm">ProcessInput<span id="LSTC55A4CCA_16"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTC55A4CCA_16?cs=()|vb=|cpp=()|nu=()|fs=()");</script></a> - one way to do this would be to use
+      <a href="http://msdn.microsoft.com/en-us/library/bbx2eya8(v=vs.110).aspx">asynchronous sockets</a>.
+    </p><p>
+      As a side note, if you don't process arriving events frequently enough, then TCP's flow control will start to slow
+      down the sender until eventually events will queue up and be dropped at the sending end.
+    </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td>
+      When using your own <a href="http://msdn2.microsoft.com/en-us/library/attbb8f5" target="_blank">Socket</a>, it is recommended to use the <span class="selflink">BroConnection</span> constructors that
+      accept sockets. It is also possible to get a handle to the socket that the Broccoli API will create when using the
+      <a href="M_BroccoliSharp_BroConnection__ctor_4.htm">Bro constructor</a> that accepts a host-name. You can do this by
+      accessing the <a href="P_BroccoliSharp_BroConnection_FileDescriptor.htm">BroConnection.FileDescriptor</a> property, but using the descriptor
+      from within a .NET application is outside the scope of this documentation.
+    </td></tr></table></div></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID8RB')" onkeypress="SectionExpandCollapse_CheckKey('ID8RB', event)" tabindex="0"><img id="ID8RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Examples</span></div><div id="ID8RBSection" class="collapsibleSection">
+    This example shows how to create and use a <span class="selflink">BroConnection</span>:
+    <div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EEAABA_tab1" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID1EEAABA','cs','1','5');return false;">C#</a></div><div id="ID1EEAABA_tab2" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID1EEAABA','vb','2','5');return false;">VB</a></div><div id="ID1EEAABA_tab3" class="codeSnippetContainerTabPhantom"><a href="#" onclick="javascript:ChangeTab('ID1EEAABA','fs','3','5');return false;">F#</a></div><div id="ID1EEAABA_tab4" class="codeSnippetContainerTab"><a href="#" onclick="javascript:ChangeTab('ID1EEAABA','jsh','4','5');return false;">J#</a></div><div id="ID1EEAABA_tab5" class="codeSnippetContainerTabPhantom"><a href="#" onclick="javascript:ChangeTab('ID1EEAABA','js','5','5');return false;">JavaScript</a></div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EEAABA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EEAABA');return false;" title="Copy">Copy</a></div></div><div id="ID1EEAABA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.Net.Sockets;
+<span class="highlight-keyword">using</span> BroccoliSharp;
+
+<span class="highlight-keyword">namespace</span> Example
+{
+    <span class="highlight-keyword">class</span> Program
+    {
+        <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> Main(<span class="highlight-keyword">string</span>[] args)
+        {
+            <span class="highlight-keyword">using</span> (BroConnection connection = <span class="highlight-keyword">new</span> BroConnection(<span class="highlight-literal">"bro.yourorg.com:1234"</span>))
+            {
+                <span class="highlight-comment">// Establish event handler for received Bro events</span>
+                connection.ReceivedEvent += connection_ReceivedEvent;
+
+                <span class="highlight-comment">// Register for event "foo"</span>
+                connection.RegisterForEvent(<span class="highlight-literal">"foo"</span>);
+
+                <span class="highlight-comment">// Connect to remote Bro</span>
+                connection.Connect();
+
+                Console.WriteLine(<span class="highlight-literal">"Peer class = "</span> + connection.PeerClass);
+
+                <span class="highlight-comment">// Create a new event</span>
+                BroEvent bar = <span class="highlight-keyword">new</span> BroEvent(<span class="highlight-literal">"bar"</span>);
+
+                bar.AddParameter(<span class="highlight-literal">"Text parameter"</span>);
+                bar.AddParameter(<span class="highlight-keyword">true</span>);
+                bar.AddParameter(<span class="highlight-literal">"192.168.1.1"</span>, BroType.IpAddr);
+                bar.AddParameter(<span class="highlight-keyword">new</span> BroPort(<span class="highlight-number">80</span>, ProtocolType.Tcp));
+                bar.AddParameter(<span class="highlight-number">2</span>, BroType.Enum, <span class="highlight-literal">"transport_proto"</span>);
+                bar.AddParameter(BroTime.Now);
+
+                <span class="highlight-comment">// Send the event</span>
+                <span class="highlight-keyword">bool</span> result = connection.SendEvent(bar);
+                Console.WriteLine(<span class="highlight-literal">"Event \"bar\" {0}"</span>, result ? <span class="highlight-literal">"was sent or queued for later delivery"</span> : <span class="highlight-literal">"failed to send or queue"</span>);
+
+                <span class="highlight-comment">// Wait for events to be received</span>
+                Console.ReadLine();
+
+                <span class="highlight-comment">// Unregister from event "foo"</span>
+                connection.UnregisterForEvent(<span class="highlight-literal">"foo"</span>);
+            }
+        }
+
+        <span class="highlight-comment">// Bro event handler</span>
+        <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> connection_ReceivedEvent(<span class="highlight-keyword">object</span> sender, BroEventArgs e)
+        {
+            <span class="highlight-comment">// Raised when a new Bro event is received</span>
+            <span class="highlight-keyword">switch</span> (e.EventName)
+            {
+                <span class="highlight-keyword">case</span> <span class="highlight-literal">"foo"</span>:
+                    <span class="highlight-comment">// Handle foo event</span>
+                    Console.WriteLine(<span class="highlight-literal">"Received event \"foo\" with {0} parameters at {1}"</span>, e.Parameters.Length, e.EventTime);
+
+                    <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; e.Parameters.Length; i++)
+                        Console.WriteLine(<span class="highlight-literal">"    Event \"foo\" parameter[{0}] = {1}"</span>, i, e.Parameters[i]);
+
+                    <span class="highlight-keyword">break</span>;
+                <span class="highlight-keyword">default</span>:
+                    Console.WriteLine(<span class="highlight-literal">"Received unexpected event \"{0}\"."</span>, e.EventName);
+                    <span class="highlight-keyword">break</span>;
+            }
+        }
+    }
+}</pre></div><div id="ID1EEAABA_code_Div2" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="highlight-keyword">Option</span> Strict <span class="highlight-keyword">On</span>
+<span class="highlight-keyword">Imports</span> BroccoliSharp
+<span class="highlight-keyword">Imports</span> System.Net.Sockets
+
+<span class="highlight-keyword">Module</span> Program
+
+    <span class="highlight-keyword">Sub</span> Main()
+
+        <span class="highlight-keyword">Using</span> connection <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> BroConnection(<span class="highlight-literal">"bro.yourorg.com:1234"</span>)
+            <span class="highlight-comment">' Establish event handler for received Bro events</span>
+            <span class="highlight-keyword">AddHandler</span> connection.ReceivedEvent, <span class="highlight-keyword">AddressOf</span> connection_ReceivedEvent
+
+            <span class="highlight-comment">' Register for event "foo"</span>
+            connection.RegisterForEvent(<span class="highlight-literal">"foo"</span>)
+
+            <span class="highlight-comment">' Connect to remote Bro</span>
+            connection.Connect()
+
+            Console.WriteLine(<span class="highlight-literal">"Peer class = "</span> + connection.PeerClass)
+
+            <span class="highlight-comment">' Create a new event</span>
+            <span class="highlight-keyword">Dim</span> bar <span class="highlight-keyword">As</span> <span class="highlight-keyword">New</span> BroEvent(<span class="highlight-literal">"bar"</span>)
+
+            bar.AddParameter(<span class="highlight-literal">"Text parameter"</span>)
+            bar.AddParameter(<span class="highlight-keyword">True</span>)
+            bar.AddParameter(<span class="highlight-literal">"192.168.1.1"</span>, BroType.IpAddr)
+            bar.AddParameter(<span class="highlight-keyword">New</span> BroPort(<span class="highlight-number">80</span>, ProtocolType.Tcp))
+            bar.AddParameter(<span class="highlight-number">2</span>, BroType.<span class="highlight-keyword">Enum</span>, <span class="highlight-literal">"transport_proto"</span>)
+            bar.AddParameter(BroTime.Now)
+
+            <span class="highlight-comment">' Send the event</span>
+            <span class="highlight-keyword">Dim</span> result <span class="highlight-keyword">As</span> <span class="highlight-keyword">Boolean</span> = connection.SendEvent(bar)
+            Console.WriteLine(<span class="highlight-literal">"Event "</span><span class="highlight-literal">"bar"</span><span class="highlight-literal">" {0}"</span>, IIf(result, <span class="highlight-literal">"was sent or queued for later delivery"</span>, <span class="highlight-literal">"failed to send or queue"</span>))
+
+            <span class="highlight-comment">' Wait for events to be received</span>
+            Console.ReadLine()
+
+            <span class="highlight-comment">' Unregister from event "foo"</span>
+            connection.UnregisterForEvent(<span class="highlight-literal">"foo"</span>)
+        <span class="highlight-keyword">End</span> <span class="highlight-keyword">Using</span>
+
+    <span class="highlight-keyword">End</span> <span class="highlight-keyword">Sub</span>
+
+    <span class="highlight-comment">' Bro event handler</span>
+    <span class="highlight-keyword">Sub</span> connection_ReceivedEvent(sender <span class="highlight-keyword">As</span> <span class="highlight-keyword">Object</span>, e <span class="highlight-keyword">As</span> BroEventArgs)
+
+        <span class="highlight-comment">' Raised when a new Bro event is received</span>
+        <span class="highlight-keyword">Select</span> <span class="highlight-keyword">Case</span> e.EventName
+            <span class="highlight-keyword">Case</span> <span class="highlight-literal">"foo"</span>
+                <span class="highlight-comment">' Handle foo event</span>
+                Console.WriteLine(<span class="highlight-literal">"Received event "</span><span class="highlight-literal">"foo"</span><span class="highlight-literal">" with {0} parameters at {1}"</span>, e.Parameters.Length, e.EventTime)
+
+                <span class="highlight-keyword">For</span> i <span class="highlight-keyword">As</span> <span class="highlight-keyword">Integer</span> = <span class="highlight-number">0</span> <span class="highlight-keyword">To</span> e.Parameters.Length - <span class="highlight-number">1</span>
+                    Console.WriteLine(<span class="highlight-literal">"    Event "</span><span class="highlight-literal">"foo"</span><span class="highlight-literal">" parameter[{0}] = {1}"</span>, i, e.Parameters(i))
+                <span class="highlight-keyword">Next</span>
+            <span class="highlight-keyword">Case</span> <span class="highlight-keyword">Else</span>
+                Console.WriteLine(<span class="highlight-literal">"Received unexpected event "</span><span class="highlight-literal">"{0}"</span><span class="highlight-literal">"."</span>, e.EventName)
+        <span class="highlight-keyword">End</span> <span class="highlight-keyword">Select</span>
+
+    <span class="highlight-keyword">End</span> <span class="highlight-keyword">Sub</span>
+
+<span class="highlight-keyword">End</span> <span class="highlight-keyword">Module</span></pre></div><div id="ID1EEAABA_code_Div3" class="codeSnippetContainerCode" style="display: none"><p>No code example is currently available or this language may not be supported.</p></div><div id="ID1EEAABA_code_Div4" class="codeSnippetContainerCode" style="display: none"><pre xml:space="preserve"><span class="highlight-keyword">package</span> Example;
+
+<span class="highlight-comment">// Imports based on IKVM.NET stubs: http://sourceforge.net/p/ikvm/wiki/Ikvmstub/</span>
+<span class="highlight-keyword">import</span> cli.BroccoliSharp.*;
+<span class="highlight-keyword">import</span> cli.System.Net.Sockets.*;
+
+<span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Program
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> main(String[] args)
+    {
+        BroConnection connection = <span class="highlight-keyword">new</span> BroConnection(<span class="highlight-literal">"bro.yourorg.com:1234"</span>);
+
+        <span class="highlight-comment">// Establish event handler for received Bro events</span>
+        connection.add_ReceivedEvent(<span class="highlight-keyword">new</span> EventHandler&lt;BroEventArgs&gt;(connection_ReceivedEvent));
+
+        <span class="highlight-comment">// Register for event "foo"</span>
+        connection.RegisterForEvent(<span class="highlight-literal">"foo"</span>);
+
+        <span class="highlight-comment">// Connect to remote Bro</span>
+        connection.Connect();
+
+        System.out.println(<span class="highlight-literal">"Peer class = "</span> + connection.get_PeerClass());
+
+        <span class="highlight-comment">// Create a new event</span>
+        BroEvent bar = <span class="highlight-keyword">new</span> BroEvent(<span class="highlight-literal">"bar"</span>);
+
+        bar.AddParameter(<span class="highlight-literal">"Text parameter"</span>);
+        bar.AddParameter(<span class="highlight-keyword">true</span>);
+        bar.AddParameter(<span class="highlight-literal">"192.168.1.1"</span>, BroType.IpAddr);
+        bar.AddParameter(<span class="highlight-keyword">new</span> BroPort(<span class="highlight-number">80</span>, ProtocolType.Tcp));
+        bar.AddParameter(<span class="highlight-number">2</span>, BroType.Enum, <span class="highlight-literal">"transport_proto"</span>);
+        bar.AddParameter(BroTime.get_Now());
+
+        <span class="highlight-comment">// Send the event</span>
+        bool result = connection.SendEvent(bar);
+        System.out.format(<span class="highlight-literal">"Event \"bar\" %s%n"</span>, result ? <span class="highlight-literal">"was sent or queued for later delivery"</span> : <span class="highlight-literal">"failed to send or queue"</span>);
+
+        <span class="highlight-comment">// Wait for events to be received</span>
+        System.in.read();
+
+        <span class="highlight-comment">// Unregister from event "foo"</span>
+        connection.UnregisterForEvent(<span class="highlight-literal">"foo"</span>);
+        connection.Dispose();
+    }
+
+    <span class="highlight-comment">// Bro event handler</span>
+    <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> connection_ReceivedEvent(object sender, BroEventArgs e)
+    {
+        <span class="highlight-comment">// Raised when a new Bro event is received</span>
+        String eventName = e.get_EventName();
+        IBroValue[] parameters = e.get_Parameters();
+
+        <span class="highlight-keyword">switch</span> (eventName)
+        {
+            <span class="highlight-keyword">case</span> <span class="highlight-literal">"foo"</span>:
+                <span class="highlight-comment">// Handle foo event</span>
+                System.out.format(<span class="highlight-literal">"Received event \"foo\" with %d parameters at %s%n"</span>, parameters.length, e.get_EventTime().ToString());
+
+                <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; parameters.length; i++)
+                    System.out.format(<span class="highlight-literal">"    Event \"foo\" parameter[%d] = %s%n"</span>, i, parameters[i].toString());
+
+                <span class="highlight-keyword">break</span>;
+            <span class="highlight-keyword">default</span>:
+                System.out.format(<span class="highlight-literal">"Received unexpected event \"%s\".%n"</span>, eventName);
+                <span class="highlight-keyword">break</span>;
+        }
+    }
+}</pre></div><div id="ID1EEAABA_code_Div5" class="codeSnippetContainerCode" style="display: none"><p>No code example is currently available or this language may not be supported.</p></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EEAABA");</script></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID9RB')" onkeypress="SectionExpandCollapse_CheckKey('ID9RB', event)" tabindex="0"><img id="ID9RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID9RBSection" class="collapsibleSection"><h4 class="subHeading">Reference</h4><div class="seeAlsoStyle"><a href="N_BroccoliSharp.htm">BroccoliSharp Namespace</a></div></div></div>
+    </div>
+    <div id="pageFooter" class="pageFooter">See <a href="https://www.bro.org/sphinx/components/broccoli/broccoli-manual.html">Bro Client Communications Library</a> manual for corresponding C API usage.<p><a href="https://www.gridprotectionalliance.org/" target="_blank">Copyright © 2014, Grid Protection Alliance.  All Rights Reserved.</a></p><div class="feedbackLink">Send comments on this topic to
+        <a id="HT_MailLink" href="mailto:rcarroll%40gridprotectionalliance.org?Subject=BroccoliSharp Documentation">GPA Development</a></div><script type="text/javascript">
+        var HT_mailLink = document.getElementById("HT_MailLink");
+        var HT_mailLinkText = HT_mailLink.innerHTML;
+        HT_mailLink.href += ": " + document.title + "\u0026body=" + encodeURIComponent("Your feedback is used to improve the documentation and the product. Your e-mail address will not be used for any other purpose and is disposed of after the issue you report is resolved. While working to resolve the issue that you report, you may be contacted via e-mail to get further details or clarification on the feedback you sent. After the issue you report has been addressed, you may receive an e-mail to let you know that your feedback has been addressed.");
+        HT_mailLink.innerHTML = HT_mailLinkText;
+        </script> </div>
+  </body>
+</html>
