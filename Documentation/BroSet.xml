@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<docs>
+<doc>
   <remarks>
     <para>
       <h2>Handling Sets</h2>
@@ -19,4 +19,4 @@
     with write accesses, set should be locked during the entire enumeration. To allow the set
     to be accessed by multiple threads for reading and writing, synchronization will be required.
   </threadsafety>
-</docs>
+</doc>

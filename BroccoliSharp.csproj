@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\Build\Output\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS, BRO_PCAP_SUPPORT</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS BRO_PCAP_SUPPORT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -31,7 +31,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Build\Output\Release\</OutputPath>
-    <DefineConstants>TRACE;CODE_ANALYSIS, BRO_PCAP_SUPPORT</DefineConstants>
+    <DefineConstants>TRACE;CODE_ANALYSIS BRO_PCAP_SUPPORT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -103,7 +103,7 @@
     <Content Include="Documentation\BroVector.xml" />
     <None Include="README" />
     <None Include="LICENSE" />
-    <Content Include="Readme.html" />
+    <Content Include="Documentation\ProjectSummary.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

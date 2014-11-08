@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<docs>
+<doc>
   <remarks>
     <para>
       <h2>Managing Connections</h2>
       You can use BroccoliSharp to establish a connection to a remote Bro, or to create a Broccoli-enabled
       server application that other Bros will connect to (this means that in principle, you can also
-      use Broccoli purely as middleware and have multiple Broccoli applications communicate directly).
+      use Broccoli purely as middle-ware and have multiple Broccoli applications communicate directly).
     </para>
     <para>
       In order to establish a connection to a remote Bro, you need to create a <see cref="BroConnection"/>.
       You then use this connection object to request events, establish the connection with the remote Bro,
       send events, etc. You can construct a client based <see cref="BroConnection"/> with a host name or
-      IP Address string; the string should be in “hostname:port” or “x.x.x.x:port” format, respectively.
+      IP Address string; the string should be in "hostname:port" or "x.x.x.x:port" format, respectively.
       For more control, you can implement your own .NET <see cref="TcpClient"/> or <see cref="Socket"/>
       objects and use that connection to construct a new <see cref="BroConnection"/>.
     </para>
@@ -128,7 +128,7 @@
     <para>
       When you want to establish connections from multiple BroccoliSharp applications with different purposes, the peer
       needs a means to understand what kind of application each connection belongs to. The real meaning of
-      “kind of application” here is “sets of event types to request”, because depending on the class of an application,
+      "kind of application" here is "sets of event types to request", because depending on the class of an application,
       the peer will likely want to receive different types of events.
     </para>
     <para>
@@ -140,8 +140,7 @@
       If your peer is a Bro node, you need to match the chosen connection class in the remote Bro's
       <c>Communication::nodes</c>  configuration. See <a
       href="https://www.bro.org/sphinx/components/broccoli/broccoli-manual.html#configuring-event-reception-in-bro-scripts">
-        “Configuring event reception in Bro scripts”
-      </a>, for how to do this. Finally, in order to obtain the class of a
+      "Configuring event reception in Bro scripts"</a>, for how to do this. Finally, in order to obtain the class of a
       connection as indicated by the remote side, check the value of the <see cref="BroConnection.PeerClass"/> property:
       <code language="C#">
           Console.WriteLine("Peer class = " + connection.PeerClass);
@@ -194,7 +193,7 @@
       <code language="C#">
           ev.AddParameter(new BroValue(2, BroType.Enum, "transport_proto"));
       </code>
-      to get the equivalent of “udp” on the remote side. In BroccoliSharp, however, most all methods dealing with a
+      to get the equivalent of "udp" on the remote side. In BroccoliSharp, however, most all methods dealing with a
       <see cref="BroValue"/> have overloads that will take a value, the <see cref="BroType"/> and an optional type name; you
       will rarely ever have to explicitly create a new <see cref="BroValue"/> to specify a desired type name, for example:
       <code language="C#">
@@ -209,7 +208,7 @@
     <para>
       All that's left to do now is to send off the event. For this, use the Bro connection method
       <see cref="BroConnection.SendEvent(BroEvent)"/> providing the event instance as the parameter. This function returns
-      <c>true</c> when the event could be sent right away or was queued for later delivery; othwerwise, <c>false</c> is returned
+      <c>true</c> when the event could be sent right away or was queued for later delivery; otherwise, <c>false</c> is returned
       on error. If the event gets queued, this does not indicate an error – it is likely that the connection was just not ready
       to send the event at this point. Whenever you call <see cref="BroConnection.SendEvent(BroEvent)"/>, Broccoli attempts to
       send as much of an existing event queue as possible. Again, the event is copied internally to make it easier for you to
@@ -263,7 +262,7 @@
       signature for these events looks like <c>delegate void ReceivedEventSignature(object sender, BroEventArgs e)</c>:
       <code language="C#">
           // Establish event handler for Bro events
-          connection.BroEvent += connection_ReceivedEvent;
+          connection.ReceivedEvent += connection_ReceivedEvent;
 
           // Bro event handler - called when a new Bro event is received
           static void connection_ReceivedEvent(object sender, BroEventArgs e)
@@ -288,7 +287,7 @@
     </para>
     <para>
       Continuing our example, we will now want to process the connection reports that contain the responses to our prior defined
-      <c>remote_conns</c> event. Let's assume those reponses look as follows:
+      <c>remote_conns</c> event. Let's assume those responses look as follows:
       <code language="jscript" title="Bro Script">
           event report_conn(req_id: int, conn: connection);
       </code>
@@ -377,8 +376,8 @@
   </remarks>
   <example>
     This example shows how to create and use a <see cref="BroConnection"/>:
-    <code source="Examples\CS\Example1\Program.cs" language="C#" />
-    <code source="Examples\VB\Example1\Program.vb" language="VB" />
-    <code source="Examples\Java\Example1\Program.java" language="JSharp" />
+    <code source="Documentation\Examples\CS\Example1\Program.cs" language="C#" />
+    <code source="Documentation\Examples\VB\Example1\Program.vb" language="VB" />
+    <code source="Documentation\Examples\Java\Example1\Program.java" language="JSharp" />
   </example>
-</docs>
+</doc>

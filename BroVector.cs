@@ -39,7 +39,7 @@ namespace BroccoliSharp
     /// <summary>
     /// Represents a Bro vector implemented as an <see cref="IList{T}">IList&lt;BroValue&gt;</see>.
     /// </summary>
-    /// <include file='Documentation\BroVector.xml' path='/docs/*'/>
+    /// <include file='Documentation\BroVector.xml' path='/doc/*'/>
     public class BroVector : IList<BroValue>, IDisposable
     {
         #region [ Members ]
@@ -67,8 +67,8 @@ namespace BroccoliSharp
         /// <summary>
         /// Creates a new <see cref="BroVector"/> from an existing collection of <see cref="BroValue"/> items.
         /// </summary>
-        /// <exception cref="ArgumentNullException"><paramref name="values"/> is <c>null</c>.</exception>
         /// <param name="values">Collection of <see cref="BroValue"/> items.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="values"/> is <c>null</c>.</exception>
         /// <exception cref="OutOfMemoryException">Failed to create Bro vector.</exception>
         public BroVector(IEnumerable<BroValue> values)
             : this()
@@ -365,10 +365,11 @@ namespace BroccoliSharp
         /// <param name="value">The value to insert into this <see cref="BroVector"/>.</param>
         /// <param name="type">The <see cref="BroType"/> of the <paramref name="value"/>.</param>
         /// <param name="typeName">Optional name of specialized type of <paramref name="value"/>.</param>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroVector"/>.</exception>
         /// <remarks>
         /// This is not a native Bro vector operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroVector"/> is disposed.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroVector"/>.</exception>
         public void Insert(int index, object value, BroType type, string typeName = null)
         {
             Insert(index, new BroValue(value, type, typeName));
@@ -379,11 +380,11 @@ namespace BroccoliSharp
         /// </summary>
         /// <param name="index">The zero-based index at which <paramref name="value"/> should be inserted.</param>
         /// <param name="value">The <see cref="BroValue"/> to insert into this <see cref="BroVector"/>.</param>
-        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroVector"/> is disposed.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroVector"/>.</exception>
         /// <remarks>
         /// This is not a native Bro vector operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroVector"/> is disposed.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroVector"/>.</exception>
         public void Insert(int index, BroValue value)
         {
             ExecuteCloneOperation(list => list.Insert(index, value));
@@ -393,10 +394,10 @@ namespace BroccoliSharp
         /// Removes the <see cref="BroValue"/> item at the specified <paramref name="index"/>.
         /// </summary>
         /// <param name="index">The zero-based index of the item to remove.</param>
-        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroVector"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro vector operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroVector"/> is disposed.</exception>
         public void RemoveAt(int index)
         {
             ExecuteCloneOperation(list => list.RemoveAt(index));
@@ -413,6 +414,7 @@ namespace BroccoliSharp
         /// <remarks>
         /// This is not a native Bro vector operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroVector"/> is disposed.</exception>
         public bool Remove(BroValue value)
         {
             int index = IndexOf(value);

@@ -39,7 +39,7 @@ namespace BroccoliSharp
     /// <summary>
     /// Represents a Bro table implemented as an <see cref="IDictionary{TKey, TValue}">IDictionary&lt;BroValue, BroValue&gt;</see>.
     /// </summary>
-    /// <include file='Documentation\BroTable.xml' path='/docs/*'/>
+    /// <include file='Documentation\BroTable.xml' path='/doc/*'/>
     public class BroTable : IDictionary<BroValue, BroValue>, IDisposable
     {
         #region [ Members ]
@@ -68,12 +68,12 @@ namespace BroccoliSharp
         /// Creates a new <see cref="BroTable"/> from an existing dictionary of <see cref="BroValue"/> items.
         /// </summary>
         /// <param name="values">Dictionary of <see cref="BroValue"/> items.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="values"/> is <c>null</c>.</exception>
-        /// <exception cref="OutOfMemoryException">Failed to create Bro table.</exception>
         /// <remarks>
         /// First item in <paramref name="values"/> will determine key and value type for the table.
         /// If other items do not have the same key and value type as the first item, they will not be added.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="values"/> is <c>null</c>.</exception>
+        /// <exception cref="OutOfMemoryException">Failed to create Bro table.</exception>
         public BroTable(IDictionary<BroValue, BroValue> values)
             : this()
         {
@@ -330,12 +330,12 @@ namespace BroccoliSharp
         /// <param name="keyTypeName">Optional name of specialized type of <paramref name="key"/>.</param>
         /// <param name="valueTypeName">Optional name of specialized type of <paramref name="value"/>.</param>
         /// <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
-        /// <exception cref="ObjectDisposedException">Cannot add key/value pair, <see cref="BroTable"/> is disposed.</exception>
         /// <remarks>
         /// First item added to the table will determine the key and value type for all subsequent key/value pairs.
         /// Any key/value pairs attempted to be added that do not have the same types as the first key/value pair
         /// will fail to insert into the table.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot add key/value pair, <see cref="BroTable"/> is disposed.</exception>
         public bool Add(object key, BroType keyType, object value, BroType valueType, string keyTypeName = null, string valueTypeName = null)
         {
             return Add(new BroValue(key, keyType, keyTypeName), new BroValue(value, valueType, valueTypeName));
@@ -347,14 +347,14 @@ namespace BroccoliSharp
         /// <param name="key">The <see cref="BroValue"/> to use as the key of the element to add.</param>
         /// <param name="value">The <see cref="BroValue"/> to use as the value of the element to add.</param>
         /// <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="key"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot add key/value pair, <see cref="BroTable"/> is disposed.</exception>
         /// <remarks>
         /// First item added to the table will determine the key and value type for all subsequent key/value pairs.
         /// Any key/value pairs attempted to be added that do not have the same types as the first key/value pair
         /// will fail to insert into the table.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="key"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot add key/value pair, <see cref="BroTable"/> is disposed.</exception>
         public bool Add(BroValue key, BroValue value)
         {
             if ((object)key == null)
@@ -379,14 +379,14 @@ namespace BroccoliSharp
         /// Adds a key/value <paramref name="pair"/> to this <see cref="BroTable"/>.
         /// </summary>
         /// <param name="pair">The key/value pair to add to this <see cref="BroTable"/>.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="pair"/>.Key is <c>null</c>.</exception>
-        /// <exception cref="ArgumentNullException"><paramref name="pair"/>.Value is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot add key/value pair, <see cref="BroTable"/> is disposed.</exception>
         /// <remarks>
         /// First item added to the table will determine the key and value type for all subsequent key/value pairs.
         /// Any key/value pairs attempted to be added that do not have the same types as the first key/value pair
         /// will fail to insert into the table.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="pair"/>.Key is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="pair"/>.Value is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot add key/value pair, <see cref="BroTable"/> is disposed.</exception>
         public void Add(KeyValuePair<BroValue, BroValue> pair)
         {
             Add(pair.Key, pair.Value);
@@ -425,7 +425,6 @@ namespace BroccoliSharp
         /// <returns>
         /// <c>true</c> if key/value <paramref name="pair"/> is found in this <see cref="BroTable"/>; otherwise, <c>false</c>.
         /// </returns>
-        /// <exception cref="ObjectDisposedException">Cannot execute dictionary operation, <see cref="BroTable"/> is disposed.</exception>
         /// <remarks>
         /// <para>
         /// This function looks for an exact match of both the key and the value using a linear search. If you simply
@@ -435,6 +434,7 @@ namespace BroccoliSharp
         /// This method performs a linear search - an O(n) operation where n is <see cref="Count"/>.
         /// </para>
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute dictionary operation, <see cref="BroTable"/> is disposed.</exception>
         public bool Contains(KeyValuePair<BroValue, BroValue> pair)
         {
             if ((object)pair == null)
@@ -549,16 +549,16 @@ namespace BroccoliSharp
         /// <summary>
         /// Removes the element with the specified <paramref name="key"/> from this <see cref="BroTable"/>.
         /// </summary>
+        /// <param name="key">The key of the element to remove.</param>
         /// <returns>
         /// <c>true</c> if the element is successfully removed; otherwise, <c>false</c>.
         /// This method also returns <c>false</c> if <paramref name="key"/> was not found in <see cref="BroTable"/>.
         /// </returns>
-        /// <param name="key">The key of the element to remove.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="key"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute dictionary operation, <see cref="BroTable"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro table operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="key"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute dictionary operation, <see cref="BroTable"/> is disposed.</exception>
         public bool Remove(BroValue key)
         {
             return ExecuteCloneOperation(dictionary => dictionary.Remove(key));

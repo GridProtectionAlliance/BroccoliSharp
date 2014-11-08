@@ -39,7 +39,7 @@ namespace BroccoliSharp
     /// <summary>
     /// Represents a Bro set implemented as an <see cref="ISet{T}">ISet&lt;BroValue&gt;</see>.
     /// </summary>
-    /// <include file='Documentation\BroSet.xml' path='/docs/*'/>
+    /// <include file='Documentation\BroSet.xml' path='/doc/*'/>
     public class BroSet : ISet<BroValue>, IDisposable
     {
         #region [ Members ]
@@ -68,12 +68,12 @@ namespace BroccoliSharp
         /// Creates a new <see cref="BroSet"/> from an existing set of <see cref="BroValue"/> items.
         /// </summary>
         /// <param name="values">Collection of <see cref="BroValue"/> items.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="values"/> is <c>null</c>.</exception>
-        /// <exception cref="OutOfMemoryException">Failed to create Bro set.</exception>
         /// <remarks>
         /// First item in <paramref name="values"/> will determine type for the set keys.
         /// If other items do not have the same type as the first item, they will not be added.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="values"/> is <c>null</c>.</exception>
+        /// <exception cref="OutOfMemoryException">Failed to create Bro set.</exception>
         public BroSet(IEnumerable<BroValue> values)
             : this()
         {
@@ -219,11 +219,11 @@ namespace BroccoliSharp
         /// <param name="type">The <see cref="BroType"/> of the <paramref name="value"/>.</param>
         /// <param name="typeName">Optional name of specialized type of <paramref name="value"/>.</param>
         /// <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
-        /// <exception cref="ObjectDisposedException">Cannot add item, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// First item added to the set will determine the type for all subsequent set keys. Any key values
         /// attempted to be added that are not the same type as the first key will fail to insert into the set.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot add item, <see cref="BroSet"/> is disposed.</exception>
         public bool Add(object value, BroType type, string typeName = null)
         {
             return Add(new BroValue(value, type, typeName));
@@ -234,12 +234,12 @@ namespace BroccoliSharp
         /// </summary>
         /// <param name="value">The <see cref="BroValue"/> to add to this <see cref="BroSet"/>.</param>
         /// <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
-        /// <exception cref="ArgumentNullException">Cannot add a <c>null</c> <see cref="BroValue"/>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot add item, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// First item added to the set will determine the type for all subsequent set keys. Any key values
         /// attempted to be added that are not the same type as the first key will fail to insert into the set.
         /// </remarks>
+        /// <exception cref="ArgumentNullException">Cannot add a <c>null</c> <see cref="BroValue"/>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot add item, <see cref="BroSet"/> is disposed.</exception>
         public bool Add(BroValue value)
         {
             if ((object)value == null)
@@ -363,11 +363,11 @@ namespace BroccoliSharp
         /// Removes all elements in the specified collection from the current set.
         /// </summary>
         /// <param name="other">The collection of items to remove from the set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public void ExceptWith(IEnumerable<BroValue> other)
         {
             ExecuteCloneOperation(set => set.ExceptWith(other));
@@ -395,11 +395,11 @@ namespace BroccoliSharp
         /// Modifies the current set so that it contains only elements that are also in a specified collection.
         /// </summary>
         /// <param name="other">The collection to compare to the current set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public void IntersectWith(IEnumerable<BroValue> other)
         {
             ExecuteCloneOperation(set => set.IntersectWith(other));
@@ -408,15 +408,15 @@ namespace BroccoliSharp
         /// <summary>
         /// Determines whether the current set is a proper (strict) subset of a specified collection.
         /// </summary>
+        /// <param name="other">The collection to compare to the current set.</param>
         /// <returns>
         /// <c>true</c> if the current set is a proper subset of <paramref name="other"/>; otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">The collection to compare to the current set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public bool IsProperSubsetOf(IEnumerable<BroValue> other)
         {
             return ExecuteCloneOperation(set => set.IsProperSubsetOf(other));
@@ -425,15 +425,15 @@ namespace BroccoliSharp
         /// <summary>
         /// Determines whether the current set is a proper (strict) superset of a specified collection.
         /// </summary>
+        /// <param name="other">The collection to compare to the current set. </param>
         /// <returns>
         /// <c>true</c> if the current set is a proper superset of <paramref name="other"/>; otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">The collection to compare to the current set. </param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public bool IsProperSupersetOf(IEnumerable<BroValue> other)
         {
             return ExecuteCloneOperation(set => set.IsProperSupersetOf(other));
@@ -442,15 +442,15 @@ namespace BroccoliSharp
         /// <summary>
         /// Determines whether a set is a subset of a specified collection.
         /// </summary>
+        /// <param name="other">The collection to compare to the current set.</param>
         /// <returns>
         /// <c>true</c> if the current set is a subset of <paramref name="other"/>; otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">The collection to compare to the current set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public bool IsSubsetOf(IEnumerable<BroValue> other)
         {
             return ExecuteCloneOperation(set => set.IsSubsetOf(other));
@@ -459,15 +459,15 @@ namespace BroccoliSharp
         /// <summary>
         /// Determines whether the current set is a superset of a specified collection.
         /// </summary>
+        /// <param name="other">The collection to compare to the current set.</param>
         /// <returns>
         /// <c>true</c> if the current set is a superset of <paramref name="other"/>; otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">The collection to compare to the current set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public bool IsSupersetOf(IEnumerable<BroValue> other)
         {
             return ExecuteCloneOperation(set => set.IsSupersetOf(other));
@@ -476,15 +476,15 @@ namespace BroccoliSharp
         /// <summary>
         /// Determines whether the current set overlaps with the specified collection.
         /// </summary>
+        /// <param name="other">The collection to compare to the current set.</param>
         /// <returns>
         /// <c>true</c> if the current set and <paramref name="other"/> share at least one common element; otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">The collection to compare to the current set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public bool Overlaps(IEnumerable<BroValue> other)
         {
             return ExecuteCloneOperation(set => set.Overlaps(other));
@@ -493,15 +493,15 @@ namespace BroccoliSharp
         /// <summary>
         /// Removes the first occurrence of the specified <see cref="BroValue"/> from this <see cref="BroSet"/>.
         /// </summary>
+        /// <param name="value">The <see cref="BroValue"/> to remove from this <see cref="BroSet"/>.</param>
         /// <returns>
         /// <c>true</c> if <paramref name="value"/> was successfully removed from this <see cref="BroSet"/>; otherwise, <c>false</c>.
         /// This method also returns <c>false</c> if <paramref name="value"/> is not found in the original <see cref="BroSet"/>.
         /// </returns>
-        /// <param name="value">The <see cref="BroValue"/> to remove from this <see cref="BroSet"/>.</param>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public bool Remove(BroValue value)
         {
             return ExecuteCloneOperation(set => set.Remove(value), true);
@@ -510,15 +510,15 @@ namespace BroccoliSharp
         /// <summary>
         /// Determines whether the current set and the specified collection contain the same elements.
         /// </summary>
+        /// <param name="other">The collection to compare to the current set.</param>
         /// <returns>
         /// <c>true</c> if the current set is equal to <paramref name="other"/>; otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">The collection to compare to the current set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public bool SetEquals(IEnumerable<BroValue> other)
         {
             return ExecuteCloneOperation(set => set.SetEquals(other));
@@ -528,11 +528,11 @@ namespace BroccoliSharp
         /// Modifies the current set so that it contains only elements that are present either in the current set or in the specified collection, but not both. 
         /// </summary>
         /// <param name="other">The collection to compare to the current set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public void SymmetricExceptWith(IEnumerable<BroValue> other)
         {
             ExecuteCloneOperation(set => set.SymmetricExceptWith(other));
@@ -573,11 +573,11 @@ namespace BroccoliSharp
         /// Modifies the current set so that it contains all elements that are present in either the current set or the specified collection.
         /// </summary>
         /// <param name="other">The collection to compare to the current set.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
-        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro set operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="other"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot execute set operation, <see cref="BroSet"/> is disposed.</exception>
         public void UnionWith(IEnumerable<BroValue> other)
         {
             ExecuteCloneOperation(set => set.UnionWith(other));

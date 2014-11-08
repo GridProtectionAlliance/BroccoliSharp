@@ -200,7 +200,9 @@ namespace BroccoliSharp
 
         #endregion
 
-        #region [ Implicit BroField <=> BroString / String Conversions ]
+        // Implicit conversions from BroField to other types managed by BroValue conversions
+
+        #region [ Implicit BroField <= BroString / String Conversions ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroString"/> value to a <see cref="BroField"/>.
@@ -213,22 +215,6 @@ namespace BroccoliSharp
         }
 
         /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroString"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroString"/> object.</returns>
-        public static implicit operator BroString(BroField value)
-        {
-            if ((object)value == null)
-                return null;
-
-            if (value.Type == BroType.String)
-                return (BroString)value.Value;
-
-            return null;
-        }
-
-        /// <summary>
         /// Implicitly converts <see cref="string"/> value to a <see cref="BroField"/>.
         /// </summary>
         /// <param name="value">A <see cref="string"/> value.</param>
@@ -238,19 +224,9 @@ namespace BroccoliSharp
             return new BroField((BroString)value, BroType.String);
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="string"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="string"/> value.</returns>
-        public static implicit operator string(BroField value)
-        {
-            return (BroString)value;
-        }
-
         #endregion
 
-        #region [ Implicit BroField <=> BroPort ]
+        #region [ Implicit BroField <= BroPort Conversion ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroPort"/> value to a <see cref="BroField"/>.
@@ -262,25 +238,9 @@ namespace BroccoliSharp
             return new BroField(value, BroType.Port);
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroPort"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroPort"/> object.</returns>
-        public static implicit operator BroPort(BroField value)
-        {
-            if ((object)value == null)
-                return default(BroPort);
-
-            if (value.Type == BroType.Port)
-                return value.GetValueAsBroPort();
-
-            return default(BroPort);
-        }
-
         #endregion
 
-        #region [ Implicit BroField <=> BroAddress / IPAddress Conversions]
+        #region [ Implicit BroField <= BroAddress / IPAddress Conversions]
 
         /// <summary>
         /// Implicitly converts <see cref="BroAddress"/> value to a <see cref="BroField"/>.
@@ -293,25 +253,6 @@ namespace BroccoliSharp
         }
 
         /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroAddress"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroAddress"/> object.</returns>
-        public static implicit operator BroAddress(BroField value)
-        {
-            if ((object)value == null)
-                return default(BroAddress);
-
-            if (value.Type == BroType.IpAddr)
-                return value.GetValueAsBroAddress();
-
-            if (value.Type == BroType.Subnet)
-                return value.GetValueAsBroSubnet();
-
-            return default(BroAddress);
-        }
-
-        /// <summary>
         /// Implicitly converts <see cref="IPAddress"/> value to a <see cref="BroField"/>.
         /// </summary>
         /// <param name="value">An <see cref="IPAddress"/> value.</param>
@@ -321,22 +262,9 @@ namespace BroccoliSharp
             return (BroAddress)value;
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to an <see cref="IPAddress"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>An <see cref="IPAddress"/> value.</returns>
-        public static implicit operator IPAddress(BroField value)
-        {
-            if ((object)value == null)
-                return null;
-
-            return (BroAddress)value;
-        }
-
         #endregion
 
-        #region [ Implicit BroField <=> BroSubnet ]
+        #region [ Implicit BroField <= BroSubnet Conversion ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroSubnet"/> value to a <see cref="BroField"/>.
@@ -348,25 +276,9 @@ namespace BroccoliSharp
             return new BroField(value, BroType.Subnet);
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroSubnet"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroSubnet"/> object.</returns>
-        public static implicit operator BroSubnet(BroField value)
-        {
-            if ((object)value == null)
-                return default(BroSubnet);
-
-            if (value.Type == BroType.Subnet)
-                return value.GetValueAsBroSubnet();
-
-            return default(BroSubnet);
-        }
-
         #endregion
 
-        #region [ Implicit BroField <=> BroVector Conversions ]
+        #region [ Implicit BroField <= BroVector Conversion ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroVector"/> value to a <see cref="BroField"/>.
@@ -378,25 +290,9 @@ namespace BroccoliSharp
             return new BroField(value, BroType.Vector);
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroVector"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroVector"/> object.</returns>
-        public static implicit operator BroVector(BroField value)
-        {
-            if ((object)value == null)
-                return null;
-
-            if (value.Type == BroType.Vector)
-                return (BroVector)value.Value;
-
-            return null;
-        }
-
         #endregion
 
-        #region [ Implicit BroField <=> BroRecord Conversions ]
+        #region [ Implicit BroField <= BroRecord Conversion ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroRecord"/> value to a <see cref="BroField"/>.
@@ -408,25 +304,9 @@ namespace BroccoliSharp
             return new BroField(value, BroType.Record);
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroRecord"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroRecord"/> object.</returns>
-        public static implicit operator BroRecord(BroField value)
-        {
-            if ((object)value == null)
-                return null;
-
-            if (value.Type == BroType.Record || value.Type == BroType.List)
-                return (BroRecord)value.Value;
-
-            return null;
-        }
-
         #endregion
 
-        #region [ Implicit BroField <=> BroTable Conversions ]
+        #region [ Implicit BroField <= BroTable Conversion ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroTable"/> value to a <see cref="BroField"/>.
@@ -438,25 +318,9 @@ namespace BroccoliSharp
             return new BroField(value, BroType.Table);
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroTable"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroTable"/> object.</returns>
-        public static implicit operator BroTable(BroField value)
-        {
-            if ((object)value == null)
-                return null;
-
-            if (value.Type == BroType.Table)
-                return (BroTable)value.Value;
-
-            return null;
-        }
-
         #endregion
 
-        #region [ Implicit BroField <=> BroSet Conversions ]
+        #region [ Implicit BroField <= BroSet Conversion ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroSet"/> value to a <see cref="BroField"/>.
@@ -468,26 +332,10 @@ namespace BroccoliSharp
             return new BroField(value, BroType.Set);
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroSet"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroSet"/> object.</returns>
-        public static implicit operator BroSet(BroField value)
-        {
-            if ((object)value == null)
-                return null;
-
-            if (value.Type == BroType.Set)
-                return (BroSet)value.Value;
-
-            return null;
-        }
-
         #endregion
 
 #if BRO_PCAP_SUPPORT
-        #region [ Implicit BroField <=> BroPacket Conversions ]
+        #region [ Implicit BroField <= BroPacket Conversion ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroPacket"/> value to a <see cref="BroField"/>.
@@ -499,26 +347,10 @@ namespace BroccoliSharp
             return new BroField(value, BroType.Packet);
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroPacket"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroPacket"/> object.</returns>
-        public static implicit operator BroPacket(BroField value)
-        {
-            if ((object)value == null)
-                return null;
-
-            if (value.Type == BroType.Packet)
-                return (BroPacket)value.Value;
-
-            return null;
-        }
-
         #endregion
 #endif
 
-        #region [ Implicit BroField <=> BroTime / DateTime Conversions ]
+        #region [ Implicit BroField <= BroTime / DateTime Conversions ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroTime"/> value to a <see cref="BroField"/>.
@@ -531,16 +363,6 @@ namespace BroccoliSharp
         }
 
         /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="BroTime"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="BroTime"/> value.</returns>
-        public static implicit operator BroTime(BroField value)
-        {
-            return (double)value;
-        }
-
-        /// <summary>
         /// Implicitly converts <see cref="DateTime"/> value to a <see cref="BroField"/>.
         /// </summary>
         /// <param name="value">A <see cref="DateTime"/> value.</param>
@@ -550,19 +372,9 @@ namespace BroccoliSharp
             return (BroTime)value;
         }
 
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="DateTime"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="DateTime"/> value.</returns>
-        public static implicit operator DateTime(BroField value)
-        {
-            return (BroTime)value;
-        }
-
         #endregion
 
-        #region [ Implicit BroField <=> Boolean Conversions ]
+        #region [ Implicit BroField <= Boolean Conversion ]
 
         /// <summary>
         /// Implicitly converts <see cref="bool"/> value to a <see cref="BroField"/>.
@@ -572,86 +384,6 @@ namespace BroccoliSharp
         public static implicit operator BroField(bool value)
         {
             return new BroField(value ? ~0 : 0, BroType.Bool);
-        }
-
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="bool"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="bool"/> value.</returns>
-        /// <exception cref="InvalidCastException">Cannot cast BroField to a bool.</exception>
-        public static implicit operator bool(BroField value)
-        {
-            return (int)value != 0;
-        }
-
-        #endregion
-
-        #region [ Implicit BroField => Native Value-type Conversions ]
-
-        // Cannot implicitly cast other value-types to a BroField without knowing the desired type.
-        // To create a native value-type based BroField just use the BroField common constructor
-        // or value method overloads that accept the BroType.
-
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="int"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="int"/> value.</returns>
-        public static implicit operator int(BroField value)
-        {
-            if ((object)value == null)
-                return default(int);
-
-            if (value.Type == BroType.Bool)
-                return value.GetValueAsInt();
-
-            return Convert.ToInt32(value.Value);
-        }
-
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="ulong"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="ulong"/> value.</returns>
-        /// <exception cref="InvalidCastException">Cannot cast BroField to a ulong.</exception>
-        public static implicit operator ulong(BroField value)
-        {
-            if ((object)value == null)
-                return default(ulong);
-
-            switch (value.Type)
-            {
-                case BroType.Int:
-                case BroType.Count:
-                case BroType.Counter:
-                case BroType.Enum:
-                    return value.GetValueAsULong();
-                default:
-                    return Convert.ToUInt32(value.Value);
-            }
-        }
-
-        /// <summary>
-        /// Implicitly converts <see cref="BroField"/> to a <see cref="double"/>.
-        /// </summary>
-        /// <param name="value">A <see cref="BroField"/> object.</param>
-        /// <returns>A <see cref="double"/> value.</returns>
-        /// <exception cref="InvalidCastException">Cannot cast BroField to a double.</exception>
-        public static implicit operator double(BroField value)
-        {
-            if ((object)value == null)
-                return default(double);
-
-            switch (value.Type)
-            {
-                case BroType.Double:
-                case BroType.Time:
-                case BroType.Interval:
-                    return value.GetValueAsDouble();
-                default:
-                    return Convert.ToDouble(value.Value);
-            }
         }
 
         #endregion

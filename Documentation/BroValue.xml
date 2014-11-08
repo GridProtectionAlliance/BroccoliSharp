@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<docs>
+<doc>
   <remarks>
     <para>
       <h2>Handling Bro Values</h2>
@@ -24,11 +24,11 @@
       the <see cref="BroValue"/> class.
     </para>
     <para>
-      A <see cref="BroValue"/> is implictly castable to all the <see cref="BroType"/> implementations. For
+      A <see cref="BroValue"/> is implicitly castable to all the <see cref="BroType"/> implementations. For
       reference-types, the <see cref="BroValue"/> just acts as a pointer to the value - casting to and from
       the type implementation and a <see cref="BroValue"/> only creates a reference to the type - not a new
       instance of the type. Casting a <see cref="BroValue"/> to a type other than the <see cref="BroType"/>
-      implementation it represents will ususally result in a <c>null</c> value. However, where applicable for
+      implementation it represents will usually result in a <c>null</c> value. However, where applicable for
       the type, casting to and from related native .NET types is allowed. To change the type of a
       <see cref="BroValue"/> to another type, use the <see cref="BroValueExtensions.ConvertToType"/> method.
       For value-types, casting to and from the type implementation and a <see cref="BroValue"/> always makes
@@ -66,9 +66,10 @@
       Even with these constraints, this would not be the end of the world - you could go down the <c>struct</c>
       path without breaking the basic functionality of the library. However, making these changes would
       significantly reduce developer usage convenience of the library by having to always create Bro wrapper types
-      to interact with the library. With the way the library is currently designed (with classes), a string can be
-      a BroString, an IPAddress can be a BroAddress and a DateTime can be a BroTime, etc. without the developer
-      having to deal with or think about the conversion details from native types to Bro wrapper types.
+      to interact with the library. With the way the library is currently designed (with classes), a
+      <see cref="string"/> can be a <see cref="BroString"/>, an <see cref="IPAddress"/> can be a
+      <see cref="BroAddress"/> and a <see cref="DateTime"/> can be a <see cref="BroTime"/>, etc. without the
+      developer having to deal with or think about the conversion details from native types to Bro wrapper types.
     </para>
     <para>
       Another issue with the <c>struct</c> approach would be the performance penalties that would be incurred in
@@ -78,4 +79,4 @@
       decided it was a bad idea - and if so, you would be right.
     </para>
   </remarks>
-</docs>
+</doc>

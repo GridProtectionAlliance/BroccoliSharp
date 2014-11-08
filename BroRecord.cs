@@ -41,7 +41,7 @@ namespace BroccoliSharp
     /// <summary>
     /// Represents a Bro record implemented as an <see cref="IList{T}">IList&lt;BroField&gt;</see>.
     /// </summary>
-    /// <include file='Documentation\BroRecord.xml' path='/docs/*'/>
+    /// <include file='Documentation\BroRecord.xml' path='/doc/*'/>
     public class BroRecord : IList<BroField>, IDisposable
     {
         #region [ Members ]
@@ -478,10 +478,10 @@ namespace BroccoliSharp
         /// <param name="type">The <see cref="BroType"/> of the <paramref name="value"/>.</param>
         /// <param name="fieldName">Name of field to add to record, can be empty string for <see cref="BroType.List">BroType.List</see> source.</param>
         /// <param name="typeName">Optional name of specialized type of <paramref name="value"/>.</param>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroRecord"/>.</exception>
         /// <remarks>
         /// This is not a native Bro record operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroRecord"/>.</exception>
         public void Insert(int index, object value, BroType type, string fieldName = "", string typeName = null)
         {
             Insert(index, new BroField(value, type, fieldName, typeName));
@@ -493,10 +493,11 @@ namespace BroccoliSharp
         /// <param name="index">The zero-based index at which <paramref name="value"/> should be inserted.</param>
         /// <param name="value"><see cref="BroValue"/> to insert into this <see cref="BroRecord"/> as a field.</param>
         /// <param name="fieldName">Name of field to add to record, can be empty string for <see cref="BroType.List">BroType.List</see> source.</param>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroRecord"/>.</exception>
         /// <remarks>
         /// This is not a native Bro record operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroRecord"/> is disposed.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroRecord"/>.</exception>
         public void Insert(int index, BroValue value, string fieldName = "")
         {
             Insert(index, new BroField(value, fieldName));
@@ -507,11 +508,11 @@ namespace BroccoliSharp
         /// </summary>
         /// <param name="index">The zero-based index at which <paramref name="field"/> should be inserted.</param>
         /// <param name="field">The <see cref="BroField"/> to insert into this <see cref="BroRecord"/>.</param>
-        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroRecord"/> is disposed.</exception>
-        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroRecord"/>.</exception>
         /// <remarks>
         /// This is not a native Bro record operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroRecord"/> is disposed.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="index"/> is not a valid index in this <see cref="BroRecord"/>.</exception>
         public void Insert(int index, BroField field)
         {
             ExecuteCloneOperation(list => list.Insert(index, field));
@@ -521,10 +522,10 @@ namespace BroccoliSharp
         /// Removes the <see cref="BroField"/> item at the specified <paramref name="index"/>.
         /// </summary>
         /// <param name="index">The zero-based index of the item to remove.</param>
-        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroRecord"/> is disposed.</exception>
         /// <remarks>
         /// This is not a native Bro record operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroRecord"/> is disposed.</exception>
         public void RemoveAt(int index)
         {
             ExecuteCloneOperation(list => list.RemoveAt(index));
@@ -541,6 +542,7 @@ namespace BroccoliSharp
         /// <remarks>
         /// This is not a native Bro record operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroRecord"/> is disposed.</exception>
         /// <exception cref="ArgumentNullException"><paramref name="fieldName"/> is <c>null</c>.</exception>
         public bool Remove(string fieldName)
         {
@@ -566,6 +568,7 @@ namespace BroccoliSharp
         /// <remarks>
         /// This is not a native Bro record operation. Function will perform expected task, but for large data sets operation may be expensive.
         /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot execute list operation, <see cref="BroRecord"/> is disposed.</exception>
         public bool Remove(BroField field)
         {
             int index = IndexOf(field);

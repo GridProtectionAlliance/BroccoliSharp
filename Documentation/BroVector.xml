@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<docs>
+<doc>
   <remarks>
     <para>
       <h2>Handling Vectors</h2>
@@ -13,4 +13,4 @@
     with write accesses, vector should be locked during the entire enumeration. To allow the vector
     to be accessed by multiple threads for reading and writing, synchronization will be required.
   </threadsafety>
-</docs>
+</doc>

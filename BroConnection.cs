@@ -42,12 +42,12 @@ namespace BroccoliSharp
     /// <summary>
     /// Represents a Bro connection. PCAP functionality is enabled for this build.
     /// </summary>
-    /// <include file='Documentation\BroConnection.xml' path='/docs/*'/>
+    /// <include file='Documentation\BroConnection.xml' path='/doc/*'/>
 #else
     /// <summary>
     /// Represents a Bro connection. PCAP functionality is not enabled for this build.
     /// </summary>
-    /// <include file='Documentation\BroConnection.xml' path='/docs/*'/>
+    /// <include file='Documentation\BroConnection.xml' path='/doc/*'/>
 #endif
     public class BroConnection : IDisposable
     {

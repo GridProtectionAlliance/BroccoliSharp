@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<docs>
+<doc>
   <remarks>
     <para>
       <h2>Handling Tables</h2>
@@ -39,4 +39,4 @@
     with write accesses, table should be locked during the entire enumeration. To allow the table
     to be accessed by multiple threads for reading and writing, synchronization will be required.
   </threadsafety>
-</docs>
+</doc>

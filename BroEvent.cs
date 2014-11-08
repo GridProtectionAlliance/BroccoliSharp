@@ -39,7 +39,7 @@ namespace BroccoliSharp
     /// <summary>
     /// Represents a Bro event implemented as an <see cref="IEnumerable{T}">IEnumerable&lt;BroValue&gt;</see>.
     /// </summary>
-    /// <include file='Documentation\BroEvent.xml' path='/docs/*'/>
+    /// <include file='Documentation\BroEvent.xml' path='/doc/*'/>
     public class BroEvent : IEnumerable<BroValue>, IDisposable
     {
         #region [ Members ]

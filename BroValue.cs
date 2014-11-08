@@ -40,7 +40,7 @@ namespace BroccoliSharp
     /// Represents a Bro value. Implicitly castable to all <see cref="BroType"/> wrapper classes,
     /// structures and applicable .NET data types.
     /// </summary>
-    /// <include file='Documentation\BroValue.xml' path='/docs/*'/>
+    /// <include file='Documentation\BroValue.xml' path='/doc/*'/>
     public class BroValue : IEquatable<BroValue>
     {
         #region [ Members ]
@@ -597,7 +597,7 @@ namespace BroccoliSharp
 
         #endregion
 
-        #region [ Implicit BroValue <=> BroPort ]
+        #region [ Implicit BroValue <=> BroPort Conversions ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroPort"/> value to a <see cref="BroValue"/>.
@@ -683,7 +683,7 @@ namespace BroccoliSharp
 
         #endregion
 
-        #region [ Implicit BroValue <=> BroSubnet ]
+        #region [ Implicit BroValue <=> BroSubnet Conversions ]
 
         /// <summary>
         /// Implicitly converts <see cref="BroSubnet"/> value to a <see cref="BroValue"/>.
