@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <HelpTOC>
 
-  <HelpTOCNode Id="4f170de3-e7d9-4c07-ba8d-787779be6778" Title="BroccoliSharp Library" Url="html/R_Project_BroccoliSharp.htm">
-    <HelpTOCNode Id="653f1302-0191-4890-a325-231d32257e5a" Title="BroccoliSharp" Url="html/N_BroccoliSharp.htm">
-      <HelpTOCNode Id="99c2546d-9a85-4387-8e4b-0bdd2fe4cecb" Title="BroAddress Structure" Url="html/T_BroccoliSharp_BroAddress.htm">
-        <HelpTOCNode Id="7c438423-b59b-47c0-bc26-393e016f75b5" Title="BroAddress Constructor " Url="html/Overload_BroccoliSharp_BroAddress__ctor.htm">
+  <HelpTOCNode Id="4e0fce28-ccc8-4498-a8de-85a87bfcdaa2" Title="BroccoliSharp Library" Url="html/R_Project_BroccoliSharp.htm">
+    <HelpTOCNode Id="0129c751-712f-48f4-943c-1c33e382707d" Title="BroccoliSharp" Url="html/N_BroccoliSharp.htm">
+      <HelpTOCNode Id="bd6a9e70-a047-4811-be1f-90f51d42ab04" Title="BroAddress Structure" Url="html/T_BroccoliSharp_BroAddress.htm">
+        <HelpTOCNode Id="bda66758-67aa-482e-b55e-bf425a1755ca" Title="BroAddress Constructor " Url="html/Overload_BroccoliSharp_BroAddress__ctor.htm">
           <HelpTOCNode Title="BroAddress Constructor (IPAddress)" Url="html/M_BroccoliSharp_BroAddress__ctor.htm" />
           <HelpTOCNode Title="BroAddress Constructor (String)" Url="html/M_BroccoliSharp_BroAddress__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="0b426bad-663f-4295-905f-007714f6a248" Title="BroAddress Methods" Url="html/Methods_T_BroccoliSharp_BroAddress.htm">
-          <HelpTOCNode Id="c98a213f-b873-427d-be81-b79ba5716a7a" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroAddress_Equals.htm">
+        <HelpTOCNode Id="bf0aea8c-b5cf-4e3c-baf0-a1f63793324f" Title="BroAddress Methods" Url="html/Methods_T_BroccoliSharp_BroAddress.htm">
+          <HelpTOCNode Id="b88ac73e-7ba2-404d-8687-d9594b5b584c" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroAddress_Equals.htm">
             <HelpTOCNode Title="Equals Method (Object)" Url="html/M_BroccoliSharp_BroAddress_Equals_1.htm" />
             <HelpTOCNode Title="Equals Method (BroAddress)" Url="html/M_BroccoliSharp_BroAddress_Equals.htm" />
           </HelpTOCNode>
@@ -17,46 +17,46 @@
           <HelpTOCNode Title="ToIPAddress Method " Url="html/M_BroccoliSharp_BroAddress_ToIPAddress.htm" />
           <HelpTOCNode Title="ToString Method " Url="html/M_BroccoliSharp_BroAddress_ToString.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="8f813055-13bc-49bb-bd94-20b73a594eab" Title="BroAddress Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroAddress.htm">
+        <HelpTOCNode Id="fc568cab-33a2-46d9-ab84-d64bdffe5345" Title="BroAddress Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroAddress.htm">
           <HelpTOCNode Title="Equality Operator " Url="html/M_BroccoliSharp_BroAddress_op_Equality.htm" />
-          <HelpTOCNode Id="ec3fcb12-3432-4572-b80c-9c8005a9fd48" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroAddress_op_Implicit.htm">
+          <HelpTOCNode Id="d95b5c20-1f28-4585-bb70-b24b2743accf" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroAddress_op_Implicit.htm">
             <HelpTOCNode Title="Implicit Conversion (IPAddress to BroAddress)" Url="html/M_BroccoliSharp_BroAddress_op_Implicit_1.htm" />
             <HelpTOCNode Title="Implicit Conversion (BroAddress to IPAddress)" Url="html/M_BroccoliSharp_BroAddress_op_Implicit.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Inequality Operator " Url="html/M_BroccoliSharp_BroAddress_op_Inequality.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="6039b386-c272-43e3-9fbc-85b6217d7562" Title="BroAddress Properties" Url="html/Properties_T_BroccoliSharp_BroAddress.htm">
+        <HelpTOCNode Id="147aa860-a1bb-4000-b942-24420e7d3f39" Title="BroAddress Properties" Url="html/Properties_T_BroccoliSharp_BroAddress.htm">
           <HelpTOCNode Title="AddressBytes Property " Url="html/P_BroccoliSharp_BroAddress_AddressBytes.htm" />
           <HelpTOCNode Title="IsIPv4MappedAddress Property " Url="html/P_BroccoliSharp_BroAddress_IsIPv4MappedAddress.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="f1d956a0-ce82-4351-9693-e2c0aeca917d" Title="BroConfiguration Class" Url="html/T_BroccoliSharp_BroConfiguration.htm">
-        <HelpTOCNode Id="7ae4626f-7d85-4fa4-a428-0b39577f8bb3" Title="BroConfiguration Methods" Url="html/Methods_T_BroccoliSharp_BroConfiguration.htm">
-          <HelpTOCNode Id="13f26c3d-65e3-42d9-8c6d-603b10e6dfce" Title="TryGetValue Method " Url="html/Overload_BroccoliSharp_BroConfiguration_TryGetValue.htm">
+      <HelpTOCNode Id="886ef664-30b2-4b89-9774-2604763bed30" Title="BroConfiguration Class" Url="html/T_BroccoliSharp_BroConfiguration.htm">
+        <HelpTOCNode Id="4ef80330-1a6b-453e-bacd-39b33727709c" Title="BroConfiguration Methods" Url="html/Methods_T_BroccoliSharp_BroConfiguration.htm">
+          <HelpTOCNode Id="c3cfcdf0-397d-4213-9017-3b4d689db7bc" Title="TryGetValue Method " Url="html/Overload_BroccoliSharp_BroConfiguration_TryGetValue.htm">
             <HelpTOCNode Title="TryGetValue Method (String, Double)" Url="html/M_BroccoliSharp_BroConfiguration_TryGetValue.htm" />
             <HelpTOCNode Title="TryGetValue Method (String, Int32)" Url="html/M_BroccoliSharp_BroConfiguration_TryGetValue_1.htm" />
             <HelpTOCNode Title="TryGetValue Method (String, String)" Url="html/M_BroccoliSharp_BroConfiguration_TryGetValue_2.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Id="160a8962-8b2e-48ed-8157-9e36d44452dd" Title="BroConfiguration Properties" Url="html/Properties_T_BroccoliSharp_BroConfiguration.htm">
+        <HelpTOCNode Id="24ad922b-5bf0-4523-9f7e-bd8129202d65" Title="BroConfiguration Properties" Url="html/Properties_T_BroccoliSharp_BroConfiguration.htm">
           <HelpTOCNode Title="Domain Property " Url="html/P_BroccoliSharp_BroConfiguration_Domain.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="f7786b1e-a201-4b02-8f21-5bfdd9416936" Title="BroConnection Class" Url="html/T_BroccoliSharp_BroConnection.htm">
-        <HelpTOCNode Id="7ea357f3-00c5-4703-83fe-4cbb9bba268b" Title="BroConnection Constructor " Url="html/Overload_BroccoliSharp_BroConnection__ctor.htm">
+      <HelpTOCNode Id="7e2d0bd4-b6e7-4897-a182-710ba4650530" Title="BroConnection Class" Url="html/T_BroccoliSharp_BroConnection.htm">
+        <HelpTOCNode Id="ba5d03dc-9c79-440f-8424-177859be4fd5" Title="BroConnection Constructor " Url="html/Overload_BroccoliSharp_BroConnection__ctor.htm">
           <HelpTOCNode Title="BroConnection Constructor (Int32, BroConnectionFlags)" Url="html/M_BroccoliSharp_BroConnection__ctor.htm" />
           <HelpTOCNode Title="BroConnection Constructor (Socket, BroConnectionFlags)" Url="html/M_BroccoliSharp_BroConnection__ctor_1.htm" />
           <HelpTOCNode Title="BroConnection Constructor (TcpClient, BroConnectionFlags)" Url="html/M_BroccoliSharp_BroConnection__ctor_2.htm" />
           <HelpTOCNode Title="BroConnection Constructor (TcpListener, BroConnectionFlags)" Url="html/M_BroccoliSharp_BroConnection__ctor_3.htm" />
           <HelpTOCNode Title="BroConnection Constructor (String, BroConnectionFlags)" Url="html/M_BroccoliSharp_BroConnection__ctor_4.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="1fb5f7d5-1c05-4da4-96a6-2d5d40211d03" Title="BroConnection Methods" Url="html/Methods_T_BroccoliSharp_BroConnection.htm">
-          <HelpTOCNode Id="b3470716-031c-432a-be25-9f7303858f68" Title="AdoptEvents Method " Url="html/Overload_BroccoliSharp_BroConnection_AdoptEvents.htm">
+        <HelpTOCNode Id="b9374e65-6f3f-4ae5-8b5d-a370622cdad3" Title="BroConnection Methods" Url="html/Methods_T_BroccoliSharp_BroConnection.htm">
+          <HelpTOCNode Id="8845b486-95d5-4ff8-b0d3-d96342a62f8b" Title="AdoptEvents Method " Url="html/Overload_BroccoliSharp_BroConnection_AdoptEvents.htm">
             <HelpTOCNode Title="AdoptEvents Method (BroConnection)" Url="html/M_BroccoliSharp_BroConnection_AdoptEvents.htm" />
             <HelpTOCNode Title="AdoptEvents Method (BroConnection, BroConnection)" Url="html/M_BroccoliSharp_BroConnection_AdoptEvents_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Connect Method " Url="html/M_BroccoliSharp_BroConnection_Connect.htm" />
-          <HelpTOCNode Id="75ae50b1-c5a6-41fc-8be6-a4322dd2b920" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroConnection_Dispose.htm">
+          <HelpTOCNode Id="4eac5af0-069d-4038-b217-e9fa5df6d7c0" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroConnection_Dispose.htm">
             <HelpTOCNode Title="Dispose Method " Url="html/M_BroccoliSharp_BroConnection_Dispose.htm" />
             <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_BroccoliSharp_BroConnection_Dispose_1.htm" />
           </HelpTOCNode>
@@ -66,7 +66,7 @@
           <HelpTOCNode Title="Reconnect Method " Url="html/M_BroccoliSharp_BroConnection_Reconnect.htm" />
           <HelpTOCNode Title="RegisterForEvent Method " Url="html/M_BroccoliSharp_BroConnection_RegisterForEvent.htm" />
           <HelpTOCNode Title="RequestEvents Method " Url="html/M_BroccoliSharp_BroConnection_RequestEvents.htm" />
-          <HelpTOCNode Id="26be22bf-bdb7-4d6f-90f5-07dfb3cf9fba" Title="SendEvent Method " Url="html/Overload_BroccoliSharp_BroConnection_SendEvent.htm">
+          <HelpTOCNode Id="48a7a0ab-212b-4a64-8f32-bed17888098f" Title="SendEvent Method " Url="html/Overload_BroccoliSharp_BroConnection_SendEvent.htm">
             <HelpTOCNode Title="SendEvent Method (BroEvent)" Url="html/M_BroccoliSharp_BroConnection_SendEvent.htm" />
             <HelpTOCNode Title="SendEvent Method (Byte[], Int32)" Url="html/M_BroccoliSharp_BroConnection_SendEvent_1.htm" />
             <HelpTOCNode Title="SendEvent Method (String, BroValue[])" Url="html/M_BroccoliSharp_BroConnection_SendEvent_2.htm" />
@@ -74,7 +74,7 @@
           <HelpTOCNode Title="SendPacket Method " Url="html/M_BroccoliSharp_BroConnection_SendPacket.htm" />
           <HelpTOCNode Title="UnregisterForEvent Method " Url="html/M_BroccoliSharp_BroConnection_UnregisterForEvent.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="cfeb7314-226f-4364-8bd5-ab366a58bffa" Title="BroConnection Properties" Url="html/Properties_T_BroccoliSharp_BroConnection.htm">
+        <HelpTOCNode Id="fe160d1f-1e1a-4a27-b384-4432af8b0e6c" Title="BroConnection Properties" Url="html/Properties_T_BroccoliSharp_BroConnection.htm">
           <HelpTOCNode Title="Class Property " Url="html/P_BroccoliSharp_BroConnection_Class.htm" />
           <HelpTOCNode Title="Data Property " Url="html/P_BroccoliSharp_BroConnection_Data.htm" />
           <HelpTOCNode Title="EventQueue Property " Url="html/P_BroccoliSharp_BroConnection_EventQueue.htm" />
@@ -87,217 +87,200 @@
           <HelpTOCNode Title="PacketContext Property " Url="html/P_BroccoliSharp_BroConnection_PacketContext.htm" />
           <HelpTOCNode Title="PeerClass Property " Url="html/P_BroccoliSharp_BroConnection_PeerClass.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9f019692-8299-4a91-a160-48e63b0b44fa" Title="BroConnection Events" Url="html/Events_T_BroccoliSharp_BroConnection.htm">
+        <HelpTOCNode Id="0b937f9c-d96c-416a-a576-ab0765c46d76" Title="BroConnection Events" Url="html/Events_T_BroccoliSharp_BroConnection.htm">
           <HelpTOCNode Title="ReceivedEvent Event" Url="html/E_BroccoliSharp_BroConnection_ReceivedEvent.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
       <HelpTOCNode Title="BroConnectionFlags Enumeration" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
-      <HelpTOCNode Id="f018a9c5-aa96-4de6-aae8-15567de6c5d9" Title="BroEvent Class" Url="html/T_BroccoliSharp_BroEvent.htm">
-        <HelpTOCNode Id="82a511bd-5466-4462-9db0-4bae211634bc" Title="BroEvent Constructor " Url="html/Overload_BroccoliSharp_BroEvent__ctor.htm">
+      <HelpTOCNode Id="37321b26-b485-4cfe-9f68-c736ba59c700" Title="BroEvent Class" Url="html/T_BroccoliSharp_BroEvent.htm">
+        <HelpTOCNode Id="228947d8-27ff-4f83-baf6-cde5d8823be5" Title="BroEvent Constructor " Url="html/Overload_BroccoliSharp_BroEvent__ctor.htm">
           <HelpTOCNode Title="BroEvent Constructor (String)" Url="html/M_BroccoliSharp_BroEvent__ctor.htm" />
           <HelpTOCNode Title="BroEvent Constructor (String, IEnumerable(BroValue))" Url="html/M_BroccoliSharp_BroEvent__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="4bc465d3-5d01-4f85-a733-ddf754270977" Title="BroEvent Methods" Url="html/Methods_T_BroccoliSharp_BroEvent.htm">
-          <HelpTOCNode Id="ecf8fb7f-68cc-4886-97c4-6264bfdd75e3" Title="AddParameter Method " Url="html/Overload_BroccoliSharp_BroEvent_AddParameter.htm">
+        <HelpTOCNode Id="f9006d29-1bf6-45b1-aa8e-03b9e0ad7514" Title="BroEvent Methods" Url="html/Methods_T_BroccoliSharp_BroEvent.htm">
+          <HelpTOCNode Id="5d4cd37c-b95d-4ecf-9204-1e8bf4d0837e" Title="AddParameter Method " Url="html/Overload_BroccoliSharp_BroEvent_AddParameter.htm">
             <HelpTOCNode Title="AddParameter Method (BroValue)" Url="html/M_BroccoliSharp_BroEvent_AddParameter.htm" />
             <HelpTOCNode Title="AddParameter Method (Object, BroType, String)" Url="html/M_BroccoliSharp_BroEvent_AddParameter_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="AddParameters Method " Url="html/M_BroccoliSharp_BroEvent_AddParameters.htm" />
-          <HelpTOCNode Id="e7c0d4d6-7468-475d-923b-da9e7fcaa211" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroEvent_Dispose.htm">
+          <HelpTOCNode Id="e63c767c-dabb-49e6-b678-1d9f2c895c90" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroEvent_Dispose.htm">
             <HelpTOCNode Title="Dispose Method " Url="html/M_BroccoliSharp_BroEvent_Dispose.htm" />
             <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_BroccoliSharp_BroEvent_Dispose_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Finalize Method " Url="html/M_BroccoliSharp_BroEvent_Finalize.htm" />
           <HelpTOCNode Title="GetEnumerator Method " Url="html/M_BroccoliSharp_BroEvent_GetEnumerator.htm" />
-          <HelpTOCNode Id="3f8db99f-c590-44b0-a408-63c715d79640" Title="ReplaceParameter Method " Url="html/Overload_BroccoliSharp_BroEvent_ReplaceParameter.htm">
+          <HelpTOCNode Id="2ad63f64-fecb-4229-b063-d5c71cf6d01a" Title="ReplaceParameter Method " Url="html/Overload_BroccoliSharp_BroEvent_ReplaceParameter.htm">
             <HelpTOCNode Title="ReplaceParameter Method (Int32, BroValue)" Url="html/M_BroccoliSharp_BroEvent_ReplaceParameter.htm" />
             <HelpTOCNode Title="ReplaceParameter Method (Int32, Object, BroType, String)" Url="html/M_BroccoliSharp_BroEvent_ReplaceParameter_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Id="3436e482-a30f-48eb-a995-5a3de145bbb4" Title="BroEvent Properties" Url="html/Properties_T_BroccoliSharp_BroEvent.htm">
+        <HelpTOCNode Id="702e74bb-6167-476b-a942-2bc9505f150b" Title="BroEvent Properties" Url="html/Properties_T_BroccoliSharp_BroEvent.htm">
           <HelpTOCNode Title="Name Property " Url="html/P_BroccoliSharp_BroEvent_Name.htm" />
           <HelpTOCNode Title="ParameterCount Property " Url="html/P_BroccoliSharp_BroEvent_ParameterCount.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="56eb62e7-73ac-409a-9438-cdba227dce41" Title="BroEventArgs Class" Url="html/T_BroccoliSharp_BroEventArgs.htm">
+      <HelpTOCNode Id="6f4ba1cc-4c16-4370-9773-74b67d13fac0" Title="BroEventArgs Class" Url="html/T_BroccoliSharp_BroEventArgs.htm">
         <HelpTOCNode Title="BroEventArgs Constructor " Url="html/M_BroccoliSharp_BroEventArgs__ctor.htm" />
         <HelpTOCNode Title="BroEventArgs Methods" Url="html/Methods_T_BroccoliSharp_BroEventArgs.htm" />
-        <HelpTOCNode Id="5c0b6496-c939-44b9-8717-a9169cc37730" Title="BroEventArgs Properties" Url="html/Properties_T_BroccoliSharp_BroEventArgs.htm">
+        <HelpTOCNode Id="365ea81d-f035-49bf-8fa9-4f0f3ded980f" Title="BroEventArgs Properties" Url="html/Properties_T_BroccoliSharp_BroEventArgs.htm">
           <HelpTOCNode Title="EventName Property " Url="html/P_BroccoliSharp_BroEventArgs_EventName.htm" />
           <HelpTOCNode Title="EventTime Property " Url="html/P_BroccoliSharp_BroEventArgs_EventTime.htm" />
           <HelpTOCNode Title="Parameters Property " Url="html/P_BroccoliSharp_BroEventArgs_Parameters.htm" />
           <HelpTOCNode Title="UserData Property " Url="html/P_BroccoliSharp_BroEventArgs_UserData.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="38475835-2ea9-4820-9c3b-12cfa659fc92" Title="BroEventQueue Class" Url="html/T_BroccoliSharp_BroEventQueue.htm">
-        <HelpTOCNode Id="d0eb2ef3-5686-4144-9af8-5ebc862a62f9" Title="BroEventQueue Methods" Url="html/Methods_T_BroccoliSharp_BroEventQueue.htm">
+      <HelpTOCNode Id="0e4889f8-c2a1-47be-a961-6dd9813d433a" Title="BroEventQueue Class" Url="html/T_BroccoliSharp_BroEventQueue.htm">
+        <HelpTOCNode Id="ab9cd89d-19f3-423e-ae9a-4fbd7af39636" Title="BroEventQueue Methods" Url="html/Methods_T_BroccoliSharp_BroEventQueue.htm">
           <HelpTOCNode Title="Flush Method " Url="html/M_BroccoliSharp_BroEventQueue_Flush.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="0cd90a74-3c3d-4685-b615-824186bff4cb" Title="BroEventQueue Properties" Url="html/Properties_T_BroccoliSharp_BroEventQueue.htm">
+        <HelpTOCNode Id="613ed59d-5474-4275-97c3-a001148d654b" Title="BroEventQueue Properties" Url="html/Properties_T_BroccoliSharp_BroEventQueue.htm">
           <HelpTOCNode Title="Length Property " Url="html/P_BroccoliSharp_BroEventQueue_Length.htm" />
           <HelpTOCNode Title="MaxLength Property " Url="html/P_BroccoliSharp_BroEventQueue_MaxLength.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="d8063971-2407-45f0-b51a-098b68e1f6cd" Title="BroField Class" Url="html/T_BroccoliSharp_BroField.htm">
-        <HelpTOCNode Id="474508c8-cb62-4c35-80e6-ff8b3b57be6a" Title="BroField Constructor " Url="html/Overload_BroccoliSharp_BroField__ctor.htm">
+      <HelpTOCNode Id="add3871f-e159-484d-9234-f011e0a2f879" Title="BroField Class" Url="html/T_BroccoliSharp_BroField.htm">
+        <HelpTOCNode Id="a8451902-4780-4d49-84fb-b942fbca1b89" Title="BroField Constructor " Url="html/Overload_BroccoliSharp_BroField__ctor.htm">
           <HelpTOCNode Title="BroField Constructor (BroValue, String)" Url="html/M_BroccoliSharp_BroField__ctor.htm" />
           <HelpTOCNode Title="BroField Constructor (Object, BroType, String, String)" Url="html/M_BroccoliSharp_BroField__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="bbc30b7c-1d49-411f-9ccc-9503ec5cde18" Title="BroField Methods" Url="html/Methods_T_BroccoliSharp_BroField.htm">
-          <HelpTOCNode Id="014830c8-90fe-43e0-984e-96441e658fb4" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroField_Equals.htm">
+        <HelpTOCNode Id="99e007d4-8090-400b-b940-00c0bb4e0fe4" Title="BroField Methods" Url="html/Methods_T_BroccoliSharp_BroField.htm">
+          <HelpTOCNode Id="f434566f-0533-48c2-ba2d-04545304095a" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroField_Equals.htm">
             <HelpTOCNode Title="Equals Method (Object)" Url="html/M_BroccoliSharp_BroField_Equals_1.htm" />
             <HelpTOCNode Title="Equals Method (BroField)" Url="html/M_BroccoliSharp_BroField_Equals.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="GetHashCode Method " Url="html/M_BroccoliSharp_BroField_GetHashCode.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="3150c1f7-965a-4d4d-9cfa-4d5c36912c38" Title="BroField Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroField.htm">
+        <HelpTOCNode Id="67195dbc-0119-4e82-802e-42f48b39a9db" Title="BroField Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroField.htm">
           <HelpTOCNode Title="Equality Operator " Url="html/M_BroccoliSharp_BroField_op_Equality.htm" />
-          <HelpTOCNode Id="11b9b6c6-d0d4-4f91-9e6b-c5e985ac921c" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroField_op_Implicit.htm">
-            <HelpTOCNode Title="Implicit Conversion (Boolean to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_27.htm" />
-            <HelpTOCNode Title="Implicit Conversion (DateTime to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_28.htm" />
-            <HelpTOCNode Title="Implicit Conversion (IPAddress to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_29.htm" />
-            <HelpTOCNode Title="Implicit Conversion (String to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_30.htm" />
+          <HelpTOCNode Id="80cd7b16-6461-4310-a9a6-3156c5259196" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroField_op_Implicit.htm">
+            <HelpTOCNode Title="Implicit Conversion (Boolean to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_10.htm" />
+            <HelpTOCNode Title="Implicit Conversion (DateTime to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_11.htm" />
+            <HelpTOCNode Title="Implicit Conversion (IPAddress to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_12.htm" />
+            <HelpTOCNode Title="Implicit Conversion (String to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_13.htm" />
             <HelpTOCNode Title="Implicit Conversion (BroAddress to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroString)" Url="html/M_BroccoliSharp_BroField_op_Implicit_1.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to String)" Url="html/M_BroccoliSharp_BroField_op_Implicit_2.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroPort)" Url="html/M_BroccoliSharp_BroField_op_Implicit_3.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroAddress)" Url="html/M_BroccoliSharp_BroField_op_Implicit_4.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to IPAddress)" Url="html/M_BroccoliSharp_BroField_op_Implicit_5.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroSubnet)" Url="html/M_BroccoliSharp_BroField_op_Implicit_6.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroVector)" Url="html/M_BroccoliSharp_BroField_op_Implicit_7.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroRecord)" Url="html/M_BroccoliSharp_BroField_op_Implicit_8.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroTable)" Url="html/M_BroccoliSharp_BroField_op_Implicit_9.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroSet)" Url="html/M_BroccoliSharp_BroField_op_Implicit_10.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroPacket)" Url="html/M_BroccoliSharp_BroField_op_Implicit_11.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to BroTime)" Url="html/M_BroccoliSharp_BroField_op_Implicit_12.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to DateTime)" Url="html/M_BroccoliSharp_BroField_op_Implicit_13.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to Boolean)" Url="html/M_BroccoliSharp_BroField_op_Implicit_14.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to Int32)" Url="html/M_BroccoliSharp_BroField_op_Implicit_15.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to UInt64)" Url="html/M_BroccoliSharp_BroField_op_Implicit_16.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroField to Double)" Url="html/M_BroccoliSharp_BroField_op_Implicit_17.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroPacket to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_18.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroPort to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_19.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroRecord to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_20.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroSet to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_21.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroString to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_22.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroSubnet to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_23.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroTable to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_24.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroTime to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_25.htm" />
-            <HelpTOCNode Title="Implicit Conversion (BroVector to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_26.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroPacket to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_1.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroPort to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_2.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroRecord to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_3.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroSet to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_4.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroString to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_5.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroSubnet to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_6.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroTable to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_7.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroTime to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_8.htm" />
+            <HelpTOCNode Title="Implicit Conversion (BroVector to BroField)" Url="html/M_BroccoliSharp_BroField_op_Implicit_9.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Inequality Operator " Url="html/M_BroccoliSharp_BroField_op_Inequality.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="7d1ebc33-3ef6-4394-b4b7-9f0a60a1d173" Title="BroField Properties" Url="html/Properties_T_BroccoliSharp_BroField.htm">
+        <HelpTOCNode Id="3428377c-b22f-40fe-845b-8475bf506f67" Title="BroField Properties" Url="html/Properties_T_BroccoliSharp_BroField.htm">
           <HelpTOCNode Title="Name Property " Url="html/P_BroccoliSharp_BroField_Name.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="b92895d9-5ee4-46a9-8151-0346ed06827e" Title="BroPacket Class" Url="html/T_BroccoliSharp_BroPacket.htm">
-        <HelpTOCNode Id="f41e0fcb-ab2f-4711-b221-c3d21b68be66" Title="BroPacket Constructor " Url="html/Overload_BroccoliSharp_BroPacket__ctor.htm">
+      <HelpTOCNode Id="ed12cf07-87a4-4f03-9547-674d23494b9c" Title="BroPacket Class" Url="html/T_BroccoliSharp_BroPacket.htm">
+        <HelpTOCNode Id="1600cdf5-dca8-476a-9f1c-cbac6b169278" Title="BroPacket Constructor " Url="html/Overload_BroccoliSharp_BroPacket__ctor.htm">
           <HelpTOCNode Title="BroPacket Constructor (DateTime, UInt32, Byte[], String)" Url="html/M_BroccoliSharp_BroPacket__ctor.htm" />
           <HelpTOCNode Title="BroPacket Constructor (UInt64, UInt32, Byte[], String)" Url="html/M_BroccoliSharp_BroPacket__ctor_2.htm" />
           <HelpTOCNode Title="BroPacket Constructor (UInt32, UInt32, UInt32, Byte[], String)" Url="html/M_BroccoliSharp_BroPacket__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="1c12c62c-ff23-4999-84a7-c3575180d27e" Title="BroPacket Methods" Url="html/Methods_T_BroccoliSharp_BroPacket.htm">
+        <HelpTOCNode Id="7a9d286e-c2f6-40ea-8568-9c173e002492" Title="BroPacket Methods" Url="html/Methods_T_BroccoliSharp_BroPacket.htm">
           <HelpTOCNode Title="Clone Method " Url="html/M_BroccoliSharp_BroPacket_Clone.htm" />
-          <HelpTOCNode Id="87643ec0-f7ea-4b32-9373-3ff1a56da9f6" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroPacket_Dispose.htm">
+          <HelpTOCNode Id="85619821-135e-4b2b-b1b3-2cb49d1f7bcf" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroPacket_Dispose.htm">
             <HelpTOCNode Title="Dispose Method " Url="html/M_BroccoliSharp_BroPacket_Dispose.htm" />
             <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_BroccoliSharp_BroPacket_Dispose_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Finalize Method " Url="html/M_BroccoliSharp_BroPacket_Finalize.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="b3b3ea67-3dba-44e4-ba3d-06e30b905cc3" Title="BroPort Structure" Url="html/T_BroccoliSharp_BroPort.htm">
-        <HelpTOCNode Id="fc77245f-8bd3-405a-ba5a-7d4398f26cdc" Title="BroPort Constructor " Url="html/Overload_BroccoliSharp_BroPort__ctor.htm">
+      <HelpTOCNode Id="cb9f861b-969f-487f-ab2b-3520c347b49c" Title="BroPort Structure" Url="html/T_BroccoliSharp_BroPort.htm">
+        <HelpTOCNode Id="9059052f-d706-4b61-9c3c-5cffdebeaeca" Title="BroPort Constructor " Url="html/Overload_BroccoliSharp_BroPort__ctor.htm">
           <HelpTOCNode Title="BroPort Constructor (UInt64, Int32)" Url="html/M_BroccoliSharp_BroPort__ctor.htm" />
           <HelpTOCNode Title="BroPort Constructor (UInt64, ProtocolType)" Url="html/M_BroccoliSharp_BroPort__ctor_1.htm" />
           <HelpTOCNode Title="BroPort Constructor (UInt64, String)" Url="html/M_BroccoliSharp_BroPort__ctor_2.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="4e52128e-f35a-4bf9-bfe9-2963e191c9cb" Title="BroPort Methods" Url="html/Methods_T_BroccoliSharp_BroPort.htm">
-          <HelpTOCNode Id="359f0b98-4f02-4c88-aa70-6a75f67c92b9" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroPort_Equals.htm">
+        <HelpTOCNode Id="9bf1db22-b73d-4331-9561-cd4dde915810" Title="BroPort Methods" Url="html/Methods_T_BroccoliSharp_BroPort.htm">
+          <HelpTOCNode Id="11b0da87-34be-4881-a3d2-350326255a06" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroPort_Equals.htm">
             <HelpTOCNode Title="Equals Method (Object)" Url="html/M_BroccoliSharp_BroPort_Equals_1.htm" />
             <HelpTOCNode Title="Equals Method (BroPort)" Url="html/M_BroccoliSharp_BroPort_Equals.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="GetHashCode Method " Url="html/M_BroccoliSharp_BroPort_GetHashCode.htm" />
           <HelpTOCNode Title="ToString Method " Url="html/M_BroccoliSharp_BroPort_ToString.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="21d93440-e94e-45bf-84fd-dfffcd3875a9" Title="BroPort Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroPort.htm">
+        <HelpTOCNode Id="211db0ec-3794-4242-bcba-51b7f9442a2b" Title="BroPort Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroPort.htm">
           <HelpTOCNode Title="Equality Operator " Url="html/M_BroccoliSharp_BroPort_op_Equality.htm" />
           <HelpTOCNode Title="Implicit Conversion (BroPort to UInt64)" Url="html/M_BroccoliSharp_BroPort_op_Implicit.htm" />
           <HelpTOCNode Title="Inequality Operator " Url="html/M_BroccoliSharp_BroPort_op_Inequality.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="8da19be3-917c-46ad-8448-c01a49238e12" Title="BroPort Properties" Url="html/Properties_T_BroccoliSharp_BroPort.htm">
+        <HelpTOCNode Id="88f689fa-8811-45f7-98e2-63c060e9e027" Title="BroPort Properties" Url="html/Properties_T_BroccoliSharp_BroPort.htm">
           <HelpTOCNode Title="Number Property " Url="html/P_BroccoliSharp_BroPort_Number.htm" />
           <HelpTOCNode Title="ProtocolType Property " Url="html/P_BroccoliSharp_BroPort_ProtocolType.htm" />
           <HelpTOCNode Title="RawProtocolType Property " Url="html/P_BroccoliSharp_BroPort_RawProtocolType.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="b61aa615-667b-4f47-8252-951a12a5ce1a" Title="BroRecord Class" Url="html/T_BroccoliSharp_BroRecord.htm">
-        <HelpTOCNode Id="e06cd3c1-b9d3-40f4-adf3-ddb8ff23ecb1" Title="BroRecord Constructor " Url="html/Overload_BroccoliSharp_BroRecord__ctor.htm">
+      <HelpTOCNode Id="09489a6f-36fb-4e92-bbe0-950758b08c06" Title="BroRecord Class" Url="html/T_BroccoliSharp_BroRecord.htm">
+        <HelpTOCNode Id="f3558013-e2f5-4fdf-8def-33d343676f03" Title="BroRecord Constructor " Url="html/Overload_BroccoliSharp_BroRecord__ctor.htm">
           <HelpTOCNode Title="BroRecord Constructor " Url="html/M_BroccoliSharp_BroRecord__ctor.htm" />
           <HelpTOCNode Title="BroRecord Constructor (IEnumerable(BroField))" Url="html/M_BroccoliSharp_BroRecord__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ab1aeeb6-9076-4a59-9817-cdb3f7f4fc89" Title="BroRecord Methods" Url="html/Methods_T_BroccoliSharp_BroRecord.htm">
-          <HelpTOCNode Id="a50edc73-2cba-4a9a-91a8-aab511fe7aac" Title="Add Method " Url="html/Overload_BroccoliSharp_BroRecord_Add.htm">
+        <HelpTOCNode Id="c10fc024-8972-4177-bd5f-283c8a6ccbfc" Title="BroRecord Methods" Url="html/Methods_T_BroccoliSharp_BroRecord.htm">
+          <HelpTOCNode Id="a449b49a-e1a7-474d-8a50-42b5a474d98c" Title="Add Method " Url="html/Overload_BroccoliSharp_BroRecord_Add.htm">
             <HelpTOCNode Title="Add Method (BroField)" Url="html/M_BroccoliSharp_BroRecord_Add.htm" />
             <HelpTOCNode Title="Add Method (BroValue, String)" Url="html/M_BroccoliSharp_BroRecord_Add_1.htm" />
             <HelpTOCNode Title="Add Method (Object, BroType, String, String)" Url="html/M_BroccoliSharp_BroRecord_Add_2.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Clear Method " Url="html/M_BroccoliSharp_BroRecord_Clear.htm" />
           <HelpTOCNode Title="Clone Method " Url="html/M_BroccoliSharp_BroRecord_Clone.htm" />
-          <HelpTOCNode Id="bff0d790-6391-4784-a4da-c1767abeeae2" Title="Contains Method " Url="html/Overload_BroccoliSharp_BroRecord_Contains.htm">
+          <HelpTOCNode Id="c6368b9b-cea5-4300-8b24-1d87b568b0a8" Title="Contains Method " Url="html/Overload_BroccoliSharp_BroRecord_Contains.htm">
             <HelpTOCNode Title="Contains Method (String)" Url="html/M_BroccoliSharp_BroRecord_Contains_1.htm" />
             <HelpTOCNode Title="Contains Method (BroField)" Url="html/M_BroccoliSharp_BroRecord_Contains.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="CopyTo Method " Url="html/M_BroccoliSharp_BroRecord_CopyTo.htm" />
-          <HelpTOCNode Id="dde5e2b6-fe85-4ea8-bb97-c0699f10f205" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroRecord_Dispose.htm">
+          <HelpTOCNode Id="f192ee29-071c-4f96-a95d-9446bc6f7521" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroRecord_Dispose.htm">
             <HelpTOCNode Title="Dispose Method " Url="html/M_BroccoliSharp_BroRecord_Dispose.htm" />
             <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_BroccoliSharp_BroRecord_Dispose_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Finalize Method " Url="html/M_BroccoliSharp_BroRecord_Finalize.htm" />
           <HelpTOCNode Title="GetEnumerator Method " Url="html/M_BroccoliSharp_BroRecord_GetEnumerator.htm" />
-          <HelpTOCNode Id="45fb8815-c41c-47a5-9aaf-607ea63dd12b" Title="IndexOf Method " Url="html/Overload_BroccoliSharp_BroRecord_IndexOf.htm">
+          <HelpTOCNode Id="ac6bfd4b-6edd-481f-91ce-907c2b44a073" Title="IndexOf Method " Url="html/Overload_BroccoliSharp_BroRecord_IndexOf.htm">
             <HelpTOCNode Title="IndexOf Method (String)" Url="html/M_BroccoliSharp_BroRecord_IndexOf_1.htm" />
             <HelpTOCNode Title="IndexOf Method (BroField)" Url="html/M_BroccoliSharp_BroRecord_IndexOf.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="27ebc822-51cc-4dda-a6e8-9de8721a1ece" Title="Insert Method " Url="html/Overload_BroccoliSharp_BroRecord_Insert.htm">
+          <HelpTOCNode Id="2e3cc176-159d-4018-9884-bb37b596b111" Title="Insert Method " Url="html/Overload_BroccoliSharp_BroRecord_Insert.htm">
             <HelpTOCNode Title="Insert Method (Int32, BroField)" Url="html/M_BroccoliSharp_BroRecord_Insert.htm" />
             <HelpTOCNode Title="Insert Method (Int32, BroValue, String)" Url="html/M_BroccoliSharp_BroRecord_Insert_1.htm" />
             <HelpTOCNode Title="Insert Method (Int32, Object, BroType, String, String)" Url="html/M_BroccoliSharp_BroRecord_Insert_2.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="979856b3-836c-485a-831e-9ca809f7fd8d" Title="Remove Method " Url="html/Overload_BroccoliSharp_BroRecord_Remove.htm">
+          <HelpTOCNode Id="c32585e8-38fb-4bcc-9467-dbb9b18a8214" Title="Remove Method " Url="html/Overload_BroccoliSharp_BroRecord_Remove.htm">
             <HelpTOCNode Title="Remove Method (String)" Url="html/M_BroccoliSharp_BroRecord_Remove_1.htm" />
             <HelpTOCNode Title="Remove Method (BroField)" Url="html/M_BroccoliSharp_BroRecord_Remove.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="RemoveAt Method " Url="html/M_BroccoliSharp_BroRecord_RemoveAt.htm" />
           <HelpTOCNode Title="ToString Method " Url="html/M_BroccoliSharp_BroRecord_ToString.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ab7f464d-751f-4354-8d7b-e2b227ccadf2" Title="BroRecord Properties" Url="html/Properties_T_BroccoliSharp_BroRecord.htm">
+        <HelpTOCNode Id="5b97f834-3416-4b81-9e22-957f118f288f" Title="BroRecord Properties" Url="html/Properties_T_BroccoliSharp_BroRecord.htm">
           <HelpTOCNode Title="Count Property " Url="html/P_BroccoliSharp_BroRecord_Count.htm" />
           <HelpTOCNode Title="IsReadOnly Property " Url="html/P_BroccoliSharp_BroRecord_IsReadOnly.htm" />
-          <HelpTOCNode Id="59099a49-4b0f-4dd3-91cb-b2765e97ef84" Title="Item Property " Url="html/Overload_BroccoliSharp_BroRecord_Item.htm">
+          <HelpTOCNode Id="d9e72d35-5ae8-4395-b1df-d5dbdf59cc3f" Title="Item Property " Url="html/Overload_BroccoliSharp_BroRecord_Item.htm">
             <HelpTOCNode Title="Item Property (Int32)" Url="html/P_BroccoliSharp_BroRecord_Item.htm" />
             <HelpTOCNode Title="Item Property (String)" Url="html/P_BroccoliSharp_BroRecord_Item_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="fe381c8f-9fc6-4ac2-b353-e6bf20fa569e" Title="BroSet Class" Url="html/T_BroccoliSharp_BroSet.htm">
-        <HelpTOCNode Id="2b285aaf-b912-4c7f-83c9-1e880dc8cbea" Title="BroSet Constructor " Url="html/Overload_BroccoliSharp_BroSet__ctor.htm">
+      <HelpTOCNode Id="4f30a27d-b058-49da-840e-0d66a31be241" Title="BroSet Class" Url="html/T_BroccoliSharp_BroSet.htm">
+        <HelpTOCNode Id="39a18b53-1e1c-44d6-beb7-c9317f8fb8a6" Title="BroSet Constructor " Url="html/Overload_BroccoliSharp_BroSet__ctor.htm">
           <HelpTOCNode Title="BroSet Constructor " Url="html/M_BroccoliSharp_BroSet__ctor.htm" />
           <HelpTOCNode Title="BroSet Constructor (IEnumerable(BroValue))" Url="html/M_BroccoliSharp_BroSet__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="486e542d-227e-45e8-a86f-54ee89d38829" Title="BroSet Methods" Url="html/Methods_T_BroccoliSharp_BroSet.htm">
-          <HelpTOCNode Id="486986ba-1391-41f3-a00b-1fb3d252dbaa" Title="Add Method " Url="html/Overload_BroccoliSharp_BroSet_Add.htm">
+        <HelpTOCNode Id="a2872223-8ac6-4b07-91be-e185eeede39a" Title="BroSet Methods" Url="html/Methods_T_BroccoliSharp_BroSet.htm">
+          <HelpTOCNode Id="2cb6c668-6153-4817-a1f6-47e4c0ab5df2" Title="Add Method " Url="html/Overload_BroccoliSharp_BroSet_Add.htm">
             <HelpTOCNode Title="Add Method (BroValue)" Url="html/M_BroccoliSharp_BroSet_Add.htm" />
             <HelpTOCNode Title="Add Method (Object, BroType, String)" Url="html/M_BroccoliSharp_BroSet_Add_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Clear Method " Url="html/M_BroccoliSharp_BroSet_Clear.htm" />
           <HelpTOCNode Title="Clone Method " Url="html/M_BroccoliSharp_BroSet_Clone.htm" />
-          <HelpTOCNode Id="0bbd7eb2-a44d-48ac-bedb-456afcb4f5a5" Title="Contains Method " Url="html/Overload_BroccoliSharp_BroSet_Contains.htm">
+          <HelpTOCNode Id="950367d7-84cd-4783-a789-84cf3205e169" Title="Contains Method " Url="html/Overload_BroccoliSharp_BroSet_Contains.htm">
             <HelpTOCNode Title="Contains Method (BroValue)" Url="html/M_BroccoliSharp_BroSet_Contains.htm" />
             <HelpTOCNode Title="Contains Method (Object, BroType, String)" Url="html/M_BroccoliSharp_BroSet_Contains_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="CopyTo Method " Url="html/M_BroccoliSharp_BroSet_CopyTo.htm" />
-          <HelpTOCNode Id="bd7a40a6-1852-4583-807f-4323b652284b" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroSet_Dispose.htm">
+          <HelpTOCNode Id="38e5590b-6d35-4486-9245-35fa729033bc" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroSet_Dispose.htm">
             <HelpTOCNode Title="Dispose Method " Url="html/M_BroccoliSharp_BroSet_Dispose.htm" />
             <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_BroccoliSharp_BroSet_Dispose_1.htm" />
           </HelpTOCNode>
@@ -316,23 +299,23 @@
           <HelpTOCNode Title="ToList Method " Url="html/M_BroccoliSharp_BroSet_ToList.htm" />
           <HelpTOCNode Title="UnionWith Method " Url="html/M_BroccoliSharp_BroSet_UnionWith.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f03e708e-04e2-42dc-84ce-d15783416b8c" Title="BroSet Properties" Url="html/Properties_T_BroccoliSharp_BroSet.htm">
+        <HelpTOCNode Id="5d62c0b6-2a64-4b25-b2dc-cd55011f1d02" Title="BroSet Properties" Url="html/Properties_T_BroccoliSharp_BroSet.htm">
           <HelpTOCNode Title="Count Property " Url="html/P_BroccoliSharp_BroSet_Count.htm" />
           <HelpTOCNode Title="IsReadOnly Property " Url="html/P_BroccoliSharp_BroSet_IsReadOnly.htm" />
           <HelpTOCNode Title="Type Property " Url="html/P_BroccoliSharp_BroSet_Type.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="f7fe9b47-1a8e-48ae-ac50-f4a8dacf5b14" Title="BroString Class" Url="html/T_BroccoliSharp_BroString.htm">
-        <HelpTOCNode Id="3ed3dd6f-ade6-4225-a790-6734b0c9a866" Title="BroString Constructor " Url="html/Overload_BroccoliSharp_BroString__ctor.htm">
+      <HelpTOCNode Id="a58eae2c-8639-4d20-ab05-9001724596cf" Title="BroString Class" Url="html/T_BroccoliSharp_BroString.htm">
+        <HelpTOCNode Id="b7976db6-7826-45f6-ab7a-8560e1e4add8" Title="BroString Constructor " Url="html/Overload_BroccoliSharp_BroString__ctor.htm">
           <HelpTOCNode Title="BroString Constructor " Url="html/M_BroccoliSharp_BroString__ctor.htm" />
           <HelpTOCNode Title="BroString Constructor (String)" Url="html/M_BroccoliSharp_BroString__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="893c7309-2e56-4538-b66f-80e30490d3ee" Title="BroString Methods" Url="html/Methods_T_BroccoliSharp_BroString.htm">
-          <HelpTOCNode Id="74ffc616-79e8-4fed-b56f-98e40c278b40" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroString_Dispose.htm">
+        <HelpTOCNode Id="460adc00-bc71-4a8d-8466-897e580ed352" Title="BroString Methods" Url="html/Methods_T_BroccoliSharp_BroString.htm">
+          <HelpTOCNode Id="58876d4e-e2ea-4faa-bfff-7a8500de4ce6" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroString_Dispose.htm">
             <HelpTOCNode Title="Dispose Method " Url="html/M_BroccoliSharp_BroString_Dispose.htm" />
             <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_BroccoliSharp_BroString_Dispose_1.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="74f42d2d-5721-4b45-b908-4d497ff21d0b" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroString_Equals.htm">
+          <HelpTOCNode Id="95fe2c65-8c98-4517-a8e5-80ec2fa77af4" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroString_Equals.htm">
             <HelpTOCNode Title="Equals Method (Object)" Url="html/M_BroccoliSharp_BroString_Equals_1.htm" />
             <HelpTOCNode Title="Equals Method (BroString)" Url="html/M_BroccoliSharp_BroString_Equals.htm" />
           </HelpTOCNode>
@@ -340,26 +323,26 @@
           <HelpTOCNode Title="GetHashCode Method " Url="html/M_BroccoliSharp_BroString_GetHashCode.htm" />
           <HelpTOCNode Title="ToString Method " Url="html/M_BroccoliSharp_BroString_ToString.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="b454b32f-ec17-4639-ac4b-b8f47572147d" Title="BroString Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroString.htm">
+        <HelpTOCNode Id="5c99bdb2-0ef2-4690-a514-7d7e52715cf0" Title="BroString Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroString.htm">
           <HelpTOCNode Title="Equality Operator " Url="html/M_BroccoliSharp_BroString_op_Equality.htm" />
-          <HelpTOCNode Id="7dd00dd7-176a-4731-95bc-1854ea38284f" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroString_op_Implicit.htm">
+          <HelpTOCNode Id="a29e8373-dc84-44c3-9de6-ba97cbff9eac" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroString_op_Implicit.htm">
             <HelpTOCNode Title="Implicit Conversion (String to BroString)" Url="html/M_BroccoliSharp_BroString_op_Implicit_1.htm" />
             <HelpTOCNode Title="Implicit Conversion (BroString to String)" Url="html/M_BroccoliSharp_BroString_op_Implicit.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Inequality Operator " Url="html/M_BroccoliSharp_BroString_op_Inequality.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="7c06a4bd-eb5d-41d6-aaaf-96dd7195c1e3" Title="BroString Properties" Url="html/Properties_T_BroccoliSharp_BroString.htm">
+        <HelpTOCNode Id="2b00abd6-7bad-49b2-9d06-228a315d6526" Title="BroString Properties" Url="html/Properties_T_BroccoliSharp_BroString.htm">
           <HelpTOCNode Title="Length Property " Url="html/P_BroccoliSharp_BroString_Length.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="ca459bd7-12a8-4ad8-a797-2a4740eecbba" Title="BroSubnet Structure" Url="html/T_BroccoliSharp_BroSubnet.htm">
-        <HelpTOCNode Id="3d4ae67c-083e-47f6-a19b-32d7ea78d7a1" Title="BroSubnet Constructor " Url="html/Overload_BroccoliSharp_BroSubnet__ctor.htm">
+      <HelpTOCNode Id="719905e3-1f02-47ba-aa40-c4632973c50e" Title="BroSubnet Structure" Url="html/T_BroccoliSharp_BroSubnet.htm">
+        <HelpTOCNode Id="9ba2562e-b4c9-430b-8cd2-da92bae35939" Title="BroSubnet Constructor " Url="html/Overload_BroccoliSharp_BroSubnet__ctor.htm">
           <HelpTOCNode Title="BroSubnet Constructor (IPAddress, UInt32)" Url="html/M_BroccoliSharp_BroSubnet__ctor_1.htm" />
           <HelpTOCNode Title="BroSubnet Constructor (String, UInt32)" Url="html/M_BroccoliSharp_BroSubnet__ctor_2.htm" />
           <HelpTOCNode Title="BroSubnet Constructor (BroAddress, UInt32)" Url="html/M_BroccoliSharp_BroSubnet__ctor.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="79e3f60b-cda8-4575-91a5-3630ba093b0e" Title="BroSubnet Methods" Url="html/Methods_T_BroccoliSharp_BroSubnet.htm">
-          <HelpTOCNode Id="ee0d97ef-5f92-4801-86b3-a27e482a68f7" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroSubnet_Equals.htm">
+        <HelpTOCNode Id="f99247f7-40b0-468b-9e72-eaabad231be4" Title="BroSubnet Methods" Url="html/Methods_T_BroccoliSharp_BroSubnet.htm">
+          <HelpTOCNode Id="4744ea1d-67b2-4252-9120-c8a7c1eca8e2" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroSubnet_Equals.htm">
             <HelpTOCNode Title="Equals Method (Object)" Url="html/M_BroccoliSharp_BroSubnet_Equals_1.htm" />
             <HelpTOCNode Title="Equals Method (BroSubnet)" Url="html/M_BroccoliSharp_BroSubnet_Equals.htm" />
           </HelpTOCNode>
@@ -367,24 +350,24 @@
           <HelpTOCNode Title="ToIPAddress Method " Url="html/M_BroccoliSharp_BroSubnet_ToIPAddress.htm" />
           <HelpTOCNode Title="ToString Method " Url="html/M_BroccoliSharp_BroSubnet_ToString.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="073796e2-25e0-49f5-85b4-18b4d31de28b" Title="BroSubnet Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroSubnet.htm">
+        <HelpTOCNode Id="a6dde52b-4ffb-49e6-a4cd-924c7ccbc411" Title="BroSubnet Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroSubnet.htm">
           <HelpTOCNode Title="Equality Operator " Url="html/M_BroccoliSharp_BroSubnet_op_Equality.htm" />
           <HelpTOCNode Title="Implicit Conversion (BroSubnet to BroAddress)" Url="html/M_BroccoliSharp_BroSubnet_op_Implicit.htm" />
           <HelpTOCNode Title="Inequality Operator " Url="html/M_BroccoliSharp_BroSubnet_op_Inequality.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="07422940-0d6b-4d36-88b0-c72ae64e16f0" Title="BroSubnet Properties" Url="html/Properties_T_BroccoliSharp_BroSubnet.htm">
+        <HelpTOCNode Id="0ccce50b-1a8b-4ae3-aaed-a6a7ea97be25" Title="BroSubnet Properties" Url="html/Properties_T_BroccoliSharp_BroSubnet.htm">
           <HelpTOCNode Title="AddressBytes Property " Url="html/P_BroccoliSharp_BroSubnet_AddressBytes.htm" />
           <HelpTOCNode Title="IsIPv4MappedAddress Property " Url="html/P_BroccoliSharp_BroSubnet_IsIPv4MappedAddress.htm" />
           <HelpTOCNode Title="Width Property " Url="html/P_BroccoliSharp_BroSubnet_Width.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="07aeaa91-2980-43fa-bdd5-ed0cc8dbcacb" Title="BroTable Class" Url="html/T_BroccoliSharp_BroTable.htm">
-        <HelpTOCNode Id="78035220-c43d-4796-ad75-dd28dbe2d9be" Title="BroTable Constructor " Url="html/Overload_BroccoliSharp_BroTable__ctor.htm">
+      <HelpTOCNode Id="35e81604-5c4e-41c4-8efa-4880ab9127e6" Title="BroTable Class" Url="html/T_BroccoliSharp_BroTable.htm">
+        <HelpTOCNode Id="b9326495-ae5d-471e-8b55-f7272a6006cf" Title="BroTable Constructor " Url="html/Overload_BroccoliSharp_BroTable__ctor.htm">
           <HelpTOCNode Title="BroTable Constructor " Url="html/M_BroccoliSharp_BroTable__ctor.htm" />
           <HelpTOCNode Title="BroTable Constructor (IDictionary(BroValue, BroValue))" Url="html/M_BroccoliSharp_BroTable__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="202a1263-bd93-47c9-a9ea-97ac378098dd" Title="BroTable Methods" Url="html/Methods_T_BroccoliSharp_BroTable.htm">
-          <HelpTOCNode Id="384c3c26-223d-41c8-97ed-b8add708ec43" Title="Add Method " Url="html/Overload_BroccoliSharp_BroTable_Add.htm">
+        <HelpTOCNode Id="c2e22baa-929f-4b76-93bf-6cb1150c3a40" Title="BroTable Methods" Url="html/Methods_T_BroccoliSharp_BroTable.htm">
+          <HelpTOCNode Id="ea79c00e-61ac-4979-87e0-18b481b9469c" Title="Add Method " Url="html/Overload_BroccoliSharp_BroTable_Add.htm">
             <HelpTOCNode Title="Add Method (KeyValuePair(BroValue, BroValue))" Url="html/M_BroccoliSharp_BroTable_Add_1.htm" />
             <HelpTOCNode Title="Add Method (BroValue, BroValue)" Url="html/M_BroccoliSharp_BroTable_Add.htm" />
             <HelpTOCNode Title="Add Method (Object, BroType, Object, BroType, String, String)" Url="html/M_BroccoliSharp_BroTable_Add_2.htm" />
@@ -392,30 +375,30 @@
           <HelpTOCNode Title="Clear Method " Url="html/M_BroccoliSharp_BroTable_Clear.htm" />
           <HelpTOCNode Title="Clone Method " Url="html/M_BroccoliSharp_BroTable_Clone.htm" />
           <HelpTOCNode Title="Contains Method " Url="html/M_BroccoliSharp_BroTable_Contains.htm" />
-          <HelpTOCNode Id="89d49e1b-38f4-43bd-af6a-943b1de581d0" Title="ContainsKey Method " Url="html/Overload_BroccoliSharp_BroTable_ContainsKey.htm">
+          <HelpTOCNode Id="ae2aa6bb-c969-4092-913f-331891e4e8a9" Title="ContainsKey Method " Url="html/Overload_BroccoliSharp_BroTable_ContainsKey.htm">
             <HelpTOCNode Title="ContainsKey Method (BroValue)" Url="html/M_BroccoliSharp_BroTable_ContainsKey.htm" />
             <HelpTOCNode Title="ContainsKey Method (Object, BroType, String)" Url="html/M_BroccoliSharp_BroTable_ContainsKey_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="CopyTo Method " Url="html/M_BroccoliSharp_BroTable_CopyTo.htm" />
-          <HelpTOCNode Id="4231b180-64ad-4c88-888b-f4156a30869b" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroTable_Dispose.htm">
+          <HelpTOCNode Id="24dcdf19-2f8c-4fdc-a7a7-48590127c221" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroTable_Dispose.htm">
             <HelpTOCNode Title="Dispose Method " Url="html/M_BroccoliSharp_BroTable_Dispose.htm" />
             <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_BroccoliSharp_BroTable_Dispose_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Finalize Method " Url="html/M_BroccoliSharp_BroTable_Finalize.htm" />
           <HelpTOCNode Title="GetEnumerator Method " Url="html/M_BroccoliSharp_BroTable_GetEnumerator.htm" />
           <HelpTOCNode Title="Remove Method " Url="html/M_BroccoliSharp_BroTable_Remove.htm" />
-          <HelpTOCNode Id="24ec6594-7a00-4e03-a66c-ccbb9302a902" Title="TryGetValue Method " Url="html/Overload_BroccoliSharp_BroTable_TryGetValue.htm">
+          <HelpTOCNode Id="dc076175-aeef-46fe-af7e-b92b98dd7957" Title="TryGetValue Method " Url="html/Overload_BroccoliSharp_BroTable_TryGetValue.htm">
             <HelpTOCNode Title="TryGetValue Method (BroValue, BroValue)" Url="html/M_BroccoliSharp_BroTable_TryGetValue.htm" />
             <HelpTOCNode Title="TryGetValue Method (Object, BroType, BroValue, String)" Url="html/M_BroccoliSharp_BroTable_TryGetValue_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Id="5a533b01-95fd-48ea-b94b-e6e9ec9b5213" Title="BroTable Type Conversions" Url="html/Operators_T_BroccoliSharp_BroTable.htm">
+        <HelpTOCNode Id="ae69a78b-1074-4828-a5aa-38bbcc728253" Title="BroTable Type Conversions" Url="html/Operators_T_BroccoliSharp_BroTable.htm">
           <HelpTOCNode Title="Implicit Conversion (BroTable to BroSet)" Url="html/M_BroccoliSharp_BroTable_op_Implicit.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="ede78204-235c-4625-8166-88086fe17d56" Title="BroTable Properties" Url="html/Properties_T_BroccoliSharp_BroTable.htm">
+        <HelpTOCNode Id="978e4c57-a487-406c-8988-add90d0f14fb" Title="BroTable Properties" Url="html/Properties_T_BroccoliSharp_BroTable.htm">
           <HelpTOCNode Title="Count Property " Url="html/P_BroccoliSharp_BroTable_Count.htm" />
           <HelpTOCNode Title="IsReadOnly Property " Url="html/P_BroccoliSharp_BroTable_IsReadOnly.htm" />
-          <HelpTOCNode Id="9755c199-0b66-4e18-8fa3-747d585c8b9a" Title="Item Property " Url="html/Overload_BroccoliSharp_BroTable_Item.htm">
+          <HelpTOCNode Id="b07680c0-03d3-4914-96a2-8bd0749ca552" Title="Item Property " Url="html/Overload_BroccoliSharp_BroTable_Item.htm">
             <HelpTOCNode Title="Item Property (BroValue)" Url="html/P_BroccoliSharp_BroTable_Item.htm" />
             <HelpTOCNode Title="Item Property (Object, BroType, String)" Url="html/P_BroccoliSharp_BroTable_Item_1.htm" />
           </HelpTOCNode>
@@ -425,37 +408,37 @@
           <HelpTOCNode Title="ValueType Property " Url="html/P_BroccoliSharp_BroTable_ValueType.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="23919e2f-f121-450c-a070-6773f5c2e5c5" Title="BroTime Structure" Url="html/T_BroccoliSharp_BroTime.htm">
-        <HelpTOCNode Id="e9f0ccd2-a17e-449c-bbce-d8a206fee60f" Title="BroTime Constructor " Url="html/Overload_BroccoliSharp_BroTime__ctor.htm">
+      <HelpTOCNode Id="a7e79330-9771-4328-b273-51c9a56899a0" Title="BroTime Structure" Url="html/T_BroccoliSharp_BroTime.htm">
+        <HelpTOCNode Id="ad8a71bd-e6ac-4633-a880-f4c8ca1b64d5" Title="BroTime Constructor " Url="html/Overload_BroccoliSharp_BroTime__ctor.htm">
           <HelpTOCNode Title="BroTime Constructor (DateTime)" Url="html/M_BroccoliSharp_BroTime__ctor.htm" />
           <HelpTOCNode Title="BroTime Constructor (Double)" Url="html/M_BroccoliSharp_BroTime__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="8790b0e4-0a71-44df-afd7-7bea801ae9ff" Title="BroTime Fields" Url="html/Fields_T_BroccoliSharp_BroTime.htm">
+        <HelpTOCNode Id="88ce38ad-17f8-4e33-8048-25781a7b815d" Title="BroTime Fields" Url="html/Fields_T_BroccoliSharp_BroTime.htm">
           <HelpTOCNode Title="Epoch Field" Url="html/F_BroccoliSharp_BroTime_Epoch.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="b445e685-6003-4dd5-86e8-02fe8ec8c19c" Title="BroTime Methods" Url="html/Methods_T_BroccoliSharp_BroTime.htm">
+        <HelpTOCNode Id="0530f4d2-2414-4a64-bc03-1ad909c3839f" Title="BroTime Methods" Url="html/Methods_T_BroccoliSharp_BroTime.htm">
           <HelpTOCNode Title="ToDateTime Method " Url="html/M_BroccoliSharp_BroTime_ToDateTime.htm" />
-          <HelpTOCNode Id="293cf926-d0de-4072-9e86-c9f40b7084b9" Title="ToString Method " Url="html/Overload_BroccoliSharp_BroTime_ToString.htm">
+          <HelpTOCNode Id="ec9a49a0-1d8a-4fe7-b4b5-467daf589bd8" Title="ToString Method " Url="html/Overload_BroccoliSharp_BroTime_ToString.htm">
             <HelpTOCNode Title="ToString Method " Url="html/M_BroccoliSharp_BroTime_ToString.htm" />
             <HelpTOCNode Title="ToString Method (String)" Url="html/M_BroccoliSharp_BroTime_ToString_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Id="a15726ce-6b3b-4982-afde-9202fb7c9aa4" Title="BroTime Type Conversions" Url="html/Operators_T_BroccoliSharp_BroTime.htm">
-          <HelpTOCNode Id="fc8461bc-8f32-4a8d-a3f1-bcc85e730498" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroTime_op_Implicit.htm">
+        <HelpTOCNode Id="4a6f1cdf-dca6-49dc-b65f-d022b1ee282a" Title="BroTime Type Conversions" Url="html/Operators_T_BroccoliSharp_BroTime.htm">
+          <HelpTOCNode Id="122ea6c4-f9ba-419e-b9d2-b575ed3695b5" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroTime_op_Implicit.htm">
             <HelpTOCNode Title="Implicit Conversion (DateTime to BroTime)" Url="html/M_BroccoliSharp_BroTime_op_Implicit_2.htm" />
             <HelpTOCNode Title="Implicit Conversion (Double to BroTime)" Url="html/M_BroccoliSharp_BroTime_op_Implicit_3.htm" />
             <HelpTOCNode Title="Implicit Conversion (BroTime to Double)" Url="html/M_BroccoliSharp_BroTime_op_Implicit.htm" />
             <HelpTOCNode Title="Implicit Conversion (BroTime to DateTime)" Url="html/M_BroccoliSharp_BroTime_op_Implicit_1.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
-        <HelpTOCNode Id="fd511556-2ec9-49a1-a242-e0230d57904d" Title="BroTime Properties" Url="html/Properties_T_BroccoliSharp_BroTime.htm">
+        <HelpTOCNode Id="ac938f3f-be59-4702-ac8b-fecbe1459ac6" Title="BroTime Properties" Url="html/Properties_T_BroccoliSharp_BroTime.htm">
           <HelpTOCNode Title="Now Property " Url="html/P_BroccoliSharp_BroTime_Now.htm" />
           <HelpTOCNode Title="Value Property " Url="html/P_BroccoliSharp_BroTime_Value.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
       <HelpTOCNode Title="BroType Enumeration" Url="html/T_BroccoliSharp_BroType.htm" />
-      <HelpTOCNode Id="f91b8701-9e3e-4812-8320-f79d2588c36b" Title="BroTypeExtensions Class" Url="html/T_BroccoliSharp_BroTypeExtensions.htm">
-        <HelpTOCNode Id="46e26c6c-2e0c-428c-8bb3-c068ccab24db" Title="BroTypeExtensions Methods" Url="html/Methods_T_BroccoliSharp_BroTypeExtensions.htm">
+      <HelpTOCNode Id="dd293b8d-cc6a-4c59-a0eb-77b40bb86813" Title="BroTypeExtensions Class" Url="html/T_BroccoliSharp_BroTypeExtensions.htm">
+        <HelpTOCNode Id="e0adc55d-16c9-43be-9b9b-c62fff7908c0" Title="BroTypeExtensions Methods" Url="html/Methods_T_BroccoliSharp_BroTypeExtensions.htm">
           <HelpTOCNode Title="IsEnumerableType Method " Url="html/M_BroccoliSharp_BroTypeExtensions_IsEnumerableType.htm" />
           <HelpTOCNode Title="IsOpaqueType Method " Url="html/M_BroccoliSharp_BroTypeExtensions_IsOpaqueType.htm" />
           <HelpTOCNode Title="IsReferenceType Method " Url="html/M_BroccoliSharp_BroTypeExtensions_IsReferenceType.htm" />
@@ -463,19 +446,19 @@
           <HelpTOCNode Title="IsValueType Method " Url="html/M_BroccoliSharp_BroTypeExtensions_IsValueType.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="f92fa965-9d69-41a7-aa22-5e68cefd9641" Title="BroValue Class" Url="html/T_BroccoliSharp_BroValue.htm">
+      <HelpTOCNode Id="d977a016-8680-471a-bae5-09adb9bbbd00" Title="BroValue Class" Url="html/T_BroccoliSharp_BroValue.htm">
         <HelpTOCNode Title="BroValue Constructor " Url="html/M_BroccoliSharp_BroValue__ctor.htm" />
-        <HelpTOCNode Id="cadae540-84c2-4349-8223-62f30f041412" Title="BroValue Methods" Url="html/Methods_T_BroccoliSharp_BroValue.htm">
-          <HelpTOCNode Id="7b544019-7d75-419d-8a74-6a1a207a9671" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroValue_Equals.htm">
+        <HelpTOCNode Id="1d065441-5452-4708-b9ba-2072db3cbdfd" Title="BroValue Methods" Url="html/Methods_T_BroccoliSharp_BroValue.htm">
+          <HelpTOCNode Id="a8ff095c-5d8f-4f4e-87e0-24b6ca35119e" Title="Equals Method " Url="html/Overload_BroccoliSharp_BroValue_Equals.htm">
             <HelpTOCNode Title="Equals Method (Object)" Url="html/M_BroccoliSharp_BroValue_Equals_1.htm" />
             <HelpTOCNode Title="Equals Method (BroValue)" Url="html/M_BroccoliSharp_BroValue_Equals.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="GetHashCode Method " Url="html/M_BroccoliSharp_BroValue_GetHashCode.htm" />
           <HelpTOCNode Title="ToString Method " Url="html/M_BroccoliSharp_BroValue_ToString.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="42770850-53a3-4357-a33a-630a963b25ec" Title="BroValue Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroValue.htm">
+        <HelpTOCNode Id="d0510de5-40fc-4a26-a718-411fda914898" Title="BroValue Operators and Type Conversions" Url="html/Operators_T_BroccoliSharp_BroValue.htm">
           <HelpTOCNode Title="Equality Operator " Url="html/M_BroccoliSharp_BroValue_op_Equality.htm" />
-          <HelpTOCNode Id="e7e216d9-795d-4553-a7fe-b3d2365a1635" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroValue_op_Implicit.htm">
+          <HelpTOCNode Id="95488ebc-acde-4610-9864-3fd7e43447d9" Title="Implicit Conversion Operators" Url="html/Overload_BroccoliSharp_BroValue_op_Implicit.htm">
             <HelpTOCNode Title="Implicit Conversion (Boolean to BroValue)" Url="html/M_BroccoliSharp_BroValue_op_Implicit_27.htm" />
             <HelpTOCNode Title="Implicit Conversion (DateTime to BroValue)" Url="html/M_BroccoliSharp_BroValue_op_Implicit_28.htm" />
             <HelpTOCNode Title="Implicit Conversion (IPAddress to BroValue)" Url="html/M_BroccoliSharp_BroValue_op_Implicit_29.htm" />
@@ -510,25 +493,25 @@
           </HelpTOCNode>
           <HelpTOCNode Title="Inequality Operator " Url="html/M_BroccoliSharp_BroValue_op_Inequality.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="d5c5e1e9-667f-4255-8ddf-9a0051ed4dc6" Title="BroValue Properties" Url="html/Properties_T_BroccoliSharp_BroValue.htm">
+        <HelpTOCNode Id="f3eb806f-777a-4c33-b9ee-f2400968f469" Title="BroValue Properties" Url="html/Properties_T_BroccoliSharp_BroValue.htm">
           <HelpTOCNode Title="HasValue Property " Url="html/P_BroccoliSharp_BroValue_HasValue.htm" />
           <HelpTOCNode Title="Type Property " Url="html/P_BroccoliSharp_BroValue_Type.htm" />
           <HelpTOCNode Title="TypeName Property " Url="html/P_BroccoliSharp_BroValue_TypeName.htm" />
           <HelpTOCNode Title="Value Property " Url="html/P_BroccoliSharp_BroValue_Value.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="2098f9c2-3bd1-495f-9432-22cc8b26dca2" Title="BroValueExtensions Class" Url="html/T_BroccoliSharp_BroValueExtensions.htm">
-        <HelpTOCNode Id="39a4f0a8-f1e9-460f-9cb8-cad8c40ab3c4" Title="BroValueExtensions Methods" Url="html/Methods_T_BroccoliSharp_BroValueExtensions.htm">
+      <HelpTOCNode Id="88215504-6672-4e6c-a3ff-afa0aaf1c95f" Title="BroValueExtensions Class" Url="html/T_BroccoliSharp_BroValueExtensions.htm">
+        <HelpTOCNode Id="2b1b76ff-cea7-47dc-9b06-b1cad6f4c75d" Title="BroValueExtensions Methods" Url="html/Methods_T_BroccoliSharp_BroValueExtensions.htm">
           <HelpTOCNode Title="ConvertToType Method " Url="html/M_BroccoliSharp_BroValueExtensions_ConvertToType.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="af96823a-5381-4a2a-81ab-1f1a69f4f833" Title="BroVector Class" Url="html/T_BroccoliSharp_BroVector.htm">
-        <HelpTOCNode Id="e62e32a6-810c-4082-8756-c243a0451cb1" Title="BroVector Constructor " Url="html/Overload_BroccoliSharp_BroVector__ctor.htm">
+      <HelpTOCNode Id="5e227c0b-e65a-4dce-a7db-827625a934ad" Title="BroVector Class" Url="html/T_BroccoliSharp_BroVector.htm">
+        <HelpTOCNode Id="fbce787b-beac-43b7-b1e9-98950d9eabf4" Title="BroVector Constructor " Url="html/Overload_BroccoliSharp_BroVector__ctor.htm">
           <HelpTOCNode Title="BroVector Constructor " Url="html/M_BroccoliSharp_BroVector__ctor.htm" />
           <HelpTOCNode Title="BroVector Constructor (IEnumerable(BroValue))" Url="html/M_BroccoliSharp_BroVector__ctor_1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9f63b408-6c4c-42d4-9630-d63ed0f2e6bd" Title="BroVector Methods" Url="html/Methods_T_BroccoliSharp_BroVector.htm">
-          <HelpTOCNode Id="0b739fd6-6739-4484-8adf-66610b42d75d" Title="Add Method " Url="html/Overload_BroccoliSharp_BroVector_Add.htm">
+        <HelpTOCNode Id="d71536d9-bf76-429c-8040-22b5bde4354c" Title="BroVector Methods" Url="html/Methods_T_BroccoliSharp_BroVector.htm">
+          <HelpTOCNode Id="30c670fe-39dd-448d-8e5d-49742db593fa" Title="Add Method " Url="html/Overload_BroccoliSharp_BroVector_Add.htm">
             <HelpTOCNode Title="Add Method (BroValue)" Url="html/M_BroccoliSharp_BroVector_Add.htm" />
             <HelpTOCNode Title="Add Method (Object, BroType, String)" Url="html/M_BroccoliSharp_BroVector_Add_1.htm" />
           </HelpTOCNode>
@@ -536,21 +519,21 @@
           <HelpTOCNode Title="Clone Method " Url="html/M_BroccoliSharp_BroVector_Clone.htm" />
           <HelpTOCNode Title="Contains Method " Url="html/M_BroccoliSharp_BroVector_Contains.htm" />
           <HelpTOCNode Title="CopyTo Method " Url="html/M_BroccoliSharp_BroVector_CopyTo.htm" />
-          <HelpTOCNode Id="bcd78497-b0f6-4cde-b4f0-9db3032c7418" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroVector_Dispose.htm">
+          <HelpTOCNode Id="8ca48bdc-00e8-4fa8-8afc-52f7a25beeb1" Title="Dispose Method " Url="html/Overload_BroccoliSharp_BroVector_Dispose.htm">
             <HelpTOCNode Title="Dispose Method " Url="html/M_BroccoliSharp_BroVector_Dispose.htm" />
             <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/M_BroccoliSharp_BroVector_Dispose_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Finalize Method " Url="html/M_BroccoliSharp_BroVector_Finalize.htm" />
           <HelpTOCNode Title="GetEnumerator Method " Url="html/M_BroccoliSharp_BroVector_GetEnumerator.htm" />
           <HelpTOCNode Title="IndexOf Method " Url="html/M_BroccoliSharp_BroVector_IndexOf.htm" />
-          <HelpTOCNode Id="d3a8113e-3d85-4435-a85d-3cea99a86aa2" Title="Insert Method " Url="html/Overload_BroccoliSharp_BroVector_Insert.htm">
+          <HelpTOCNode Id="17d1deaa-8a27-4f9e-8d1c-af7a51deee94" Title="Insert Method " Url="html/Overload_BroccoliSharp_BroVector_Insert.htm">
             <HelpTOCNode Title="Insert Method (Int32, BroValue)" Url="html/M_BroccoliSharp_BroVector_Insert.htm" />
             <HelpTOCNode Title="Insert Method (Int32, Object, BroType, String)" Url="html/M_BroccoliSharp_BroVector_Insert_1.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="Remove Method " Url="html/M_BroccoliSharp_BroVector_Remove.htm" />
           <HelpTOCNode Title="RemoveAt Method " Url="html/M_BroccoliSharp_BroVector_RemoveAt.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="89480ce6-2b5c-418a-8ca7-7f49b6cdb08b" Title="BroVector Properties" Url="html/Properties_T_BroccoliSharp_BroVector.htm">
+        <HelpTOCNode Id="b0dfba4d-5b8b-47c0-b6f5-ffb98f69e0db" Title="BroVector Properties" Url="html/Properties_T_BroccoliSharp_BroVector.htm">
           <HelpTOCNode Title="Count Property " Url="html/P_BroccoliSharp_BroVector_Count.htm" />
           <HelpTOCNode Title="IsReadOnly Property " Url="html/P_BroccoliSharp_BroVector_IsReadOnly.htm" />
           <HelpTOCNode Title="Item Property " Url="html/P_BroccoliSharp_BroVector_Item.htm" />
