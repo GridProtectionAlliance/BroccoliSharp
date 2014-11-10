@@ -8,6 +8,10 @@ Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "BroccoliSharpHelp", "Brocco
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroccoliSharp", "BroccoliSharp.csproj", "{AD88485E-0776-4B00-88F8-C85F1A8AF953}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{80078D10-F6EF-4317-B0F8-F06B2BF7AE7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroPing", "Tests\BroPing\BroPing.csproj", "{A83DC653-F6A4-4D20-B159-3EA53473A31C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,17 @@ Global
 		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.ReleaseNoPCAP|Any CPU.ActiveCfg = ReleaseNoPCAP|Any CPU
 		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.ReleaseNoPCAP|Any CPU.Build.0 = ReleaseNoPCAP|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseNoPCAP|Any CPU.ActiveCfg = Release|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseNoPCAP|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C} = {80078D10-F6EF-4317-B0F8-F06B2BF7AE7F}
 	EndGlobalSection
 EndGlobal

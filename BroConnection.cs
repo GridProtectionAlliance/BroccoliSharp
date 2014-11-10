@@ -68,6 +68,7 @@ namespace BroccoliSharp
         private readonly BroEventQueue m_eventQueue;
         private readonly Dictionary<string, object> m_data;
         private readonly Dictionary<string, object> m_userData;
+        private readonly Dictionary<string, Action<BroEventArgs>> m_eventHandlers;
         private string m_class;
         private bool m_disposed;
 
@@ -81,6 +82,7 @@ namespace BroccoliSharp
             m_eventQueue = new BroEventQueue(this);
             m_data = new Dictionary<string, object>();
             m_userData = new Dictionary<string, object>();
+            m_eventHandlers = new Dictionary<string, Action<BroEventArgs>>();
         }
 
         /// <summary>
@@ -565,6 +567,35 @@ namespace BroccoliSharp
         }
 
         /// <summary>
+        /// Registers for events that arrive with the name of <paramref name="eventName"/> using specified <paramref name="eventHandler"/>.
+        /// </summary>
+        /// <param name="eventName">Event name to register for.</param>
+        /// <param name="eventHandler">Event handler to use for the event.</param>
+        /// <param name="userData">Any user-data to be passed to event.</param>
+        /// <remarks>
+        /// Users can use this event registration function to provide a direct handler for the event instead
+        /// attaching to the <see cref="ReceivedEvent"/> and using one common handler for all events.
+        /// </remarks>
+        /// <exception cref="ArgumentNullException"><paramref name="eventName"/> or <paramref name="eventHandler"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot register for event, <see cref="BroConnection"/> is disposed.</exception>
+        public void RegisterForEvent(string eventName, Action<BroEventArgs> eventHandler, object userData = null)
+        {
+            if ((object)eventHandler == null)
+                throw new ArgumentNullException("eventHandler");
+
+            RegisterForEvent(eventName, userData);
+
+            // Attach to common event handler for direct event handlers
+            lock (m_eventHandlers)
+            {
+                if (m_eventHandlers.Count == 0)
+                    ReceivedEvent += CommonDirectEventHandler;
+
+                m_eventHandlers[eventName] = eventHandler;
+            }
+        }
+
+        /// <summary>
         /// Unregisters for events that arrive with the name of <paramref name="eventName"/>.
         /// </summary>
         /// <param name="eventName">Event name to unregister for.</param>
@@ -584,6 +615,13 @@ namespace BroccoliSharp
             lock (m_userData)
             {
                 m_userData.Remove(eventName);
+            }
+
+            // Detach from common event handler for direct event handlers when no events are registered
+            lock (m_eventHandlers)
+            {
+                if (m_eventHandlers.Remove(eventName) && m_eventHandlers.Count == 0)
+                    ReceivedEvent -= CommonDirectEventHandler;
             }
         }
 
@@ -702,6 +740,16 @@ namespace BroccoliSharp
             }
 
             return string.Format("@FD={0}", socket.Handle.ToInt32());
+        }
+
+        // Common ReceivedEvent handler for direct event handler registrations
+        private void CommonDirectEventHandler(object sender, BroEventArgs e)
+        {
+            Action<BroEventArgs> eventHandler;
+
+            // Call delegates for direct event handler registrations
+            if (m_eventHandlers.TryGetValue(e.EventName, out eventHandler))
+                eventHandler(e);
         }
 
         // Get pointer to Bro connection

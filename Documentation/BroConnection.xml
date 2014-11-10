@@ -278,9 +278,9 @@
       <i>Register to Receive Event</i>
     </h3>
     <para>
-      In order to register to receive an event, use <see cref="BroConnection.RegisterForEvent">BroConnection.RegisterForEvent()</see>
-      and provide it the name of the Bro event you want to receive. You can optionally also provide user definable data that will
-      be provided to the event handler any time an event with this name is received.
+      In order to register to receive an event, use <see cref="BroConnection.RegisterForEvent(string, object)">
+      BroConnection.RegisterForEvent()</see>and provide it the name of the Bro event you want to receive. You can optionally also
+      provide user definable data that will be provided to the event handler any time an event with this name is received.
       <note>
         Any user data associated with the event is maintained in managed memory and does not cross into the Broccoli API.
       </note>
@@ -293,7 +293,7 @@
       </code>
       The reply events contain the request ID so we can associate requests with replies, and a connection record (defined in
       <c>bro.init</c> in Bro). Now just register to receive the event using the connection object's
-      <see cref="BroConnection.RegisterForEvent"/> function:
+      <see cref="BroConnection.RegisterForEvent(string, object)"/> function:
       <code language="C#">
           connection.RegisterForEvent("report_conn");
       </code>
@@ -305,8 +305,8 @@
     </h3>
     <para>
       Events are received in a <see cref="BroEventArgs"/> object that is passed to the event handler that is attached to the
-      connection object's <see cref="BroConnection.ReceivedEvent"/>. All received events can be distinguished by keying off the
-      <see cref="BroEventArgs.EventName">BroEventArgs.EventName</see> value, for example:
+      connection object's <see cref="BroConnection.ReceivedEvent"/>. All received events can be distinguished by keying off
+      the <see cref="BroEventArgs.EventName">BroEventArgs.EventName</see> value, for example:
       <code language="C#">
           // Bro event handler
           static void connection_ReceivedEvent(object sender, BroEventArgs e)
@@ -328,6 +328,27 @@
               }
           }
       </code>
+      <note>
+        In addition to attaching to the <see cref="BroConnection.ReceivedEvent"/>, you can also use the use the
+        <see cref="BroConnection.RegisterForEvent(string, Action{BroEventArgs}, object)"/> overload that accepts a
+        <see cref="Delegate"/> as the desired event handler. You can use this in-lieu of creating a single common
+        event handler for all registered events:
+        <code language="C#">
+            // Register to receive the pong event
+            connection.RegisterForEvent("pong", e =&gt;
+            {
+                BroRecord pongData = e.Parameters[0];
+                DateTime dst_time = pongData["dst_time"];
+                DateTime src_time = pongData["src_time"];
+
+                Console.WriteLine("pong event from {0}: seq={1}, time={2}/{3} s",
+                    s_hostName,
+                    pongData["seq"],
+                    (dst_time - src_time).TotalSeconds,
+                    (BroTime.Now - src_time).TotalSeconds);
+            });
+        </code>
+      </note>
     </para>
     <h2>Requesting Event Delivery</h2>
     <para>
