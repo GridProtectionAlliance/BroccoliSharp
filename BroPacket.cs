@@ -46,7 +46,7 @@ namespace BroccoliSharp
         #region [ Members ]
 
         // Fields
-        private IntPtr m_packet;
+        private readonly BroPacketPtr m_packetPtr;
         private bool m_disposed;
 
         #endregion
@@ -112,17 +112,17 @@ namespace BroccoliSharp
             header.caplen = captureLength;
             header.len = (uint)packetData.Length;
 
-            m_packet = BroApi.bro_packet_new(ref header, packetData, tag);
+            m_packetPtr = BroApi.bro_packet_new(ref header, packetData, tag);
 
-            if (m_packet == IntPtr.Zero)
+            if (m_packetPtr.IsInvalid)
                 throw new OutOfMemoryException("Failed to create Bro packet.");
         }
 
         // Create new BroPacket from an existing source packet - have to clone source packet since we don't own it
-        internal BroPacket(IntPtr sourcePacket)
+        internal BroPacket(BroPacketPtr sourcePacketPtr)
         {
-            if (sourcePacket != IntPtr.Zero)
-                m_packet = BroApi.bro_packet_clone(sourcePacket);
+            if (sourcePacketPtr.IsInvalid)
+                m_packetPtr = BroApi.bro_packet_clone(sourcePacketPtr);
         }
 
         /// <summary>
@@ -156,11 +156,8 @@ namespace BroccoliSharp
             {
                 try
                 {
-                    if (m_packet != IntPtr.Zero)
-                    {
-                        BroApi.bro_packet_free(m_packet);
-                        m_packet = IntPtr.Zero;
-                    }
+                    if ((object)m_packetPtr != null && !m_packetPtr.IsInvalid)
+                        m_packetPtr.Dispose();
                 }
                 finally
                 {
@@ -176,19 +173,19 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clone, <see cref="BroPacket"/> is disposed.</exception>
         public BroPacket Clone()
         {
-            if (m_packet == IntPtr.Zero)
+            if (m_packetPtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot clone, Bro packet is disposed.");
 
-            return new BroPacket(m_packet);
+            return new BroPacket(m_packetPtr);
         }
 
         // Get pointer to Bro packet
-        internal IntPtr GetValuePtr()
+        internal BroPacketPtr GetValuePtr()
         {
-            if (m_packet == IntPtr.Zero)
+            if (m_packetPtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot get value pointer, Bro packet is disposed.");
 
-            return m_packet;
+            return m_packetPtr;
         }
 
         #endregion

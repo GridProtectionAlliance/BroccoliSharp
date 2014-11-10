@@ -3,16 +3,24 @@
 //
 //  Copyright © 2014, Grid Protection Alliance.  All Rights Reserved.
 //
-//  Licensed to the Grid Protection Alliance (GPA) under one or more contributor license agreements. See
-//  the NOTICE file distributed with this work for additional information regarding copyright ownership.
-//  The GPA licenses this file to you under the Eclipse Public License -v 1.0 (the "License"); you may
-//  not use this file except in compliance with the License. You may obtain a copy of the License at:
+//  Redistribution and use in source and binary forms, with or without modification, are permitted
+//  provided that the following conditions are met:
 //
-//      http://www.opensource.org/licenses/eclipse-1.0.php
+//  (1) Redistributions of source code must retain the above copyright notice, this list of conditions
+//      and the following disclaimer.
 //
-//  Unless agreed to in writing, the subject software distributed under the License is distributed on an
-//  "AS-IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. Refer to the
-//  License for the specific language governing permissions and limitations.
+//  (2) Redistributions in binary form must reproduce the above copyright notice, this list of
+//      conditions and the following disclaimer in the documentation and/or other materials provided
+//      with the distribution.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+//  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+//  FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+//  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+//  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+//  IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+//  OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 //  Code Modification History:
 //  ----------------------------------------------------------------------------------------------------
@@ -22,6 +30,7 @@
 //******************************************************************************************************
 
 using System;
+using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security;
 
@@ -34,7 +43,10 @@ namespace BroccoliSharp.Internal
     internal static class BroApi
     {
         // Mono will suffix library filename with .so or .dylib based on operating system
-        private const string BroccoliLibrary = "libbroccoli";
+        internal const string BroccoliLibrary = "libbroccoli";
+
+        // Note: Bro API function declarations for freeing opaque data structures are
+        // located privately within their associated safe handle implementations
 
         #region [ Callback Signatures ]
 
@@ -48,7 +60,7 @@ namespace BroccoliSharp.Internal
         // * Bro events, called in the argument-expanded style.  For details
         // * see bro_event_registry_add().
         // */
-        //public delegate void BroEventFunc(IntPtr bc, IntPtr user_data, __arglist);
+        //public delegate void BroEventFunc(BroConnectionPtr bc, IntPtr user_data, __arglist);
 
         /**
          * BroCompactEventFunc - The signature of compact event callbacks.
@@ -60,7 +72,7 @@ namespace BroccoliSharp.Internal
          * Bro events, called in the compact-argument style. For details
          * see bro_event_registry_add_compact().
          */
-        public delegate void BroCompactEventFunc(IntPtr bc, IntPtr user_data, ref bro_ev_meta meta);
+        public delegate void BroCompactEventFunc(BroConnectionPtr bc, IntPtr user_data, ref bro_ev_meta meta);
 
         /**
          * BroTableCallback - The signature of callbacks for iterating over tables.
@@ -120,23 +132,24 @@ namespace BroccoliSharp.Internal
 
         #region [ Connection Handling ]
 
-        /**
-         * bro_conn_new - Creates and returns a handle for a connection to a remote Bro.
-         * @param ip_addr 4-byte IP address of Bro to contact, in network byte order.
-         * @param port of machine at @p ip_addr to contact, in network byte order.
-         * @param flags an or-combination of the %BRO_CONN_xxx flags.
-         *
-         * The function creates a new Bro connection handle for communication with
-         * Bro through a network. Depending on the flags passed in, the connection
-         * and its setup process can be adjusted. If you don't want to pass any
-         * flags, use %BRO_CFLAG_NONE.
-         *
-         * @returns pointer to a newly allocated and initialized
-         * Bro connection structure. You need this structure for all
-         * other calls in order to identify the connection to Bro.
-         */
-        [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_conn_new(uint ip_addr, ushort port, BroConnectionFlags flags);
+        // Function not needed in a .NET implementation
+        // /**
+        // * bro_conn_new - Creates and returns a handle for a connection to a remote Bro.
+        // * @param ip_addr 4-byte IP address of Bro to contact, in network byte order.
+        // * @param port of machine at @p ip_addr to contact, in network byte order.
+        // * @param flags an or-combination of the %BRO_CONN_xxx flags.
+        // *
+        // * The function creates a new Bro connection handle for communication with
+        // * Bro through a network. Depending on the flags passed in, the connection
+        // * and its setup process can be adjusted. If you don't want to pass any
+        // * flags, use %BRO_CFLAG_NONE.
+        // *
+        // * @returns pointer to a newly allocated and initialized
+        // * Bro connection structure. You need this structure for all
+        // * other calls in order to identify the connection to Bro.
+        // */
+        //[DllImport(BroccoliLibrary)]
+        //public static extern IntPtr bro_conn_new(uint ip_addr, ushort port, BroConnectionFlags flags);
 
         /**
          * bro_conn_new_str - Same as bro_conn_new(), but accepts strings for hostname and port.
@@ -153,7 +166,7 @@ namespace BroccoliSharp.Internal
          * other calls in order to identify the connection to Bro.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern IntPtr bro_conn_new_str([MarshalAs(UnmanagedType.LPStr)] string hostname, BroConnectionFlags flags);
+        public static extern BroConnectionPtr bro_conn_new_str([MarshalAs(UnmanagedType.LPStr)] string hostname, BroConnectionFlags flags);
 
         /**
          * bro_conn_new_socket - Same as bro_conn_new(), but uses existing socket.
@@ -170,7 +183,7 @@ namespace BroccoliSharp.Internal
          * other calls in order to identify the connection to Bro.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_conn_new_socket(int socket, BroConnectionFlags flags);
+        public static extern BroConnectionPtr bro_conn_new_socket(int socket, BroConnectionFlags flags);
 
         /**
          * bro_conn_set_class - Sets a connection's class identifier.
@@ -186,7 +199,7 @@ namespace BroccoliSharp.Internal
          * pointed to by @p classname.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern void bro_conn_set_class(IntPtr bc, [MarshalAs(UnmanagedType.LPStr)] string classname);
+        public static extern void bro_conn_set_class(BroConnectionPtr bc, [MarshalAs(UnmanagedType.LPStr)] string classname);
 
         /**
          * bro_conn_get_peer_class - Reports connection class indicated by peer.	
@@ -196,7 +209,7 @@ namespace BroccoliSharp.Internal
          * if any, otherwise %NULL.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_conn_get_peer_class(IntPtr bc);
+        public static extern IntPtr bro_conn_get_peer_class(BroConnectionPtr bc);
 
         /**
          * bro_conn_get_connstats - Reports connection properties.
@@ -207,7 +220,7 @@ namespace BroccoliSharp.Internal
          * information about the given connection.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_conn_get_connstats(IntPtr bc, ref bro_conn_stats cs);
+        public static extern void bro_conn_get_connstats(BroConnectionPtr bc, ref bro_conn_stats cs);
 
         /**
          * bro_conn_connect - Establish connection to peer.
@@ -219,7 +232,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE on success, %FALSE on failure.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_conn_connect(IntPtr bc);
+        public static extern int bro_conn_connect(BroConnectionPtr bc);
 
         /**
          * bro_conn_reconnect - Drop the current connection and reconnect, reusing all settings.
@@ -234,20 +247,7 @@ namespace BroccoliSharp.Internal
          * bro_conn_delete()).
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_conn_reconnect(IntPtr bc);
-
-        /**
-         * bro_conn_delete - terminates and releases connection.
-         * @param bc Bro connection handle.
-         *
-         * This function will terminate the given connection if necessary
-         * and release all resources associated with the connection handle.
-         * 
-         *
-         * @returns %FALSE on error, %TRUE otherwise.
-         */
-        [DllImport(BroccoliLibrary)]
-        public static extern int bro_conn_delete(IntPtr bc);
+        public static extern int bro_conn_reconnect(BroConnectionPtr bc);
 
         /**
          * bro_conn_alive - Reports whether a connection is currently alive or has died.
@@ -259,7 +259,7 @@ namespace BroccoliSharp.Internal
          * connection's state, it only reports the value of flags indicating
          * its status. In particular, this means that when calling
          * bro_conn_alive() directly after a select() on the connection's
-         * descriptor, bro_conn_alive() may return an incorrent value. It will
+         * descriptor, bro_conn_alive() may return an incorrect value. It will
          * however return the correct value after a subsequent call to
          * bro_conn_process_input(). Also note that the connection is also
          * dead after the connection handle is obtained and before
@@ -268,7 +268,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE if the connection is alive, %FALSE otherwise.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_conn_alive(IntPtr bc);
+        public static extern int bro_conn_alive(BroConnectionPtr bc);
 
         /**
          * bro_conn_adopt_events - Makes one connection send out the same events as another.
@@ -279,7 +279,7 @@ namespace BroccoliSharp.Internal
          * mask as the one identified by @p src.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_conn_adopt_events(IntPtr src, IntPtr dst);
+        public static extern void bro_conn_adopt_events(BroConnectionPtr src, BroConnectionPtr dst);
 
         /**
          * bro_conn_get_fd - Returns file descriptor of a Bro connection.
@@ -292,7 +292,7 @@ namespace BroccoliSharp.Internal
          * on error.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_conn_get_fd(IntPtr bc);
+        public static extern int bro_conn_get_fd(BroConnectionPtr bc);
 
         /**
          * bro_conn_process_input - Processes input sent to the sensor by Bro.
@@ -308,7 +308,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE if any input was processed, %FALSE otherwise.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_conn_process_input(IntPtr bc);
+        public static extern int bro_conn_process_input(BroConnectionPtr bc);
 
         #endregion
 
@@ -324,17 +324,7 @@ namespace BroccoliSharp.Internal
          * @returns new event, or %NULL if allocation failed.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern IntPtr bro_event_new([MarshalAs(UnmanagedType.LPStr)] string event_name);
-
-        /**
-         * bro_event_free - Releases all memory associated with an event.
-         * @param be event to release.
-         *
-         * The function releases all memory associated with @p be. Note 
-         * that you do NOT have to call this after sending an event.
-         */
-        [DllImport(BroccoliLibrary)]
-        public static extern void bro_event_free(IntPtr be);
+        public static extern BroEventPtr bro_event_new([MarshalAs(UnmanagedType.LPStr)] string event_name);
 
         /**
          * bro_event_add_val - Adds a parameter to an event.
@@ -353,7 +343,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE if the operation was successful, %FALSE otherwise.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern int bro_event_add_val(IntPtr be, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
+        public static extern int bro_event_add_val(BroEventPtr be, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
 
         /**
          * bro_event_set_val - Replace a value in an event.
@@ -373,7 +363,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE if successful, %FALSE on error.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern int bro_event_set_val(IntPtr be, int val_num, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
+        public static extern int bro_event_set_val(BroEventPtr be, int val_num, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
 
         /**
          * bro_event_send - Tries to send an event to a Bro agent.
@@ -392,7 +382,7 @@ namespace BroccoliSharp.Internal
          * also look at bro_event_queue_empty().
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_event_send(/*BroConn*/ IntPtr bc, /*BroEvent*/ IntPtr be);
+        public static extern int bro_event_send(BroConnectionPtr bc, BroEventPtr be);
 
         /**
          * bro_event_send_raw - Enqueues a serialized event directly into a connection's send buffer.
@@ -406,7 +396,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE if successful, %FALSE on error.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_event_send_raw(IntPtr bc, byte[] data, int data_len);
+        public static extern int bro_event_send_raw(BroConnectionPtr bc, byte[] data, int data_len);
 
         /**
          * bro_event_queue_length - Returns current queue length.
@@ -418,7 +408,7 @@ namespace BroccoliSharp.Internal
          * @returns number of items currently queued.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_event_queue_length(IntPtr bc);
+        public static extern int bro_event_queue_length(BroConnectionPtr bc);
 
         /**
          * bro_event_queue_length_max - Returns maximum queue length.
@@ -430,7 +420,7 @@ namespace BroccoliSharp.Internal
          * @returns maximum possible queue size.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_event_queue_length_max(IntPtr bc);
+        public static extern int bro_event_queue_length_max(BroConnectionPtr bc);
 
         /**
          * bro_event_queue_flush - Tries to flush the send queue of a connection.
@@ -442,7 +432,7 @@ namespace BroccoliSharp.Internal
          * @returns remaining queue length after flush.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_event_queue_flush(IntPtr bc);
+        public static extern int bro_event_queue_flush(BroConnectionPtr bc);
 
         #endregion
 
@@ -470,7 +460,7 @@ namespace BroccoliSharp.Internal
         // * in order to signal to the peering Bro that you want to receive those events.
         // */
         //[DllImport(BroccoliLibrary)]
-        //public static extern void bro_event_registry_add(IntPtr bc, string event_name, BroEventFunc func, IntPtr user_data);
+        //public static extern void bro_event_registry_add(BroConnectionPtr bc, string event_name, BroEventFunc func, IntPtr user_data);
 
         /**
          * bro_event_registry_add_compact - Adds a compact-argument event callback to the event registry.
@@ -487,7 +477,7 @@ namespace BroccoliSharp.Internal
          * details.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern void bro_event_registry_add_compact(IntPtr bc, [MarshalAs(UnmanagedType.LPStr)] string event_name, BroCompactEventFunc func, IntPtr user_data);
+        public static extern void bro_event_registry_add_compact(BroConnectionPtr bc, [MarshalAs(UnmanagedType.LPStr)] string event_name, BroCompactEventFunc func, IntPtr user_data);
 
         /**
          * bro_event_registry_remove - Removes an event handler.
@@ -498,7 +488,7 @@ namespace BroccoliSharp.Internal
          * event registry for connection @p bc.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern void bro_event_registry_remove(IntPtr bc, [MarshalAs(UnmanagedType.LPStr)] string event_name);
+        public static extern void bro_event_registry_remove(BroConnectionPtr bc, [MarshalAs(UnmanagedType.LPStr)] string event_name);
 
         /**
          * bro_event_registry_request - Notifies peering Bro to send events.
@@ -508,7 +498,7 @@ namespace BroccoliSharp.Internal
          * bro_event_registry_add() from the Bro listening on @p bc.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_event_registry_request(IntPtr bc);
+        public static extern void bro_event_registry_request(BroConnectionPtr bc);
 
         #endregion
 
@@ -668,18 +658,19 @@ namespace BroccoliSharp.Internal
          * this when manipulating a BroString on the stack, paired with
          * bro_string_init().
          */
-        [DllImport(BroccoliLibrary)]
+        [DllImport(BroccoliLibrary), ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
         public static extern void bro_string_cleanup(ref bro_string bs);
 
-        /**
-         * bro_string_free - Cleans up dynamically allocated BroString.
-         * @param bs string pointer.
-         * 
-         * This function releases the entire BroString pointed to by @p bs, including
-         * the BroString structure itself.
-         */
-        [DllImport(BroccoliLibrary)]
-        public static extern void bro_string_free(ref bro_string bs);
+        // Structures will be created in managed memory - this function should not be called from .NET
+        // /**
+        // * bro_string_free - Cleans up dynamically allocated BroString.
+        // * @param bs string pointer.
+        // * 
+        // * This function releases the entire BroString pointed to by @p bs, including
+        // * the BroString structure itself.
+        // */
+        //[DllImport(BroccoliLibrary)]
+        //public static extern void bro_string_free(ref bro_string bs);
 
         #endregion
 
@@ -698,17 +689,7 @@ namespace BroccoliSharp.Internal
          * @returns a new record, or %NULL on error.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_record_new();
-
-        /**
-         * bro_record_free - Releases a record.
-         * @param rec record handle.
-         *
-         * The function releases all memory consumed by the record pointed to
-         * by @p rec.
-         */
-        [DllImport(BroccoliLibrary)]
-        public static extern void bro_record_free(IntPtr rec);
+        public static extern BroRecordPtr bro_record_new();
 
         /**
          * bro_record_get_length - Returns number of fields in record.
@@ -717,7 +698,7 @@ namespace BroccoliSharp.Internal
          * @returns the number of fields in the record.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_record_get_length(IntPtr rec);
+        public static extern int bro_record_get_length(BroRecordPtr rec);
 
         /**
          * bro_record_add_val - Adds a value to a record.
@@ -742,7 +723,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE on success, %FALSE on error.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern int bro_record_add_val(IntPtr rec, [MarshalAs(UnmanagedType.LPStr)] string name, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
+        public static extern int bro_record_add_val(BroRecordPtr rec, [MarshalAs(UnmanagedType.LPStr)] string name, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
 
         /**
          * bro_record_get_nth_val - Retrieves a value from a record by field index.
@@ -765,7 +746,7 @@ namespace BroccoliSharp.Internal
          * @returns pointer to queried value on success, %NULL on error.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_record_get_nth_val(IntPtr rec, int num, ref BroType type);
+        public static extern IntPtr bro_record_get_nth_val(BroRecordPtr rec, int num, ref BroType type);
 
         /**
          * bro_record_get_nth_name - Retrieves a name from a record by field index.
@@ -777,7 +758,7 @@ namespace BroccoliSharp.Internal
          * @returns field name on success, %NULL on error.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_record_get_nth_name(IntPtr rec, int num);
+        public static extern IntPtr bro_record_get_nth_name(BroRecordPtr rec, int num);
 
         /**
          * bro_record_get_named_val - Retrieves a value from a record by field name.
@@ -793,7 +774,7 @@ namespace BroccoliSharp.Internal
          * @returns pointer to queried value on success, %NULL on error.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern IntPtr bro_record_get_named_val(IntPtr rec, [MarshalAs(UnmanagedType.LPStr)] string name, ref BroType type);
+        public static extern IntPtr bro_record_get_named_val(BroRecordPtr rec, [MarshalAs(UnmanagedType.LPStr)] string name, ref BroType type);
 
         /**
          * bro_record_set_nth_val - Replaces a value in a record, identified by field index.
@@ -813,7 +794,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE on success, %FALSE on error.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern int bro_record_set_nth_val(IntPtr rec, int num, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
+        public static extern int bro_record_set_nth_val(BroRecordPtr rec, int num, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
 
         /**
          * bro_record_set_named_val - Replaces a value in a record, identified by name.
@@ -833,7 +814,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE on success, %FALSE on error.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern int bro_record_set_named_val(IntPtr rec, [MarshalAs(UnmanagedType.LPStr)] string name, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
+        public static extern int bro_record_set_named_val(BroRecordPtr rec, [MarshalAs(UnmanagedType.LPStr)] string name, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
 
         #endregion
 
@@ -842,46 +823,40 @@ namespace BroccoliSharp.Internal
         // TODO: When comments are added to broccoli.h.in for these functions, copy them here
 
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_table_new();
+        public static extern BroTablePtr bro_table_new();
 
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_table_free(IntPtr tbl);
+        public static extern int bro_table_insert(BroTablePtr tbl, BroType key_type, IntPtr key, BroType val_type, IntPtr val);
 
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_table_insert(IntPtr tbl, BroType key_type, IntPtr key, BroType val_type, IntPtr val);
+        public static extern IntPtr bro_table_find(BroTablePtr tbl, IntPtr key);
 
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_table_find(IntPtr tbl, IntPtr key);
+        public static extern int bro_table_get_size(BroTablePtr tbl);
 
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_table_get_size(IntPtr tbl);
+        public static extern void bro_table_foreach(BroTablePtr tbl, BroTableCallback cb, IntPtr user_data);
 
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_table_foreach(IntPtr tbl, BroTableCallback cb, IntPtr user_data);
+        public static extern void bro_table_get_types(BroTablePtr tbl, ref BroType key_type, ref BroType val_type);
 
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_table_get_types(IntPtr tbl, ref BroType key_type, ref BroType val_type);
+        public static extern BroSetPtr bro_set_new();
 
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_set_new();
+        public static extern int bro_set_insert(BroSetPtr set, BroType type, IntPtr val);
 
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_set_free(IntPtr set);
+        public static extern int bro_set_find(BroSetPtr set, IntPtr key);
 
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_set_insert(IntPtr set, BroType type, IntPtr val);
+        public static extern int bro_set_get_size(BroSetPtr set);
 
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_set_find(IntPtr set, IntPtr key);
+        public static extern void bro_set_foreach(BroSetPtr set, BroSetCallback cb, IntPtr user_data);
 
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_set_get_size(IntPtr set);
-
-        [DllImport(BroccoliLibrary)]
-        public static extern void bro_set_foreach(IntPtr set, BroSetCallback cb, IntPtr user_data);
-
-        [DllImport(BroccoliLibrary)]
-        public static extern void bro_set_get_type(IntPtr set, ref BroType type);
+        public static extern void bro_set_get_type(BroSetPtr set, ref BroType type);
 
         #endregion
 
@@ -895,17 +870,7 @@ namespace BroccoliSharp.Internal
          * @returns a new vector, or %NULL on error.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_vector_new();
-
-        /**
-         * bro_vector_free - Releases a vector.
-         * @param vec vector handle.
-         *
-         * The function releases all memory consumed by the vector pointed to
-         * by @p vec.
-         */
-        [DllImport(BroccoliLibrary)]
-        public static extern void bro_vector_free(IntPtr vec);
+        public static extern BroVectorPtr bro_vector_new();
 
         /**
          * bro_vector_get_length - Returns number of elements in vector.
@@ -914,7 +879,7 @@ namespace BroccoliSharp.Internal
          * @returns the number of elements in the vector.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_vector_get_length(IntPtr vec);
+        public static extern int bro_vector_get_length(BroVectorPtr vec);
 
         /**
          * bro_vector_add_val - Adds a value to a vector.
@@ -938,7 +903,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE on success, %FALSE on error.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern int bro_vector_add_val(IntPtr vec, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
+        public static extern int bro_vector_add_val(BroVectorPtr vec, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
 
         /**
          * bro_vector_get_nth_val - Retrieves a value from a vector by index.
@@ -961,7 +926,7 @@ namespace BroccoliSharp.Internal
          * @returns pointer to queried value on success, %NULL on error.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_vector_get_nth_val(IntPtr vec, int num, ref BroType type);
+        public static extern IntPtr bro_vector_get_nth_val(BroVectorPtr vec, int num, ref BroType type);
 
         /**
          * bro_vector_set_nth_val - Replaces a value in a vector, identified by index.
@@ -981,7 +946,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE on success, %FALSE on error.
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern int bro_vector_set_nth_val(IntPtr vec, int num, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
+        public static extern int bro_vector_set_nth_val(BroVectorPtr vec, int num, BroType type, [MarshalAs(UnmanagedType.LPStr)] string type_name, IntPtr val);
 
         #endregion
 
@@ -997,7 +962,7 @@ namespace BroccoliSharp.Internal
          * handled by this connection.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_conn_set_packet_ctxt(IntPtr bc, int link_type);
+        public static extern void bro_conn_set_packet_ctxt(BroConnectionPtr bc, int link_type);
 
         /**
          * bro_conn_get_packet_ctxt - Gets current packet context for connection.
@@ -1007,7 +972,7 @@ namespace BroccoliSharp.Internal
          * The function returns @p bc's current packet context through @p link_type.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern void bro_conn_get_packet_ctxt(IntPtr bc, ref int link_type);
+        public static extern void bro_conn_get_packet_ctxt(BroConnectionPtr bc, ref int link_type);
 
         /** 
          * bro_packet_new - Creates a new packet.
@@ -1020,7 +985,7 @@ namespace BroccoliSharp.Internal
          * Release the resulting packet using bro_packet_free().
          */
         [DllImport(BroccoliLibrary, BestFitMapping = false)]
-        public static extern IntPtr bro_packet_new(ref pcap_pkthdr hdr, byte[] data, [MarshalAs(UnmanagedType.LPStr)] string tag);
+        public static extern BroPacketPtr bro_packet_new(ref pcap_pkthdr hdr, byte[] data, [MarshalAs(UnmanagedType.LPStr)] string tag);
 
         /**
          * bro_packet_clone - Clones a packet.
@@ -1029,17 +994,7 @@ namespace BroccoliSharp.Internal
          * @returns a copy of @p packet, or %NULL on error.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern IntPtr bro_packet_clone(IntPtr packet);
-
-        /**
-         * bro_packet_free - Releases a packet.
-         * @param packet packet to release.
-         * 
-         * The function releases all memory occupied by a packet previously allocated
-         * using bro_packet_new().
-         */
-        [DllImport(BroccoliLibrary)]
-        public static extern void bro_packet_free(IntPtr packet);
+        public static extern BroPacketPtr bro_packet_clone(BroPacketPtr packet);
 
         /**
          * bro_packet_send - Sends a packet over a given connection.
@@ -1051,7 +1006,7 @@ namespace BroccoliSharp.Internal
          * @returns %TRUE if successful, %FALSE otherwise.
          */
         [DllImport(BroccoliLibrary)]
-        public static extern int bro_packet_send(IntPtr bc, IntPtr packet);
+        public static extern int bro_packet_send(BroConnectionPtr bc, BroPacketPtr packet);
 
         #endregion
 #endif
@@ -1079,7 +1034,7 @@ namespace BroccoliSharp.Internal
         // * passing.
         // */
         //[DllImport(BroccoliLibrary, BestFitMapping = false)]
-        //public static extern void bro_conn_data_set(IntPtr bc, [MarshalAs(UnmanagedType.LPStr)] string key, IntPtr val);
+        //public static extern void bro_conn_data_set(BroConnectionPtr bc, [MarshalAs(UnmanagedType.LPStr)] string key, IntPtr val);
 
         // /**
         // * bro_conn_data_get - Looks up a data item.
@@ -1092,7 +1047,7 @@ namespace BroccoliSharp.Internal
         // * @returns data item if lookup was successful, %NULL otherwise.
         // */
         //[DllImport(BroccoliLibrary, BestFitMapping = false)]
-        //public static extern IntPtr bro_conn_data_get(IntPtr bc, [MarshalAs(UnmanagedType.LPStr)] string key);
+        //public static extern IntPtr bro_conn_data_get(BroConnectionPtr bc, [MarshalAs(UnmanagedType.LPStr)] string key);
 
         // /**
         // * bro_conn_data_del - Removes a data item.
@@ -1104,7 +1059,7 @@ namespace BroccoliSharp.Internal
         // * @returns the removed data item if it exists, %NULL otherwise.
         // */
         //[DllImport(BroccoliLibrary, BestFitMapping = false)]
-        //public static extern IntPtr bro_conn_data_del(IntPtr bc, [MarshalAs(UnmanagedType.LPStr)] string key);
+        //public static extern IntPtr bro_conn_data_del(BroConnectionPtr bc, [MarshalAs(UnmanagedType.LPStr)] string key);
 
         #endregion
 
@@ -1132,7 +1087,7 @@ namespace BroccoliSharp.Internal
         // * The function releases all memory held by the buffer pointed
         // * to by @p buf. Use paired with bro_buf_new().
         // */
-        //[DllImport(BroccoliLibrary)]
+        //[DllImport(BroccoliLibrary), ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)]
         //public static extern void bro_buf_free(IntPtr buf);
 
         // /**

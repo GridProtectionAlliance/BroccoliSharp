@@ -45,7 +45,7 @@ namespace BroccoliSharp
         #region [ Members ]
 
         // Fields
-        private IntPtr m_table;
+        private BroTablePtr m_tablePtr;
         private bool m_disposed;
 
         #endregion
@@ -58,9 +58,9 @@ namespace BroccoliSharp
         /// <exception cref="OutOfMemoryException">Failed to create Bro table.</exception>
         public BroTable()
         {
-            m_table = BroApi.bro_table_new();
+            m_tablePtr = BroApi.bro_table_new();
 
-            if (m_table == IntPtr.Zero)
+            if (m_tablePtr.IsInvalid)
                 throw new OutOfMemoryException("Failed to create Bro table.");
         }
 
@@ -85,23 +85,23 @@ namespace BroccoliSharp
         }
 
         // Create a new BroTable from an existing source table - have to clone source table since we don't own it
-        internal BroTable(IntPtr sourceTable)
+        internal BroTable(BroTablePtr sourceTablePtr)
             : this()
         {
-            if (sourceTable == IntPtr.Zero)
+            if (sourceTablePtr.IsInvalid)
                 return;
 
             BroType keyType = BroType.Unknown;
             BroType valueType = BroType.Unknown;
 
-            BroApi.bro_table_get_types(sourceTable, ref keyType, ref valueType);
+            BroApi.bro_table_get_types(sourceTablePtr, ref keyType, ref valueType);
 
-            BroApi.bro_table_foreach(sourceTable,
+            BroApi.bro_table_foreach(sourceTablePtr,
                 (key, value, userData) =>
                 {
                     try
                     {
-                        BroApi.bro_table_insert(m_table, keyType, key, valueType, value);
+                        BroApi.bro_table_insert(m_tablePtr, keyType, key, valueType, value);
                         return ~0;
                     }
                     catch
@@ -167,10 +167,10 @@ namespace BroccoliSharp
                 if ((object)key == null)
                     throw new ArgumentNullException("key");
 
-                if (m_table == IntPtr.Zero)
+                if (m_tablePtr.IsInvalid)
                     throw new ObjectDisposedException(string.Format("Cannot get value for key \"{0}\", Bro table is disposed.", key));
 
-                IntPtr valuePtr = key.ExecuteWithFixedPtr(keyPtr => BroApi.bro_table_find(m_table, keyPtr));
+                IntPtr valuePtr = key.ExecuteWithFixedPtr(keyPtr => BroApi.bro_table_find(m_tablePtr, keyPtr));
 
                 return BroValue.CreateFromPtr(valuePtr, ValueType);
             }
@@ -194,7 +194,7 @@ namespace BroccoliSharp
                 BroType keyType = BroType.Unknown;
                 BroType valueType = BroType.Unknown;
 
-                BroApi.bro_table_get_types(m_table, ref keyType, ref valueType);
+                BroApi.bro_table_get_types(m_tablePtr, ref keyType, ref valueType);
 
                 return keyType;
             }
@@ -213,7 +213,7 @@ namespace BroccoliSharp
                 BroType keyType = BroType.Unknown;
                 BroType valueType = BroType.Unknown;
 
-                BroApi.bro_table_get_types(m_table, ref keyType, ref valueType);
+                BroApi.bro_table_get_types(m_tablePtr, ref keyType, ref valueType);
 
                 return valueType;
             }
@@ -229,8 +229,8 @@ namespace BroccoliSharp
         {
             get
             {
-                if (m_table != IntPtr.Zero)
-                    return BroApi.bro_table_get_size(m_table);
+                if (!m_tablePtr.IsInvalid)
+                    return BroApi.bro_table_get_size(m_tablePtr);
 
                 return 0;
             }
@@ -306,11 +306,8 @@ namespace BroccoliSharp
             {
                 try
                 {
-                    if (m_table != IntPtr.Zero)
-                    {
-                        BroApi.bro_table_free(m_table);
-                        m_table = IntPtr.Zero;
-                    }
+                    if ((object)m_tablePtr != null && !m_tablePtr.IsInvalid)
+                        m_tablePtr.Dispose();
                 }
                 finally
                 {
@@ -363,10 +360,10 @@ namespace BroccoliSharp
             if ((object)value == null)
                 throw new ArgumentNullException("value");
 
-            if (m_table == IntPtr.Zero)
+            if (m_tablePtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot add key/value pair, Bro table is disposed.");
 
-            return key.ExecuteWithFixedPtr(keyPtr => value.ExecuteWithFixedPtr(valuePtr => BroApi.bro_table_insert(m_table, key.Type, keyPtr, value.Type, valuePtr) != 0));
+            return key.ExecuteWithFixedPtr(keyPtr => value.ExecuteWithFixedPtr(valuePtr => BroApi.bro_table_insert(m_tablePtr, key.Type, keyPtr, value.Type, valuePtr) != 0));
         }
 
         // Interface for dictionary returns no value
@@ -399,10 +396,10 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clone, <see cref="BroTable"/> is disposed.</exception>
         public BroTable Clone()
         {
-            if (m_table == IntPtr.Zero)
+            if (m_tablePtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot clone, Bro table is disposed.");
 
-            return new BroTable(m_table);
+            return new BroTable(m_tablePtr);
         }
 
         /// <summary>
@@ -411,11 +408,11 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clear, <see cref="BroTable"/> is disposed.</exception>
         public void Clear()
         {
-            if (m_table == IntPtr.Zero)
+            if (m_tablePtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot clear items, Bro table is disposed.");
 
-            BroApi.bro_table_free(m_table);
-            m_table = BroApi.bro_table_new();
+            m_tablePtr.Dispose();
+            m_tablePtr = BroApi.bro_table_new();
         }
 
         /// <summary>
@@ -477,10 +474,10 @@ namespace BroccoliSharp
             if ((object)key == null)
                 throw new ArgumentNullException("key");
 
-            if (m_table == IntPtr.Zero)
+            if (m_tablePtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot execute contains, Bro table is disposed.");
 
-            return key.ExecuteWithFixedPtr(ptr => BroApi.bro_table_find(m_table, ptr) != IntPtr.Zero);
+            return key.ExecuteWithFixedPtr(ptr => BroApi.bro_table_find(m_tablePtr, ptr) != IntPtr.Zero);
         }
 
         /// <summary>
@@ -503,16 +500,16 @@ namespace BroccoliSharp
             if (Count > array.Length - arrayIndex)
                 throw new ArgumentException("Not enough available space in destination array starting from specified array index to hold all source elements.");
 
-            if (m_table == IntPtr.Zero)
+            if (m_tablePtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot copy to array, Bro table is disposed.");
 
             BroType keyType = BroType.Unknown;
             BroType valueType = BroType.Unknown;
             int i = 0;
 
-            BroApi.bro_table_get_types(m_table, ref keyType, ref valueType);
+            BroApi.bro_table_get_types(m_tablePtr, ref keyType, ref valueType);
 
-            BroApi.bro_table_foreach(m_table,
+            BroApi.bro_table_foreach(m_tablePtr,
                 (key, value, userData) =>
                 {
                     try
@@ -621,16 +618,16 @@ namespace BroccoliSharp
         // Gets current table as a Dictionary<BroValue, BroValue>
         private Dictionary<BroValue, BroValue> GetDictionary()
         {
-            if (m_table == IntPtr.Zero)
+            if (m_tablePtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot execute dictionary operation, Bro table is disposed.");
 
             Dictionary<BroValue, BroValue> dictionary = new Dictionary<BroValue, BroValue>();
             BroType keyType = BroType.Unknown;
             BroType valueType = BroType.Unknown;
 
-            BroApi.bro_table_get_types(m_table, ref keyType, ref valueType);
+            BroApi.bro_table_get_types(m_tablePtr, ref keyType, ref valueType);
 
-            BroApi.bro_table_foreach(m_table,
+            BroApi.bro_table_foreach(m_tablePtr,
                 (key, value, userData) =>
                 {
                     try
@@ -649,12 +646,12 @@ namespace BroccoliSharp
         }
 
         // Get pointer to Bro table
-        internal IntPtr GetValuePtr()
+        internal BroTablePtr GetValuePtr()
         {
-            if (m_table == IntPtr.Zero)
+            if (m_tablePtr.IsInvalid)
                 throw new ObjectDisposedException("Cannot get value pointer, Bro table is disposed.");
 
-            return m_table;
+            return m_tablePtr;
         }
 
         #endregion

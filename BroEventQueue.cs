@@ -42,7 +42,7 @@ namespace BroccoliSharp
         #region [ Members ]
 
         // Fields
-        private readonly Func<IntPtr> m_getValuePtr;
+        private readonly Func<BroConnectionPtr> m_getValuePtr;
 
         #endregion
 
@@ -97,11 +97,11 @@ namespace BroccoliSharp
         }
 
         // Get pointer to parent Bro connection
-        private IntPtr GetConnectionPtr()
+        private BroConnectionPtr GetConnectionPtr()
         {
-            IntPtr connection = m_getValuePtr();
+            BroConnectionPtr connection = m_getValuePtr();
 
-            if (connection == IntPtr.Zero)
+            if (connection.IsInvalid)
                 throw new ObjectDisposedException("Cannot flush event queue length, Bro connection is disposed.");
 
             return connection;

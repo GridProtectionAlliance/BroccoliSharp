@@ -113,7 +113,9 @@ namespace BroccoliSharp
         {
             get
             {
-                return ToIPAddress().IsIPv4MappedToIPv6;
+                // Using internal extension function instead of directly calling the
+                // IsIPv4MappedToIPv6 property since this is only in .NET 4.5:
+                return ToIPAddress().IsIPv4MappedAddress();
             }
         }
 

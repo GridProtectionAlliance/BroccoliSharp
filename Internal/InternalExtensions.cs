@@ -3,16 +3,24 @@
 //
 //  Copyright © 2014, Grid Protection Alliance.  All Rights Reserved.
 //
-//  Licensed to the Grid Protection Alliance (GPA) under one or more contributor license agreements. See
-//  the NOTICE file distributed with this work for additional information regarding copyright ownership.
-//  The GPA licenses this file to you under the Eclipse Public License -v 1.0 (the "License"); you may
-//  not use this file except in compliance with the License. You may obtain a copy of the License at:
+//  Redistribution and use in source and binary forms, with or without modification, are permitted
+//  provided that the following conditions are met:
 //
-//      http://www.opensource.org/licenses/eclipse-1.0.php
+//  (1) Redistributions of source code must retain the above copyright notice, this list of conditions
+//      and the following disclaimer.
 //
-//  Unless agreed to in writing, the subject software distributed under the License is distributed on an
-//  "AS-IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. Refer to the
-//  License for the specific language governing permissions and limitations.
+//  (2) Redistributions in binary form must reproduce the above copyright notice, this list of
+//      conditions and the following disclaimer in the documentation and/or other materials provided
+//      with the distribution.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+//  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+//  FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+//  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+//  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+//  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+//  IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+//  OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 //  Code Modification History:
 //  ----------------------------------------------------------------------------------------------------
@@ -22,6 +30,9 @@
 //******************************************************************************************************
 
 using System.Net;
+#if !DNET45
+using System.Net.Sockets;
+#endif
 
 namespace BroccoliSharp.Internal
 {
@@ -73,5 +84,84 @@ namespace BroccoliSharp.Internal
 
             return broAddress;
         }
+
+#if DNET45
+        internal static bool IsIPv4MappedAddress(this IPAddress value)
+        {
+            return value.IsIPv4MappedToIPv6;
+        }
+#else
+        // The following functionality is new to .NET 4.5 and not available in older versions:
+
+        // Determine if IPv6 based address is mapped to an IPv4 address
+        internal static bool IsIPv4MappedAddress(this IPAddress value)
+        {
+            // If IP address is not IPv6, it cannot be a mapped address
+            if (value.AddressFamily != AddressFamily.InterNetworkV6)
+                return false;
+
+            ushort[] numbers = value.GetNumbers();
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (numbers[i] != 0)
+                    return false;
+            }
+
+            return numbers[5] == ushort.MaxValue;
+        }
+
+        // Maps an address to IPv6
+        internal static IPAddress MapToIPv6(this IPAddress value)
+        {
+            // If IP address is already IPv6, just return it
+            if (value.AddressFamily == AddressFamily.InterNetworkV6)
+                return value;
+
+#pragma warning disable 618
+            long address = value.Address; // Address property is obsolete
+            ushort[] numbers = new ushort[8];
+            byte[] array = new byte[16];
+            int index = 0;
+
+            numbers[5] = ushort.MaxValue;
+            numbers[6] = (ushort)((address & 65280L) >> 8 | (address & (long)byte.MaxValue) << 8);
+            numbers[7] = (ushort)((address & 4278190080L) >> 24 | (address & 16711680L) >> 8);
+
+            for (int i = 0; i < 8; i++)
+            {
+                array[index++] = (byte)(numbers[i] >> 8 & 255);
+                array[index++] = (byte)(numbers[i] & 255);
+            }
+
+            return new IPAddress(array, 0U);
+        }
+
+        // Maps an address to IPv4
+        internal static IPAddress MapToIPv4(this IPAddress value)
+        {
+            // If IP address is already IPv4, just return it
+            if (value.AddressFamily == AddressFamily.InterNetwork)
+                return value;
+
+            ushort[] numbers = value.GetNumbers();
+
+            return new IPAddress((long)(((int)numbers[6] & 65280) >> 8 | ((int)numbers[6] & (int)byte.MaxValue) << 8 | (((int)numbers[7] & 65280) >> 8 | ((int)numbers[7] & (int)byte.MaxValue) << 8) << 16));
+        }
+
+        // Gets the 16-bit address numbers of an IPv6 address
+        private static ushort[] GetNumbers(this IPAddress value)
+        {
+            byte[] address = value.GetAddressBytes();
+            ushort[] numbers = new ushort[8];
+
+            for (int i = 0; i < 8; i++)
+            {
+                numbers[i] = (ushort)((int)address[i * 2] * 256 + (int)address[i * 2 + 1]);
+            }
+
+            return numbers;
+        }
+#endif
     }
 }
