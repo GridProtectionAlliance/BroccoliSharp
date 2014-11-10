@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroccoliSharp-NET4.0", "BroccoliSharp-NET4.0.csproj", "{AD88485E-0776-4B00-88F8-C85F1A8AF953}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AEF8A3B5-5E6D-44D7-99EE-D2EBD47B46AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroPing-NET4.0", "Tests\BroPing\BroPing-NET4.0.csproj", "{A83DC653-F6A4-4D20-B159-3EA53473A31C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,8 +20,17 @@ Global
 		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.ReleaseNoPCAP|Any CPU.ActiveCfg = ReleaseNoPCAP|Any CPU
 		{AD88485E-0776-4B00-88F8-C85F1A8AF953}.ReleaseNoPCAP|Any CPU.Build.0 = ReleaseNoPCAP|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseNoPCAP|Any CPU.ActiveCfg = Release|Any CPU
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseNoPCAP|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A83DC653-F6A4-4D20-B159-3EA53473A31C} = {AEF8A3B5-5E6D-44D7-99EE-D2EBD47B46AD}
 	EndGlobalSection
 EndGlobal

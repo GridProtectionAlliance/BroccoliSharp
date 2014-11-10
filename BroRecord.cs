@@ -265,6 +265,22 @@ namespace BroccoliSharp
         }
 
         /// <summary>
+        /// Adds a new column, with no initial value, to this <see cref="BroRecord"/> with the specified <paramref name="fieldName"/> and <paramref name="type"/>.
+        /// </summary>
+        /// <param name="fieldName">Name of field to add to record.</param>
+        /// <param name="type">The <see cref="BroType"/> of the new field.</param>
+        /// <param name="typeName">Optional name of specialized type of for the field.</param>
+        /// <returns><c>true</c> if successful; otherwise, <c>false</c>.</returns>
+        /// <remarks>
+        /// You can use this method to define a new column for the <see cref="BroRecord"/> without assigning an initial value.
+        /// </remarks>
+        /// <exception cref="ObjectDisposedException">Cannot add item, <see cref="BroRecord"/> is disposed.</exception>
+        public bool Add(string fieldName, BroType type, string typeName = null)
+        {
+            return Add(new BroField(null, type, fieldName, typeName));
+        }
+
+        /// <summary>
         /// Adds new <paramref name="value"/> of <paramref name="type"/> to this <see cref="BroRecord"/> with specified <paramref name="fieldName"/>.
         /// </summary>
         /// <param name="value">The value to add to record as a field.</param>

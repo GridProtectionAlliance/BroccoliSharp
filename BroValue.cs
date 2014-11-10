@@ -1024,7 +1024,10 @@ namespace BroccoliSharp
 
                     fixed (void* pValue = &buffer[0])
                     {
-                        *(int*)pValue = (Convert.ToInt32(sourceValue) == 0 ? 0 : ~0);
+                        if (sourceValue == null)
+                            *(int*)pValue = default(int);
+                        else
+                            *(int*)pValue = (Convert.ToInt32(sourceValue) == 0 ? 0 : ~0);
                     }
                     break;
                 case BroType.Int:
@@ -1035,7 +1038,10 @@ namespace BroccoliSharp
 
                     fixed (void* pValue = &buffer[0])
                     {
-                        *(ulong*)pValue = Convert.ToUInt64(sourceValue);
+                        if (sourceValue == null)
+                            *(ulong*)pValue = default(ulong);
+                        else
+                            *(ulong*)pValue = Convert.ToUInt64(sourceValue);
                     }
                     break;
                 case BroType.Double:
@@ -1045,7 +1051,9 @@ namespace BroccoliSharp
 
                     fixed (void* pValue = &buffer[0])
                     {
-                        if (sourceValue is BroTime)
+                        if (sourceValue == null)
+                            *(double*)pValue = default(double);
+                        else if (sourceValue is BroTime)
                             *(double*)pValue = (BroTime)sourceValue;
                         else if (sourceValue is DateTime)
                             *(double*)pValue = (BroTime)(DateTime)sourceValue;
@@ -1058,7 +1066,9 @@ namespace BroccoliSharp
 
                     fixed (void* pValue = &buffer[0])
                     {
-                        if (sourceValue is BroPort)
+                        if (sourceValue == null)
+                            *(BroPort*)pValue = default(BroPort);
+                        else if (sourceValue is BroPort)
                             *(BroPort*)pValue = (BroPort)sourceValue;
                         else
                             throw new InvalidOperationException("BroValue of type \"Port\" can only reference a BroPort.");
@@ -1069,7 +1079,9 @@ namespace BroccoliSharp
 
                     fixed (void* pValue = &buffer[0])
                     {
-                        if (sourceValue is BroAddress)
+                        if (sourceValue == null)
+                            *(BroAddress*)pValue = default(BroAddress);
+                        else if (sourceValue is BroAddress)
                             *(BroAddress*)pValue = (BroAddress)sourceValue;
                         else if (sourceValue is BroSubnet)
                             *(BroAddress*)pValue = (BroSubnet)sourceValue;
@@ -1086,7 +1098,9 @@ namespace BroccoliSharp
 
                     fixed (void* pValue = &buffer[0])
                     {
-                        if (sourceValue is BroSubnet)
+                        if (sourceValue == null)
+                            *(BroSubnet*)pValue = default(BroSubnet);
+                        else if (sourceValue is BroSubnet)
                             *(BroSubnet*)pValue = (BroSubnet)sourceValue;
                         else
                             throw new InvalidOperationException("BroValue of type \"Subnet\" can only reference a BroSubnet.");

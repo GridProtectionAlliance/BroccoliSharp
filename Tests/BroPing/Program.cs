@@ -17,6 +17,8 @@ namespace BroPing
                 return 1;
             }
 
+            Console.WriteLine("Attempting to establish Bro connection...");
+
             try
             {
                 s_hostName = args[0];
@@ -45,8 +47,9 @@ namespace BroPing
                     BroRecord pingData = new BroRecord();
                     int seq = 0;
 
-                    pingData.Add(seq, BroType.Count, "seq");
-                    pingData.Add(BroTime.Now, "src_time");
+                    // Define columns without any initial value
+                    pingData.Add("seq", BroType.Count);
+                    pingData.Add("src_time", BroType.Time);
 
                     while (!Console.KeyAvailable)
                     {
@@ -61,7 +64,7 @@ namespace BroPing
             }
             catch (Exception ex)
             {
-                Console.Write("Exception: {0}", ex.Message);
+                Console.Write("Exception: {0}{1}", ex.Message, Environment.NewLine);
                 return 1;
             }
         }

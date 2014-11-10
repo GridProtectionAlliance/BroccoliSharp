@@ -75,14 +75,23 @@
     <Compile Include="BroPort.cs" />
     <Compile Include="BroRecord.cs" />
     <Compile Include="BroSet.cs" />
+    <Compile Include="Internal\BroConnectionPtr.cs" />
+    <Compile Include="Internal\BroEventPtr.cs" />
+    <Compile Include="Internal\BroPacketPtr.cs" />
+    <Compile Include="Internal\BroRecordPtr.cs" />
+    <Compile Include="Internal\BroSetPtr.cs" />
     <Compile Include="Internal\BroStructures.cs" />
     <Compile Include="BroSubnet.cs" />
     <Compile Include="BroTable.cs" />
     <Compile Include="BroTime.cs" />
     <Compile Include="BroType.cs" />
     <Compile Include="BroVector.cs" />
+    <Compile Include="Internal\BroTablePtr.cs" />
+    <Compile Include="Internal\BroUnkownPtr.cs" />
+    <Compile Include="Internal\BroVectorPtr.cs" />
     <Compile Include="Internal\InternalExtensions.cs" />
     <Compile Include="NamespaceDoc.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BroString.cs" />
   </ItemGroup>

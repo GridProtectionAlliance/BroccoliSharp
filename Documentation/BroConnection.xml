@@ -104,8 +104,8 @@
     <para>
       Just by creating a <see cref="BroConnection"/> instance you do not also establish a connection right away, this
       is done using <see cref="BroConnection.Connect"/>. The main reason for this is to allow you to subscribe to
-      events (using <see cref="BroConnection.RegisterForEvent">RegisterForEvent()</see>, see example below) before
-      establishing the connection. Upon successfully returning from <see cref="BroConnection.Connect"/> you are
+      events (using <see cref="BroConnection.RegisterForEvent(string, object)">RegisterForEvent()</see>, see example below)
+      before establishing the connection. Upon successfully returning from <see cref="BroConnection.Connect"/> you are
       guaranteed to receive all instances of the event types you have requested, while later on during the connection
       some time may elapse between the issuing of a request for events and the processing of that request at the remote
       end. Connections are established via TCP. The port numbers Bro agents and Broccoli applications listen on can
