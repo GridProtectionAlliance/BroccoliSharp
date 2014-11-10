@@ -96,7 +96,7 @@
   <HelpKINode Title="BroConnection.ProcessInput method" Url="html/M_BroccoliSharp_BroConnection_ProcessInput.htm" />
   <HelpKINode Title="BroConnection.ReceivedEvent event" Url="html/E_BroccoliSharp_BroConnection_ReceivedEvent.htm" />
   <HelpKINode Title="BroConnection.Reconnect method" Url="html/M_BroccoliSharp_BroConnection_Reconnect.htm" />
-  <HelpKINode Title="BroConnection.RegisterForEvent method" Url="html/M_BroccoliSharp_BroConnection_RegisterForEvent.htm" />
+  <HelpKINode Title="BroConnection.RegisterForEvent method" Url="html/Overload_BroccoliSharp_BroConnection_RegisterForEvent.htm" />
   <HelpKINode Title="BroConnection.RequestEvents method" Url="html/M_BroccoliSharp_BroConnection_RequestEvents.htm" />
   <HelpKINode Title="BroConnection.SendEvent method" Url="html/Overload_BroccoliSharp_BroConnection_SendEvent.htm" />
   <HelpKINode Title="BroConnection.SendPacket method" Url="html/M_BroccoliSharp_BroConnection_SendPacket.htm" />
@@ -603,7 +603,7 @@
   <HelpKINode Title="Reconnect enumeration member" Url="html/T_BroccoliSharp_BroConnectionFlags.htm" />
   <HelpKINode Title="Reconnect method" Url="html/M_BroccoliSharp_BroConnection_Reconnect.htm" />
   <HelpKINode Title="Record enumeration member" Url="html/T_BroccoliSharp_BroType.htm" />
-  <HelpKINode Title="RegisterForEvent method" Url="html/M_BroccoliSharp_BroConnection_RegisterForEvent.htm" />
+  <HelpKINode Title="RegisterForEvent method" Url="html/Overload_BroccoliSharp_BroConnection_RegisterForEvent.htm" />
   <HelpKINode Title="Remove method">
     <HelpKINode Title="BroRecord.Remove Method " Url="html/Overload_BroccoliSharp_BroRecord_Remove.htm" />
     <HelpKINode Title="BroSet.Remove Method " Url="html/M_BroccoliSharp_BroSet_Remove.htm" />
