@@ -31,6 +31,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
@@ -111,6 +112,7 @@ namespace BroccoliSharp
         /// <param name="flags">Connection flags for this <see cref="BroConnection"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="tcpListener"/> is <c>null</c>.</exception>
         /// <exception cref="OutOfMemoryException">Failed to create Bro connection.</exception>
+        [SuppressMessage("Gendarme.Rules.Interoperability", "DoNotAssumeIntPtrSizeRule")]
         public BroConnection(TcpListener tcpListener, BroConnectionFlags flags = BroConnectionFlags.None)
             : this()
         {
@@ -135,6 +137,7 @@ namespace BroccoliSharp
         /// <param name="flags">Connection flags for this <see cref="BroConnection"/>.</param>
         /// <exception cref="ArgumentNullException"><paramref name="tcpClient"/> is <c>null</c>.</exception>
         /// <exception cref="OutOfMemoryException">Failed to create Bro connection.</exception>
+        [SuppressMessage("Gendarme.Rules.Interoperability", "DoNotAssumeIntPtrSizeRule")]
         public BroConnection(TcpClient tcpClient, BroConnectionFlags flags = BroConnectionFlags.None)
             : this()
         {
@@ -157,10 +160,15 @@ namespace BroccoliSharp
         /// </summary>
         /// <param name="socket">Existing open socket to use for <see cref="BroConnection"/>.</param>
         /// <param name="flags">Connection flags for this <see cref="BroConnection"/>.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="socket"/> is <c>null</c>.</exception>
         /// <exception cref="OutOfMemoryException">Failed to create Bro connection.</exception>
+        [SuppressMessage("Gendarme.Rules.Interoperability", "DoNotAssumeIntPtrSizeRule")]
         public BroConnection(Socket socket, BroConnectionFlags flags = BroConnectionFlags.None)
             : this()
         {
+            if ((object)socket == null)
+                throw new ArgumentNullException("socket");
+
             m_connectionPtr = BroApi.bro_conn_new_socket(socket.Handle.ToInt32(), flags);
 
             if (m_connectionPtr.IsInvalid)

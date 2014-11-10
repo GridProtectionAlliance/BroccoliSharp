@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Diagnostics.CodeAnalysis;
 
 #pragma warning disable 1591
 // ReSharper disable UnusedMember.Global
@@ -9,7 +9,7 @@
 // ReSharper disable IntroduceOptionalParameters.Global
 // ReSharper disable MemberCanBeProtected.Global
 // ReSharper disable InconsistentNaming
-
+// ReSharper disable once CheckNamespace
 namespace BroccoliSharp.Annotations
 {
     /// <summary>
@@ -355,6 +355,7 @@ namespace BroccoliSharp.Annotations
     /// which should not be removed and so is treated as used
     /// </summary>
     [MeansImplicitUse]
+    [SuppressMessage("Gendarme.Rules.Design", "MissingAttributeUsageOnCustomAttributeRule")]
     public sealed class PublicAPIAttribute : Attribute
     {
         public PublicAPIAttribute() { }
@@ -397,6 +398,7 @@ namespace BroccoliSharp.Annotations
     /// starting from web root (~)
     /// </summary>
     [AttributeUsage(AttributeTargets.Parameter)]
+    [SuppressMessage("Gendarme.Rules.Performance", "AvoidUnsealedConcreteAttributesRule")]
     public class PathReferenceAttribute : Attribute
     {
         public PathReferenceAttribute() { }
@@ -412,36 +414,48 @@ namespace BroccoliSharp.Annotations
     // ASP.NET MVC attributes
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+    [SuppressMessage("Gendarme.Rules.Design", "AttributeArgumentsShouldHaveAccessorsRule")]
+    [SuppressMessage("Gendarme.Rules.Performance", "AvoidUnusedParametersRule")]
     public sealed class AspMvcAreaMasterLocationFormatAttribute : Attribute
     {
         public AspMvcAreaMasterLocationFormatAttribute(string format) { }
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+    [SuppressMessage("Gendarme.Rules.Design", "AttributeArgumentsShouldHaveAccessorsRule")]
+    [SuppressMessage("Gendarme.Rules.Performance", "AvoidUnusedParametersRule")]
     public sealed class AspMvcAreaPartialViewLocationFormatAttribute : Attribute
     {
         public AspMvcAreaPartialViewLocationFormatAttribute(string format) { }
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+    [SuppressMessage("Gendarme.Rules.Design", "AttributeArgumentsShouldHaveAccessorsRule")]
+    [SuppressMessage("Gendarme.Rules.Performance", "AvoidUnusedParametersRule")]
     public sealed class AspMvcAreaViewLocationFormatAttribute : Attribute
     {
         public AspMvcAreaViewLocationFormatAttribute(string format) { }
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+    [SuppressMessage("Gendarme.Rules.Design", "AttributeArgumentsShouldHaveAccessorsRule")]
+    [SuppressMessage("Gendarme.Rules.Performance", "AvoidUnusedParametersRule")]
     public sealed class AspMvcMasterLocationFormatAttribute : Attribute
     {
         public AspMvcMasterLocationFormatAttribute(string format) { }
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+    [SuppressMessage("Gendarme.Rules.Design", "AttributeArgumentsShouldHaveAccessorsRule")]
+    [SuppressMessage("Gendarme.Rules.Performance", "AvoidUnusedParametersRule")]
     public sealed class AspMvcPartialViewLocationFormatAttribute : Attribute
     {
         public AspMvcPartialViewLocationFormatAttribute(string format) { }
     }
 
     [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
+    [SuppressMessage("Gendarme.Rules.Design", "AttributeArgumentsShouldHaveAccessorsRule")]
+    [SuppressMessage("Gendarme.Rules.Performance", "AvoidUnusedParametersRule")]
     public sealed class AspMvcViewLocationFormatAttribute : Attribute
     {
         public AspMvcViewLocationFormatAttribute(string format) { }

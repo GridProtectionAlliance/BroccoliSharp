@@ -177,9 +177,9 @@
         </p>
         <p>
           The code has also been through extensive analysis using the
-          <a href="http://www.mono-project.com/docs/tools+libraries/tools/gendarme/">Gendarme</a> tool. All
-          items it reports have been reviewed thoroughly - there are no issues of concern. A future to-do could
-          be to create an exclusion list with justifications.
+          <a href="http://www.mono-project.com/docs/tools+libraries/tools/gendarme/">Gendarme</a> tool. All reported
+          items of concern have been corrected and the remaining items have been reviewed thoroughly. A future to-do
+          could be to create an exclusion list with justifications.
         </p>
       </summary>
     </member>
