@@ -109,7 +109,7 @@
           <p style="text-indent: .5in">
             <span style="font-family: Symbol">· </span> 
           <a href="http://www.mono-project.com/download/#download-lin">Mono</a> –
-          version supporting.NET 4.5 is preferred but may not be required.
+          version supporting .NET 4.5 is preferred, but not required.
         </p>
           <h3>Building BroccoliSharp</h3>
           <p>
@@ -125,8 +125,15 @@
             <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln</span>
           </p>
           <p>
-          You can also build the library on Windows using Visual Studio, however the binaries built on Windows
-          will only work on Linux if the Mono release at least supports .NET 4.5.
+          To build BroccoliSharp to target older versions of Mono (e.g., 2.10.8.1), use:
+        </p>
+          <p style="text-indent: .5in">
+            <span class="code">xbuild /p:Configuration=Release BroccoliSharp-NET4.0.sln</span>
+          </p>
+          <p>
+          You can also build the library on Windows using Visual Studio and the binaries
+          should still work on Linux depending on the corresponding installed version of
+          Mono.
         </p>
           <p>
           Once the BroccoliSharp.dll exists (found in Build/Output/Release folder relative to solution) you can
