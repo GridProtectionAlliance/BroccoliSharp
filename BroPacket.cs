@@ -121,7 +121,7 @@ namespace BroccoliSharp
         // Create new BroPacket from an existing source packet - have to clone source packet since we don't own it
         internal BroPacket(BroPacketPtr sourcePacketPtr)
         {
-            if (sourcePacketPtr.IsInvalid)
+            if (!sourcePacketPtr.IsInvalid)
                 m_packetPtr = BroApi.bro_packet_clone(sourcePacketPtr);
         }
 
