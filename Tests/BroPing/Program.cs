@@ -6,8 +6,6 @@ namespace BroPing
 {
     class Program
     {
-        private static string s_hostName;
-
         static int Main(string[] args)
         {
             if (args.Length != 1)
@@ -17,14 +15,14 @@ namespace BroPing
                 return 1;
             }
 
-            Console.WriteLine("Attempting to establish Bro connection...");
-
             try
             {
-                s_hostName = args[0];
+                string hostName = args[0];
+
+                Console.WriteLine("Attempting to establish Bro connection to \"{0}\"...", hostName);
 
                 // Create the connection object
-                using (BroConnection connection = new BroConnection(s_hostName))
+                using (BroConnection connection = new BroConnection(hostName))
                 {
                     // Register to receive the pong event
                     connection.RegisterForEvent("pong", e =>
@@ -34,7 +32,7 @@ namespace BroPing
                         DateTime src_time = pongData["src_time"];
 
                         Console.WriteLine("pong event from {0}: seq={1}, time={2}/{3} s",
-                            s_hostName,
+                            hostName,
                             pongData["seq"],
                             (dst_time - src_time).TotalSeconds,
                             (BroTime.Now - src_time).TotalSeconds);
