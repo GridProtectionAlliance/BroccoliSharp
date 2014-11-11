@@ -42,19 +42,29 @@ namespace BroPing
 
                     Console.WriteLine("Bro connection established. Starting ping cycle, press any key to cancel...");
 
-                    BroRecord pingData = new BroRecord();
-                    int seq = 0;
-
-                    // Define columns without any initial value
-                    pingData.Add("seq", BroType.Count);
-                    pingData.Add("src_time", BroType.Time);
-
-                    while (!Console.KeyAvailable)
+                    using (BroRecord pingData = new BroRecord())
                     {
-                        pingData["seq"] = new BroValue(seq++, BroType.Count);
-                        pingData["src_time"] = BroTime.Now;
-                        connection.SendEvent("ping", pingData);
-                        Thread.Sleep(1000);
+                        int seq = 0;
+
+                        // Define columns without any initial value
+                        pingData.Add("seq", BroType.Count);
+                        pingData.Add("src_time", BroType.Time);
+
+                        while (!Console.KeyAvailable)
+                        {
+                            // Update ping record parameters
+                            pingData["seq"] = new BroValue(seq++, BroType.Count);
+                            pingData["src_time"] = BroTime.Now;
+
+                            // Send ping
+                            connection.SendEvent("ping", pingData);
+
+                            // Process any received responses
+                            connection.ProcessInput();
+
+                            // Wait one second between pings
+                            Thread.Sleep(1000);
+                        }
                     }
                 }
 

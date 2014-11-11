@@ -1322,7 +1322,8 @@ namespace BroccoliSharp
                     break;
             }
 
-            return new BroValue(value, type);
+            // Make sure you are calling internal constructor (parameters are reversed)!
+            return new BroValue(type, value);
         }
 
         #endregion

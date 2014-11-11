@@ -671,42 +671,34 @@ namespace BroccoliSharp
         // Call-back handler for Bro compact event function
         private unsafe void BroCompactEventCallBack(BroConnectionPtr bc, IntPtr user_data, ref bro_ev_meta meta)
         {
-            // This BroConnection instance should only receive call-backs for itself
-            if (bc == m_connectionPtr)
+            if (string.IsNullOrEmpty(meta.ev_name))
+                return;
+
+            // Create new BroEventArgs from call-back metadata
+            BroEventArgs args = new BroEventArgs();
+            bro_ev_arg arg;
+
+            args.EventName = meta.ev_name;
+            args.EventTime = new BroTime(meta.ev_ts);
+
+            // Get any user data passed to the call-back for the specified event name
+            lock (m_userData)
             {
-                // Create new BroEventArgs from call-back metadata
-                BroEventArgs args = new BroEventArgs();
-                bro_ev_arg arg;
+                object userData;
 
-                args.EventName = meta.ev_name;
-                args.EventTime = new BroTime(meta.ev_ts);
-
-                // Get any user data passed to the call-back for the specified event name
-                lock (m_userData)
-                {
-                    object userData;
-
-                    if (m_userData.TryGetValue(args.EventName, out userData))
-                        args.UserData = userData;
-                }
-
-                args.Parameters = new BroValue[meta.ev_numargs];
-
-                for (int i = 0; i < args.Parameters.Length; i++)
-                {
-                    arg = meta.ev_args[i];
-                    args.Parameters[i] = BroValue.CreateFromPtr(arg.arg_data, arg.arg_type);
-                }
-
-                OnReceivedEvent(args);
+                if (m_userData.TryGetValue(args.EventName, out userData))
+                    args.UserData = userData;
             }
-            else
+
+            args.Parameters = new BroValue[meta.ev_numargs];
+
+            for (int i = 0; i < args.Parameters.Length; i++)
             {
-                // May not be very safe to throw an exception here - but if we received a call-back for some
-                // other Bro connection, something is bad wrong anyway
-                if (!m_connectionPtr.IsInvalid)
-                    throw new UnauthorizedAccessException("Received a call-back for an unknown Bro connection.");
+                arg = meta.ev_args[i];
+                args.Parameters[i] = BroValue.CreateFromPtr(arg.arg_data, arg.arg_type);
             }
+
+            OnReceivedEvent(args);
         }
 
         private bro_conn_stats GetConnectionStats()
