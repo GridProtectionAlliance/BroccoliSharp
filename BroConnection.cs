@@ -98,7 +98,7 @@ namespace BroccoliSharp
             if ((object)hostName == null)
                 throw new ArgumentNullException("hostName");
 
-            m_connectionPtr = BroApi.bro_conn_new_str(m_hostName, flags);
+            m_connectionPtr = BroApi.bro_conn_new_str(hostName, flags);
 
             if (m_connectionPtr.IsInvalid)
                 throw new OutOfMemoryException("Failed to create Bro connection.");

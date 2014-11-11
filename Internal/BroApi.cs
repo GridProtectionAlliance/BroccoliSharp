@@ -110,7 +110,7 @@ namespace BroccoliSharp.Internal
             // Calling bro_init from static constructor so it is only called once - we won't be using
             // OpenSSL from a .NET application so we will always pass in null into the initializer.
             if (bro_init(IntPtr.Zero) == 0)
-                throw new TypeInitializationException("BroccoliSharp.Internal.BroApi", new Exception("Failed to initialize Broccoli library - bro_init() function reported failure."));
+                throw new TypeInitializationException("Failed to initialize Broccoli library - bro_init() function reported failure.", new Exception("Cannot load BroccoliSharp.Internal.BroApi"));
         }
 
         /**

@@ -45,9 +45,9 @@
     <None Include="broping-record.bro" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BroccoliSharp.csproj">
+    <ProjectReference Include="..\..\BroccoliSharp-NET4.0.csproj">
       <Project>{ad88485e-0776-4b00-88f8-c85f1a8af953}</Project>
-      <Name>BroccoliSharp</Name>
+      <Name>BroccoliSharp-NET4.0</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
