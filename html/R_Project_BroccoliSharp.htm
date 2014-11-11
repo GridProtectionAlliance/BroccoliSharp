@@ -43,12 +43,17 @@
           the Broccoli API and will allow you to create client sensors for the Bro intrusion
           detection system, receive Bro IDs, send and receive Bro events, as well as send
           and receive event requests to and from peering Bros. As in the native C Broccoli
-          API, you can currently create and receive values of pure types like integers,
-          counters, timestamps, IP addresses, port numbers, booleans, and strings.
+          API, this .NET library can be used to create and receive values of pure types like
+          integers, counters, timestamps, IP addresses, port numbers, booleans, and strings.
         </p>
           <p>
-          BroccoliSharp is free software under terms of the BSD license as provided in the
-          LICENSE file distributed with the source code.
+          BroccoliSharp is free software under terms of the BSD license as provided in the LICENSE file
+          distributed with the source code. This source code library was developed and is maintained by
+          the <a href="https://www.gridprotectionalliance.org">Grid Protection Alliance</a> who provides
+          production grade open source software to electric utilities.  This library was developed as
+          part of a <a href="http://energy.gov/oe/services/technology-development/energy-delivery-systems-cybersecurity">DOE CEDS</a>
+          project called <a href="https://www.controlsystemsroadmap.net/ieRoadmap%20Documents/GPA-ARMORE-CEDS_Peer_Review_2014.pdf">"ARMORE"</a>
+          which is incorporating Bro within a security appliance for use in substations.
         </p>
           <p>
           More details on BroccoliSharp usage can be found in the documentation related to
@@ -65,8 +70,8 @@
         </p>
           <ul>
             <li>
-            For details on how to manage connections, handle connections classes, and compose and send
-            events using BroccoliSharp, see topic remarks for the:
+            For details on how to manage connections, handle connections classes, and send events using
+            BroccoliSharp, see topic remarks for the:
             <ul style="list-style-type: none"><li><a href="T_BroccoliSharp_BroConnection.htm">BroConnection class</a></li></ul></li>
             <li>
             For details on how to handle record structures in BroccoliSharp, see topic remarks for the:
@@ -138,6 +143,13 @@
           <p>
           Once the BroccoliSharp.dll exists (found in Build/Output/Release folder relative to solution) you can
           add a reference to the library in your .NET projects and begin using BroccoliSharp.
+        </p>
+          <p>
+          In order for your .NET application to be able to find the Broccoli API shared library (i.e.,
+          <span class="code">libbroccoli.so</span>), you will need to add the location of this library to your
+          Linux library path (e.g., add path to <span class="code">LD_LIBRARY_PATH</span> environmental variable).
+          See <a href="http://www.mono-project.com/docs/advanced/pinvoke/">Mono Interop documentation</a> on
+          "Library Handling" for more detail.
         </p>
           <h3>About the Code</h3>
           <p>
