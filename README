@@ -53,10 +53,11 @@ To create builds that use SafeHandle implementations for opaque pointers use:
     xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp.sln
     xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp.sln
     
-To build BroccoliSharp to target older versions of Mono use:
+To build BroccoliSharp to target older versions of Mono use one of the following:
 
     xbuild /p:Configuration=Debug BroccoliSharp-NET4.0.sln
     xbuild /p:Configuration=Release BroccoliSharp-NET4.0.sln
+    xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp-NET4.0.sln
     xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp-NET4.0.sln
     xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp-NET4.0.sln
     xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp-NET4.0.sln
@@ -65,6 +66,7 @@ You can also build the library on Windows using Visual Studio and the binaries
 should still work on Linux depending on the corresponding installed version of
 Mono.
 
-Once the BroccoliSharp.dll exists (found in Build/Output/Release folder
-relative to solution) you can add a reference to the library in your .NET
-projects and begin using BroccoliSharp. 
+Once the BroccoliSharp.dll exists (found in the output folder associated with
+the build configuration, e.g., "/Main/Build/Output/Release" relative to source,
+you can add a reference to the library in your .NET projects and begin using
+BroccoliSharp. 
