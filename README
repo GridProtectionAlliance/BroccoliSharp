@@ -38,14 +38,28 @@ To build the BroccoliSharp library using Mono you can use xbuild:
 
     xbuild /p:Configuration=Release BroccoliSharp.sln
 
+To build a debug library, use: 
+
+    xbuild /p:Configuration=Debug BroccoliSharp.sln
+
 To build BroccoliSharp to work with a Broccoli release that has disabled PCAP
 support, use: 
 
     xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln
-    
-To build BroccoliSharp to target older versions of Mono (e.g., 2.10.8.1), use:
 
+To create builds that use SafeHandle implementations for opaque pointers use:
+
+    xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp.sln
+    xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp.sln
+    xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp.sln
+    
+To build BroccoliSharp to target older versions of Mono use:
+
+    xbuild /p:Configuration=Debug BroccoliSharp-NET4.0.sln
     xbuild /p:Configuration=Release BroccoliSharp-NET4.0.sln
+    xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp-NET4.0.sln
+    xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp-NET4.0.sln
+    xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp-NET4.0.sln
 
 You can also build the library on Windows using Visual Studio and the binaries
 should still work on Linux depending on the corresponding installed version of
