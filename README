@@ -5,12 +5,16 @@ wrap Broccoli, the "Bro client communications library". This library fully
 implements the Broccoli API and will allow you to create client sensors for
 the Bro intrusion detection system, receive Bro IDs, send and receive Bro
 events, as well as send and receive event requests to and from peering Bros.
-As in the native C Broccoli API, you can currently create and receive values
-of pure types like integers, counters, timestamps, IP addresses, port numbers,
-booleans, and strings. 
+As in the native C Broccoli API, this .NET library can be used to create and
+receive values of pure types like integers, counters, timestamps, IP
+addresses, port numbers, booleans, and strings.
 
 BroccoliSharp is free software under terms of the BSD license as provided in
-the LICENSE file distributed with the source code. 
+the LICENSE file distributed with the source code. This source code library
+was developed and is maintained by the Grid Protection Alliance who provides
+production grade open source software to electric utilities. This library was
+developed as part of a DOE CEDS project called "ARMORE" which is
+incorporating Bro within a security appliance for use in substations.
 
 More details on BroccoliSharp usage can be found in the documentation related
 to the primary data structures. It is expected that the developer is already
