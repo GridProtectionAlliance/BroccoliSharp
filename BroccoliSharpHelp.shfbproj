@@ -91,8 +91,9 @@
     <FooterText>See &amp;lt%3ba href=&amp;quot%3bhttps://www.bro.org/sphinx/components/broccoli/broccoli-manual.html&amp;quot%3b&amp;gt%3bBro Client Communications Library&amp;lt%3b/a&amp;gt%3b manual for corresponding C API usage.</FooterText>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="BroccoliSharp" isDocumented="True" />
-<NamespaceSummaryItem name="(global)" isDocumented="True" />
-<NamespaceSummaryItem name="BroccoliSharp.Annotations" isDocumented="False" /></NamespaceSummaries>
+      <NamespaceSummaryItem name="(global)" isDocumented="True" />
+      <NamespaceSummaryItem name="BroccoliSharp.Annotations" isDocumented="False" />
+    </NamespaceSummaries>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
@@ -111,6 +112,15 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DebugWithSafeHandles' ">
+    <OutputPath>bin\DebugWithSafeHandles\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'ReleaseWithSafeHandles' ">
+    <OutputPath>bin\ReleaseWithSafeHandles\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'ReleaseNoPCAPWithSafeHandles' ">
+    <OutputPath>bin\ReleaseNoPCAPWithSafeHandles\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Icons\" />

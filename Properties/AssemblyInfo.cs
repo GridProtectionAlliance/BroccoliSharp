@@ -7,6 +7,17 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("BroccoliSharp")]
 [assembly: AssemblyDescription("C# Wrapper Implementation of Broccoli API")]
+#if USE_SAFE_HANDLES
+#if DEBUG
+[assembly: AssemblyConfiguration("Debug Build with Safe Handles")]
+#else
+#if BRO_PCAP_SUPPORT
+[assembly: AssemblyConfiguration("Release Build with Safe Handles (PCAP Support Enabled)")]
+#else
+[assembly: AssemblyConfiguration("Release Build with Safe Handles (No PCAP Support)")]
+#endif
+#endif
+#else
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug Build")]
 #else
@@ -14,6 +25,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("Release Build (PCAP Support Enabled)")]
 #else
 [assembly: AssemblyConfiguration("Release Build (No PCAP Support)")]
+#endif
 #endif
 #endif
 [assembly: AssemblyCompany("Grid Protection Alliance")]

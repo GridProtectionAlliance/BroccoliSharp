@@ -45,7 +45,11 @@ namespace BroccoliSharp
         #region [ Members ]
 
         // Fields
+#if USE_SAFE_HANDLES
         private BroVectorPtr m_vectorPtr;
+#else
+        private IntPtr m_vectorPtr;
+#endif
         private bool m_disposed;
 
         #endregion
@@ -60,7 +64,7 @@ namespace BroccoliSharp
         {
             m_vectorPtr = BroApi.bro_vector_new();
 
-            if (m_vectorPtr.IsInvalid)
+            if (m_vectorPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro vector.");
         }
 
@@ -81,10 +85,14 @@ namespace BroccoliSharp
         }
 
         // Create new BroVector from an existing source vector - have to clone source vector since we don't own it
+#if USE_SAFE_HANDLES
         internal BroVector(BroVectorPtr sourceVectorPtr)
+#else
+        internal BroVector(IntPtr sourceVectorPtr)
+#endif
             : this()
         {
-            if (sourceVectorPtr.IsInvalid)
+            if (sourceVectorPtr.IsInvalid())
                 return;
 
             int length = BroApi.bro_vector_get_length(sourceVectorPtr);
@@ -124,7 +132,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (m_vectorPtr.IsInvalid)
+                if (m_vectorPtr.IsInvalid())
                     throw new ObjectDisposedException("Cannot get value, Bro vector is disposed.");
 
                 if (index < 0 || index >= Count)
@@ -137,7 +145,7 @@ namespace BroccoliSharp
             }
             set
             {
-                if (m_vectorPtr.IsInvalid)
+                if (m_vectorPtr.IsInvalid())
                     throw new ObjectDisposedException("Cannot set value, Bro vector is disposed.");
 
                 if (index < 0 || index >= Count)
@@ -161,7 +169,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (!m_vectorPtr.IsInvalid)
+                if (!m_vectorPtr.IsInvalid())
                     return BroApi.bro_vector_get_length(m_vectorPtr);
 
                 return 0;
@@ -208,8 +216,16 @@ namespace BroccoliSharp
             {
                 try
                 {
-                    if ((object)m_vectorPtr != null && !m_vectorPtr.IsInvalid)
+#if USE_SAFE_HANDLES
+                    if ((object)m_vectorPtr != null && !m_vectorPtr.IsInvalid())
                         m_vectorPtr.Dispose();
+#else
+                    if (m_vectorPtr != IntPtr.Zero)
+                    {
+                        BroApi.bro_vector_free(m_vectorPtr);
+                        m_vectorPtr = IntPtr.Zero;
+                    }
+#endif
                 }
                 finally
                 {
@@ -243,7 +259,7 @@ namespace BroccoliSharp
             if ((object)value == null)
                 throw new ArgumentNullException("value");
 
-            if (m_vectorPtr.IsInvalid)
+            if (m_vectorPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot add value, Bro vector is disposed.");
 
             return value.ExecuteWithFixedPtr(ptr => BroApi.bro_vector_add_val(m_vectorPtr, value.Type, value.TypeName, ptr) != 0);
@@ -262,7 +278,7 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clone, <see cref="BroVector"/> is disposed.</exception>
         public BroVector Clone()
         {
-            if (m_vectorPtr.IsInvalid)
+            if (m_vectorPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot clone, Bro vector is disposed.");
 
             return new BroVector(m_vectorPtr);
@@ -274,10 +290,14 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clear, <see cref="BroVector"/> is disposed.</exception>
         public void Clear()
         {
-            if (m_vectorPtr.IsInvalid)
+            if (m_vectorPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot clear items, Bro vector is disposed.");
 
+#if USE_SAFE_HANDLES
             m_vectorPtr.Dispose();
+#else
+            BroApi.bro_vector_free(m_vectorPtr);
+#endif
             m_vectorPtr = BroApi.bro_vector_new();
         }
 
@@ -427,7 +447,7 @@ namespace BroccoliSharp
 
         private void ExecuteCloneOperation(Action<List<BroValue>> operation)
         {
-            if (m_vectorPtr.IsInvalid)
+            if (m_vectorPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot execute list operation, Bro table is disposed.");
 
             // Copy the Bro vector items into a new List<T> data structure
@@ -445,9 +465,13 @@ namespace BroccoliSharp
         }
 
         // Get pointer to Bro vector
+#if USE_SAFE_HANDLES
         internal BroVectorPtr GetValuePtr()
+#else
+        internal IntPtr GetValuePtr()
+#endif
         {
-            if (m_vectorPtr.IsInvalid)
+            if (m_vectorPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot get value pointer, Bro vector is disposed.");
 
             return m_vectorPtr;

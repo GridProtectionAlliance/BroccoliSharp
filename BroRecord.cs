@@ -47,7 +47,11 @@ namespace BroccoliSharp
         #region [ Members ]
 
         // Fields
+#if USE_SAFE_HANDLES
         private BroRecordPtr m_recordPtr;
+#else
+        private IntPtr m_recordPtr;
+#endif
         private bool m_disposed;
 
         #endregion
@@ -62,7 +66,7 @@ namespace BroccoliSharp
         {
             m_recordPtr = BroApi.bro_record_new();
 
-            if (m_recordPtr.IsInvalid)
+            if (m_recordPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro record.");
         }
 
@@ -83,10 +87,14 @@ namespace BroccoliSharp
         }
 
         // Create new BroRecord from an existing source record - have to clone source record since we don't own it
+#if USE_SAFE_HANDLES
         internal BroRecord(BroRecordPtr sourceRecordPtr)
+#else
+        internal BroRecord(IntPtr sourceRecordPtr)
+#endif
             : this()
         {
-            if (sourceRecordPtr.IsInvalid)
+            if (sourceRecordPtr.IsInvalid())
                 return;
 
             int length = BroApi.bro_record_get_length(sourceRecordPtr);
@@ -127,7 +135,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (m_recordPtr.IsInvalid)
+                if (m_recordPtr.IsInvalid())
                     throw new ObjectDisposedException("Cannot get field, Bro record is disposed.");
 
                 if (index < 0 || index >= Count)
@@ -141,7 +149,7 @@ namespace BroccoliSharp
             }
             set
             {
-                if (m_recordPtr.IsInvalid)
+                if (m_recordPtr.IsInvalid())
                     throw new ObjectDisposedException("Cannot set field, Bro record is disposed.");
 
                 if (index < 0 || index >= Count)
@@ -170,7 +178,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (m_recordPtr.IsInvalid)
+                if (m_recordPtr.IsInvalid())
                     throw new ObjectDisposedException("Cannot get field, Bro record is disposed.");
 
                 if ((object)name == null)
@@ -183,7 +191,7 @@ namespace BroccoliSharp
             }
             set
             {
-                if (m_recordPtr.IsInvalid)
+                if (m_recordPtr.IsInvalid())
                     throw new ObjectDisposedException("Cannot set field, Bro record is disposed.");
 
                 if ((object)name == null)
@@ -207,7 +215,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (!m_recordPtr.IsInvalid)
+                if (!m_recordPtr.IsInvalid())
                     return BroApi.bro_record_get_length(m_recordPtr);
 
                 return 0;
@@ -254,8 +262,16 @@ namespace BroccoliSharp
             {
                 try
                 {
-                    if ((object)m_recordPtr != null && !m_recordPtr.IsInvalid)
+#if USE_SAFE_HANDLES
+                    if ((object)m_recordPtr != null && !m_recordPtr.IsInvalid())
                         m_recordPtr.Dispose();
+#else
+                    if (m_recordPtr != IntPtr.Zero)
+                    {
+                        BroApi.bro_record_free(m_recordPtr);
+                        m_recordPtr = IntPtr.Zero;
+                    }
+#endif
                 }
                 finally
                 {
@@ -328,7 +344,7 @@ namespace BroccoliSharp
             if ((object)field == null)
                 throw new ArgumentNullException("field");
 
-            if (m_recordPtr.IsInvalid)
+            if (m_recordPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot add value, Bro record is disposed.");
 
             return field.ExecuteWithFixedPtr(ptr => BroApi.bro_record_add_val(m_recordPtr, field.Name == string.Empty ? null : field.Name, field.Type, field.TypeName, ptr) != 0);
@@ -347,7 +363,7 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clone, <see cref="BroRecord"/> is disposed.</exception>
         public BroRecord Clone()
         {
-            if (m_recordPtr.IsInvalid)
+            if (m_recordPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot clone, Bro record is disposed.");
 
             return new BroRecord(m_recordPtr);
@@ -359,10 +375,14 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clear, <see cref="BroRecord"/> is disposed.</exception>
         public void Clear()
         {
-            if (m_recordPtr.IsInvalid)
+            if (m_recordPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot clear items, Bro record is disposed.");
 
+#if USE_SAFE_HANDLES
             m_recordPtr.Dispose();
+#else
+            BroApi.bro_record_free(m_recordPtr);
+#endif
             m_recordPtr = BroApi.bro_record_new();
         }
 
@@ -609,7 +629,7 @@ namespace BroccoliSharp
 
         private void ExecuteCloneOperation(Action<List<BroField>> operation)
         {
-            if (m_recordPtr.IsInvalid)
+            if (m_recordPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot execute list operation, Bro table is disposed.");
 
             // Copy the Bro record fields into a new List<T> data structure
@@ -627,9 +647,13 @@ namespace BroccoliSharp
         }
 
         // Get pointer to Bro record
+#if USE_SAFE_HANDLES
         internal BroRecordPtr GetValuePtr()
+#else
+        internal IntPtr GetValuePtr()
+#endif
         {
-            if (m_recordPtr.IsInvalid)
+            if (m_recordPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot get value pointer, Bro record is disposed.");
 
             return m_recordPtr;

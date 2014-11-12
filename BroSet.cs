@@ -45,7 +45,11 @@ namespace BroccoliSharp
         #region [ Members ]
 
         // Fields
+#if USE_SAFE_HANDLES
         private BroSetPtr m_setPtr;
+#else
+        private IntPtr m_setPtr;
+#endif
         private bool m_disposed;
 
         #endregion
@@ -60,7 +64,7 @@ namespace BroccoliSharp
         {
             m_setPtr = BroApi.bro_set_new();
 
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro set.");
         }
 
@@ -85,10 +89,14 @@ namespace BroccoliSharp
         }
 
         // Create new BroSet from an existing source set - have to clone source set since we don't own it
+#if USE_SAFE_HANDLES
         internal BroSet(BroSetPtr sourceSetPtr)
+#else
+        internal BroSet(IntPtr sourceSetPtr)
+#endif
             : this()
         {
-            if (sourceSetPtr.IsInvalid)
+            if (sourceSetPtr.IsInvalid())
                 return;
 
             BroType type = BroType.Unknown;
@@ -135,7 +143,7 @@ namespace BroccoliSharp
             {
                 BroType type = BroType.Unknown;
 
-                if (!m_setPtr.IsInvalid)
+                if (!m_setPtr.IsInvalid())
                     BroApi.bro_set_get_type(m_setPtr, ref type);
 
                 return type;
@@ -152,7 +160,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (!m_setPtr.IsInvalid)
+                if (!m_setPtr.IsInvalid())
                     return BroApi.bro_set_get_size(m_setPtr);
 
                 return 0;
@@ -199,8 +207,16 @@ namespace BroccoliSharp
             {
                 try
                 {
-                    if ((object)m_setPtr != null && !m_setPtr.IsInvalid)
+#if USE_SAFE_HANDLES
+                    if ((object)m_setPtr != null && !m_setPtr.IsInvalid())
                         m_setPtr.Dispose();
+#else
+                    if (m_setPtr != IntPtr.Zero)
+                    {
+                        BroApi.bro_set_free(m_setPtr);
+                        m_setPtr = IntPtr.Zero;
+                    }
+#endif
                 }
                 finally
                 {
@@ -242,7 +258,7 @@ namespace BroccoliSharp
             if ((object)value == null)
                 throw new ArgumentNullException("value");
 
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot add value, Bro set is disposed.");
 
             return value.ExecuteWithFixedPtr(ptr => BroApi.bro_set_insert(m_setPtr, value.Type, ptr) != 0);
@@ -261,7 +277,7 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clone, <see cref="BroSet"/> is disposed.</exception>
         public BroSet Clone()
         {
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot clone, Bro set is disposed.");
 
             return new BroSet(m_setPtr);
@@ -273,10 +289,14 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clear, <see cref="BroSet"/> is disposed.</exception>
         public void Clear()
         {
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot clear items, Bro set is disposed.");
 
+#if USE_SAFE_HANDLES
             m_setPtr.Dispose();
+#else
+            BroApi.bro_set_free(m_setPtr);
+#endif
             m_setPtr = BroApi.bro_set_new();
         }
 
@@ -308,7 +328,7 @@ namespace BroccoliSharp
             if ((object)value == null)
                 throw new ArgumentNullException("value");
 
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot execute contains, Bro set is disposed.");
 
             return value.ExecuteWithFixedPtr(ptr => BroApi.bro_set_find(m_setPtr, ptr) != 0);
@@ -334,7 +354,7 @@ namespace BroccoliSharp
             if (Count > array.Length - arrayIndex)
                 throw new ArgumentException("Not enough available space in destination array starting from specified array index to hold all source elements.");
 
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot copy to array, Bro set is disposed.");
 
             BroType type = this.Type;
@@ -542,7 +562,7 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot get list, <see cref="BroSet"/> is disposed.</exception>
         public List<BroValue> ToList()
         {
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot get list, Bro set is disposed.");
 
             List<BroValue> list = new List<BroValue>(Count);
@@ -621,7 +641,7 @@ namespace BroccoliSharp
         // Gets current set as a HashSet<BroValue>
         private HashSet<BroValue> GetHashSet()
         {
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot execute set operation, Bro set is disposed.");
 
             HashSet<BroValue> set = new HashSet<BroValue>();
@@ -646,9 +666,13 @@ namespace BroccoliSharp
         }
 
         // Get pointer to Bro set
+#if USE_SAFE_HANDLES
         internal BroSetPtr GetValuePtr()
+#else
+        internal IntPtr GetValuePtr()
+#endif
         {
-            if (m_setPtr.IsInvalid)
+            if (m_setPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot get value pointer, Bro set is disposed.");
 
             return m_setPtr;

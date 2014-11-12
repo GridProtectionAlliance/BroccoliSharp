@@ -29,7 +29,9 @@
 //
 //******************************************************************************************************
 
+using System;
 using System.Net;
+using System.Runtime.InteropServices;
 #if !DNET45
 using System.Net.Sockets;
 #endif
@@ -40,7 +42,7 @@ namespace BroccoliSharp.Internal
     internal static class InternalExtensions
     {
         // Get address bytes of a bro_addr structure
-        public unsafe static byte[] GetAddressBytes(this bro_addr address)
+        public static unsafe byte[] GetAddressBytes(this bro_addr address)
         {
             byte[] addressBytes = new byte[16];
 
@@ -56,7 +58,7 @@ namespace BroccoliSharp.Internal
         }
 
         // Determines if one bro_addr structure is equal to another
-        public unsafe static bool ValueEquals(this bro_addr address1, bro_addr address2)
+        public static unsafe bool ValueEquals(this bro_addr address1, bro_addr address2)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -68,7 +70,7 @@ namespace BroccoliSharp.Internal
         }
 
         // Converts an IPAddress to a bro_addr
-        public unsafe static bro_addr ConvertToBroAddr(this IPAddress ipAddress)
+        public static unsafe bro_addr ConvertToBroAddr(this IPAddress ipAddress)
         {
             bro_addr broAddress = new bro_addr();
 
@@ -83,6 +85,16 @@ namespace BroccoliSharp.Internal
             }
 
             return broAddress;
+        }
+
+        internal static bool IsInvalid(this IntPtr ptr)
+        {
+            return ptr == IntPtr.Zero;
+        }
+
+        internal static bool IsInvalid(this SafeHandle ptr)
+        {
+            return ptr.IsInvalid;
         }
 
 #if DNET45

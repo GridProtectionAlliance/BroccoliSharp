@@ -29,6 +29,7 @@
 //
 //******************************************************************************************************
 
+#if USE_SAFE_HANDLES
 using System;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
@@ -67,3 +68,4 @@ namespace BroccoliSharp.Internal
         private static extern int bro_conn_delete(IntPtr bc);
     }
 }
+#endif

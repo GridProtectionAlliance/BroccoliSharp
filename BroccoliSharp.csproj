@@ -52,6 +52,42 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugWithSafeHandles|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Build\Output\DebugWithSafeHandles\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;BRO_PCAP_SUPPORT;DNET45;USE_SAFE_HANDLES</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>..\Build\Output\DebugWithSafeHandles\BroccoliSharp.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseWithSafeHandles|AnyCPU'">
+    <OutputPath>..\Build\Output\ReleaseWithSafeHandles\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS;BRO_PCAP_SUPPORT;DNET45;USE_SAFE_HANDLES</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>..\Build\Output\ReleaseWithSafeHandles\BroccoliSharp.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNoPCAPWithSafeHandles|AnyCPU'">
+    <OutputPath>..\Build\Output\ReleaseNoPCAPWithSafeHandles\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS;DNET45;USE_SAFE_HANDLES</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>..\Build\Output\ReleaseNoPCAPWithSafeHandles\BroccoliSharp.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />

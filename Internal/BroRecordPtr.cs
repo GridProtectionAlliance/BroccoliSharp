@@ -29,6 +29,7 @@
 //
 //******************************************************************************************************
 
+#if USE_SAFE_HANDLES
 using System;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
@@ -73,3 +74,4 @@ namespace BroccoliSharp.Internal
         private static extern void bro_record_free(IntPtr rec);
     }
 }
+#endif

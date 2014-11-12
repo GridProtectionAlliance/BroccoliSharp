@@ -32,7 +32,9 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+#if USE_SAFE_HANDLES
 using System.Runtime.InteropServices;
+#endif
 using BroccoliSharp.Internal;
 
 namespace BroccoliSharp
@@ -364,7 +366,11 @@ namespace BroccoliSharp
 
             // Handle obtaining pointer for opaque reference-types - Bro API calls
             // do not modify value pointers, so this is safe:
+#if USE_SAFE_HANDLES
             return operation(GetValuePtr().DangerousGetHandle());
+#else
+            return operation(GetValuePtr());
+#endif
         }
 
         // ***************************************************************************************
@@ -385,7 +391,11 @@ namespace BroccoliSharp
         }
 
         // Gets value pointer for opaque reference-types.
+#if USE_SAFE_HANDLES
         internal SafeHandle GetValuePtr()
+#else
+        internal IntPtr GetValuePtr()
+#endif
         {
             // Can only get pointer to Bro base object for opaque reference-types
             if (m_value != null)
@@ -423,10 +433,17 @@ namespace BroccoliSharp
                 }
             }
 
+#if USE_SAFE_HANDLES
             if (m_value is IntPtr)
                 return new BroUnknownPtr((IntPtr)m_value);
 
             return new BroUnknownPtr(IntPtr.Zero);
+#else
+            if (m_value is IntPtr)
+                return (IntPtr)m_value;
+
+            return IntPtr.Zero;
+#endif
         }
 
         // Get Bro value as an int (typically for bool values)
@@ -1297,6 +1314,7 @@ namespace BroccoliSharp
                 case BroType.String:
                     value = new BroString(*(bro_string*)sourcePtr.ToPointer());
                     break;
+#if USE_SAFE_HANDLES
                 case BroType.Table:
                     value = new BroTable(new BroTablePtr(sourcePtr, false));
                     break;
@@ -1315,6 +1333,26 @@ namespace BroccoliSharp
                 case BroType.Set:
                     value = new BroSet(new BroSetPtr(sourcePtr, false));
                     break;
+#else
+                case BroType.Table:
+                    value = new BroTable(sourcePtr);
+                    break;
+                case BroType.List:
+                case BroType.Record:
+                    value = new BroRecord(sourcePtr);
+                    break;
+                case BroType.Vector:
+                    value = new BroVector(sourcePtr);
+                    break;
+#if BRO_PCAP_SUPPORT
+                case BroType.Packet:
+                    value = new BroPacket(sourcePtr);
+                    break;
+#endif
+                case BroType.Set:
+                    value = new BroSet(sourcePtr);
+                    break;
+#endif
                 default:
                     // For received values of unsupported types, just provide original pointer as the value,
                     // this could be used as a handy way to get custom data back through BroccoliSharp

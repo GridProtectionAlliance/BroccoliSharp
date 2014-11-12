@@ -45,7 +45,11 @@ namespace BroccoliSharp
         #region [ Members ]
 
         // Fields
+#if USE_SAFE_HANDLES
         private readonly BroEventPtr m_eventPtr;
+#else
+        private IntPtr m_eventPtr;
+#endif
         private readonly string m_name;
         private readonly List<BroValue> m_parameters;
         private bool m_disposed;
@@ -67,7 +71,7 @@ namespace BroccoliSharp
 
             m_eventPtr = BroApi.bro_event_new(name);
 
-            if (m_eventPtr.IsInvalid)
+            if (m_eventPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro event.");
 
             m_name = name;
@@ -150,8 +154,16 @@ namespace BroccoliSharp
             {
                 try
                 {
-                    if ((object)m_eventPtr != null && !m_eventPtr.IsInvalid)
+#if USE_SAFE_HANDLES
+                    if ((object)m_eventPtr != null && !m_eventPtr.IsInvalid())
                         m_eventPtr.Dispose();
+#else
+                    if (m_eventPtr != IntPtr.Zero)
+                    {
+                        BroApi.bro_event_free(m_eventPtr);
+                        m_eventPtr = IntPtr.Zero;
+                    }
+#endif
 
                     if (disposing)
                         m_parameters.Clear();
@@ -188,7 +200,7 @@ namespace BroccoliSharp
             if ((object)value == null)
                 throw new ArgumentNullException("value");
 
-            if (m_eventPtr.IsInvalid)
+            if (m_eventPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot add value, Bro event is disposed.");
 
             if (value.ExecuteWithFixedPtr(ptr => BroApi.bro_event_add_val(m_eventPtr, value.Type, value.TypeName, ptr) == 0))
@@ -253,7 +265,7 @@ namespace BroccoliSharp
             if ((object)value == null)
                 throw new ArgumentNullException("value");
 
-            if (m_eventPtr.IsInvalid)
+            if (m_eventPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot replace value, Bro event is disposed.");
 
             if (index < 0 || index >= m_parameters.Count)
@@ -284,9 +296,13 @@ namespace BroccoliSharp
         }
 
         // Get pointer to Bro event
+#if USE_SAFE_HANDLES
         internal BroEventPtr GetValuePtr()
+#else
+        internal IntPtr GetValuePtr()
+#endif
         {
-            if (m_eventPtr.IsInvalid)
+            if (m_eventPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot get value pointer, Bro event is disposed.");
 
             return m_eventPtr;

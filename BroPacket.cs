@@ -46,7 +46,11 @@ namespace BroccoliSharp
         #region [ Members ]
 
         // Fields
+#if USE_SAFE_HANDLES
         private readonly BroPacketPtr m_packetPtr;
+#else
+        private IntPtr m_packetPtr;
+#endif
         private bool m_disposed;
 
         #endregion
@@ -114,14 +118,18 @@ namespace BroccoliSharp
 
             m_packetPtr = BroApi.bro_packet_new(ref header, packetData, tag);
 
-            if (m_packetPtr.IsInvalid)
+            if (m_packetPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro packet.");
         }
 
         // Create new BroPacket from an existing source packet - have to clone source packet since we don't own it
+#if USE_SAFE_HANDLES
         internal BroPacket(BroPacketPtr sourcePacketPtr)
+#else
+        internal BroPacket(IntPtr sourcePacketPtr)
+#endif
         {
-            if (!sourcePacketPtr.IsInvalid)
+            if (!sourcePacketPtr.IsInvalid())
                 m_packetPtr = BroApi.bro_packet_clone(sourcePacketPtr);
         }
 
@@ -156,8 +164,16 @@ namespace BroccoliSharp
             {
                 try
                 {
-                    if ((object)m_packetPtr != null && !m_packetPtr.IsInvalid)
+#if USE_SAFE_HANDLES
+                    if ((object)m_packetPtr != null && !m_packetPtr.IsInvalid())
                         m_packetPtr.Dispose();
+#else
+                    if (m_packetPtr != IntPtr.Zero)
+                    {
+                        BroApi.bro_packet_free(m_packetPtr);
+                        m_packetPtr = IntPtr.Zero;
+                    }
+#endif
                 }
                 finally
                 {
@@ -173,16 +189,20 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot clone, <see cref="BroPacket"/> is disposed.</exception>
         public BroPacket Clone()
         {
-            if (m_packetPtr.IsInvalid)
+            if (m_packetPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot clone, Bro packet is disposed.");
 
             return new BroPacket(m_packetPtr);
         }
 
         // Get pointer to Bro packet
+#if USE_SAFE_HANDLES
         internal BroPacketPtr GetValuePtr()
+#else
+        internal IntPtr GetValuePtr()
+#endif
         {
-            if (m_packetPtr.IsInvalid)
+            if (m_packetPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot get value pointer, Bro packet is disposed.");
 
             return m_packetPtr;

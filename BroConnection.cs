@@ -62,7 +62,11 @@ namespace BroccoliSharp
         public event EventHandler<BroEventArgs> ReceivedEvent;
 
         // Fields
+#if USE_SAFE_HANDLES
         private readonly BroConnectionPtr m_connectionPtr;
+#else
+        private IntPtr m_connectionPtr;
+#endif
         private readonly string m_hostName;
         private readonly BroConnectionFlags m_flags;
         private readonly BroEventQueue m_eventQueue;
@@ -100,7 +104,7 @@ namespace BroccoliSharp
 
             m_connectionPtr = BroApi.bro_conn_new_str(hostName, flags);
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro connection.");
 
             m_hostName = hostName;
@@ -125,7 +129,7 @@ namespace BroccoliSharp
 
             m_connectionPtr = BroApi.bro_conn_new_socket(socket.Handle.ToInt32(), flags);
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro connection.");
 
             m_hostName = DeriveHostName(socket);
@@ -150,7 +154,7 @@ namespace BroccoliSharp
 
             m_connectionPtr = BroApi.bro_conn_new_socket(socket.Handle.ToInt32(), flags);
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro connection.");
 
             m_hostName = DeriveHostName(socket);
@@ -173,7 +177,7 @@ namespace BroccoliSharp
 
             m_connectionPtr = BroApi.bro_conn_new_socket(socket.Handle.ToInt32(), flags);
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro connection.");
 
             m_hostName = DeriveHostName(socket);
@@ -191,7 +195,7 @@ namespace BroccoliSharp
         {
             m_connectionPtr = BroApi.bro_conn_new_socket(socket, flags);
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new OutOfMemoryException("Failed to create Bro connection.");
 
             m_hostName = string.Format("@FD={0}", socket);
@@ -274,7 +278,7 @@ namespace BroccoliSharp
             {
                 m_class = value;
 
-                if (m_connectionPtr.IsInvalid)
+                if (m_connectionPtr.IsInvalid())
                     throw new ObjectDisposedException("Cannot set property, Bro connection is disposed.");
 
                 BroApi.bro_conn_set_class(m_connectionPtr, m_class);
@@ -288,7 +292,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (m_connectionPtr.IsInvalid)
+                if (m_connectionPtr.IsInvalid())
                     return string.Empty;
 
                 return Marshal.PtrToStringAnsi(BroApi.bro_conn_get_peer_class(m_connectionPtr));
@@ -302,7 +306,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (m_connectionPtr.IsInvalid)
+                if (m_connectionPtr.IsInvalid())
                     return false;
 
                 return BroApi.bro_conn_alive(m_connectionPtr) != 0;
@@ -344,7 +348,7 @@ namespace BroccoliSharp
         {
             get
             {
-                if (m_connectionPtr.IsInvalid)
+                if (m_connectionPtr.IsInvalid())
                     return 0;
 
                 return BroApi.bro_conn_get_fd(m_connectionPtr);
@@ -362,14 +366,14 @@ namespace BroccoliSharp
             {
                 int linkType = -1;
 
-                if (!m_connectionPtr.IsInvalid)
+                if (!m_connectionPtr.IsInvalid())
                     BroApi.bro_conn_get_packet_ctxt(m_connectionPtr, ref linkType);
 
                 return linkType;
             }
             set
             {
-                if (m_connectionPtr.IsInvalid)
+                if (m_connectionPtr.IsInvalid())
                     throw new ObjectDisposedException("Cannot set property, Bro connection is disposed.");
 
                 BroApi.bro_conn_set_packet_ctxt(m_connectionPtr, value);
@@ -400,8 +404,16 @@ namespace BroccoliSharp
             {
                 try
                 {
-                    if ((object)m_connectionPtr != null && !m_connectionPtr.IsInvalid)
+#if USE_SAFE_HANDLES
+                    if ((object)m_connectionPtr != null && !m_connectionPtr.IsInvalid())
                         m_connectionPtr.Dispose();
+#else
+                    if (m_connectionPtr != IntPtr.Zero)
+                    {
+                        BroApi.bro_conn_delete(m_connectionPtr);
+                        m_connectionPtr = IntPtr.Zero;
+                    }
+#endif
                 }
                 finally
                 {
@@ -417,7 +429,7 @@ namespace BroccoliSharp
         /// <exception cref="InvalidOperationException">Failed to connect to host.</exception>
         public void Connect()
         {
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot connect, Bro connection is disposed.");
 
             // Attempt connection
@@ -432,7 +444,7 @@ namespace BroccoliSharp
         /// <exception cref="InvalidOperationException">Failed to reconnect to host.</exception>
         public void Reconnect()
         {
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot reconnect, Bro connection is disposed.");
 
             // Attempt reconnection
@@ -451,7 +463,7 @@ namespace BroccoliSharp
             if ((object)source == null)
                 throw new ArgumentNullException("source");
 
-            if (m_connectionPtr.IsInvalid || source.m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid() || source.m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot adopt events, Bro connection is disposed.");
 
             BroApi.bro_conn_adopt_events(source.m_connectionPtr, m_connectionPtr);
@@ -469,7 +481,7 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot process input, <see cref="BroConnection"/> is disposed.</exception>
         public bool ProcessInput()
         {
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot process input, Bro connection is disposed.");
 
             return BroApi.bro_conn_process_input(m_connectionPtr) != 0;
@@ -506,7 +518,7 @@ namespace BroccoliSharp
             if ((object)@event == null)
                 throw new ArgumentNullException("event");
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot send event, Bro connection is disposed.");
 
             return BroApi.bro_event_send(m_connectionPtr, @event.GetValuePtr()) != 0;
@@ -533,7 +545,7 @@ namespace BroccoliSharp
             if (length > data.Length)
                 throw new ArgumentOutOfRangeException("length");
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot send event, Bro connection is disposed.");
 
             return BroApi.bro_event_send_raw(m_connectionPtr, data, length) != 0;
@@ -551,7 +563,7 @@ namespace BroccoliSharp
             if ((object)eventName == null)
                 throw new ArgumentNullException("eventName");
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot register for event, Bro connection is disposed.");
 
             if (userData != null)
@@ -606,7 +618,7 @@ namespace BroccoliSharp
             if ((object)eventName == null)
                 throw new ArgumentNullException("eventName");
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot unregister for event, Bro connection is disposed.");
 
             BroApi.bro_event_registry_remove(m_connectionPtr, eventName);
@@ -631,7 +643,7 @@ namespace BroccoliSharp
         /// <exception cref="ObjectDisposedException">Cannot request events, <see cref="BroConnection"/> is disposed.</exception>
         public void RequestEvents()
         {
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot request events, Bro connection is disposed.");
 
             BroApi.bro_event_registry_request(m_connectionPtr);
@@ -650,7 +662,7 @@ namespace BroccoliSharp
             if ((object)packet == null)
                 throw new ArgumentNullException("packet");
 
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot send packet, Bro connection is disposed.");
 
             return BroApi.bro_packet_send(m_connectionPtr, packet.GetValuePtr()) != 0;
@@ -669,7 +681,11 @@ namespace BroccoliSharp
         }
 
         // Call-back handler for Bro compact event function
+#if USE_SAFE_HANDLES
         private unsafe void BroCompactEventCallBack(BroConnectionPtr bc, IntPtr user_data, ref bro_ev_meta meta)
+#else
+        private unsafe void BroCompactEventCallBack(IntPtr bc, IntPtr user_data, ref bro_ev_meta meta)
+#endif
         {
             if (string.IsNullOrEmpty(meta.ev_name))
                 return;
@@ -705,7 +721,7 @@ namespace BroccoliSharp
         {
             bro_conn_stats stats = new bro_conn_stats();
 
-            if (!m_connectionPtr.IsInvalid)
+            if (!m_connectionPtr.IsInvalid())
                 BroApi.bro_conn_get_connstats(m_connectionPtr, ref stats);
 
             return stats;
@@ -745,9 +761,13 @@ namespace BroccoliSharp
         }
 
         // Get pointer to Bro connection
+#if USE_SAFE_HANDLES
         internal BroConnectionPtr GetValuePtr()
+#else
+        internal IntPtr GetValuePtr()
+#endif
         {
-            if (m_connectionPtr.IsInvalid)
+            if (m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot get value pointer, Bro connection is disposed.");
 
             return m_connectionPtr;
@@ -774,7 +794,7 @@ namespace BroccoliSharp
             if ((object)destination == null)
                 throw new ArgumentNullException("destination");
 
-            if (source.m_connectionPtr.IsInvalid || destination.m_connectionPtr.IsInvalid)
+            if (source.m_connectionPtr.IsInvalid() || destination.m_connectionPtr.IsInvalid())
                 throw new ObjectDisposedException("Cannot adopt events, Bro connection is disposed.");
 
             BroApi.bro_conn_adopt_events(source.m_connectionPtr, destination.m_connectionPtr);

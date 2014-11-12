@@ -29,6 +29,7 @@
 //
 //******************************************************************************************************
 
+#if USE_SAFE_HANDLES
 using System;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
@@ -72,3 +73,4 @@ namespace BroccoliSharp.Internal
         private static extern void bro_vector_free(IntPtr vec);
     }
 }
+#endif

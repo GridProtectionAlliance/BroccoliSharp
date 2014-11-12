@@ -29,6 +29,7 @@
 //
 //******************************************************************************************************
 
+#if USE_SAFE_HANDLES
 using System;
 using System.Runtime.ConstrainedExecution;
 using System.Security.Permissions;
@@ -55,3 +56,4 @@ namespace BroccoliSharp.Internal
         }
     }
 }
+#endif
