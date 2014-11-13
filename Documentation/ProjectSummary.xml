@@ -145,6 +145,14 @@
         </p>
 
         <p>
+          To build a debug library, use:
+        </p>
+
+        <p style='text-indent: .5in'>
+          <span class="code">xbuild /p:Configuration=Debug BroccoliSharp.sln</span>
+        </p>
+        
+        <p>
           To build BroccoliSharp to work with a Broccoli release that has disabled PCAP support, use:
         </p>
 
@@ -153,11 +161,33 @@
         </p>
 
         <p>
-          To build BroccoliSharp to target older versions of Mono (e.g., 2.10.8.1), use:
+          To create builds that use SafeHandle implementations for opaque pointers use:
         </p>
 
         <p style='text-indent: .5in'>
+          <span class="code">xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp.sln</span>
+          <br/>
+          <span class="code">xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp.sln</span>
+          <br/>
+          <span class="code">xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp.sln</span>
+        </p>
+
+        <p>
+          To build BroccoliSharp to target older versions of Mono use one of the following:
+        </p>
+
+        <p style='text-indent: .5in'>
+          <span class="code">xbuild /p:Configuration=Debug BroccoliSharp-NET4.0.sln</span>
+          <br/>
           <span class="code">xbuild /p:Configuration=Release BroccoliSharp-NET4.0.sln</span>
+          <br/>
+          <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp-NET4.0.sln</span>
+          <br/>
+          <span class="code">xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+          <br/>
+          <span class="code">xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+          <br/>
+          <span class="code">xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp-NET4.0.sln</span>
         </p>
 
         <p>
@@ -167,8 +197,10 @@
         </p>
 
         <p>
-          Once the BroccoliSharp.dll exists (found in Build/Output/Release folder relative to solution) you can
-          add a reference to the library in your .NET projects and begin using BroccoliSharp.
+          Once the BroccoliSharp.dll exists (found in the output folder associated with
+          the build configuration, e.g., "/Main/Build/Output/Release" relative to source,
+          you can add a reference to the library in your .NET projects and begin using
+          BroccoliSharp.
         </p>
 
         <p>
@@ -181,6 +213,21 @@
 
         <h3>About the Code</h3>
 
+        <p>
+          The source code has been defined with precompiler directives to allow for compiling the code to
+          either use direct pointers or use safe handles for opaque Bro types. Generally, as their name
+          implies, safe handles are the ideal choice when using managed code with unmanaged code. See the
+          <a href="http://msdn.microsoft.com/en-us/library/fh21e17c(v=vs.110).aspx">Safe Handles</a>
+          documentation for more detail. In general, multi-threaded race conditions between garbage collection
+          and pointer usage can be avoided and the unmanaged memory allocations the pointer references will
+          be disposed of properly even if the program abnormally terminates. That being said, depending on the
+          version of Mono you are targeting, the safe handle implementation may not be fully cooked. Also, if
+          you are trying to debug your .NET application and get Mono to report verbose information, there is a
+          lot less noise to filter through when you are just using pointers. As a result, you can choose which
+          mode of operation you to use depending on your task. For any production level deployments, it is
+          recommended to use the <span class="code">ReleaseWithSafeHandles</span> build configuration.
+        </p>
+        
         <p>
           When building inside Visual Studio code analysis is enabled for this project. A rule set is included
           with the source code (i.e., BroccoliSharp.ruleset) that defines the analysis rules that are enabled for
