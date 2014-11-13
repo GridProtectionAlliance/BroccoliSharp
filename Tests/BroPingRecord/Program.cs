@@ -2,7 +2,7 @@
 using System.Threading;
 using BroccoliSharp;
 
-namespace BroPing
+namespace BroPingRecord
 {
     class Program
     {
@@ -11,7 +11,7 @@ namespace BroPing
             if (args.Length != 1)
             {
                 Console.WriteLine("Usage:");
-                Console.WriteLine("    BroPing host:port");
+                Console.WriteLine("    BroPingRecord host:port");
                 return 1;
             }
 
@@ -27,13 +27,13 @@ namespace BroPing
                     // Register to receive the pong event
                     connection.RegisterForEvent("pong", e =>
                     {
-                        BroValue[] values = e.Parameters;
-                        DateTime src_time = values[0];
-                        DateTime dst_time = values[1];
+                        BroRecord pongData = e.Parameters[0];
+                        DateTime src_time = pongData["src_time"];
+                        DateTime dst_time = pongData["dst_time"];
 
                         Console.WriteLine("pong event from {0}: seq={1}, time={2}/{3} s",
                             hostName,
-                            values[2],
+                            pongData["seq"],
                             (dst_time - src_time).TotalSeconds,
                             (BroTime.Now - src_time).TotalSeconds);
                     });
@@ -42,18 +42,29 @@ namespace BroPing
 
                     Console.WriteLine("Bro connection established. Starting ping cycle, press any key to cancel...");
 
-                    int seq = 0;
-
-                    while (!Console.KeyAvailable)
+                    using (BroRecord pingData = new BroRecord())
                     {
-                        // Send ping
-                        connection.SendEvent("ping", BroTime.Now, new BroValue(seq++, BroType.Count));
+                        int seq = 0;
 
-                        // Process any received responses
-                        connection.ProcessInput();
+                        // Define columns without any initial value
+                        pingData.Add("seq", BroType.Count);
+                        pingData.Add("src_time", BroType.Time);
 
-                        // Wait one second between pings
-                        Thread.Sleep(1000);
+                        while (!Console.KeyAvailable)
+                        {
+                            // Update ping record parameters
+                            pingData["seq"] = new BroValue(seq++, BroType.Count);
+                            pingData["src_time"] = BroTime.Now;
+
+                            // Send ping
+                            connection.SendEvent("ping", pingData);
+
+                            // Process any received responses
+                            connection.ProcessInput();
+
+                            // Wait one second between pings
+                            Thread.Sleep(1000);
+                        }
                     }
                 }
 

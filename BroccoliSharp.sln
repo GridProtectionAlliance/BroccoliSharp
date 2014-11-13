@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{80078D10
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroPing", "Tests\BroPing\BroPing.csproj", "{A83DC653-F6A4-4D20-B159-3EA53473A31C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroPingRecord", "Tests\BroPingRecord\BroPingRecord.csproj", "{962346EB-13D4-45ED-8474-3C2CCB6E2930}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,11 +60,24 @@ Global
 		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseNoPCAPWithSafeHandles|Any CPU.Build.0 = ReleaseNoPCAPWithSafeHandles|Any CPU
 		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseWithSafeHandles|Any CPU.ActiveCfg = ReleaseWithSafeHandles|Any CPU
 		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseWithSafeHandles|Any CPU.Build.0 = ReleaseWithSafeHandles|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.DebugWithSafeHandles|Any CPU.ActiveCfg = DebugWithSafeHandles|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.DebugWithSafeHandles|Any CPU.Build.0 = DebugWithSafeHandles|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.ReleaseNoPCAP|Any CPU.ActiveCfg = ReleaseNoPCAPWithSafeHandles|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.ReleaseNoPCAP|Any CPU.Build.0 = ReleaseNoPCAPWithSafeHandles|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.ReleaseNoPCAPWithSafeHandles|Any CPU.ActiveCfg = ReleaseNoPCAPWithSafeHandles|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.ReleaseNoPCAPWithSafeHandles|Any CPU.Build.0 = ReleaseNoPCAPWithSafeHandles|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.ReleaseWithSafeHandles|Any CPU.ActiveCfg = ReleaseWithSafeHandles|Any CPU
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930}.ReleaseWithSafeHandles|Any CPU.Build.0 = ReleaseWithSafeHandles|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A83DC653-F6A4-4D20-B159-3EA53473A31C} = {80078D10-F6EF-4317-B0F8-F06B2BF7AE7F}
+		{962346EB-13D4-45ED-8474-3C2CCB6E2930} = {80078D10-F6EF-4317-B0F8-F06B2BF7AE7F}
 	EndGlobalSection
 EndGlobal

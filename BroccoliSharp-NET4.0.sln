@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AEF8A3B5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroPing-NET4.0", "Tests\BroPing\BroPing-NET4.0.csproj", "{A83DC653-F6A4-4D20-B159-3EA53473A31C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroPingRecord-NET4.0", "Tests\BroPingRecord\BroPingRecord-NET4.0.csproj", "{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,11 +43,24 @@ Global
 		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseNoPCAPWithSafeHandles|Any CPU.Build.0 = ReleaseNoPCAPWithSafeHandles|Any CPU
 		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseWithSafeHandles|Any CPU.ActiveCfg = ReleaseWithSafeHandles|Any CPU
 		{A83DC653-F6A4-4D20-B159-3EA53473A31C}.ReleaseWithSafeHandles|Any CPU.Build.0 = ReleaseWithSafeHandles|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.DebugWithSafeHandles|Any CPU.ActiveCfg = DebugWithSafeHandles|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.DebugWithSafeHandles|Any CPU.Build.0 = DebugWithSafeHandles|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.ReleaseNoPCAP|Any CPU.ActiveCfg = ReleaseNoPCAPWithSafeHandles|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.ReleaseNoPCAP|Any CPU.Build.0 = ReleaseNoPCAPWithSafeHandles|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.ReleaseNoPCAPWithSafeHandles|Any CPU.ActiveCfg = ReleaseNoPCAPWithSafeHandles|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.ReleaseNoPCAPWithSafeHandles|Any CPU.Build.0 = ReleaseNoPCAPWithSafeHandles|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.ReleaseWithSafeHandles|Any CPU.ActiveCfg = ReleaseWithSafeHandles|Any CPU
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE}.ReleaseWithSafeHandles|Any CPU.Build.0 = ReleaseWithSafeHandles|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A83DC653-F6A4-4D20-B159-3EA53473A31C} = {AEF8A3B5-5E6D-44D7-99EE-D2EBD47B46AD}
+		{D4B8937B-3C82-4187-810B-06FF8C9D0CAE} = {AEF8A3B5-5E6D-44D7-99EE-D2EBD47B46AD}
 	EndGlobalSection
 EndGlobal
