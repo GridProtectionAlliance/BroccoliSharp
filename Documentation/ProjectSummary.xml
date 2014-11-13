@@ -224,8 +224,9 @@
           version of Mono you are targeting, the safe handle implementation may not be fully cooked. Also, if
           you are trying to debug your .NET application and get Mono to report verbose information, there is a
           lot less noise to filter through when you are just using pointers. As a result, you can choose which
-          mode of operation you to use depending on your task. For any production level deployments, it is
-          recommended to use the <span class="code">ReleaseWithSafeHandles</span> build configuration.
+          mode of operation you want to use depending on your task. For any production level deployments, it is
+          recommended to use the <span class="code">ReleaseWithSafeHandles</span> build configuration with a
+          later build of Mono.
         </p>
         
         <p>
