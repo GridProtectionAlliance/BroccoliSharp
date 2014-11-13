@@ -43,12 +43,17 @@
           the Broccoli API and will allow you to create client sensors for the Bro intrusion
           detection system, receive Bro IDs, send and receive Bro events, as well as send
           and receive event requests to and from peering Bros. As in the native C Broccoli
-          API, you can currently create and receive values of pure types like integers,
-          counters, timestamps, IP addresses, port numbers, booleans, and strings.
+          API, this .NET library can be used to create and receive values of pure types like
+          integers, counters, timestamps, IP addresses, port numbers, booleans, and strings.
         </p>
           <p>
-          BroccoliSharp is free software under terms of the BSD license as provided in the
-          LICENSE file distributed with the source code.
+          BroccoliSharp is free software under terms of the BSD license as provided in the LICENSE file
+          distributed with the source code. This source code library was developed and is maintained by
+          the <a href="https://www.gridprotectionalliance.org">Grid Protection Alliance</a> who provides
+          production grade open source software to electric utilities.  This library was developed as
+          part of a <a href="http://energy.gov/oe/services/technology-development/energy-delivery-systems-cybersecurity">DOE CEDS</a>
+          project called <a href="https://www.controlsystemsroadmap.net/ieRoadmap%20Documents/GPA-ARMORE-CEDS_Peer_Review_2014.pdf">"ARMORE"</a>
+          which is incorporating Bro within a security appliance for use in substations.
         </p>
           <p>
           More details on BroccoliSharp usage can be found in the documentation related to
@@ -65,8 +70,8 @@
         </p>
           <ul>
             <li>
-            For details on how to manage connections, handle connections classes, and compose and send
-            events using BroccoliSharp, see topic remarks for the:
+            For details on how to manage connections, handle connections classes, and send events using
+            BroccoliSharp, see topic remarks for the:
             <ul style="list-style-type: none"><li><a href="T_BroccoliSharp_BroConnection.htm">BroConnection class</a></li></ul></li>
             <li>
             For details on how to handle record structures in BroccoliSharp, see topic remarks for the:
@@ -116,19 +121,72 @@
           To build the BroccoliSharp library using Mono you can use <span class="code">xbuild</span>:
         </p>
           <p style="text-indent: .5in">
-            <span class="code">xbuild /p:Configuration=Release BroccoliSharp.sln</span>
+            <ul>
+              <li>
+                <span class="code">xbuild /p:Configuration=Release BroccoliSharp.sln</span>
+              </li>
+            </ul>
+          </p>
+          <p>
+          To build a debug library, use:
+        </p>
+          <p style="text-indent: .5in">
+            <ul>
+              <li>
+                <span class="code">xbuild /p:Configuration=Debug BroccoliSharp.sln</span>
+              </li>
+            </ul>
           </p>
           <p>
           To build BroccoliSharp to work with a Broccoli release that has disabled PCAP support, use:
         </p>
           <p style="text-indent: .5in">
-            <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln</span>
+            <ul>
+              <li>
+                <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln</span>
+              </li>
+            </ul>
           </p>
           <p>
-          To build BroccoliSharp to target older versions of Mono (e.g., 2.10.8.1), use:
+          To create builds that use SafeHandle implementations for opaque pointers use:
         </p>
           <p style="text-indent: .5in">
-            <span class="code">xbuild /p:Configuration=Release BroccoliSharp-NET4.0.sln</span>
+            <ul>
+              <li>
+                <span class="code">xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp.sln</span>
+              </li>
+              <li>
+                <span class="code">xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp.sln</span>
+              </li>
+              <li>
+                <span class="code">xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp.sln</span>
+              </li>
+            </ul>
+          </p>
+          <p>
+          To build BroccoliSharp to target older versions of Mono use one of the following:
+        </p>
+          <p style="text-indent: .5in">
+            <ul>
+              <li>
+                <span class="code">xbuild /p:Configuration=Debug BroccoliSharp-NET4.0.sln</span>
+              </li>
+              <li>
+                <span class="code">xbuild /p:Configuration=Release BroccoliSharp-NET4.0.sln</span>
+              </li>
+              <li>
+                <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp-NET4.0.sln</span>
+              </li>
+              <li>
+                <span class="code">xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+              </li>
+              <li>
+                <span class="code">xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+              </li>
+              <li>
+                <span class="code">xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+              </li>
+            </ul>
           </p>
           <p>
           You can also build the library on Windows using Visual Studio and the binaries
@@ -136,10 +194,34 @@
           Mono.
         </p>
           <p>
-          Once the BroccoliSharp.dll exists (found in Build/Output/Release folder relative to solution) you can
-          add a reference to the library in your .NET projects and begin using BroccoliSharp.
+          Once the BroccoliSharp.dll exists (found in the output folder associated with
+          the build configuration, e.g., "/Main/Build/Output/Release" relative to source,
+          you can add a reference to the library in your .NET projects and begin using
+          BroccoliSharp.
+        </p>
+          <p>
+          In order for your .NET application to be able to find the Broccoli API shared library (i.e.,
+          <span class="code">libbroccoli.so</span>), you will need to add the location of this library to your
+          Linux library path (e.g., add path to <span class="code">LD_LIBRARY_PATH</span> environmental variable).
+          See <a href="http://www.mono-project.com/docs/advanced/pinvoke/">Mono Interop documentation</a> on
+          "Library Handling" for more detail.
         </p>
           <h3>About the Code</h3>
+          <p>
+          The source code has been defined with precompiler directives to allow for compiling the code to
+          either use direct pointers or use safe handles for opaque Bro types. Generally, as their name
+          implies, safe handles are the ideal choice when using managed code with unmanaged code. See the
+          <a href="http://msdn.microsoft.com/en-us/library/fh21e17c(v=vs.110).aspx">Safe Handles</a>
+          documentation for more detail. In general, multi-threaded race conditions between garbage collection
+          and pointer usage can be avoided and the unmanaged memory allocations the pointer references will
+          be disposed of properly even if the program abnormally terminates. That being said, depending on the
+          version of Mono you are targeting, the safe handle implementation may not be fully cooked. Also, if
+          you are trying to debug your .NET application and get Mono to report verbose information, there is a
+          lot less noise to filter through when you are just using pointers. As a result, you can choose which
+          mode of operation you want to use depending on your task. For any production level deployments, it is
+          recommended to use the <span class="code">ReleaseWithSafeHandles</span> build configuration with a
+          later build of Mono.
+        </p>
           <p>
           When building inside Visual Studio code analysis is enabled for this project. A rule set is included
           with the source code (i.e., BroccoliSharp.ruleset) that defines the analysis rules that are enabled for
