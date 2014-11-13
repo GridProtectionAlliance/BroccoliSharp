@@ -558,7 +558,7 @@ namespace BroccoliSharp
         /// <param name="userData">Any user-data to be passed to event.</param>
         /// <exception cref="ArgumentNullException"><paramref name="eventName"/> is <c>null</c>.</exception>
         /// <exception cref="ObjectDisposedException">Cannot register for event, <see cref="BroConnection"/> is disposed.</exception>
-        public void RegisterForEvent(string eventName, object userData = null)
+        public unsafe void RegisterForEvent(string eventName, object userData = null)
         {
             if ((object)eventName == null)
                 throw new ArgumentNullException("eventName");
@@ -682,20 +682,21 @@ namespace BroccoliSharp
 
         // Call-back handler for Bro compact event function
 #if USE_SAFE_HANDLES
-        private unsafe void BroCompactEventCallBack(BroConnectionPtr bc, IntPtr user_data, ref bro_ev_meta meta)
+        private unsafe void BroCompactEventCallBack(BroConnectionPtr bc, IntPtr user_data, bro_ev_meta* meta)
 #else
-        private unsafe void BroCompactEventCallBack(IntPtr bc, IntPtr user_data, ref bro_ev_meta meta)
+        private unsafe void BroCompactEventCallBack(IntPtr bc, IntPtr user_data, bro_ev_meta* meta)
 #endif
         {
-            if (string.IsNullOrEmpty(meta.ev_name))
+            // Bail out if we didn't get a meta structure or event name
+            if (meta == null || meta->ev_name == IntPtr.Zero)
                 return;
 
             // Create new BroEventArgs from call-back metadata
             BroEventArgs args = new BroEventArgs();
             bro_ev_arg arg;
 
-            args.EventName = meta.ev_name;
-            args.EventTime = new BroTime(meta.ev_ts);
+            args.EventName = Marshal.PtrToStringAnsi(meta->ev_name);
+            args.EventTime = new BroTime(meta->ev_ts);
 
             // Get any user data passed to the call-back for the specified event name
             lock (m_userData)
@@ -706,11 +707,11 @@ namespace BroccoliSharp
                     args.UserData = userData;
             }
 
-            args.Parameters = new BroValue[meta.ev_numargs];
+            args.Parameters = new BroValue[meta->ev_numargs];
 
             for (int i = 0; i < args.Parameters.Length; i++)
             {
-                arg = meta.ev_args[i];
+                arg = meta->ev_args[i];
                 args.Parameters[i] = BroValue.CreateFromPtr(arg.arg_data, arg.arg_type);
             }
 

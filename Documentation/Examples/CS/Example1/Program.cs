@@ -35,7 +35,9 @@ namespace Example
                 bool result = connection.SendEvent(bar);
                 Console.WriteLine("Event \"bar\" {0}", result ? "was sent or queued for later delivery" : "failed to send or queue");
 
-                // Wait for events to be received
+                // Process any incoming events...
+				connection.ProcessInput();
+				
                 Console.ReadLine();
 
                 // Unregister from event "foo"

@@ -86,8 +86,7 @@ namespace BroccoliSharp.Internal
     [StructLayout(LayoutKind.Sequential)]
     internal unsafe struct bro_ev_meta
     {
-        [MarshalAs(UnmanagedType.LPStr)]
-        public string ev_name;                  // The name of the event
+        public IntPtr ev_name;                  // The name of the event
         public double ev_ts;                    // Timestamp of event, taken from BroEvent itself
         public int ev_numargs;                  // How many arguments are passed
         public bro_ev_arg* ev_args;             // Array of BroEvArgs, one for each argument

@@ -35,8 +35,10 @@ public class Program
         bool result = connection.SendEvent(bar);
         System.out.format("Event \"bar\" %s%n", result ? "was sent or queued for later delivery" : "failed to send or queue");
 
-        // Wait for events to be received
-        System.in.read();
+        // Process any incoming events...
+		connection.ProcessInput();
+
+		System.in.read();
 
         // Unregister from event "foo"
         connection.UnregisterForEvent("foo");

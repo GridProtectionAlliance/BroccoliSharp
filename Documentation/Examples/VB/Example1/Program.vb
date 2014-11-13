@@ -32,8 +32,10 @@ Module Program
             Dim result As Boolean = connection.SendEvent(bar)
             Console.WriteLine("Event ""bar"" {0}", IIf(result, "was sent or queued for later delivery", "failed to send or queue"))
 
-            ' Wait for events to be received
-            Console.ReadLine()
+            ' Process any incoming events...
+			connection.ProcessInput()
+            
+			Console.ReadLine()
 
             ' Unregister from event "foo"
             connection.UnregisterForEvent("foo")

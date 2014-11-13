@@ -276,7 +276,7 @@ namespace BroccoliSharp.Internal
          * Bro events, called in the compact-argument style. For details
          * see bro_event_registry_add_compact().
          */
-        public delegate void BroCompactEventFunc(BroConnectionPtr bc, IntPtr user_data, ref bro_ev_meta meta);
+        public unsafe delegate void BroCompactEventFunc(BroConnectionPtr bc, IntPtr user_data, bro_ev_meta* meta);
 
         /**
          * BroTableCallback - The signature of callbacks for iterating over tables.
@@ -1040,7 +1040,7 @@ namespace BroccoliSharp.Internal
          * Bro events, called in the compact-argument style. For details
          * see bro_event_registry_add_compact().
          */
-        public delegate void BroCompactEventFunc(IntPtr bc, IntPtr user_data, ref bro_ev_meta meta);
+        public unsafe delegate void BroCompactEventFunc(IntPtr bc, IntPtr user_data, bro_ev_meta* meta);
 
         /**
          * BroTableCallback - The signature of callbacks for iterating over tables.
