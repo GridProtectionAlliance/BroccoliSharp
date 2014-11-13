@@ -117,7 +117,7 @@
     <OutputPath>..\Build\Help\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'ReleaseWithSafeHandles' ">
-    <OutputPath>bin\ReleaseWithSafeHandles\</OutputPath>
+    <OutputPath>..\Build\Help\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'ReleaseNoPCAPWithSafeHandles' ">
     <OutputPath>bin\ReleaseNoPCAPWithSafeHandles\</OutputPath>
