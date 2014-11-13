@@ -114,7 +114,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DebugWithSafeHandles' ">
-    <OutputPath>bin\DebugWithSafeHandles\</OutputPath>
+    <OutputPath>..\Build\Help\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'ReleaseWithSafeHandles' ">
     <OutputPath>bin\ReleaseWithSafeHandles\</OutputPath>

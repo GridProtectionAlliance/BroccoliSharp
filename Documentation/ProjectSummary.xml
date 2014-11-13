@@ -141,7 +141,11 @@
         </p>
 
         <p style='text-indent: .5in'>
-          <span class="code">xbuild /p:Configuration=Release BroccoliSharp.sln</span>
+          <ul>
+            <li>
+              <span class="code">xbuild /p:Configuration=Release BroccoliSharp.sln</span>
+            </li>
+          </ul>          
         </p>
 
         <p>
@@ -149,7 +153,11 @@
         </p>
 
         <p style='text-indent: .5in'>
-          <span class="code">xbuild /p:Configuration=Debug BroccoliSharp.sln</span>
+          <ul>
+            <li>
+              <span class="code">xbuild /p:Configuration=Debug BroccoliSharp.sln</span>
+            </li>
+          </ul>          
         </p>
         
         <p>
@@ -157,7 +165,11 @@
         </p>
 
         <p style='text-indent: .5in'>
-          <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln</span>
+          <ul>
+            <li>
+              <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp.sln</span>
+            </li>
+          </ul>          
         </p>
 
         <p>
@@ -165,11 +177,17 @@
         </p>
 
         <p style='text-indent: .5in'>
-          <span class="code">xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp.sln</span>
-          <br/>
-          <span class="code">xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp.sln</span>
-          <br/>
-          <span class="code">xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp.sln</span>
+          <ul>
+            <li>
+              <span class="code">xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp.sln</span>
+            </li>
+            <li>
+              <span class="code">xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp.sln</span>
+            </li>
+            <li>
+              <span class="code">xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp.sln</span>
+            </li>
+          </ul>
         </p>
 
         <p>
@@ -177,17 +195,26 @@
         </p>
 
         <p style='text-indent: .5in'>
-          <span class="code">xbuild /p:Configuration=Debug BroccoliSharp-NET4.0.sln</span>
-          <br/>
-          <span class="code">xbuild /p:Configuration=Release BroccoliSharp-NET4.0.sln</span>
-          <br/>
-          <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp-NET4.0.sln</span>
-          <br/>
-          <span class="code">xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp-NET4.0.sln</span>
-          <br/>
-          <span class="code">xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp-NET4.0.sln</span>
-          <br/>
-          <span class="code">xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+          <ul>
+            <li>
+              <span class="code">xbuild /p:Configuration=Debug BroccoliSharp-NET4.0.sln</span>
+            </li>
+            <li>
+              <span class="code">xbuild /p:Configuration=Release BroccoliSharp-NET4.0.sln</span>
+            </li>
+            <li>
+              <span class="code">xbuild /p:Configuration=ReleaseNoPCAP BroccoliSharp-NET4.0.sln</span>
+            </li>
+            <li>
+              <span class="code">xbuild /p:Configuration=DebugWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+            </li>
+            <li>
+              <span class="code">xbuild /p:Configuration=ReleaseWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+            </li>
+            <li>
+              <span class="code">xbuild /p:Configuration=ReleaseNoPCAPWithSafeHandles BroccoliSharp-NET4.0.sln</span>
+            </li>
+          </ul>
         </p>
 
         <p>
