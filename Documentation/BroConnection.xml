@@ -396,9 +396,15 @@
     </note>
   </remarks>
   <example>
-    This example shows how to create and use a <see cref="BroConnection"/>:
-    <code source="Documentation\Examples\CS\Example1\Program.cs" language="C#" />
-    <code source="Documentation\Examples\VB\Example1\Program.vb" language="VB" />
-    <code source="Documentation\Examples\Java\Example1\Program.java" language="JSharp" />
+    <para>
+      This example shows how to create and use a <see cref="BroConnection"/>:
+      <code source="Documentation\Examples\CS\Example1\Program.cs" language="C#" />
+      <code source="Documentation\Examples\VB\Example1\Program.vb" language="VB" />
+      <code source="Documentation\Examples\Java\Example1\Program.java" language="JSharp" />
+    </para>
+    <para>
+      This example shows a "ping" working with the <c>broping.bro</c> script:
+      <code source="Tests\BroPing\Program.cs" language="C#" />
+    </para>
   </example>
 </doc>

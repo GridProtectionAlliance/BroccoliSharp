@@ -1,0 +1,29 @@
+﻿BroPingRecord Test Application
+
+You can use this application to test BroccoliSharp with the standard
+Broccoli API "broping-record.bro" testing script. You will first need to
+build the BroccoliSharp library before testing - see the root README for
+more info.
+
+To test the application, first run the Bro script from a terminal session:
+
+	bro broping-record.bro
+
+Note that the "bro" application may not be in your path - it is commonly
+installed at "/usr/local/bro/bin". You may need to add this to your
+path or run the program directly from this folder.
+
+Next, run the BroccoliSharp application from a second terminal session:
+
+	mono BroPing.exe 127.0.0.1:47758
+
+If there is a type initializer exception when starting the application
+in the BroccoliSharp.Internal.BroApi, this indicates that the Broccoli
+API shared library, libbroccoli.so, cannot be located. To fix this you
+can either update the ld.so.conf with the Bro library path (then apply
+the updates using ldconfig) or simply set the LD_LIBRARY_PATH to the
+path. The Broccoli library is commonly installed at "/usr/local/bro/lib",
+so as example, you could assign the LINUX library path like so:
+
+	export LD_LIBRARY_PATH=/usr/local/bro/lib
+

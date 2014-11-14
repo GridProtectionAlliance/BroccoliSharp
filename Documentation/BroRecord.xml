@@ -27,14 +27,15 @@
     </para>
   </remarks>
   <example>
-    The <see cref="BroRecord"/> has two indexer properties. One will access <see cref="BroField"/>
-    values by index and the other by field name:
-    <code language="C#">
+    <para>
+      The <see cref="BroRecord"/> has two indexer properties. One will access <see cref="BroField"/>
+      values by index and the other by field name:
+      <code language="C#">
         BroRecord record = new BroRecord();
         BroVector list = new BroVector();
 
         for (int i = 0; i &lt; 10; i++)
-            list.Add(i, BroType.Int);
+          list.Add(i, BroType.Int);
 
         record.Add(list.Count, BroType.Int, "listCount");
         record.Add(list, "list");
@@ -48,7 +49,12 @@
 
         // Get column named "enumCol"
         BroValue enumCol = record["enumCol"];
-    </code>
+      </code>
+    </para>
+    <para>
+      This example shows a record based "ping" working with the <c>broping-record.bro</c> script:
+      <code source="Tests\BroPingRecord\Program.cs" language="C#" />
+    </para>
   </example>
   <threadsafety>
     Implementation of <see cref="BroRecord"/> is not synchronized, as a result, enumerating through

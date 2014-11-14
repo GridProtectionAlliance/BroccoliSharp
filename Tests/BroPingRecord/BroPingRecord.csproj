@@ -74,6 +74,7 @@
     <Content Include="broping-record.bro">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="README" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BroccoliSharp.csproj">
