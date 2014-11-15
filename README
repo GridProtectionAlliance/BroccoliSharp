@@ -67,6 +67,6 @@ should still work on Linux depending on the corresponding installed version of
 Mono.
 
 Once the BroccoliSharp.dll exists (found in the output folder associated with
-the build configuration, e.g., "/Main/Build/Output/Release" relative to source,
+the build configuration, e.g., "/Main/Build/Output/Release" relative to source),
 you can add a reference to the library in your .NET projects and begin using
 BroccoliSharp. 
