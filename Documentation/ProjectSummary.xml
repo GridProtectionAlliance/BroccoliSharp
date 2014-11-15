@@ -41,7 +41,7 @@
           <a href="https://www.bro.org/sphinx/components/broccoli/broccoli-manual.html">Broccoli documentation</a>
           put into context of using BroccoliSharp from a .NET application. Many topics also include usage
           examples in C#. The <a href="T_BroccoliSharp_BroConnection.htm">BroConnection class</a> topic remarks
-          also include examples in VB.NET and Java using <a href="http://www.ikvm.net/">IKVM.NET</a>.
+          include examples in VB.NET and Java using <a href="http://www.ikvm.net/">IKVM.NET</a>.
         </p>
 
         <ul>
