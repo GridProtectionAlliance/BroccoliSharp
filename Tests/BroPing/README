@@ -23,7 +23,7 @@ API shared library, libbroccoli.so, cannot be located. To fix this you
 can either update the ld.so.conf with the Bro library path (then apply
 the updates using ldconfig) or simply set the LD_LIBRARY_PATH to the
 path. The Broccoli library is commonly installed at "/usr/local/bro/lib",
-so as example, you could assign the LINUX library path like so:
+as an example, you could assign the LINUX library path like so:
 
 	export LD_LIBRARY_PATH=/usr/local/bro/lib
 

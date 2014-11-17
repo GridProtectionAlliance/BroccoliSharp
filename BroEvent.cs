@@ -164,7 +164,6 @@ namespace BroccoliSharp
                         m_eventPtr = IntPtr.Zero;
                     }
 #endif
-
                     if (disposing)
                         m_parameters.Clear();
                 }
@@ -234,6 +233,18 @@ namespace BroccoliSharp
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Adds specified parameters to this <see cref="BroEvent"/>.
+        /// </summary>
+        /// <param name="args">Individual parameter values to add to the event.</param>
+        /// <returns><c>true</c> if all items were added; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="args"/> is <c>null</c>.</exception>
+        /// <exception cref="ObjectDisposedException">Cannot add parameter, <see cref="BroEvent"/> is disposed.</exception>
+        public bool AddParameters(params BroValue[] args)
+        {
+            return AddParameters(args as IEnumerable<BroValue>);
         }
 
         /// <summary>
