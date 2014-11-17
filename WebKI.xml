@@ -7,7 +7,7 @@
     <HelpKINode Title="BroVector.Add Method " Url="html/Overload_BroccoliSharp_BroVector_Add.htm" />
   </HelpKINode>
   <HelpKINode Title="AddParameter method" Url="html/Overload_BroccoliSharp_BroEvent_AddParameter.htm" />
-  <HelpKINode Title="AddParameters method" Url="html/M_BroccoliSharp_BroEvent_AddParameters.htm" />
+  <HelpKINode Title="AddParameters method" Url="html/Overload_BroccoliSharp_BroEvent_AddParameters.htm" />
   <HelpKINode Title="AddressBytes property">
     <HelpKINode Title="BroAddress.AddressBytes Property " Url="html/P_BroccoliSharp_BroAddress_AddressBytes.htm" />
     <HelpKINode Title="BroSubnet.AddressBytes Property " Url="html/P_BroccoliSharp_BroSubnet_AddressBytes.htm" />
@@ -110,7 +110,7 @@
     <HelpKINode Title="properties" Url="html/Properties_T_BroccoliSharp_BroEvent.htm" />
   </HelpKINode>
   <HelpKINode Title="BroEvent.AddParameter method" Url="html/Overload_BroccoliSharp_BroEvent_AddParameter.htm" />
-  <HelpKINode Title="BroEvent.AddParameters method" Url="html/M_BroccoliSharp_BroEvent_AddParameters.htm" />
+  <HelpKINode Title="BroEvent.AddParameters method" Url="html/Overload_BroccoliSharp_BroEvent_AddParameters.htm" />
   <HelpKINode Title="BroEvent.BroEvent constructor" Url="html/Overload_BroccoliSharp_BroEvent__ctor.htm" />
   <HelpKINode Title="BroEvent.Dispose method" Url="html/Overload_BroccoliSharp_BroEvent_Dispose.htm" />
   <HelpKINode Title="BroEvent.Finalize method" Url="html/M_BroccoliSharp_BroEvent_Finalize.htm" />
