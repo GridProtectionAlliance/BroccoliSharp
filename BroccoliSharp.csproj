@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BroccoliSharp.ruleset" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Documentation\BroConnection.xml" />
@@ -146,7 +147,6 @@
     </Content>
     <Content Include="Documentation\BroEvent.xml" />
     <Content Include="Documentation\BroVector.xml" />
-    <None Include="README" />
     <None Include="LICENSE" />
     <Content Include="Documentation\ProjectSummary.xml" />
   </ItemGroup>

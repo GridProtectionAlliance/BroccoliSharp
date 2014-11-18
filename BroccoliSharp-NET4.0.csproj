@@ -146,7 +146,7 @@
     </Content>
     <Content Include="Documentation\BroEvent.xml" />
     <Content Include="Documentation\BroVector.xml" />
-    <None Include="README" />
+    <None Include="README.md" />
     <None Include="LICENSE" />
     <Content Include="Documentation\ProjectSummary.xml" />
   </ItemGroup>
