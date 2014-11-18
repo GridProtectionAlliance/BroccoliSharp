@@ -1,4 +1,13 @@
-﻿<h1>BroccoliSharp: A .NET implementation of the Bro Client Communications Library.</h1>
+<table>
+    <tr>
+        <td>
+            <img src="http://gridprotectionalliance.github.io/BroccoliSharp/icons/BroccoliSharp.png"/>
+        </td>
+        <td>
+            <h2>BroccoliSharp: A .NET implementation of the Bro Client Communications Library.</h2>
+        </td>
+    </tr>
+</table>
 
 <p>
     BroccoliSharp is a set of managed C# based .NET classes and structures that wrap
