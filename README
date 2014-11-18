@@ -19,7 +19,9 @@ incorporating Bro within a security appliance for use in substations.
 More details on BroccoliSharp usage can be found in the documentation related
 to the primary data structures. It is expected that the developer is already
 familiar with basic Bro concepts before using the BroccoliSharp library. 
- 
+
+[![Build status](https://ci.appveyor.com/api/projects/status/8jhnn7jjh3qv7qs4?svg=true)](https://ci.appveyor.com/project/ritchiecarroll/broccolisharp)
+
 Installation
 
     The BroccoliSharp library has only been tested on Linux so far. 
