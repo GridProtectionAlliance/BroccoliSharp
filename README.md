@@ -101,17 +101,6 @@
     </li>
 </ul>
 
-<h2>Download</h2>
-
-<p>
-    Source Code: <a href="https://github.com/GridProtectionAlliance/BroccoliSharp/archive/master.zip">Download Zip</a>
-</p>
-
-<p>
-    BroccoliSharp is hosted on GitHub:
-    <a href="https://github.com/GridProtectionAlliance/BroccoliSharp">GridProtectionAlliance/BroccoliSharp</a>
-</p>
-
 <h2>Installation</h2>
 
 <p>
