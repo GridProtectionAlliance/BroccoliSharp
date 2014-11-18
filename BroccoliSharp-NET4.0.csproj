@@ -18,11 +18,11 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\Build\Output\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;BRO_PCAP_SUPPORT</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;BRO_PCAP_SUPPORT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>..\Build\Output\Debug\BroccoliSharp.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
@@ -31,60 +31,60 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Build\Output\Release\</OutputPath>
-    <DefineConstants>TRACE;CODE_ANALYSIS;BRO_PCAP_SUPPORT</DefineConstants>
+    <DefineConstants>TRACE;BRO_PCAP_SUPPORT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>..\Build\Output\Release\BroccoliSharp.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseNoPCAP|AnyCPU' ">
     <OutputPath>..\Build\Output\ReleaseNoPCAP\</OutputPath>
-    <DefineConstants>TRACE;CODE_ANALYSIS;</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DocumentationFile>..\Build\Output\ReleaseNoPCAP\BroccoliSharp.XML</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugWithSafeHandles|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\Build\Output\DebugWithSafeHandles\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;BRO_PCAP_SUPPORT;USE_SAFE_HANDLES</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;BRO_PCAP_SUPPORT;USE_SAFE_HANDLES</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DocumentationFile>..\Build\Output\DebugWithSafehandles\BroccoliSharp.XML</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseWithSafeHandles|AnyCPU'">
     <OutputPath>..\Build\Output\ReleaseWithSafeHandles\</OutputPath>
-    <DefineConstants>TRACE;CODE_ANALYSIS;BRO_PCAP_SUPPORT;USE_SAFE_HANDLES</DefineConstants>
+    <DefineConstants>TRACE;BRO_PCAP_SUPPORT;USE_SAFE_HANDLES</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DocumentationFile>..\Build\Output\ReleaseWithSafeHandles\BroccoliSharp.XML</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNoPCAPWithSafeHandles|AnyCPU'">
     <OutputPath>..\Build\Output\ReleaseNoPCAPWithSafeHandles\</OutputPath>
-    <DefineConstants>TRACE;CODE_ANALYSIS;USE_SAFE_HANDLES</DefineConstants>
+    <DefineConstants>TRACE;USE_SAFE_HANDLES</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DocumentationFile>..\Build\Output\ReleaseNoPCAPWithSafeHandles\BroccoliSharp.XML</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>BroccoliSharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
